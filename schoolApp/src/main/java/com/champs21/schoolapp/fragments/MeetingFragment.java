@@ -371,8 +371,8 @@ public class MeetingFragment extends Fragment implements UserAuthListener{
 		params.put("page_size", "10");
 		params.put("page_number", String.valueOf(pageNumber));
 		
-		Log.e("Meeting", String.valueOf(pageNumber));
-		
+        Log.e("Meeting", String.valueOf(pageNumber));
+
 		if(type != null)
 			params.put("type", type);
 		

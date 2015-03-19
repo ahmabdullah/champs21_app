@@ -18,7 +18,10 @@ public class SPKeyHelper {
 	public final static String IS_JOINED_SCHOOL = "IS_JOINED";
 	public final static String JOINED_SCHOOL = "JOINED_SCHOOL";
 	public final static String SESSION = "SESSION";
-	public final static String TOKEN = "TOKEN";
+	public final static String SCHOOL_lOGO = "SCHOOL_lOGO";
+    public final static String SCHOOL_PICTURE = "SCHOOL_PICTURE";
+    public final static String SCHOOL_COVER = "SCHOOL_COVER";
+    public final static String TOKEN = "TOKEN";
 	public final static String IS_ADMIN = "IS_ADMIN";
 	public final static String IS_PARENT = "IS_PARENT";
 	public final static String IS_TEACHER = "IS_TEACHER";

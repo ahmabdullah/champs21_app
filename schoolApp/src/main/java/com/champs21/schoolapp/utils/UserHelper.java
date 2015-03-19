@@ -400,6 +400,23 @@ public class UserHelper {
 
 	};
 
+
+    public void saveSchoolLogo(String logo) {
+        SharedPreferencesHelper.getInstance().setString(SPKeyHelper.SCHOOL_lOGO,
+                logo);
+    }
+
+    public void saveSchoolPicture(String picture) {
+        SharedPreferencesHelper.getInstance().setString(SPKeyHelper.SCHOOL_PICTURE,
+                picture);
+    }
+
+    public void saveSchoolCover(String cover) {
+        SharedPreferencesHelper.getInstance().setString(SPKeyHelper.SCHOOL_COVER,
+                cover);
+    }
+
+
 	public void saveUserSecret(String secret) {
 		SharedPreferencesHelper.getInstance().setString(SPKeyHelper.TOKEN,
 				secret);
@@ -518,6 +535,8 @@ public class UserHelper {
 				SPKeyHelper.BATCH_ID, ""));
 		info.setProfileId(SharedPreferencesHelper.getInstance().getString(
 				SPKeyHelper.PROFILE_ID, ""));
+        info.setSchool_logo(SharedPreferencesHelper.getInstance().getString(
+                SPKeyHelper.SCHOOL_ID, ""));
 		info.setSchoolId(SharedPreferencesHelper.getInstance().getString(
 				SPKeyHelper.SCHOOL_ID, ""));
 		info.setSchool_name(SharedPreferencesHelper.getInstance().getString(
@@ -685,6 +704,10 @@ public class UserHelper {
 				saveSchoolName(user.getPaidInfo().getSchool_name());
 				saveProfileId(user.getPaidInfo().getProfileId());
 				saveBatchID(user.getPaidInfo().getBatchId());
+                saveSchoolLogo(user.getPaidInfo().getSchool_logo());
+                saveSchoolPicture(user.getPaidInfo().getSchool_picture());
+                saveSchoolCover(user.getPaidInfo().getSchool_cover());
+
 
 				if (user.getPaidInfo().isAdmin())
 					saveUserType(UserTypeEnum.ADMIN.ordinal());
