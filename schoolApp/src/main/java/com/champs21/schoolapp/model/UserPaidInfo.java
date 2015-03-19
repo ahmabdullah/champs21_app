@@ -40,6 +40,17 @@ public class UserPaidInfo {
 	private String profile_image;
 	@SerializedName("school_name")
 	private String school_name;
+
+
+    @SerializedName("school_logo")
+    private String school_logo;
+
+    @SerializedName("school_picture")
+    private String school_picture;
+
+    @SerializedName("school_cover")
+    private String school_cover;
+
 	
 	
 	public String getSchool_name() {
@@ -168,5 +179,30 @@ public class UserPaidInfo {
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
+
+
+    public String getSchool_cover() {
+        return school_cover;
+    }
+
+    public void setSchool_cover(String school_cover) {
+        this.school_cover = school_cover;
+    }
+
+    public String getSchool_picture() {
+        return school_picture;
+    }
+
+    public void setSchool_picture(String school_picture) {
+        this.school_picture = school_picture;
+    }
+
+    public String getSchool_logo() {
+        return school_logo;
+    }
+
+    public void setSchool_logo(String school_logo) {
+        this.school_logo = school_logo;
+    }
 
 }

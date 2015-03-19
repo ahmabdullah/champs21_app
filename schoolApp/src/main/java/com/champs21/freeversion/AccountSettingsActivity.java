@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
@@ -124,8 +125,13 @@ public class AccountSettingsActivity extends ChildContainerActivity implements O
 		setUpEditProfileView();
 		
 	}
-	
-	private void setUpEditProfileView() {
+
+    @Override
+    public void onActivityResult(int requestCode, int responseCode, Intent intent) {
+        super.onActivityResult(requestCode, responseCode, intent);
+    }
+
+    private void setUpEditProfileView() {
 		passwordEmainTextView = (TextView) findViewById(R.id.tv_pass_email);
 		passwordEmainTextView.setText(userHelper.getUser().getEmail());
 		saveButton = (ImageButton)findViewById(R.id.save_btn);
