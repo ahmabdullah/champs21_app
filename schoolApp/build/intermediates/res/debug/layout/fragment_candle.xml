@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.champs21.schoolapp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_child_choosing"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dip" >
+
+                    <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon
+                        android:id="@+id/rhombus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        custom:iconImageRhombus="@drawable/candle_icon_red" >
+                    </com.champs21.schoolapp.viewhelpers.CustomRhombusIcon>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Candle"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/candle_banner" />
+
+                <com.champs21.schoolapp.viewhelpers.ExpandableTextView
+                        android:id="@+id/tv_candle_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="14sp"
+                        android:padding="5dip"
+                        android:textStyle="bold"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="@color/red" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Start Candling"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" 
+                        android:layout_margin="5dip"/>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="5dip"
+                    android:layout_marginTop="5dip">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="My Candle is for"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/cb_candle_student"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@drawable/check_btn"
+                        android:padding="5dip"
+                        android:text="Student"
+                        android:textColor="@color/gray_1"
+                        android:textSize="12sp" />
+
+                    <CheckBox
+                        android:id="@+id/cb_candle_parents"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@drawable/check_btn"
+                        android:padding="5dip"
+                        android:text="Parents"
+                        android:textColor="@color/gray_1"
+                        android:textSize="12sp" />
+
+                    <CheckBox
+                        android:id="@+id/cb_candle_teacher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@drawable/check_btn"
+                        android:padding="5dip"
+                        android:text="Teacher"
+                        android:textColor="@color/gray_1"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/candle_field"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dip" 
+                    android:id="@+id/select_cat_panel">
+
+                    <TextView
+                        android:id="@+id/tv_candle_cateogry"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dip"
+                        android:layout_weight="1"
+                        android:hint="Select Your Candle Category"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray_1"
+                        android:textSize="12sp" />
+
+                    <ImageButton
+                        android:id="@+id/btn_candle_category_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spinner_btn" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/et_candle_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/candle_field"
+                    android:hint="Title"
+                    android:paddingLeft="5dip"
+                    android:paddingRight="5dip"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray_1"
+                    android:textSize="12sp" />
+                <EditText
+                    android:id="@+id/et_mobile_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/candle_field"
+                    android:hint="Mobile Number"
+                    android:inputType="number"
+                    android:paddingLeft="5dip"
+                    android:paddingRight="5dip"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray_1"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/et_candle_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/text_field_candle_description"
+                    android:hint="Write Description..."
+                    android:maxLines="4"
+                    android:paddingLeft="5dip"
+                    android:paddingRight="5dip"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray_1"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <com.champs21.schoolapp.viewhelpers.CustomButton
+                        android:id="@+id/btn_candle_attach_files"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/general_btn"
+                        android:clickable="true"
+                        android:gravity="center"
+                        custom:iconImage="@drawable/attach_btn_normal"
+                        custom:iconText="@string/btn_candle_attach_file" />
+
+                    <com.champs21.schoolapp.viewhelpers.CustomButton
+                        android:id="@+id/btn_candle_upload_pic"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/general_btn"
+                        android:clickable="true"
+                        android:gravity="center"
+                        custom:iconImage="@drawable/camera_normal"
+                        custom:iconText="@string/btn_candle_upload_picture" />
+
+                    <com.champs21.schoolapp.viewhelpers.CustomButton
+                        android:id="@+id/btn_candle_submit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/general_btn"
+                        android:clickable="true"
+                        android:gravity="center"
+                        custom:iconImage="@drawable/send_btn_normal"
+                        custom:iconText="@string/btn_candle_Send" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="@color/red"/>
+
+                <LinearLayout
+                    android:id="@+id/file_attached_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/candle_field"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dip" >
+
+                    <TextView
+                        android:id="@+id/tv_file_name"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dip"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray_1"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/btn_cross_file"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:padding="5dip"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/cross" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/image_attached_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/candle_field"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dip" >
+
+                    <TextView
+                        android:id="@+id/tv_image_name"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dip"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray_1"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/btn_cross_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:padding="5dip"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/cross" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/layout/fragment_candle.xml -->

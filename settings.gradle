@@ -1,0 +1,6 @@
+include ':facebookSDK'
+include ':flowTextView'
+include ':pullToRefreshLibrary'
+include ':simpleFacebook'
+include ':aFileChooser'
+include ':schoolApp'

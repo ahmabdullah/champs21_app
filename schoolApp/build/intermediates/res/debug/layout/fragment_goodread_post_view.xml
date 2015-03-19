@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+  <ListView
+        android:id="@+id/list_goodread"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip"
+        android:background="@color/white"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="17.0sp"
+        android:listSelector="@android:color/transparent" >
+    </ListView>     
+
+</LinearLayout>
+<!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/layout/fragment_goodread_post_view.xml -->

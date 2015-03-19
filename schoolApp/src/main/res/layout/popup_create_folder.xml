@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.champs21.schoolapp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_2"
+    android:orientation="vertical">
+
+   <LinearLayout android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:background="@color/white"
+       android:padding="10dip">
+       
+       
+       <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           custom:iconImageRhombus="@drawable/goodread_icon_white"
+           >
+           
+           
+       </com.champs21.schoolapp.viewhelpers.CustomRhombusIcon>
+       
+       
+       <LinearLayout android:layout_width="0dip"
+           android:layout_height="fill_parent"
+           android:orientation="vertical"
+           android:gravity="center_vertical"
+           android:layout_weight="1">
+           
+           <TextView android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:text="Good Read"
+               android:textColor="@color/gray_1"
+               android:textSize="14sp"
+               
+               />
+           
+           <TextView android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:text="Choose your folder"
+               android:textColor="@color/maroon"
+               android:textSize="10sp"
+               
+               />
+       </LinearLayout>
+       
+   </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:id="@+id/fixed_container"
+       android:layout_marginTop="2dip">
+     </LinearLayout>
+
+    
+    <HorizontalScrollView android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+        <LinearLayout android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/custom_container"
+            android:orientation="horizontal">
+            
+            
+        </LinearLayout>
+        
+    </HorizontalScrollView>
+    
+
+    <Button
+        android:id="@+id/btn_create_folder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/icon_add"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="@color/maroon" />
+
+</LinearLayout>

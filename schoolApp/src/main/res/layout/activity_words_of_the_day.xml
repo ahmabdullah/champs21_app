@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DFE1E2"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/layoutCountQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="138dp"
+            android:background="@drawable/red_top"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutCountQuestion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-5dp"
+            android:gravity="center"
+            android:padding="7dp"
+            android:background="@drawable/game_top_next"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:hint="Type your text"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:inputType="textFilter"
+                android:textCursorDrawable="@null" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/linearLayout3"
+            android:layout_alignTop="@+id/linearLayout3"
+            android:layout_marginTop="-7dp"
+            android:background="@drawable/btn_game_submit" />
+
+        <ImageButton
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/linearLayout3"
+            android:layout_alignTop="@+id/linearLayout3"
+            android:layout_marginTop="-7dp"
+            android:background="@drawable/btn_game_say_again" />
+
+        <LinearLayout
+            android:id="@+id/btnSayAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/layoutCountQuestion"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_marginTop="-7dp"
+            android:background="@drawable/btn_game_help"
+            android:clickable="true"
+            android:orientation="horizontal" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+	<color name="transparent_gray">#FFF8F1EC</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="gray_bg">#DFE1E2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#312E2F</color>
+    <color name="gray_1">#777C7E</color>
+    <color name="gray_2">#E7ECEE</color>
+    <color name="gray_dark">#B1B8BA</color>
+    <color name="red">#C01920</color>
+    <color name="calender_offday_text_color">#C8C8C8</color>
+    <color name="calender_onday_text_color">#808080</color>
+    <color name="maroon">#CF141C</color>
+    <color name="dark_grey">#333333</color>
+    <color name="gray_3">#F9FAFA</color>
+    <color name="gray_4">#D1D7D9</color>
+	<color name="gray_child_choosing">#DFE1E2</color>
+	<color name="present">#5fb614</color>
+	<color name="absent">#f55c00</color>
+	<color name="late">#febe00</color>
+	<color name="leave">#239cdc</color>
+	<color name="hint_color">#dfe1e2</color>
+	<color name="gray_5">#575757</color>
+	<color name="popup_header_color">#242021</color>
+	<!-- setting drawer -->
+	<color name="settings_grey_left">#A5ABAE</color>
+	<color name="settings_grey_item_bg">#DFE1E2</color>
+	<color name="settings_grey_title_bar">#C3C7C8</color>
+	<color name="settings_grey_divider">#D5D9DB</color>
+	<color name="accepted_color">#017DB9</color>
+	<color name="red_disable">#c89fa0</color>
+	<color name="bg_disable">#ecedee</color>
+	
+	<color name="search_container_tap">#e7ecee</color>
+	
+	<color name="total_class">#11b4a7</color>
+	<color name="present_class">#952db3</color>
+	<color name="absent_class">#e43b0d</color>
+	<color name="late_class">#f7941d</color>
+	<color name="leave_class">#1a93c2</color>
+	
+</resources>

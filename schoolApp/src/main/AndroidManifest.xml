@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.champs21.schoolapp"
+    android:installLocation="auto"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!--
+     Creates a custom permission so only this app can receive its messages.
+
+     NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE,
+           where PACKAGE is the application's package name.
+
+
+
+    -->
+    <permission
+        android:name="com.champs21.schoolapp.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.champs21.schoolapp.permission.C2D_MESSAGE" />
+
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:name="com.champs21.schoolapp.utils.SchoolApp"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:logo="@drawable/champs_logo"
+        android:screenOrientation="portrait" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Include the AdActivity configChanges and theme. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!-- android:theme="@android:style/Theme.Light.NoTitleBar" > -->
+        <activity
+            android:name="com.champs21.freeversion.HomePageFreeVersion"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.schoolapp.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.HomeBaseActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.champs21.schoolapp.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.champs21.freeversion.GoodReadActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.champs21.freeversion.FreeVersionLoggedInActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.champs21.schoolapp.HomePageActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.champs21.schoolapp.TestActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.champs21.schoolapp.ChildSelectionActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.champs21.freeversion.RegistrationActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.champs21.freeversion.SingleItemShowActivity"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.champs21.com"
+                    android:scheme="http" 
+                    android:pathPrefix="/"/>
+                <data
+                    android:host="champs21.com"
+                    android:scheme="http" 
+                    android:pathPrefix="/"/>
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.champs21.freeversion.CompleteProfileActivityContainer"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/fb_app_id" />
+
+        <receiver android:name="com.champs21.schoolapp.utils.MyAlarm" >
+        </receiver>
+        <receiver
+            android:name="com.champs21.schoolapp.utils.BootBroadcastReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.champs21.freeversion.CandleActivity"
+            android:label="@string/title_activity_candle"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.SchoolDetailsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.SchoolAllActivities"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.SchoolPopulationActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.SingleSchooolFromSearchActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.CmartMainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.CmartProductDetaillActivity"
+            android:label="@string/title_activity_cmart_product_detaill" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.InfoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.WordsOfTheDayMainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.PreferenceSettingsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.champs21.freeversion.AccountSettingsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.CartActivity"
+            android:label="@string/title_activity_cart" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.VideoPlayerActivity"
+            android:configChanges="orientation|screenSize" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.SchoolScrollableDetailsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.SchoolFreeVersionActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.SingleSchoolFreeVersionActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--
+          WakefulBroadcastReceiver that will receive intents from GCM
+          services and hand them to the custom IntentService.
+
+          The com.google.android.c2dm.permission.SEND permission is necessary
+          so only GCM services can send data messages for the app.
+
+
+
+        -->
+        <receiver
+            android:name="com.champs21.schoolapp.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.champs21.schoolapp" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.champs21.schoolapp.GcmIntentService" />
+
+        <activity
+            android:name="com.champs21.freeversion.SchoolCandleSettingActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.PaidVersionHomePageActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.AssesmentActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.schoolapp.StudentListActivity"
+            android:label="@string/title_activity_student_list" >
+        </activity>
+        <activity
+            android:name="com.champs21.freeversion.CreateMeetingRequest"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.champs21.schoolapp.SyllabusActivity"
+            android:label="@string/title_activity_syllabus" >
+        </activity>
+        <activity 
+            android:name="com.champs21.freeversion.AssesmentHistoryActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+
+        <activity
+            android:name="com.champs21.schoolapp.StudentInfoActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_student_info" >
+        </activity>
+        <activity 
+            android:name="com.champs21.freeversion.AssessmentSummeryActivity"
+            android:screenOrientation="portrait">
+        </activity>
+		<activity
+            android:name="com.champs21.freeversion.SchoolSingleItemShowActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.champs21.freeversion.AssessmentLeaderBoardActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        <activity android:name="com.champs21.freeversion.AssessmentRules"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        
+        <service android:name="com.champs21.schoolapp.NotifyService"/>
+        
+        <receiver android:name="com.champs21.schoolapp.NotifyServiceReceiver"/>
+        
+        <activity 
+            android:name="com.champs21.freeversion.AssesmentHomeworkActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+
+        <activity 
+            android:name="com.champs21.freeversion.SingleHomeworkActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        <activity 
+            android:name="com.champs21.freeversion.SingleCalendarEvent"
+            android:screenOrientation="portrait">
+            
+        </activity>
+
+        <activity
+            android:name="com.champs21.schoolapp.NotificationActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity 
+            android:name="com.champs21.freeversion.SingleSyllabus"
+            android:screenOrientation="portrait">
+            
+        </activity>
+
+        <activity 
+            android:name="com.champs21.freeversion.SyllabusMidLayerActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+
+        <activity 
+            android:name="com.champs21.freeversion.SingleExamRoutine"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        <activity 
+            android:name="com.champs21.freeversion.SingleItemTermReportActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity 
+            android:name="com.champs21.freeversion.TeacherHomeworkDoneActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        <activity 
+            android:name="com.champs21.freeversion.SingleTeacherHomeworkActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        <activity 
+            android:name="com.champs21.freeversion.SingleNoticeActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        <activity 
+            android:name="com.champs21.freeversion.AnyFragmentLoadActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        <activity 
+            android:name="com.champs21.freeversion.SingleMeetingRequestActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        
+
+
+    </application>
+
+</manifest>

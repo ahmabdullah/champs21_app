@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.champs21.schoolapp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:iconImageRhombus="@drawable/shopping_tap" 
+                android:id="@+id/my_cart_btn">
+            </com.champs21.schoolapp.viewhelpers.CustomRhombusIcon>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Cart"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/cmart_tv_product_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="0 items"
+                    android:textColor="@color/gray_1"
+                    android:textSize="8sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dip"
+            android:layout_height="fill_parent"
+            android:background="@color/gray_bg" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/taka_big" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="5000000/-"
+                android:textColor="@color/red"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dip"
+            android:layout_height="fill_parent"
+            android:background="@color/gray_bg" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:gravity="center" >
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shopping_tap" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_weight=".8"
+            android:text="Select Catagory" >
+        </TextView>
+
+        <View
+            android:layout_width="2dip"
+            android:layout_height="fill_parent"
+            android:background="@color/gray_bg" />
+
+        <TextView
+            android:id="@+id/tv_selected_cat_text"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="All" >
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:gravity="center" >
+
+            <ImageButton
+                android:id="@+id/btn_category_selection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_btn" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="2dip"
+        android:paddingLeft="2dip"
+        android:paddingRight="2dip"
+        android:paddingTop="5dip" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip" 
+            android:layout_weight="1">
+
+            <GridView
+                android:id="@+id/product_grid"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:columnWidth="150dp"
+                android:gravity="center"
+                android:horizontalSpacing="10dp"
+                android:listSelector="#00000000"
+                android:numColumns="2"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="vertical"
+                android:stretchMode="columnWidth"
+                android:verticalScrollbarPosition="right"
+                android:verticalSpacing="20dp"
+                android:layout_centerInParent="true"
+                 >
+            </GridView>
+            
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#CCDFE1E2"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:id="@+id/pb"
+                android:visibility="gone"
+                >
+            <ProgressBar android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            </LinearLayout>
+            
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="@drawable/red_line" />
+    </LinearLayout>
+
+</LinearLayout>
