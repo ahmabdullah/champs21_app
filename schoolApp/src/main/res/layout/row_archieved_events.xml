@@ -33,6 +33,7 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 android:id="@+id/event_cat_name" />
 
             <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon
