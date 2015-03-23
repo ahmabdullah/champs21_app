@@ -35,12 +35,28 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:src="@drawable/banner"/>
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgViewCover"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/banner"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBarImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="false" />
+
+            </RelativeLayout>
+
+
 
             <RelativeLayout
                 android:id="@+id/layoutWhiteBot"

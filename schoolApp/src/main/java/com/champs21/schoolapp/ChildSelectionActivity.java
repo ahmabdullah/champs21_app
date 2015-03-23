@@ -48,7 +48,12 @@ public class ChildSelectionActivity extends RoboFragmentActivity{
 	private  float density;
 	
 	private CustomIndicator customIndicator;
-	
+
+
+    private ImageView imgViewCover;
+	private ProgressBar progressBarImage;
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -131,12 +136,15 @@ public class ChildSelectionActivity extends RoboFragmentActivity{
 		
 		
 		customIndicator = (CustomIndicator)this.findViewById(R.id.customIndicator);
+
+        imgViewCover  = (ImageView)this.findViewById(R.id.imgViewCover);
+        progressBarImage = (ProgressBar)this.findViewById(R.id.progressBarImage);
 	}
 	
 	private void initAction()
 	{
-		
-		refreshData(currentPosition);
+
+            refreshData(currentPosition);
 		btnPrevious.setVisibility(View.INVISIBLE);
 		
 		
@@ -194,6 +202,17 @@ public class ChildSelectionActivity extends RoboFragmentActivity{
 		{
 			customIndicator.setVisibility(View.VISIBLE);
 		}
+
+
+        if(!TextUtils.isEmpty(UserHelper.getSchoolCover()))
+        {
+            SchoolApp.getInstance().displayUniversalImage(UserHelper.getSchoolCover(), imgViewCover, progressBarImage);
+        }
+        else
+        {
+            imgViewCover.setImageResource(R.drawable.header_student_select);
+        }
+
 	}
 	
 	
