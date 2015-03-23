@@ -479,8 +479,7 @@ public class CandleFragment extends Fragment implements OnClickListener {
 							selectedFilePath = path;
 							updateFilenamePanel(true);
 						} catch (Exception e) {
-							Log.e("FileSelectorTestActivity",
-									"File select error", e);
+							Log.e("FileSelector error occured",e.toString());
 						}
 					} else {
 						Toast.makeText(getActivity(), "Invalid file type",

@@ -254,7 +254,8 @@ public class RollCallTeacherFragment extends Fragment implements LeaveApplicatio
 			rowView.setBackgroundResource(R.drawable.white_bar);
 			holder.rollNumberText.setTextColor(getActivity().getResources().getColor(R.color.black));
 			holder.nameText.setTextColor(getActivity().getResources().getColor(R.color.black));
-			holder.rightImg.setVisibility(View.GONE);
+            holder.rightImg.setBackgroundResource(R.drawable.present_1);
+            holder.rightImg.setVisibility(View.VISIBLE);
 			break;
 		case LATE:
 			rowView.setBackgroundResource(R.drawable.rool_call_bg);
@@ -315,8 +316,7 @@ public class RollCallTeacherFragment extends Fragment implements LeaveApplicatio
 					break;
 				}
 	        	updateViewAttr(s, holder, view);
-	        	
-	        }
+            }
 	    };
 	}
 

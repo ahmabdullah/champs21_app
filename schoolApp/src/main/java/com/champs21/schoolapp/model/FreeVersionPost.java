@@ -807,6 +807,184 @@ public class FreeVersionPost {
 		}
 		
 	}
+    public class NextHomeWork{
+        @SerializedName("subjects")
+        private String subjects;
+        @SerializedName("batch")
+        private String batch;
+        @SerializedName("course")
+        private String course;
+        @SerializedName("subjects_id")
+        private String subjects_id;
+        @SerializedName("duedate")
+        private String duedate;
+        @SerializedName("type")
+        private String type;
+        @SerializedName("id")
+        private String id;
+
+        public String getSubjects() {
+            return subjects;
+        }
+
+        public void setSubjects(String subjects) {
+            this.subjects = subjects;
+        }
+
+        public String getBatch() {
+            return batch;
+        }
+
+        public void setBatch(String batch) {
+            this.batch = batch;
+        }
+
+        public String getCourse() {
+            return course;
+        }
+
+        public void setCourse(String course) {
+            this.course = course;
+        }
+
+        public String getSubjects_id() {
+            return subjects_id;
+        }
+
+        public void setSubjects_id(String subjects_id) {
+            this.subjects_id = subjects_id;
+        }
+
+        public String getDuedate() {
+            return duedate;
+        }
+
+        public void setDuedate(String duedate) {
+            this.duedate = duedate;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getDone() {
+            return done;
+        }
+
+        public void setDone(String done) {
+            this.done = done;
+        }
+
+        @SerializedName("done")
+        private String done;
+
+    }
+    public class NextClass{
+        @SerializedName("batch_name")
+        private String batch_name;
+        @SerializedName("course_name")
+        private String course_name;
+        @SerializedName("subject_code")
+        private String subject_code;
+        @SerializedName("subject_name")
+        private String subject_name;
+        @SerializedName("subject_icon_name")
+        private String subject_icon_name;
+        @SerializedName("subject_icon_path")
+        private String subject_icon_path;
+        @SerializedName("class_start_time")
+        private String class_start_time;
+        @SerializedName("class_end_time")
+        private String class_end_time;
+
+        public String getWeekday_text() {
+            return weekday_text;
+        }
+
+        public void setWeekday_text(String weekday_text) {
+            this.weekday_text = weekday_text;
+        }
+
+        public String getClass_end_time() {
+            return class_end_time;
+        }
+
+        public void setClass_end_time(String class_end_time) {
+            this.class_end_time = class_end_time;
+        }
+
+        public String getClass_start_time() {
+            return class_start_time;
+        }
+
+        public void setClass_start_time(String class_start_time) {
+            this.class_start_time = class_start_time;
+        }
+
+        public String getSubject_icon_path() {
+            return subject_icon_path;
+        }
+
+        public void setSubject_icon_path(String subject_icon_path) {
+            this.subject_icon_path = subject_icon_path;
+        }
+
+        public String getSubject_icon_name() {
+            return subject_icon_name;
+        }
+
+        public void setSubject_icon_name(String subject_icon_name) {
+            this.subject_icon_name = subject_icon_name;
+        }
+
+        public String getSubject_name() {
+            return subject_name;
+        }
+
+        public void setSubject_name(String subject_name) {
+            this.subject_name = subject_name;
+        }
+
+        public String getSubject_code() {
+            return subject_code;
+        }
+
+        public void setSubject_code(String subject_code) {
+            this.subject_code = subject_code;
+        }
+
+        public String getCourse_name() {
+            return course_name;
+        }
+
+        public void setCourse_name(String course_name) {
+            this.course_name = course_name;
+        }
+
+        public String getBatch_name() {
+            return batch_name;
+        }
+
+        public void setBatch_name(String batch_name) {
+            this.batch_name = batch_name;
+        }
+
+        @SerializedName("weekday_text")
+        private  String weekday_text;
+
+    }
 	public class DateFeed{
 		@SerializedName("student_name")
 		private String student_name;
@@ -838,7 +1016,37 @@ public class FreeVersionPost {
 		private boolean fees;
 		@SerializedName("meeting_request")
 		private ArrayList<SummeryLeave> summeryMeetings;
-		
+
+        public boolean isMeetingTomorrow() {
+            return meetingTomorrow;
+        }
+
+        public void setMeetingTomorrow(boolean meetingTomorrow) {
+            this.meetingTomorrow = meetingTomorrow;
+        }
+
+        @SerializedName("meeting_tommorow")
+        private boolean meetingTomorrow;
+        public ArrayList<NextHomeWork> getNextHomeWorks() {
+            return nextHomeWorks;
+        }
+
+        public void setNextHomeWorks(ArrayList<NextHomeWork> nextHomeWorks) {
+            this.nextHomeWorks = nextHomeWorks;
+        }
+        @SerializedName("homework")
+        private ArrayList<NextHomeWork> nextHomeWorks;
+
+        public ArrayList<NextClass> getNextClasses() {
+            return nextClasses;
+        }
+
+        public void setNextClasses(ArrayList<NextClass> nextClasses) {
+            this.nextClasses = nextClasses;
+        }
+
+        @SerializedName("next_class")
+        private ArrayList<NextClass> nextClasses;
 		public ArrayList<SummeryLeave> getSummeryMeetings() {
 			return summeryMeetings;
 		}

@@ -105,7 +105,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 		adapter = new GoodReadAdapter(getActivity(), allGooadReadPost);
 		userHelper = new UserHelper(this, getActivity());
 		allGooadReadPost.clear();
-		Log.e("SIZE OF ALLGOODREADPOST:", "" + allGooadReadPost.size());
+		//Log.e("SIZE OF ALLGOODREADPOST:", "" + allGooadReadPost.size());
 	}
 
 	@Override
@@ -457,32 +457,60 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 							.findViewById(R.id.sum_tv_event);
 					holder.todayTextView = (TextView) convertView
 							.findViewById(R.id.sum_tv_today);
-					holder.attendanceTextView = (TextView) convertView
-							.findViewById(R.id.sum_tv_attendance_text);
-					holder.classTomorrow = (LinearLayout) convertView
-							.findViewById(R.id.sum_lay_has_class_tomorrow);
+                    if(userHelper.getUser().getType() == UserTypeEnum.TEACHER){
+                        holder.meeting = (LinearLayout) convertView.findViewById(R.id.sum_lay_meeting);
+                        holder.sum_lay_add_homework = (LinearLayout) convertView.findViewById(R.id.sum_lay_add_homework);
+                        holder.sum_lay_add_quiz = (LinearLayout) convertView.findViewById(R.id.sum_lay_add_quiz);
+                        holder.sum_lay_rollcall =(LinearLayout) convertView.findViewById(R.id.sum_lay_roll_call);
+                        holder.nextClasses = (LinearLayout) convertView.findViewById(R.id.sum_lay_next_classes);
+                        holder.nextClass2 = (LinearLayout) convertView.findViewById(R.id.sum_lay_next_class_second);
+                        holder.nextHomework2 = (LinearLayout) convertView.findViewById(R.id.sum_lay_homework_second);
+                        holder.teacherHomewoks = (LinearLayout) convertView.findViewById(R.id.sum_lay_next_homeworks);
+                        holder.routineHomeworkQuizAdd = (LinearLayout) convertView.findViewById(R.id.sum_lay_teacher_rhq );
+                        holder.sum_tv_batch_course1 = (TextView) convertView.findViewById(R.id.sum_tv_batch_course1);
+                        holder.sum_tv_batch_course2 = (TextView) convertView.findViewById(R.id.sum_tv_batch_course2);
+                        holder.sum_tv_class_duration1 = (TextView) convertView.findViewById(R.id.sum_tv_class_duration1);
+                        holder.sum_tv_class_duration2 = (TextView) convertView.findViewById(R.id.sum_tv_class_duration2);
+                        holder.sum_tv_subject_name_day1 = (TextView) convertView.findViewById(R.id.sum_tv_subject_name_day1);
+                        holder.sum_tv_subject_name_day2 = (TextView) convertView.findViewById(R.id.sum_tv_subject_name_day2);
+                        holder.sum_tv_teacher_hw_subject_stat1 = (TextView) convertView.findViewById(R.id.sum_tv_teacher_hw_subject_stat1);
+                        holder.sum_tv_teacher_hw_subject_stat2 = (TextView) convertView.findViewById(R.id.sum_tv_teacher_hw_subject_stat2);
+                        holder.sum_tv_teacher_hw_class_section1 = (TextView) convertView.findViewById(R.id.sum_tv_teacher_hw_class_section1);
+                        holder.sum_tv_teacher_hw_class_section2 = (TextView) convertView.findViewById(R.id.sum_tv_teacher_hw_class_section2);
+                        holder.sum_tv_teacher_hw_date1 = (TextView) convertView.findViewById(R.id.sum_tv_teacher_hw_date1);
+                        holder.sum_tv_teacher_hw_date2 = (TextView) convertView.findViewById(R.id.sum_tv_teacher_hw_date2);
+
+                    }else {
+
+                        holder.attendanceTextView = (TextView) convertView
+                                .findViewById(R.id.sum_tv_attendance_text);
+                        holder.classTomorrow = (LinearLayout) convertView
+                                .findViewById(R.id.sum_lay_has_class_tomorrow);
+                        holder.toggle = (LinearLayout) convertView
+                                .findViewById(R.id.sum_lay_toggle);
+                        holder.homework = (LinearLayout) convertView
+                                .findViewById(R.id.sum_lay_homework);
+                        holder.quiz = (LinearLayout) convertView
+                                .findViewById(R.id.sum_lay_quiz);
+                        holder.examResultText = (TextView) convertView
+                                .findViewById(R.id.sum_tv_result_pub_text);
+                        holder.examRoutineText = (TextView) convertView
+                                .findViewById(R.id.sum_tv_exam_routine);
+                        holder.examTomorrow = (LinearLayout) convertView
+                                .findViewById(R.id.sum_lay_exam);
+                        holder.routinePublish = (LinearLayout) convertView
+                                .findViewById(R.id.sum_lay_exam_routine_publish);
+                        holder.reusltPublish = (LinearLayout) convertView
+                                .findViewById(R.id.sum_lay_report_card);
+                    }
+
 					holder.dateSlot = (LinearLayout) convertView
 							.findViewById(R.id.sum_lay_date_slot);
-					holder.toggle = (LinearLayout) convertView
-							.findViewById(R.id.sum_lay_toggle);
-					holder.homework = (LinearLayout) convertView
-							.findViewById(R.id.sum_lay_homework);
-					holder.quiz = (LinearLayout) convertView
-							.findViewById(R.id.sum_lay_quiz);
-					holder.examResultText = (TextView) convertView
-							.findViewById(R.id.sum_tv_result_pub_text);
-					holder.examRoutineText = (TextView) convertView
-							.findViewById(R.id.sum_tv_exam_routine);
-					// holder.reusltPublish =
+                    // holder.reusltPublish =
 					// (LinearLayout)convertView.findViewById(R.id.sum_lay)
 					holder.eventTomorrow = (LinearLayout) convertView
 							.findViewById(R.id.sum_lay_event);
-					holder.examTomorrow = (LinearLayout) convertView
-							.findViewById(R.id.sum_lay_exam);
-					holder.routinePublish = (LinearLayout) convertView
-							.findViewById(R.id.sum_lay_exam_routine_publish);
-					holder.reusltPublish = (LinearLayout) convertView
-							.findViewById(R.id.sum_lay_report_card);
+
 					holder.notice = (LinearLayout) convertView
 							.findViewById(R.id.sum_lay_notice);
 					for (int m = 0; m < 6; m++) {
@@ -625,16 +653,119 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 								+ summary.getLast_visited().getNumber()
 								+ "\n"
 								+ summary.getLast_visited().getType());
-					}
+					}else {
+                        holder.todayTextView.setText(summary.getLast_visited().getNumber());
+                    }
 
-					else
-						holder.todayTextView.setText(summary.getLast_visited()
-								.getNumber());
-					holder.attendanceTextView.setText(feed.getAttendence());
-					disableBlock(holder.classTomorrow,
-							feed.isHasClassTomorrow(), 8);
-					disableBlock(holder.homework, feed.getHomeWorkSubjects()
-							.size() != 0, 2);
+
+                    if(userHelper.getUser().getType()==UserTypeEnum.TEACHER){
+                        disableBlock(holder.meeting, feed.isMeetingTomorrow(), 9);
+                        if(feed.getNextClasses().size()==0){
+                            holder.nextClasses.setVisibility(View.GONE);
+                        }else {
+                            holder.nextClasses.setVisibility(View.VISIBLE);
+                            holder.nextClasses.setOnClickListener(new OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    ((HomePageFreeVersion) getActivity())
+                                            .loadPaidFragment(PaidVersionHomeFragment
+                                                    .newInstance(4));
+                                }
+                            });
+                            holder.sum_tv_subject_name_day1.setText(feed.getNextClasses().get(0).getSubject_name()+"("+feed.getNextClasses().get(0).getWeekday_text()+")");
+                            holder.sum_tv_batch_course1.setText(feed.getNextClasses().get(0).getBatch_name()+", "+feed.getNextClasses().get(0).getCourse_name());
+                            holder.sum_tv_class_duration1.setText(feed.getNextClasses().get(0).getClass_start_time()+"-"+feed.getNextClasses().get(0).getClass_end_time());
+                            if(feed.getNextClasses().size()>1){
+                                holder.sum_tv_subject_name_day2.setText(feed.getNextClasses().get(1).getSubject_name()+"("+feed.getNextClasses().get(1).getWeekday_text()+")");
+                                holder.sum_tv_batch_course2.setText(feed.getNextClasses().get(1).getBatch_name()+", "+feed.getNextClasses().get(1).getCourse_name());
+                                holder.sum_tv_class_duration2.setText(feed.getNextClasses().get(1).getClass_start_time()+"-"+feed.getNextClasses().get(1).getClass_end_time());
+                            }else {
+                                holder.nextClass2.setVisibility(View.GONE);
+                            }
+                        }
+                        if(feed.getNextHomeWorks().size()==0){
+                            holder.teacherHomewoks.setVisibility(View.GONE);
+                        }else {
+                            holder.teacherHomewoks.setVisibility(View.VISIBLE);
+                            holder.teacherHomewoks.setOnClickListener(new OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    ((HomePageFreeVersion) getActivity())
+                                            .loadPaidFragment(PaidVersionHomeFragment
+                                                    .newInstance(3));
+                                }
+                            });
+                            holder.sum_tv_teacher_hw_subject_stat1.setText(feed.getNextHomeWorks().get(0).getSubjects()+"("+feed.getNextHomeWorks().get(0).getDone()+" Done)");
+                            holder.sum_tv_teacher_hw_class_section1.setText(feed.getNextHomeWorks().get(0).getBatch()+", "+feed.getNextHomeWorks().get(0).getCourse());
+                            holder.sum_tv_teacher_hw_date1.setText(feed.getNextHomeWorks().get(0).getDuedate());
+                            if(feed.getNextHomeWorks().size()>1){
+                                holder.sum_tv_teacher_hw_subject_stat2.setText(feed.getNextHomeWorks().get(1).getSubjects()+"("+feed.getNextHomeWorks().get(1).getDone()+" Done)");
+                                holder.sum_tv_teacher_hw_class_section2.setText(feed.getNextHomeWorks().get(1).getBatch()+", "+feed.getNextHomeWorks().get(1).getCourse());
+                                holder.sum_tv_teacher_hw_date2.setText(feed.getNextHomeWorks().get(1).getDuedate());
+                            }else {
+                                holder.nextHomework2.setVisibility(View.GONE);
+                            }
+                        }
+                        holder.routineHomeworkQuizAdd.setVisibility(View.VISIBLE);
+                        holder.sum_lay_rollcall.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                ((HomePageFreeVersion) getActivity())
+                                        .loadPaidFragment(PaidVersionHomeFragment
+                                                .newInstance(2));
+                            }
+                        });
+                        holder.sum_lay_add_homework.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                ((HomePageFreeVersion) getActivity())
+                                        .loadPaidFragment(PaidVersionHomeFragment
+                                                .newInstance(3));
+                            }
+                        });
+                    }else {
+                        holder.toggle.setVisibility(View.VISIBLE);
+                        holder.attendance.setVisibility(View.VISIBLE);
+                        holder.attendanceTextView.setText(feed.getAttendence());
+                        disableBlock(holder.classTomorrow,
+                                feed.isHasClassTomorrow(), 8);
+                        disableBlock(holder.homework, feed.getHomeWorkSubjects()
+                                .size() != 0, 2);
+                        disableBlock(holder.attendance, true, 7);
+                        disableBlock(holder.examTomorrow, feed.isHasExamTomorrow(),
+                                9);
+                        disableBlock(holder.quiz,
+                                feed.getSummeryQuizes().size() != 0, 3);
+                        disableBlock(holder.reusltPublish,
+                                !TextUtils.isEmpty(feed.getResult_publish()), 10);
+                        if (!TextUtils.isEmpty(feed.getResult_publish())) {
+                            holder.examResultText.setText(feed.getResult_publish()
+                                    + " Result published.");
+                        }
+                        if (!TextUtils.isEmpty(feed.getRoutine_publish())) {
+                            holder.examRoutineText.setText(feed
+                                    .getRoutine_publish() + " Routine published.");
+                        }
+                        disableBlock(holder.routinePublish,
+                                !TextUtils.isEmpty(feed.getRoutine_publish()), 9);
+                        holder.toggle.setOnClickListener(new OnClickListener() {
+
+                            @Override
+                            public void onClick(View v) {
+                                View mother = (View) v.getParent().getParent();
+                                View child = mother
+                                        .findViewById(R.id.sum_lay_date_slot);
+                                if (child.getVisibility() == View.VISIBLE)
+                                    child.setVisibility(View.GONE);
+                                else{
+                                    child.setVisibility(View.VISIBLE);
+                                    listGoodread.refreshDrawableState();
+                                }
+
+                            }
+                        });
+                    }
+
 					if (userHelper.getUser().getType() == UserTypeEnum.PARENTS) {
 						disableBlock(holder.leave, feed.getSummeryLeaves()
 								.size() != 0, 14);
@@ -661,29 +792,15 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 						}
 
 					}
-					disableBlock(holder.attendance, true, 7);
+
 					disableBlock(holder.eventTomorrow,
 							feed.isHasEventTomorrow(), 6);
 					if (feed.isHasEventTomorrow())
 						holder.eventText.setText("You have "
 								+ feed.getEvent_name() + " Tomorrow.");
-					disableBlock(holder.examTomorrow, feed.isHasExamTomorrow(),
-							9);
+
 					disableBlock(holder.notice, feed.isHasNotice(), 4);
-					disableBlock(holder.quiz,
-							feed.getSummeryQuizes().size() != 0, 3);
-					disableBlock(holder.reusltPublish,
-							!TextUtils.isEmpty(feed.getResult_publish()), 10);
-					if (!TextUtils.isEmpty(feed.getResult_publish())) {
-						holder.examResultText.setText(feed.getResult_publish()
-								+ " Result published.");
-					}
-					if (!TextUtils.isEmpty(feed.getRoutine_publish())) {
-						holder.examRoutineText.setText(feed
-								.getRoutine_publish() + " Routine published.");
-					}
-					disableBlock(holder.routinePublish,
-							!TextUtils.isEmpty(feed.getRoutine_publish()), 9);
+
 					if (!TextUtils.isEmpty(summary.getSchool_picture()))
 						SchoolApp.getInstance().displayUniversalImage(
 								summary.getSchool_picture(),
@@ -730,23 +847,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 								.substring(0, 3));
 
 					}
-					holder.toggle.setOnClickListener(new OnClickListener() {
 
-						@Override
-						public void onClick(View v) {
-							// TODO Auto-generated method stub
-							View mother = (View) v.getParent().getParent();
-							View child = mother
-									.findViewById(R.id.sum_lay_date_slot);
-							if (child.getVisibility() == View.VISIBLE)
-								child.setVisibility(View.GONE);
-							else{
-								child.setVisibility(View.VISIBLE);
-								listGoodread.refreshDrawableState();
-							}
-								
-						}
-					});
 					break;
 				case TYPE_ITEM:
 					DisplayImageOptions userimgoptions = new DisplayImageOptions.Builder()
@@ -951,8 +1052,8 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 				public void onClick(View v) {
 					int pos = Integer.parseInt(v.getTag().toString());
 					((HomePageFreeVersion) getActivity())
-							.loadFragment(PaidVersionHomeFragment
-									.newInstance(pos));
+							.loadPaidFragment(PaidVersionHomeFragment
+                                    .newInstance(pos));
 				}
 			});
 			switch (view.getId()) {
@@ -966,15 +1067,13 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 			case R.id.sum_lay_attendance:
 			case R.id.sum_lay_meeting:
 				if (state) {
-					// view.setBackgroundColor(getResources().getColor(R.color.white));
-					// ((ImageView)view.findViewById(R.id.sum_iv_disable)).setAlpha(1f);
+
 					view.setVisibility(View.VISIBLE);
 					view.setTag("" + pos);
 
 				} else {
 					view.setVisibility(View.GONE);
-					// view.setBackgroundColor(getResources().getColor(R.color.bg_disable));
-					// ((ImageView)view.findViewById(R.id.sum_iv_disable)).setAlpha(.4f);
+
 				}
 
 				break;
@@ -984,8 +1083,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 				if (state) {
 					view.setVisibility(View.VISIBLE);
 					view.setTag("" + pos);
-					// view.setBackgroundColor(getResources().getColor(R.color.white));
-					// view.findViewById(R.id.sum_iv_disable).setBackgroundColor(getActivity().getResources().getColor(R.color.red));
+
 				} else {
 					view.setVisibility(View.GONE);
 					// view.setBackgroundColor(getResources().getColor(R.color.bg_disable));
@@ -1072,14 +1170,22 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 		TextView wowCount;
 
 		// SUMMERY LAYOUT
-		TextView schoolName, currentDate, todayTextView, studentName,
-				attendanceTextView, leaveStatusText, meetingStatusText,
-				examRoutineText, examResultText, eventText;
+		TextView schoolName, currentDate, studentName;
+        TextView todayTextView;
+		TextView attendanceTextView, leaveStatusText, meetingStatusText;
+		TextView examRoutineText, examResultText, eventText;
+        TextView sum_tv_subject_name_day1,sum_tv_batch_course1,sum_tv_class_duration1;
+        TextView sum_tv_subject_name_day2,sum_tv_batch_course2,sum_tv_class_duration2;
+        TextView sum_tv_teacher_hw_subject_stat1,sum_tv_teacher_hw_class_section1,sum_tv_teacher_hw_date1;
+        TextView sum_tv_teacher_hw_subject_stat2,sum_tv_teacher_hw_class_section2,sum_tv_teacher_hw_date2;
 		ResizableImageView schoolPicture;
 		ImageView profilePicture;
 		LinearLayout classTomorrow, homework, reusltPublish, routinePublish,
 				eventTomorrow, examTomorrow, notice, quiz;
-		LinearLayout meeting, leave, tution, attendance, dateSlot, toggle;
+		LinearLayout meeting, leave, tution, attendance, dateSlot, toggle,
+                nextClasses,teacherHomewoks,nextClass2,nextHomework2,routineHomeworkQuizAdd;
+        LinearLayout sum_lay_rollcall,sum_lay_add_homework,sum_lay_add_quiz;
+
 		TextView[] dateTextViewArray = new TextView[6];
 		TextView[] monthTextViewArray = new TextView[6];
 		LinearLayout[] linearLayoutArray = new LinearLayout[6];

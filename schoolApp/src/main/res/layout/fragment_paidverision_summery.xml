@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/gray_1"
+    android:paddingBottom="10dp"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -347,7 +348,99 @@
         android:layout_height="3dp"
         android:background="@color/red" />
 
+
+        <LinearLayout
+            android:id="@+id/sum_lay_next_classes"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/gray_4">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:gravity="center"
+                android:background="@color/gray_4">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Next\nClass"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical">
+                 <TextView
+                     android:id="@+id/sum_tv_subject_name_day1"
+                     android:textStyle="bold"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Science(Monday)"
+                       android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/sum_tv_batch_course1"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="General, Class 2"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/sum_tv_class_duration1"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:00pm-12:45pm"
+                    android:textColor="@color/red"/>
+                </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sum_lay_next_class_second"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="1dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/sum_tv_subject_name_day2"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Science(Monday)"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/sum_tv_batch_course2"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="General, Class 2"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/sum_tv_class_duration2"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:00pm-12:45pm"
+                    android:textColor="@color/red"/>
+            </LinearLayout>
+            </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/sum_lay_teacher_rhq"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -356,6 +449,198 @@
         android:orientation="horizontal" >
 
         <LinearLayout
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:visibility="visible"
+            android:id="@+id/sum_lay_roll_call"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/attendance_tap" />
+
+            <View
+                android:layout_marginLeft="5dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/gray_2" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Roll Call"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sum_lay_add_homework"
+            android:visibility="visible"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/sum_add_homework" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/gray_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Add New Homework"
+                android:textColor="@color/red"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/sum_lay_add_quiz"
+            android:visibility="visible"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/sum_add_quiz" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/gray_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Add Quiz"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sum_lay_next_homeworks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sum_homework" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/sum_tv_teacher_hw_subject_stat1"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Science(Monday)"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sum_tv_teacher_hw_class_section1"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="General, Class 2"
+                android:textColor="@color/gray_5"/>
+            <TextView
+                android:id="@+id/sum_tv_teacher_hw_date1"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:00pm-12:45pm"
+                android:textColor="@color/gray_5"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sum_lay_homework_second"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/sum_tv_teacher_hw_subject_stat2"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Science(Monday)"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sum_tv_teacher_hw_class_section2"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="General, Class 2"
+                android:textColor="@color/gray_5"/>
+            <TextView
+                android:id="@+id/sum_tv_teacher_hw_date2"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:00pm-12:45pm"
+                android:textColor="@color/gray_5"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:visibility="gone"
             android:id="@+id/sum_lay_attendance"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -400,6 +685,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:visibility="gone"
             android:id="@+id/sum_lay_has_class_tomorrow"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -411,7 +697,6 @@
             android:orientation="horizontal" >
 
             <ImageView
-                android:id="@+id/sum_iv_disable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -434,6 +719,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/sum_lay_homework"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -445,7 +731,6 @@
         android:orientation="horizontal" >
 
         <ImageView
-            android:id="@+id/sum_iv_disable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/sum_homework" />
@@ -497,7 +782,6 @@
             android:orientation="horizontal" >
 
             <ImageView
-                android:id="@+id/sum_iv_disable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/sum_fee" />
@@ -543,7 +827,6 @@
             android:orientation="horizontal" >
 
             <ImageView
-                android:id="@+id/sum_iv_disable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/sum_quiz" />
@@ -575,7 +858,6 @@
         android:orientation="horizontal" >
 
         <RelativeLayout
-            android:id="@+id/sum_iv_disable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/red" >
@@ -613,7 +895,6 @@
         android:orientation="horizontal" >
 
         <ImageView
-            android:id="@+id/sum_iv_disable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/sum_event" />
@@ -634,6 +915,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/sum_lay_exam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -645,7 +927,6 @@
         android:orientation="horizontal" >
 
         <LinearLayout
-            android:id="@+id/sum_iv_disable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/red" >
@@ -685,6 +966,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/sum_lay_exam_routine_publish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -696,7 +978,6 @@
         android:orientation="horizontal" >
 
         <LinearLayout
-            android:id="@+id/sum_iv_disable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/red" >
@@ -723,6 +1004,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/sum_lay_report_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -788,7 +1070,6 @@
             android:visibility="gone" >
 
             <ImageView
-                android:id="@+id/sum_iv_disable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/sum_leaveapplication" />
@@ -873,13 +1154,14 @@
         </LinearLayout>
     </LinearLayout>
 	<LinearLayout
+        android:visibility="gone"
         android:id="@+id/sum_lay_toggle"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+
         android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal" >
