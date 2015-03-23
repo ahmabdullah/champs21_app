@@ -26,8 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list id="b743d2f1-e4a6-497b-a929-b33b38506a09" name="Default" comment="" />
-    <list default="true" id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="asdf">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SchoolFeedFragment.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SchoolFeedFragment.java" />
+    <list default="true" id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="some commit">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SchoolApp.iws" />
@@ -84,19 +83,19 @@
       <file leaf-file-name="SchoolFeedFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SchoolFeedFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5216606" vertical-offset="0" max-vertical-offset="21114">
-              <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.2761733" vertical-offset="0" max-vertical-offset="21114">
+              <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
               <folding>
-                <element signature="e#5252#5330#0" expanded="true" />
-                <element signature="e#5887#5946#0" expanded="true" />
-                <element signature="e#8770#8802#0" expanded="true" />
-                <element signature="e#8848#8880#0" expanded="true" />
-                <element signature="e#23454#23535#0" expanded="true" />
-                <element signature="e#23573#23661#0" expanded="true" />
-                <element signature="e#48863#48911#0" expanded="true" />
-                <element signature="e#48939#49003#0" expanded="true" />
-                <element signature="e#50169#50214#0" expanded="true" />
-                <element signature="e#50242#50306#0" expanded="true" />
+                <element signature="e#5251#5329#0" expanded="true" />
+                <element signature="e#5886#5945#0" expanded="true" />
+                <element signature="e#8769#8801#0" expanded="true" />
+                <element signature="e#8847#8879#0" expanded="true" />
+                <element signature="e#23453#23534#0" expanded="true" />
+                <element signature="e#23572#23660#0" expanded="true" />
+                <element signature="e#48862#48910#0" expanded="true" />
+                <element signature="e#48938#49002#0" expanded="true" />
+                <element signature="e#50168#50213#0" expanded="true" />
+                <element signature="e#50241#50305#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -4121,7 +4120,11 @@
       <created>1427092594027</created>
       <updated>1427092594027</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="some commit">
+      <created>1427092783247</created>
+      <updated>1427092783247</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -4146,7 +4149,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32914287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -4167,7 +4170,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19411765" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19411765" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973261" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685715" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
@@ -4198,7 +4201,8 @@
     <MESSAGE value="Teacher Summary page and roll call fragment image update" />
     <MESSAGE value="present 1 image added" />
     <MESSAGE value="gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+    <MESSAGE value="some commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="some commit" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -4600,19 +4604,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SchoolFeedFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5216606" vertical-offset="0" max-vertical-offset="21114">
-          <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.2761733" vertical-offset="0" max-vertical-offset="21114">
+          <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
           <folding>
-            <element signature="e#5252#5330#0" expanded="true" />
-            <element signature="e#5887#5946#0" expanded="true" />
-            <element signature="e#8770#8802#0" expanded="true" />
-            <element signature="e#8848#8880#0" expanded="true" />
-            <element signature="e#23454#23535#0" expanded="true" />
-            <element signature="e#23573#23661#0" expanded="true" />
-            <element signature="e#48863#48911#0" expanded="true" />
-            <element signature="e#48939#49003#0" expanded="true" />
-            <element signature="e#50169#50214#0" expanded="true" />
-            <element signature="e#50242#50306#0" expanded="true" />
+            <element signature="e#5251#5329#0" expanded="true" />
+            <element signature="e#5886#5945#0" expanded="true" />
+            <element signature="e#8769#8801#0" expanded="true" />
+            <element signature="e#8847#8879#0" expanded="true" />
+            <element signature="e#23453#23534#0" expanded="true" />
+            <element signature="e#23572#23660#0" expanded="true" />
+            <element signature="e#48862#48910#0" expanded="true" />
+            <element signature="e#48938#49002#0" expanded="true" />
+            <element signature="e#50168#50213#0" expanded="true" />
+            <element signature="e#50241#50305#0" expanded="true" />
           </folding>
         </state>
       </provider>
