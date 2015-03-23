@@ -125,6 +125,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 				.findViewById(R.id.listView_category);
 		int footerHeight = getActivity().getResources().getDimensionPixelSize(
 				R.dimen.footer_height);
+        //some code
 		listGoodread.setQuickReturnListViewOnScrollListener(
 				PullToRefreshListViewCustom.QuickReturnType.FOOTER, null, 0,
 				mQuickReturnTextView, footerHeight);
