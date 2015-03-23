@@ -25,494 +25,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.champs21.schoolapp" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b743d2f1-e4a6-497b-a929-b33b38506a09" name="Default" comment="Teacher Summary page and roll call fragment image update">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/sum_add_homework.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/sum_add_quiz.png" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\R.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-hdpi-v4\ic_chooser.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-hdpi-v4\ic_file.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-hdpi-v4\ic_folder.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-hdpi-v4\ic_provider.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-mdpi-v4\ic_chooser.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-mdpi-v4\ic_file.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-mdpi-v4\ic_folder.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-mdpi-v4\ic_provider.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-xhdpi-v4\ic_chooser.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-xhdpi-v4\ic_file.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-xhdpi-v4\ic_folder.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-xhdpi-v4\ic_provider.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-xxhdpi-v4\ic_chooser.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-xxhdpi-v4\ic_file.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-xxhdpi-v4\ic_folder.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\drawable-xxhdpi-v4\ic_provider.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\layout\file.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-ca\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-de\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-es\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-fr\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-ga\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-it\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-ko\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-pl\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-pt-rBR\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-ru\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-v11\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values-v19\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\values\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\aFileChooser\unspecified\res\xml\mimetypes.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\R.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_blue_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_blue_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_blue_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_grey_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_grey_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_grey_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_close.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_inverse_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_picker_magnifier.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-ldpi-v4\com_facebook_close.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-mdpi-v4\com_facebook_button_blue_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-mdpi-v4\com_facebook_button_blue_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-mdpi-v4\com_facebook_button_blue_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-mdpi-v4\com_facebook_inverse_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-mdpi-v4\com_facebook_picker_magnifier.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_blue_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_blue_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_blue_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_grey_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_grey_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_grey_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_close.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_inverse_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_picker_magnifier.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_blue.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_blue_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_blue_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_blue_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_check.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_check_off.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_check_on.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_grey_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_grey_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_grey_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_close.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_inverse_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_list_divider.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_list_section_header_background.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_loginbutton_silver.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_item_background.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_longpressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_selector.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_selector_background_transition.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_selector_disabled.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_top_button.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_place_default_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_profile_default_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_profile_picture_blank_portrait.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_profile_picture_blank_square.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_top_background.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_top_button.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_usersettingsfragment_background_gradient.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_friendpickerfragment.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_login_activity_layout.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_activity_circle_row.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_checkbox.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_image.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_list_row.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_list_section_header.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_search_box.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_title_bar.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_title_bar_stub.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_placepickerfragment.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_placepickerfragment_list_row.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_search_bar_layout.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_usersettingsfragment.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-es\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-hdpi-v4\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-he\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-iw\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-ldpi-v4\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-mdpi-v4\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-xhdpi-v4\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\R.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\res\drawable-hdpi-v4\ic_action_search.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\res\drawable-hdpi-v4\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\res\drawable-mdpi-v4\ic_action_search.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\res\drawable-mdpi-v4\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\res\drawable-xhdpi-v4\ic_action_search.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\res\drawable-xhdpi-v4\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\res\menu\activity_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\res\raw\template1.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\res\values-v11\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\res\values-v14\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\flowTextView\unspecified\res\values\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\R.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\anim\slide_in_from_bottom.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\anim\slide_in_from_top.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\anim\slide_out_to_bottom.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\anim\slide_out_to_top.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\drawable-hdpi-v4\default_ptr_flip.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\drawable-hdpi-v4\default_ptr_rotate.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\drawable-hdpi-v4\indicator_arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\drawable-mdpi-v4\default_ptr_flip.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\drawable-mdpi-v4\default_ptr_rotate.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\drawable-mdpi-v4\indicator_arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\drawable-xhdpi-v4\default_ptr_flip.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\drawable-xhdpi-v4\default_ptr_rotate.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\drawable-xhdpi-v4\indicator_arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\drawable\indicator_bg_bottom.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\drawable\indicator_bg_top.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\layout\pull_to_refresh_header_horizontal.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\layout\pull_to_refresh_header_vertical.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-ar\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-cs\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-de\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-es\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-fi\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-fr\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-he\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-it\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-iw\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-ja\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-ko\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-nl\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-pl\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-pt-rBR\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-pt\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-ro\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-ru\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values-zh\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\pullToRefreshLibrary\unspecified\res\values\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\simpleFacebook\unspecified\AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\simpleFacebook\unspecified\R.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\simpleFacebook\unspecified\classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\SchoolApp\simpleFacebook\unspecified\res\values\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\aidl\android\support\v4\app\INotificationSideChannel.aidl" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\R.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\proguard.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\color\common_signin_btn_text_dark.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\color\common_signin_btn_text_light.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\color\wallet_primary_text_holo_light.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\color\wallet_secondary_text_holo_dark.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_full_open_on_phone.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_ic_googleplayservices.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_icon_disabled_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_icon_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_icon_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_icon_normal_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_icon_normal_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_icon_pressed_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_text_disabled_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_text_disabled_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_text_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_text_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_text_normal_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_text_normal_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_text_pressed_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\common_signin_btn_text_pressed_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\ic_plusone_medium_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\ic_plusone_small_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\ic_plusone_standard_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\ic_plusone_tall_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\powered_by_google_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-hdpi\powered_by_google_light.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_icon_disabled_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_icon_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_icon_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_icon_normal_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_icon_normal_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_icon_pressed_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_text_disabled_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_text_disabled_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_text_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_text_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_text_normal_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_text_normal_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_text_pressed_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\common_signin_btn_text_pressed_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\ic_plusone_medium_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\ic_plusone_small_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\ic_plusone_standard_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\ic_plusone_tall_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\powered_by_google_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-mdpi\powered_by_google_light.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-tvdpi\ic_plusone_medium_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-tvdpi\ic_plusone_small_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-tvdpi\ic_plusone_standard_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-tvdpi\ic_plusone_tall_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_icon_disabled_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_icon_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_icon_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_icon_normal_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_icon_normal_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_icon_pressed_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_text_disabled_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_text_disabled_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_text_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_text_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_text_normal_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_text_normal_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_text_pressed_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\common_signin_btn_text_pressed_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\ic_plusone_medium_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\ic_plusone_small_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\ic_plusone_standard_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\ic_plusone_tall_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\powered_by_google_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xhdpi\powered_by_google_light.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_icon_disabled_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_icon_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_icon_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_icon_normal_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_icon_normal_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_icon_pressed_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_text_disabled_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_text_disabled_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_text_focus_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_text_focus_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_text_normal_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_text_normal_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_text_pressed_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\common_signin_btn_text_pressed_light.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\ic_plusone_medium_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\ic_plusone_small_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\ic_plusone_standard_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\ic_plusone_tall_off_client.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\powered_by_google_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable-xxhdpi\powered_by_google_light.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable\common_signin_btn_icon_dark.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable\common_signin_btn_icon_light.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable\common_signin_btn_text_dark.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\drawable\common_signin_btn_text_light.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\raw\gtm_analytics" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-af\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-am\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ar\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-bg\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-bn-rBD\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ca\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-cs\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-da\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-de\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-el\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-en-rGB\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-en-rIN\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-es-rUS\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-es\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-es\wallet_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-et-rEE\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-eu-rES\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-fa\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-fi\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-fr-rCA\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-fr\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-gl-rES\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-hi\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-hr\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-hu\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-hy-rAM\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-in\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-is-rIS\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-it\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-iw\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ja\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ka-rGE\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-kk-rKZ\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-km-rKH\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-kn-rIN\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ko\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ky-rKG\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-lo-rLA\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-lt\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-lv\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-mk-rMK\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ml-rIN\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-mn-rMN\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-mr-rIN\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ms-rMY\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-my-rMM\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-nb\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ne-rNP\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-nl\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-pl\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-pt-rBR\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-pt-rPT\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-pt\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ro\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ru\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-si-rLK\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-sk\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-sl\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-sr\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-sv\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-sw\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ta-rIN\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-te-rIN\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-th\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-tl\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-tr\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-uk\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-ur-rPK\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-uz-rUZ\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-vi\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-zh-rCN\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-zh-rHK\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-zh-rTW\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values-zu\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\admob_ads_attrs.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\admob_iap_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\admob_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\common_attrs.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\common_colors.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\common_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\maps_attrs.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\version.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\wallet_attrs.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\wallet_colors.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\wallet_strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\schoolApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\res\values\wallet_styles.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\R.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_blue_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_blue_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_blue_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_grey_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_grey_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_button_grey_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_close.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_inverse_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-hdpi-v4\com_facebook_picker_magnifier.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-ldpi-v4\com_facebook_close.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-mdpi-v4\com_facebook_button_blue_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-mdpi-v4\com_facebook_button_blue_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-mdpi-v4\com_facebook_button_blue_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-mdpi-v4\com_facebook_inverse_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-mdpi-v4\com_facebook_picker_magnifier.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_blue_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_blue_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_blue_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_grey_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_grey_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_button_grey_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_close.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_inverse_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable-xhdpi-v4\com_facebook_picker_magnifier.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_blue.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_blue_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_blue_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_blue_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_check.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_check_off.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_check_on.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_grey_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_grey_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_button_grey_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_close.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_inverse_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_list_divider.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_list_section_header_background.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_loginbutton_silver.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_item_background.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_focused.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_longpressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_selector.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_selector_background_transition.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_list_selector_disabled.9.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_picker_top_button.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_place_default_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_profile_default_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_profile_picture_blank_portrait.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_profile_picture_blank_square.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_top_background.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_top_button.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\drawable\com_facebook_usersettingsfragment_background_gradient.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_friendpickerfragment.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_login_activity_layout.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_activity_circle_row.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_checkbox.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_image.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_list_row.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_list_section_header.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_search_box.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_title_bar.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_picker_title_bar_stub.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_placepickerfragment.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_placepickerfragment_list_row.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_search_bar_layout.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\layout\com_facebook_usersettingsfragment.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-es\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-hdpi-v4\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-he\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-iw\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-ldpi-v4\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-mdpi-v4\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values-xhdpi-v4\values.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\champs21_app\simpleFacebook\build\intermediates\exploded-aar\SchoolApp\facebookSDK\unspecified\res\values\values.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/absent_1.png" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/absent_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/child_choose_banner.png" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/child_choose_banner.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/late_1.png" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/late_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/CandleFragment.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/CandleFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/FreeVersionPost.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/FreeVersionPost.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/champs21/schoolapp/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/champs21/schoolapp/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/facebook/android/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/facebook/android/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/handmark/pulltorefresh/library/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/handmark/pulltorefresh/library/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/sromku/simple/fb/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/sromku/simple/fb/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/uk/co/deanwild/flowtextview/flowtextview/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/uk/co/deanwild/flowtextview/flowtextview/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/RollCallTeacherFragment.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/RollCallTeacherFragment.java" />
+    <list id="b743d2f1-e4a6-497b-a929-b33b38506a09" name="Default" comment="" />
+    <list default="true" id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="asdf">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SchoolFeedFragment.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SchoolFeedFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_paidverision_summery.xml" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_paidverision_summery.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/intermediates/tmp/dex/debug/inputList.txt" afterPath="$PROJECT_DIR$/schoolApp/build/intermediates/tmp/dex/debug/inputList.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_20_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_20_0_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SchoolApp.iws" />
@@ -569,20 +84,30 @@
       <file leaf-file-name="SchoolFeedFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SchoolFeedFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37013996" vertical-offset="0" max-vertical-offset="21114">
-              <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.5216606" vertical-offset="0" max-vertical-offset="21114">
+              <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
               <folding>
-                <element signature="e#5251#5329#0" expanded="true" />
-                <element signature="e#5886#5945#0" expanded="true" />
-                <element signature="e#8769#8801#0" expanded="true" />
-                <element signature="e#8847#8879#0" expanded="true" />
-                <element signature="e#23453#23534#0" expanded="true" />
-                <element signature="e#23572#23660#0" expanded="true" />
-                <element signature="e#48862#48910#0" expanded="true" />
-                <element signature="e#48938#49002#0" expanded="true" />
-                <element signature="e#50168#50213#0" expanded="true" />
-                <element signature="e#50241#50305#0" expanded="true" />
+                <element signature="e#5252#5330#0" expanded="true" />
+                <element signature="e#5887#5946#0" expanded="true" />
+                <element signature="e#8770#8802#0" expanded="true" />
+                <element signature="e#8848#8880#0" expanded="true" />
+                <element signature="e#23454#23535#0" expanded="true" />
+                <element signature="e#23573#23661#0" expanded="true" />
+                <element signature="e#48863#48911#0" expanded="true" />
+                <element signature="e#48939#49003#0" expanded="true" />
+                <element signature="e#50169#50214#0" expanded="true" />
+                <element signature="e#50242#50306#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="1088">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -4292,6 +3817,7 @@
         <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_children_selection2.xml" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/RollCallTeacherFragment.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_paidverision_summery.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SchoolFeedFragment.java" />
       </list>
     </option>
@@ -4361,154 +3887,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="champs21_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champs21_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champs21_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champs21_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champs21_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable-xhdpi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champs21_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champs21" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champs21_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -4723,6 +4101,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b743d2f1-e4a6-497b-a929-b33b38506a09" name="Default" comment="" />
+      <changelist id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="" />
       <created>1426686923142</created>
       <updated>1426686923142</updated>
     </task>
@@ -4730,7 +4109,19 @@
       <created>1426758082732</created>
       <updated>1426758082732</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Teacher Summary page and roll call fragment image update">
+      <created>1427091059742</created>
+      <updated>1427091059742</updated>
+    </task>
+    <task id="LOCAL-00003" summary="present 1 image added">
+      <created>1427091604795</created>
+      <updated>1427091604795</updated>
+    </task>
+    <task id="LOCAL-00004" summary="gitignore">
+      <created>1427092594027</created>
+      <updated>1427092594027</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -4755,10 +4146,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32914287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914287" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -4768,14 +4159,15 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685715" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3622857" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12457143" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22742857" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22742857" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973261" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19411765" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19411765" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973261" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685715" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
@@ -4784,7 +4176,6 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3622857" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -4805,7 +4196,10 @@
     </option>
     <MESSAGE value="1. Second Commit." />
     <MESSAGE value="Teacher Summary page and roll call fragment image update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Teacher Summary page and roll call fragment image update" />
+    <MESSAGE value="present 1 image added" />
+    <MESSAGE value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -4813,17 +4207,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/row_rollcall_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="680">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/BatchSelectionChangedBroadcastReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="918">
@@ -5207,21 +4590,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="1088">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SchoolFeedFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37013996" vertical-offset="0" max-vertical-offset="21114">
-          <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.5216606" vertical-offset="0" max-vertical-offset="21114">
+          <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
           <folding>
-            <element signature="e#5251#5329#0" expanded="true" />
-            <element signature="e#5886#5945#0" expanded="true" />
-            <element signature="e#8769#8801#0" expanded="true" />
-            <element signature="e#8847#8879#0" expanded="true" />
-            <element signature="e#23453#23534#0" expanded="true" />
-            <element signature="e#23572#23660#0" expanded="true" />
-            <element signature="e#48862#48910#0" expanded="true" />
-            <element signature="e#48938#49002#0" expanded="true" />
-            <element signature="e#50168#50213#0" expanded="true" />
-            <element signature="e#50241#50305#0" expanded="true" />
+            <element signature="e#5252#5330#0" expanded="true" />
+            <element signature="e#5887#5946#0" expanded="true" />
+            <element signature="e#8770#8802#0" expanded="true" />
+            <element signature="e#8848#8880#0" expanded="true" />
+            <element signature="e#23454#23535#0" expanded="true" />
+            <element signature="e#23573#23661#0" expanded="true" />
+            <element signature="e#48863#48911#0" expanded="true" />
+            <element signature="e#48939#49003#0" expanded="true" />
+            <element signature="e#50169#50214#0" expanded="true" />
+            <element signature="e#50242#50306#0" expanded="true" />
           </folding>
         </state>
       </provider>
