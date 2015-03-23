@@ -315,7 +315,7 @@ public class SyllabusFragment extends Fragment {
 				{
 					btn.setButtonSelected(false, getResources().getColor(R.color.black), R.drawable.syllabus_normal);
 				}
-				
+
 			}
 		}
 	}
