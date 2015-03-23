@@ -24,4 +24,4 @@
     <item android:state_focused="true"                                                             android:drawable="@drawable/com_facebook_picker_list_focused" />
     <item                                                                                          android:drawable="@android:color/transparent" />
 </selector>
-<!-- From: file:/E:/ovi/SchoolApp/SchoolApp/facebookSDK/src/main/res/drawable/com_facebook_picker_item_background.xml --><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/build/intermediates/exploded-aar/SchoolApp/facebookSDK/unspecified/res/drawable/com_facebook_picker_item_background.xml -->
+<!-- From: file:/E:/champs21_app/facebookSDK/src/main/res/drawable/com_facebook_picker_item_background.xml --><!-- From: file:/E:/champs21_app/schoolApp/build/intermediates/exploded-aar/champs21_app/facebookSDK/unspecified/res/drawable/com_facebook_picker_item_background.xml -->

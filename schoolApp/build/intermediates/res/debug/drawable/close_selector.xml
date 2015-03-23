@@ -5,4 +5,4 @@
     <item android:state_focused="true" android:drawable="@drawable/close_tap"/>
     <item android:drawable="@drawable/close_normal"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/close_selector.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/close_selector.xml -->

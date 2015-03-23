@@ -3,4 +3,4 @@
 	<item android:drawable="@drawable/draft_tap"
 		android:state_selected="true" />
 	<item android:drawable="@drawable/draft_normal" />
-</selector> <!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/tab_draft.xml -->
+</selector> <!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/tab_draft.xml -->

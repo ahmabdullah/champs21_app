@@ -4,4 +4,4 @@
     <item android:state_checked="true" android:drawable="@drawable/radio_name_red"/>
     <item android:drawable="@drawable/radio_name_blank"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/radio_btn_name.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/radio_btn_name.xml -->

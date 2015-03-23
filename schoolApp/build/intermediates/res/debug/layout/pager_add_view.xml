@@ -35,4 +35,4 @@
             android:layout_gravity="center_horizontal" />
     </com.champs21.schoolapp.viewhelpers.PagerContainer>
 
-</RelativeLayout><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/layout/pager_add_view.xml -->
+</RelativeLayout><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/layout/pager_add_view.xml -->

@@ -3,4 +3,4 @@
 	<item android:drawable="@drawable/term_report_tap"
 		android:state_selected="true" />
 	<item android:drawable="@drawable/term_report_normal" />
-</selector> <!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/tab_term_report.xml -->
+</selector> <!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/tab_term_report.xml -->

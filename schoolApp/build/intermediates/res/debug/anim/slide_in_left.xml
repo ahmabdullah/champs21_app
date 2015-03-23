@@ -5,4 +5,4 @@
     	android:toXDelta="0%" android:fromYDelta="0%"
     	android:toYDelta="0%" android:duration="400">
 	</translate>
-</set><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/anim/slide_in_left.xml -->
+</set><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/anim/slide_in_left.xml -->

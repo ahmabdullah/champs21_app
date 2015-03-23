@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/ovi/SchoolApp/SchoolApp/aFileChooser/src/main/res/values-ca/strings.xml -->
+    <!-- From: file:/E:/champs21_app/aFileChooser/src/main/res/values-ca/strings.xml -->
     <eat-comment/>
     <string name="choose_file">Seleccioneu un fitxer</string>
     <string name="empty_directory">Carpeta buida</string>

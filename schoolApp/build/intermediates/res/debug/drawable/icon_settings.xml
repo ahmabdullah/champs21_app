@@ -5,4 +5,4 @@
     <item android:state_focused="true" android:drawable="@drawable/settings_tap"/>
     <item android:drawable="@drawable/settings_normal"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/icon_settings.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/icon_settings.xml -->

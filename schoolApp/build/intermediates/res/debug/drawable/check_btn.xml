@@ -4,4 +4,4 @@
     <item android:state_checked="true" android:drawable="@drawable/checkbox_tap"/>
     <item android:drawable="@drawable/checkbox_normal"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/check_btn.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/check_btn.xml -->

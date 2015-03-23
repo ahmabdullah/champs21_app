@@ -11,4 +11,4 @@
 		android:fromAlpha="0.0" android:toAlpha="1.0"
 		android:duration="@android:integer/config_shortAnimTime"
 	/>
-</set><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/anim/grow_from_bottomleft_to_topright.xml -->
+</set><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/anim/grow_from_bottomleft_to_topright.xml -->

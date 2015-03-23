@@ -8,4 +8,4 @@
           android:state_focused="true" />
     <item  
      	  android:drawable="@drawable/calender_grid_item_bg" />
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/list_item_background.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/list_item_background.xml -->

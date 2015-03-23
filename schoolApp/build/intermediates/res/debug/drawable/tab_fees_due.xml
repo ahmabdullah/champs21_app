@@ -3,4 +3,4 @@
 	<item android:drawable="@drawable/due_tap"
 		android:state_selected="true" />
 	<item android:drawable="@drawable/due_normal" />
-</selector> <!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/tab_fees_due.xml -->
+</selector> <!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/tab_fees_due.xml -->

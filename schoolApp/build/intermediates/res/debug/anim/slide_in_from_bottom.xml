@@ -19,4 +19,4 @@
     android:duration="@android:integer/config_longAnimTime"
     android:fromYDelta="100%p"
     android:toYDelta="0" />
-<!-- From: file:/E:/ovi/SchoolApp/SchoolApp/pullToRefreshLibrary/src/main/res/anim/slide_in_from_bottom.xml --><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/build/intermediates/exploded-aar/SchoolApp/pullToRefreshLibrary/unspecified/res/anim/slide_in_from_bottom.xml -->
+<!-- From: file:/E:/champs21_app/pullToRefreshLibrary/src/main/res/anim/slide_in_from_bottom.xml --><!-- From: file:/E:/champs21_app/schoolApp/build/intermediates/exploded-aar/champs21_app/pullToRefreshLibrary/unspecified/res/anim/slide_in_from_bottom.xml -->

@@ -5,4 +5,4 @@
     <item android:state_focused="true"
           android:color="#1e87f2"/> <!-- focused -->
     <item android:color="#777C7E"/> <!-- default -->
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/color/txt_see_all.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/color/txt_see_all.xml -->

@@ -5,4 +5,4 @@
     <item android:state_focused="true" android:drawable="@drawable/library_tap"/>
     <item android:drawable="@drawable/library_normal"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/icon_library.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/icon_library.xml -->

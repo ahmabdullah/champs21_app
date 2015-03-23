@@ -5,4 +5,4 @@
     <item android:state_focused="true" android:drawable="@drawable/cmart_tap"/>
     <item android:drawable="@drawable/cmart_normal"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/btn_cmart.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/btn_cmart.xml -->

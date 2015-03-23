@@ -98,4 +98,4 @@
             android:layout_height="match_parent"
             android:background="@drawable/dimension_bar" />
     </LinearLayout>
-</RelativeLayout><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/layout/right_drawer_with_menu_list.xml -->
+</RelativeLayout><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/layout/right_drawer_with_menu_list.xml -->

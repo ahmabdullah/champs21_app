@@ -5,4 +5,4 @@
     <item android:state_focused="true" android:drawable="@drawable/student_list_tap"/>
     <item android:drawable="@drawable/student_list_normal"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/icon_student_list.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/icon_student_list.xml -->

@@ -5,4 +5,4 @@
     <item android:state_focused="true" android:drawable="@drawable/meeting_request_send2"/>
     <item android:drawable="@drawable/meeting_request_send1"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/btn_meeting_request_send.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/btn_meeting_request_send.xml -->

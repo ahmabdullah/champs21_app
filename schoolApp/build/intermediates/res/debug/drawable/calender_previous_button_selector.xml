@@ -8,4 +8,4 @@
           android:state_focused="true" />
     <item  
      	  android:drawable="@drawable/arrow_left_normal" />
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/calender_previous_button_selector.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/calender_previous_button_selector.xml -->
