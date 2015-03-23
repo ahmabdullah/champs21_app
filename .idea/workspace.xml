@@ -26,9 +26,18 @@
   </component>
   <component name="ChangeListManager">
     <list id="b743d2f1-e4a6-497b-a929-b33b38506a09" name="Default" comment="" />
-    <list default="true" id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="1. Added new layout for ChildSelection activity.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/ChildSelectionActivity.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/ChildSelectionActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_children_selection2.xml" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_children_selection2.xml" />
+    <list default="true" id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="1. Added new layout for ChildSelection activity and associated java  codes.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/event_row_gray_icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/champs21/schoolapp/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/champs21/schoolapp/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/facebook/android/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/facebook/android/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/google/android/gms/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/google/android/gms/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/handmark/pulltorefresh/library/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/handmark/pulltorefresh/library/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/sromku/simple/fb/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/sromku/simple/fb/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/uk/co/deanwild/flowtextview/flowtextview/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/uk/co/deanwild/flowtextview/flowtextview/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SyllabusFragment.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SyllabusFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_syllabus_new.xml" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_syllabus_new.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/res/layout/row_archieved_events.xml" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/layout/row_archieved_events.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SchoolApp.iws" />
@@ -52,21 +61,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ChildSelectionActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/ChildSelectionActivity.java">
+      <file leaf-file-name="SyllabusFragment.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SyllabusFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6535163" vertical-offset="2679" max-vertical-offset="6120">
-              <caret line="212" column="74" selection-start-line="212" selection-start-column="74" selection-end-line="212" selection-end-column="74" />
+            <state vertical-scroll-proportion="0.27572018" vertical-offset="3878" max-vertical-offset="7803">
+              <caret line="299" column="6" selection-start-line="299" selection-start-column="6" selection-end-line="299" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_children_selection2.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_children_selection2.xml">
+      <file leaf-file-name="fragment_syllabus_new.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_syllabus_new.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.4814816" vertical-offset="648" max-vertical-offset="4420">
-              <caret line="50" column="53" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="53" />
+            <state vertical-scroll-proportion="-7.148148" vertical-offset="2068" max-vertical-offset="4556">
+              <caret line="133" column="51" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -3746,6 +3755,10 @@
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SchoolFeedFragment.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_children_selection2.xml" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/ChildSelectionActivity.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/row_upcoming_events.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/row_archieved_events.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_syllabus_new.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SyllabusFragment.java" />
       </list>
     </option>
   </component>
@@ -3796,7 +3809,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3815,8 +3827,173 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="champs21" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schoolapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="champs21" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schoolapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="champs21" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3827,8 +4004,8 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="BIGA45CUY9HILR65" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="T4A69S45GIFQ5PSO" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="adv4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
     <property name="OverrideImplement.combined" value="true" />
@@ -3843,6 +4020,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ovi\SchoolApp\SchoolApp\schoolApp\src\main\res\drawable-xhdpi" />
       <recent name="E:\champs21_app\schoolApp\src\main\res\drawable-xhdpi" />
       <recent name="E:\TasvirulR&amp;DProject\Mine\SchoolApp\schoolApp\src\main\res\drawable-xhdpi" />
     </key>
@@ -4056,7 +4234,11 @@
       <created>1427094457220</created>
       <updated>1427094457220</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1. Added new layout for ChildSelection activity and associated java  codes.">
+      <created>1427098423830</created>
+      <updated>1427098423830</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -4081,13 +4263,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914287" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1401919" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5197802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685715" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -4095,15 +4277,15 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685715" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3622857" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12457143" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43516484" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22742857" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973261" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19402985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685715" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1705757" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32637364" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973261" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -4135,7 +4317,8 @@
     <MESSAGE value="gitignore" />
     <MESSAGE value="some commit" />
     <MESSAGE value="1. Added new layout for ChildSelection activity." />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Added new layout for ChildSelection activity." />
+    <MESSAGE value="1. Added new layout for ChildSelection activity and associated java  codes." />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Added new layout for ChildSelection activity and associated java  codes." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -4144,96 +4327,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/BatchSelectionChangedBroadcastReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="918">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/BatchSelectionChangedBroadcastReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="918">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/import-summary.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1898" max-vertical-offset="2533">
-          <caret line="121" column="58" selection-start-line="121" selection-start-column="58" selection-end-line="121" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xxhdpi/icon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flowTextView/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19274376" vertical-offset="0" max-vertical-offset="882">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/AppConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6500956" vertical-offset="663" max-vertical-offset="3315">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/MyTagHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53741497" vertical-offset="87" max-vertical-offset="969">
-          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/social/PlusClientFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="9214">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17034069" vertical-offset="0" max-vertical-offset="499">
-          <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-          <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/CartActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02915952" vertical-offset="51" max-vertical-offset="2074">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/viewhelpers/UIHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11663808" vertical-offset="0" max-vertical-offset="1717">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/AccountSettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12639405" vertical-offset="986" max-vertical-offset="3400">
@@ -4252,13 +4345,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
           <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/ParentEventFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6988848" vertical-offset="1800" max-vertical-offset="7446">
-          <caret line="134" column="12" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -4375,14 +4461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/UserHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="12087" max-vertical-offset="13328">
-          <caret line="711" column="49" selection-start-line="711" selection-start-column="49" selection-end-line="711" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/champs21/schoolapp/R.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42424244" vertical-offset="46538" max-vertical-offset="88060">
@@ -4449,14 +4527,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/row_rollcall_layout.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.02425107" vertical-offset="0" max-vertical-offset="701">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/RollCallTeacherFragment.java">
@@ -4476,14 +4554,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_paidverision_summery.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="19461" max-vertical-offset="20162">
           <caret line="1171" column="42" selection-start-line="1171" selection-start-column="42" selection-end-line="1171" selection-end-column="42" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -4518,10 +4596,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_children_selection2.xml">
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/UserHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.4814816" vertical-offset="648" max-vertical-offset="4420">
-          <caret line="50" column="53" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.5077187" vertical-offset="9972" max-vertical-offset="13158">
+          <caret line="630" column="25" selection-start-line="630" selection-start-column="25" selection-end-line="630" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/banner.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_children_selection2.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28490567" vertical-offset="648" max-vertical-offset="4420">
+          <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/ChildSelectionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2679" max-vertical-offset="6120">
+          <caret line="211" column="9" selection-start-line="211" selection-start-column="9" selection-end-line="211" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/event_row_icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/ParentEventFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="7174">
+          <caret line="144" column="51" selection-start-line="144" selection-start-column="51" selection-end-line="144" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/ArchievePageFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1437" max-vertical-offset="4403">
+          <caret line="148" column="32" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/adapters/ArchievedEventListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="1887">
+          <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/UpcomingEventsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.268431" vertical-offset="1660" max-vertical-offset="4403">
+          <caret line="147" column="38" selection-start-line="147" selection-start-column="38" selection-end-line="147" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/adapters/UpcomingEventListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8994614" vertical-offset="247" max-vertical-offset="4709">
+          <caret line="82" column="81" selection-start-line="82" selection-start-column="81" selection-end-line="82" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/row_upcoming_events.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51132077" vertical-offset="69" max-vertical-offset="3621">
+          <caret line="20" column="47" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -4529,10 +4684,47 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/ChildSelectionActivity.java">
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/syllabus.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/syllabus_tap.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/row_archieved_events.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="443" max-vertical-offset="2686">
+          <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/syllabus_normal.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_syllabus_new.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6535163" vertical-offset="2679" max-vertical-offset="6120">
-          <caret line="212" column="74" selection-start-line="212" selection-start-column="74" selection-end-line="212" selection-end-column="74" />
+        <state vertical-scroll-proportion="-7.148148" vertical-offset="2068" max-vertical-offset="4556">
+          <caret line="133" column="51" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SyllabusFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27572018" vertical-offset="3878" max-vertical-offset="7803">
+          <caret line="299" column="6" selection-start-line="299" selection-start-column="6" selection-end-line="299" selection-end-column="6" />
           <folding />
         </state>
       </provider>
