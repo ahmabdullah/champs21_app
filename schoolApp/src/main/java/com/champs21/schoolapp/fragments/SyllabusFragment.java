@@ -384,7 +384,7 @@ public class SyllabusFragment extends Fragment {
 				selectedBatchTextView.setText(selectedBatch.getName());
 				initApiCall("3");
 				currentButton = btnTermExam;
-				btnTermExam.setButtonSelected(true, getResources().getColor(R.color.black), R.drawable.exam_tap);
+				btnTermExam.setButtonSelected(true, getResources().getColor(R.color.black), R.drawable.syllabus_tap);
 				updateButtonUi();
 				break;
 			default:
