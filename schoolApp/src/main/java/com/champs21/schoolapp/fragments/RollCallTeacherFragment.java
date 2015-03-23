@@ -331,7 +331,7 @@ public class RollCallTeacherFragment extends Fragment implements LeaveApplicatio
 	AsyncHttpResponseHandler getStudentHandler = new AsyncHttpResponseHandler() {
 		public void onFailure(Throwable arg0, String arg1) {
 			pbLayout.setVisibility(View.GONE);
-			Log.e("error", arg1);
+			//Log.e("error", arg1);
 		};
 
 		public void onStart() {
