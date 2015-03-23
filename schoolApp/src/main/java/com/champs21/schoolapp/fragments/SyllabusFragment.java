@@ -173,7 +173,7 @@ public class SyllabusFragment extends Fragment {
 		listBtn.add(btnYearly);
 		
 		currentButton = btnTermExam;
-		btnTermExam.setButtonSelected(true, getResources().getColor(R.color.black), R.drawable.exam_tap);
+		btnTermExam.setButtonSelected(true, getResources().getColor(R.color.black), R.drawable.syllabus_tap);
 		
 		//initApiCall("3");
 		
@@ -186,7 +186,7 @@ public class SyllabusFragment extends Fragment {
 			    //horizontalScrollView.smoothScrollTo(scrollX, 0);
 			    
 				currentButton = btnTermExam;
-				btnTermExam.setButtonSelected(true, getResources().getColor(R.color.black), R.drawable.exam_tap);
+				btnTermExam.setButtonSelected(true, getResources().getColor(R.color.black), R.drawable.syllabus_tap);
 				
 				updateButtonUi();
 				
@@ -205,7 +205,7 @@ public class SyllabusFragment extends Fragment {
 			    //horizontalScrollView.smoothScrollTo(scrollX, 0);
 			    
 				currentButton = btnClassTest;
-				btnClassTest.setButtonSelected(true, getResources().getColor(R.color.black), R.drawable.exam_tap);
+				btnClassTest.setButtonSelected(true, getResources().getColor(R.color.black), R.drawable.syllabus_tap);
 				
 				updateButtonUi();
 				
@@ -222,7 +222,7 @@ public class SyllabusFragment extends Fragment {
 			    //horizontalScrollView.smoothScrollTo(scrollX, 0);
 			    
 				currentButton = btnProject;
-				btnProject.setButtonSelected(true, getResources().getColor(R.color.black), R.drawable.exam_tap);
+				btnProject.setButtonSelected(true, getResources().getColor(R.color.black), R.drawable.syllabus_tap);
 
 				updateButtonUi();
 				
@@ -313,7 +313,7 @@ public class SyllabusFragment extends Fragment {
 				}
 				else
 				{
-					btn.setButtonSelected(false, getResources().getColor(R.color.black), R.drawable.exam_normal);
+					btn.setButtonSelected(false, getResources().getColor(R.color.black), R.drawable.syllabus_normal);
 				}
 				
 			}
