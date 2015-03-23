@@ -95,7 +95,7 @@ public class ChildSelectionActivity extends RoboFragmentActivity{
 		initView();
 		initAction();
 
-        Log.e("COVER", "is: "+userHelper.getUser().getPaidInfo().getSchool_logo());
+        Log.e("COVER", "is: "+UserHelper.getSchoolCover());
 
 	}
 

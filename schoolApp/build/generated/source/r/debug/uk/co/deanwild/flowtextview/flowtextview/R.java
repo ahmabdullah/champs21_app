@@ -12,7 +12,7 @@ public final class R {
 		public static final int ic_launcher = 0x7f020163;
 	}
 	public static final class id {
-		public static final int menu_settings = 0x7f0b03f2;
+		public static final int menu_settings = 0x7f0b03f5;
 	}
 	public static final class menu {
 		public static final int activity_main = 0x7f0f0002;

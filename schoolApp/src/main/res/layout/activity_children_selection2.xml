@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/child_choose_banner"
-        android:gravity="center_horizontal|bottom"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
         android:orientation="vertical" >
 
         <TextView
@@ -20,6 +21,52 @@
             android:text="CHOOSE STUDENT"
             android:textSize="15sp" />
     </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:src="@drawable/banner"/>
+
+            <RelativeLayout
+                android:id="@+id/layoutWhiteBot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-30dp"
+                android:background="@drawable/header_student_select"
+                android:gravity="bottom">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHOOSE STUDENT"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/textView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="23dp" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

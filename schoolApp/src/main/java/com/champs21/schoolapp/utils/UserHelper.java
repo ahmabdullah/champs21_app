@@ -618,10 +618,26 @@ public class UserHelper {
 
 	}
 
+    public static String getSchoolLogo() {
+        return SharedPreferencesHelper.getInstance().getString(
+                SPKeyHelper.SCHOOL_lOGO, "");
+    }
+
+    public static String getSchoolPicture() {
+        return SharedPreferencesHelper.getInstance().getString(
+                SPKeyHelper.SCHOOL_PICTURE, "");
+    }
+
+    public static String getSchoolCover() {
+        return SharedPreferencesHelper.getInstance().getString(
+                SPKeyHelper.SCHOOL_COVER, "");
+    }
+
+
 	public static String getUserSecret() {
-		return SharedPreferencesHelper.getInstance().getString(
-				SPKeyHelper.TOKEN, "");
-	}
+        return SharedPreferencesHelper.getInstance().getString(
+                SPKeyHelper.TOKEN, "");
+    }
 
 	public static String getUserSession() {
 		return SharedPreferencesHelper.getInstance().getString(
