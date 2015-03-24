@@ -103,7 +103,7 @@
                         android:clickable="true"
                         android:gravity="center"
                         android:padding="5dp"
-                        custom:iconImageTab="@drawable/exam_normal"
+                        custom:iconImageTab="@drawable/syllabus_normal"
                         custom:iconTextTab="Term Exam" />
                 </LinearLayout>
 
@@ -121,7 +121,7 @@
                         android:clickable="true"
                         android:gravity="center"
                         android:padding="5dp"
-                        custom:iconImageTab="@drawable/exam_normal"
+                        custom:iconImageTab="@drawable/syllabus_normal"
                         custom:iconTextTab="Class Test" />
                 </LinearLayout>
 
@@ -139,7 +139,7 @@
                         android:clickable="true"
                         android:gravity="center"
                         android:padding="5dp"
-                        custom:iconImageTab="@drawable/exam_normal"
+                        custom:iconImageTab="@drawable/syllabus_normal"
                         custom:iconTextTab="Project" />
                 </LinearLayout>
 

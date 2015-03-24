@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/child_choose_banner"
-        android:gravity="center_horizontal|bottom"
+        android:gravity="center_horizontal"
         android:visibility="gone"
         android:orientation="vertical" >
 
@@ -24,6 +24,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/layoutTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -34,17 +35,35 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="fitXY"
-                android:src="@drawable/banner"/>
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgViewCover"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/banner"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBarImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="false" />
+
+            </RelativeLayout>
+
+
 
             <RelativeLayout
                 android:id="@+id/layoutWhiteBot"
                 android:layout_width="match_parent"
-                android:layout_height="85dp"
-                android:background="@android:color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-30dp"
+                android:background="@drawable/header_student_select"
                 android:gravity="bottom">
 
                 <TextView
@@ -53,17 +72,8 @@
                     android:text="CHOOSE STUDENT"
                     android:textColor="@android:color/black"
                     android:id="@+id/textView"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageView4"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/student_choose_icon"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="23dp" />
 
 
             </RelativeLayout>

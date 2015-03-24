@@ -18,6 +18,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="1dip"
             android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:background="@color/white"
             android:orientation="vertical" >
 
@@ -32,17 +33,15 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 android:id="@+id/event_cat_name" />
 
-            <ImageView
-                android:id="@+id/icon"
+            <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dip"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/science" />
+                custom:iconImageRhombus="@drawable/event_row_gray_icon" >
+            </com.champs21.schoolapp.viewhelpers.CustomRhombusIcon>
 
             <TextView
                 android:id="@+id/txtTime"
