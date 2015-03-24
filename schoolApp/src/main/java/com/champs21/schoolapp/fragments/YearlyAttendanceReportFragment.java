@@ -116,7 +116,7 @@ public class YearlyAttendanceReportFragment extends Fragment implements UserAuth
 			super.onFailure(arg0, arg1);
 			//uiHelper.showMessage(arg1);
 			uiHelper.dismissLoadingDialog();
-			Log.e("Error", arg1);
+			//Log.e("Error", arg1);
 		}
 
 		@Override
