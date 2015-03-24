@@ -3,4 +3,4 @@
 	<item android:drawable="@drawable/project_black"
 		android:state_selected="true" />
 	<item android:drawable="@drawable/project_gray" />
-</selector> <!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/tab_result_project.xml -->
+</selector> <!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/tab_result_project.xml -->

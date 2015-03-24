@@ -59,4 +59,4 @@
         android:choiceMode="singleChoice"
         layout="@layout/right_drawer_with_menu_list"/>
 
-</android.support.v4.widget.DrawerLayout><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/layout/activity_main_container_layout.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/layout/activity_main_container_layout.xml -->

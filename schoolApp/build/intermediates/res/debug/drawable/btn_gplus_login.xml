@@ -5,4 +5,4 @@
     <item android:drawable="@drawable/goolge_tap" android:state_focused="true"/>
     <item android:drawable="@drawable/goolge_normal"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/btn_gplus_login.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/btn_gplus_login.xml -->

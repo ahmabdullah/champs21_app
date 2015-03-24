@@ -73,4 +73,4 @@
         android:layout_below="@id/footer"
         android:src="@drawable/quickaction_arrow_down" />
 
-</RelativeLayout><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/layout/quickaction.xml -->
+</RelativeLayout><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/layout/quickaction.xml -->

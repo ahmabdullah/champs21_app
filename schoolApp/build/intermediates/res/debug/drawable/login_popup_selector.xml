@@ -5,4 +5,4 @@
     <item android:state_focused="true" android:drawable="@drawable/login_popup_tap"/>
     <item android:drawable="@drawable/login_popup_normal"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/login_popup_selector.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/login_popup_selector.xml -->

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/build/intermediates/exploded-aar/SchoolApp/aFileChooser/unspecified/res/values-v11/values.xml -->
+    <!-- From: file:/E:/champs21_app/schoolApp/build/intermediates/exploded-aar/champs21_app/aFileChooser/unspecified/res/values-v11/values.xml -->
     <eat-comment/>
     <string name="choose_file">Choose a file</string>
-    <!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/values-v11/styles.xml -->
+    <!-- From: file:/E:/champs21_app/schoolApp/src/main/res/values-v11/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!-- API 11 theme customizations can go here. -->

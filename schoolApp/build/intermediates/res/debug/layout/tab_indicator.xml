@@ -24,4 +24,4 @@
         android:layout_toRightOf="@+id/icon"
         android:textStyle="bold" />
 
-</RelativeLayout><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/layout/tab_indicator.xml -->
+</RelativeLayout><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/layout/tab_indicator.xml -->

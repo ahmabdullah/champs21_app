@@ -15,4 +15,4 @@
         android:topLeftRadius="@dimen/indicator_corner_radius"
         android:topRightRadius="@dimen/indicator_corner_radius" />
 
-</shape><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/pullToRefreshLibrary/src/main/res/drawable/indicator_bg_bottom.xml --><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/pullToRefreshLibrary/build/intermediates/bundles/debug/res/drawable/indicator_bg_bottom.xml -->
+</shape><!-- From: file:/E:/champs21_app/pullToRefreshLibrary/src/main/res/drawable/indicator_bg_bottom.xml --><!-- From: file:/E:/champs21_app/pullToRefreshLibrary/build/intermediates/bundles/debug/res/drawable/indicator_bg_bottom.xml -->

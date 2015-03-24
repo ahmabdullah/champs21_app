@@ -17,13 +17,13 @@ ADDED from AndroidManifest.xml:2:1
 		ADDED from AndroidManifest.xml:4:5
 uses-sdk
 ADDED from AndroidManifest.xml:8:5
-MERGED from SchoolApp:aFileChooser:unspecified:20:5
+MERGED from champs21_app:aFileChooser:unspecified:20:5
 MERGED from com.android.support:support-v4:20.0.0:16:5
-MERGED from SchoolApp:pullToRefreshLibrary:unspecified:7:5
-MERGED from SchoolApp:simpleFacebook:unspecified:20:5
-MERGED from SchoolApp:facebookSDK:unspecified:20:5
+MERGED from champs21_app:pullToRefreshLibrary:unspecified:7:5
+MERGED from champs21_app:simpleFacebook:unspecified:20:5
+MERGED from champs21_app:facebookSDK:unspecified:20:5
 MERGED from com.android.support:support-v4:20.0.0:16:5
-MERGED from SchoolApp:flowTextView:unspecified:7:5
+MERGED from champs21_app:flowTextView:unspecified:7:5
 MERGED from com.android.support:support-v4:20.0.0:16:5
 MERGED from com.android.support:support-v4:20.0.0:16:5
 MERGED from com.google.android.gms:play-services:6.1.71:15:5
@@ -93,11 +93,11 @@ ADDED from AndroidManifest.xml:42:5
 application
 ADDED from AndroidManifest.xml:44:5
 MERGED from com.android.support:support-v4:20.0.0:17:5
-MERGED from SchoolApp:pullToRefreshLibrary:unspecified:11:5
-MERGED from SchoolApp:simpleFacebook:unspecified:24:5
-MERGED from SchoolApp:facebookSDK:unspecified:24:5
+MERGED from champs21_app:pullToRefreshLibrary:unspecified:11:5
+MERGED from champs21_app:simpleFacebook:unspecified:24:5
+MERGED from champs21_app:facebookSDK:unspecified:24:5
 MERGED from com.android.support:support-v4:20.0.0:17:5
-MERGED from SchoolApp:flowTextView:unspecified:11:5
+MERGED from champs21_app:flowTextView:unspecified:11:5
 MERGED from com.android.support:support-v4:20.0.0:17:5
 MERGED from com.android.support:support-v4:20.0.0:17:5
 MERGED from com.google.android.gms:play-services:6.1.71:16:5
@@ -111,7 +111,7 @@ MERGED from com.android.support:support-v4:20.0.0:17:5
 	android:icon
 		ADDED from AndroidManifest.xml:47:9
 	android:theme
-		ADDED from SchoolApp:flowTextView:unspecified:13:9
+		ADDED from champs21_app:flowTextView:unspecified:13:9
 	android:name
 		ADDED from AndroidManifest.xml:45:9
 	android:logo

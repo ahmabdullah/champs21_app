@@ -17,4 +17,4 @@
 		android:drawable="@drawable/white_selected" />
 	<item android:state_pressed="true" android:drawable="@drawable/white_selected" />
 </selector>
-<!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/tab_indicator.xml -->
+<!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/tab_indicator.xml -->

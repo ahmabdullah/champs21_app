@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/ovi/SchoolApp/SchoolApp/aFileChooser/build/intermediates/bundles/debug/res/values-de/values.xml -->
+    <!-- From: file:/E:/champs21_app/aFileChooser/build/intermediates/bundles/debug/res/values-de/values.xml -->
     <eat-comment/>
     <string name="choose_file">Wähle eine Datei</string>
     <string name="empty_directory">Leerer Ordner</string>

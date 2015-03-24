@@ -86,4 +86,4 @@
 	<!-- Android specific -->
 	<type extension=".apk" mimetype="application/vnd.android.package-archive" />
 	
-</MimeTypes><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/aFileChooser/src/main/res/xml/mimetypes.xml --><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/build/intermediates/exploded-aar/SchoolApp/aFileChooser/unspecified/res/xml/mimetypes.xml -->
+</MimeTypes><!-- From: file:/E:/champs21_app/aFileChooser/src/main/res/xml/mimetypes.xml --><!-- From: file:/E:/champs21_app/schoolApp/build/intermediates/exploded-aar/champs21_app/aFileChooser/unspecified/res/xml/mimetypes.xml -->

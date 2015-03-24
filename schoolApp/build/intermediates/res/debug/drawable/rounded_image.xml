@@ -5,4 +5,4 @@
   <corners android:bottomRightRadius="0dp" android:bottomLeftRadius="0dp" android:topLeftRadius="0dp" android:topRightRadius="0dp" /> 
   <padding android:left="3dp" android:top="3dp" android:right="3dp" android:bottom="3dp" /> 
   </shape>
-<!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/rounded_image.xml -->
+<!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/rounded_image.xml -->

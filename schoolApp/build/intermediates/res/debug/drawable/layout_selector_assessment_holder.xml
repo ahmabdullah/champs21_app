@@ -5,4 +5,4 @@
     <item android:state_focused="true" android:drawable="@drawable/layout_assement_holder2"/>
     <item android:drawable="@drawable/layout_assement_holder1"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/layout_selector_assessment_holder.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/layout_selector_assessment_holder.xml -->

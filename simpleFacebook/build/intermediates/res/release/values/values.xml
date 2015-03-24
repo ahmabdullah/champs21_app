@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/ovi/SchoolApp/SchoolApp/simpleFacebook/build/intermediates/exploded-aar/SchoolApp/facebookSDK/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/champs21_app/simpleFacebook/build/intermediates/exploded-aar/champs21_app/facebookSDK/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="com_facebook_blue">#3B5998</color>
     <color name="com_facebook_loginview_text_color">#FFFFFF</color>
@@ -27,10 +27,10 @@
     <dimen name="com_facebook_usersettingsfragment_profile_picture_height">64dp</dimen>
     <dimen name="com_facebook_usersettingsfragment_profile_picture_width">64dp</dimen>
     <drawable name="com_facebook_picker_default_separator_color">#33464c59</drawable>
-    <!-- From: file:/E:/ovi/SchoolApp/SchoolApp/simpleFacebook/src/main/res/values/strings.xml -->
+    <!-- From: file:/E:/champs21_app/simpleFacebook/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">Simple Facebook</string>
-    <!-- From: file:/E:/ovi/SchoolApp/SchoolApp/simpleFacebook/build/intermediates/exploded-aar/SchoolApp/facebookSDK/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/champs21_app/simpleFacebook/build/intermediates/exploded-aar/champs21_app/facebookSDK/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="com_facebook_choose_friends">Choose Friends</string>
     <string name="com_facebook_dialogloginactivity_ok_button">OK</string>

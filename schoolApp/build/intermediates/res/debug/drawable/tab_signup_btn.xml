@@ -5,4 +5,4 @@
     <item android:state_focused="true" android:drawable="@drawable/signup_tap"/>
     <item android:drawable="@drawable/signup_normal"/>
 
-</selector><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/drawable/tab_signup_btn.xml -->
+</selector><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/drawable/tab_signup_btn.xml -->

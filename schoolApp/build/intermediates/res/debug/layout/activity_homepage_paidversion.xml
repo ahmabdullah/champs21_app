@@ -3,4 +3,4 @@
     android:id="@+id/pager_frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    </FrameLayout><!-- From: file:/E:/ovi/SchoolApp/SchoolApp/schoolApp/src/main/res/layout/activity_homepage_paidversion.xml -->
+    </FrameLayout><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/layout/activity_homepage_paidversion.xml -->
