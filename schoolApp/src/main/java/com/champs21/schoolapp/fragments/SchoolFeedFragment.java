@@ -113,7 +113,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_school_feed, container,
 				false);
-		
+		//some code goes here
 		spinner = (ProgressBar) view.findViewById(R.id.loading);
 		
 		// adapter.notifyDataSetChanged();
@@ -673,11 +673,11 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                                                     .newInstance(4));
                                 }
                             });
-                            holder.sum_tv_subject_name_day1.setText(feed.getNextClasses().get(0).getSubject_name()+"("+feed.getNextClasses().get(0).getWeekday_text()+")");
+                            holder.sum_tv_subject_name_day1.setText(feed.getNextClasses().get(0).getSubject_name()+"("+capitalize(feed.getNextClasses().get(0).getWeekday_text().substring(0,3))+")");
                             holder.sum_tv_batch_course1.setText(feed.getNextClasses().get(0).getBatch_name()+", "+feed.getNextClasses().get(0).getCourse_name());
                             holder.sum_tv_class_duration1.setText(feed.getNextClasses().get(0).getClass_start_time()+"-"+feed.getNextClasses().get(0).getClass_end_time());
                             if(feed.getNextClasses().size()>1){
-                                holder.sum_tv_subject_name_day2.setText(feed.getNextClasses().get(1).getSubject_name()+"("+feed.getNextClasses().get(1).getWeekday_text()+")");
+                                holder.sum_tv_subject_name_day2.setText(feed.getNextClasses().get(1).getSubject_name()+"("+capitalize(feed.getNextClasses().get(1).getWeekday_text().substring(0,3))+")");
                                 holder.sum_tv_batch_course2.setText(feed.getNextClasses().get(1).getBatch_name()+", "+feed.getNextClasses().get(1).getCourse_name());
                                 holder.sum_tv_class_duration2.setText(feed.getNextClasses().get(1).getClass_start_time()+"-"+feed.getNextClasses().get(1).getClass_end_time());
                             }else {
@@ -1012,7 +1012,9 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
 			return convertView;
 		}
-
+        private String capitalize(final String line) {
+            return Character.toUpperCase(line.charAt(0)) + line.substring(1);
+        }
 		private void doWow(int i) {
 			// TODO Auto-generated method stub
 			RequestParams params = new RequestParams();
