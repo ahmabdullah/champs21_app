@@ -151,14 +151,10 @@ public class CreateMeetingRequest extends ChildContainerActivity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 //showBatchPicker(PickerType.TEACHER_BATCH);
-
-
                 RequestParams params = new RequestParams();
                 params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
                 AppRestClient.post(URLHelper.URL_GET_TEACHER_BATCH, params, getBatchEventsHandler);
-
 
             }
         });

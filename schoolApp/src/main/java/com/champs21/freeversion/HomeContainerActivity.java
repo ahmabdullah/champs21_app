@@ -204,14 +204,20 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 		 * childSelectionStates.put(groupItem.get(count).getText(),
 		 * menuStatelist); count++;
 		 */
-		/*if (UserHelper.isLoggedIn()
+
+		if (UserHelper.isLoggedIn()
 				&& UserHelper.getUserAccessType() == UserAccessType.PAID) {
-			group = new DrawerGroup();
-			group.setImageName("diary_white");
-			group.setText("My School");
-			group.setId("1");
-			groupItem.add(group);
-			String[] myMySchoolArrayText={userHelper.getUser().getPaidInfo().getSchool_name()};
+            if (userHelper.getUser().getType()==UserTypeEnum.PARENTS){
+                group = new DrawerGroup();
+                group.setImageName("student_selection_icon_white");
+                group.setText("Select your Child");
+                group.setId("1");
+                groupItem.add(group);
+                childList.put(groupItem.get(count++).getText(),
+                        new ArrayList<DrawerChildBase>());
+            }
+
+			/*String[] myMySchoolArrayText={userHelper.getUser().getPaidInfo().getSchool_name()};
 			String[] myMySchoolArrayImages={"account_settings"};
 			
 			List<DrawerChildBase> myschool = new ArrayList<DrawerChildBase>();
@@ -223,8 +229,8 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 				child.setId("" + i);
 				myschool.add(child);
 			}
-			childList.put(groupItem.get(count++).getText(), myschool);
-		}*/
+			childList.put(groupItem.get(count++).getText(), myschool);*/
+		}
 		/*if (UserHelper.isLoggedIn()
 				&& UserHelper.getUserAccessType() == UserAccessType.PAID) {
 			group = new DrawerGroup();
@@ -1282,13 +1288,13 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 				builder.setAdapter(adapter,
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int item) {
-								Log.e("Crop as koida? click er pore",
+								/*Log.e("Crop as koida? click er pore",
 										cropOptions.get(item).appIntent
 												.getComponent().getClassName()
 												+ " "
 												+ cropOptions.get(item).appIntent
 														.getComponent()
-														.getPackageName());
+														.getPackageName());*/
 								startActivityForResult(
 										cropOptions.get(item).appIntent,
 										REQUEST_CODE_CROP);

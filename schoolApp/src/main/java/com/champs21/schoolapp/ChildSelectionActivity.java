@@ -85,7 +85,6 @@ public class ChildSelectionActivity extends RoboFragmentActivity{
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position,
 					long id) {
-				// TODO Auto-generated method stub
 				userHelper.storeCurrentChildInfo(childrenList.get(position));
 				Intent paidIntent = new Intent(ChildSelectionActivity.this,
 						HomePageFreeVersion.class);
@@ -342,7 +341,6 @@ public class ChildSelectionActivity extends RoboFragmentActivity{
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			// TODO Auto-generated method stub
 			// A ViewHolder keeps references to children views to avoid unneccessary calls
 			// to findViewById() on each row.
 			ViewHolder holder;
