@@ -1,21 +1,5 @@
 package com.champs21.freeversion;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
@@ -43,7 +27,6 @@ import android.provider.MediaStore;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
@@ -59,8 +42,6 @@ import android.view.View.OnTouchListener;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.FrameLayout;
@@ -86,8 +67,6 @@ import com.champs21.schoolapp.fragments.FroyoAlbumDirFactory;
 import com.champs21.schoolapp.model.CropOption;
 import com.champs21.schoolapp.model.DrawerChildBase;
 import com.champs21.schoolapp.model.DrawerChildMenu;
-import com.champs21.schoolapp.model.DrawerChildMenuDiary;
-import com.champs21.schoolapp.model.DrawerChildMySchool;
 import com.champs21.schoolapp.model.DrawerChildSettings;
 import com.champs21.schoolapp.model.DrawerGroup;
 import com.champs21.schoolapp.model.User;
@@ -103,6 +82,7 @@ import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.utils.UserHelper.UserAccessType;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.champs21.schoolapp.viewhelpers.CustomRhombusIcon;
+import com.champs21.schoolapp.viewhelpers.PopupDialogChangePassword;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.google.gson.JsonArray;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -110,6 +90,20 @@ import com.loopj.android.http.RequestParams;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class HomeContainerActivity extends SocialBaseActivity implements
 		OnQueryTextListener, OnClickListener, SearchView.OnCloseListener {
@@ -1665,6 +1659,7 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 			uiHelper.dismissLoadingDialog();
 		}
 		updateUI();
+
 		// Toast.makeText(this, "Successfully updated Password",
 		// Toast.LENGTH_SHORT).show();
 	}

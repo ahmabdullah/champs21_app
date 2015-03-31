@@ -12,6 +12,7 @@ public class SPKeyHelper {
 	public final static String UDID = "UDID";
 	public final static String IS_LOGGED_IN = "IS_LOGGED_IN";
 	public final static String IS_REGISTERED = "IS_REGISTERED";
+    public final static String IS_FIRST_LOGIN = "IS_FIRST_LOGIN";
 	
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ USER $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
