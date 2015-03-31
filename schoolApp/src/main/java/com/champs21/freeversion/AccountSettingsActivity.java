@@ -16,57 +16,28 @@
 
 package com.champs21.freeversion;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.util.TypedValue;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
-import android.view.ViewGroup;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.champs21.schoolapp.LoginActivity;
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.model.FreeVersionPost;
 import com.champs21.schoolapp.model.UserAuthListener;
-import com.champs21.schoolapp.model.Wrapper;
-import com.champs21.schoolapp.networking.AppRestClient;
-import com.champs21.schoolapp.utils.AppConstant;
-import com.champs21.schoolapp.utils.AppUtility;
-import com.champs21.schoolapp.utils.GsonParser;
-import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
+import com.champs21.schoolapp.viewhelpers.PopupDialogChangePassword;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
 
-public class AccountSettingsActivity extends ChildContainerActivity implements OnClickListener,UserAuthListener{
+public class AccountSettingsActivity extends ChildContainerActivity implements OnClickListener,UserAuthListener,PopupDialogChangePassword.PassChangeCallBack{
 
 	private InputMethodManager im;
 	private EditText etCurrentPass;
@@ -262,8 +233,10 @@ public class AccountSettingsActivity extends ChildContainerActivity implements O
 			}
 		});
 	}
-	
 
-	
 
+    @Override
+    public void onPassChangeDialogDismiss() {
+
+    }
 }

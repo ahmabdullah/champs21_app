@@ -1,8 +1,8 @@
 package com.champs21.schoolapp.model;
 
-import java.util.ArrayList;
-
 import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
 
 public class UserPaidInfo {
 
@@ -51,6 +51,16 @@ public class UserPaidInfo {
     @SerializedName("school_cover")
     private String school_cover;
 
+    public String getIs_first_login() {
+        return is_first_login;
+    }
+
+    public void setIs_first_login(String is_first_login) {
+        this.is_first_login = is_first_login;
+    }
+
+    @SerializedName("is_first_login")
+    private String is_first_login;
 	
 	
 	public String getSchool_name() {

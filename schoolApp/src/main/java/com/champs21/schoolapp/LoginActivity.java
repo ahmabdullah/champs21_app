@@ -1,6 +1,5 @@
 package com.champs21.schoolapp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,17 +11,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.champs21.freeversion.AssesmentActivity;
 import com.champs21.freeversion.CompleteProfileActivityContainer;
 import com.champs21.freeversion.HomePageFreeVersion;
 import com.champs21.freeversion.RegistrationActivity;
 import com.champs21.schoolapp.fragments.UserTypeSelectionDialog;
 import com.champs21.schoolapp.fragments.UserTypeSelectionDialog.UserTypeListener;
-import com.champs21.schoolapp.model.AssessmentQuestion;
 import com.champs21.schoolapp.utils.SPKeyHelper;
 import com.champs21.schoolapp.utils.SchoolApp;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
+import com.champs21.schoolapp.viewhelpers.PopupDialogChangePassword;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 
 public class LoginActivity extends SocialBaseActivity implements
@@ -144,33 +142,11 @@ public class LoginActivity extends SocialBaseActivity implements
 					finish();
 					break;
 				case PAID:
-					
-					switch (userHelper.getUser().getType()) {
-					
-					case PARENTS:
-						if (userHelper.getUser().getChildren() == null) {
-							Log.e("Userhelper", "null");
-						}
-						if (userHelper.getUser().getChildren().size() > 0) {
-							Intent paidIntent = new Intent(LoginActivity.this,
-									HomePageFreeVersion.class);
-							paidIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-									| Intent.FLAG_ACTIVITY_CLEAR_TASK);
-							startActivity(paidIntent);
-							finish();
-						}
-						break;
-					default:
-						Intent paidIntent = new Intent(LoginActivity.this,
-								HomePageFreeVersion.class);
-						paidIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-								| Intent.FLAG_ACTIVITY_CLEAR_TASK);
-						startActivity(paidIntent);
-						finish();
-						break;
-					}
-
-					break;
+                    if(UserHelper.isFirstLogin() ){
+                        PopupDialogChangePassword picker = new PopupDialogChangePassword();
+                        picker.show(getSupportFragmentManager(), null);
+                    }
+                    break;
 
 				default:
 					break;
@@ -201,6 +177,39 @@ public class LoginActivity extends SocialBaseActivity implements
 
 	}
 
+    private void doPaidNavigation(){
+        switch (userHelper.getUser().getType()) {
+
+            case PARENTS:
+                if (userHelper.getUser().getChildren() == null) {
+                    Log.e("Userhelper", "null");
+                }
+                if (userHelper.getUser().getChildren().size() > 0) {
+                    Intent paidIntent = new Intent(LoginActivity.this,
+                            HomePageFreeVersion.class);
+                    paidIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                            | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(paidIntent);
+                    finish();
+                }
+                break;
+            default:
+
+                if(userHelper.getUserAccessType()== UserHelper.UserAccessType.PAID ){//&& UserHelper.isFirstLogin()
+                    PopupDialogChangePassword picker = new PopupDialogChangePassword();
+                    picker.show(getSupportFragmentManager(), null);
+                }
+                Intent paidIntent = new Intent(LoginActivity.this,
+                        HomePageFreeVersion.class);
+                paidIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                        | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(paidIntent);
+                finish();
+                break;
+        }
+
+
+    }
 	@Override
 	public void onAuthenticationFailed(String msg) {
 		if (uiHelper.isDialogActive()) {
@@ -218,7 +227,6 @@ public class LoginActivity extends SocialBaseActivity implements
 
 	@Override
 	public void onPaswordChanged() {
-		// TODO Auto-generated method stub
-		
+        doPaidNavigation();
 	}
 }
