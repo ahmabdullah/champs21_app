@@ -8,8 +8,8 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.EditText;
 
 import com.champs21.freeversion.CompleteProfileActivityContainer;
 import com.champs21.freeversion.HomePageFreeVersion;
@@ -38,6 +38,7 @@ public class LoginActivity extends SocialBaseActivity implements
 	UIHelper uiHelper;
 	UserHelper userHelper;
 	String username = "", password = "";
+    public static int REQUEST_COMPLETE_PROFILE=567;
 	
 	private String fromAssessment = "";
 
@@ -127,12 +128,10 @@ public class LoginActivity extends SocialBaseActivity implements
 				{
 					//Intent intent = new Intent(LoginActivity.this, AssesmentActivity.class);
 					finish();
-					
-					return;
-				}
-				
-				
-				switch (UserHelper.getUserAccessType()) {
+                    return;
+                }
+
+                switch (UserHelper.getUserAccessType()) {
 				case FREE:
 					Intent intent = new Intent(LoginActivity.this,
 							HomePageFreeVersion.class);
@@ -142,20 +141,16 @@ public class LoginActivity extends SocialBaseActivity implements
 					finish();
 					break;
 				case PAID:
-                    if(UserHelper.isFirstLogin() ){
+                    if ( UserHelper.isFirstLogin() ){
                         PopupDialogChangePassword picker = new PopupDialogChangePassword();
                         picker.show(getSupportFragmentManager(), null);
-                    }
+                    }else doPaidNavigation();
                     break;
 
 				default:
 					break;
 				}
-			
-				
-				
-				
-				
+
 			} else {
 				finish();
 				Intent intent = new Intent(LoginActivity.this,
@@ -177,6 +172,23 @@ public class LoginActivity extends SocialBaseActivity implements
 
 	}
 
+    @Override
+    public void onActivityResult(int requestCode, int responseCode, Intent intent) {
+
+        if(requestCode==REQUEST_COMPLETE_PROFILE){
+                doPaidNavigation();
+        }
+        super.onActivityResult(requestCode, responseCode, intent);
+    }
+
+    private void gotoCompleteProfile() {
+        Intent i = new Intent(LoginActivity.this,
+                CompleteProfileActivityContainer.class);
+        i.putExtra(SPKeyHelper.USER_TYPE, userHelper
+                .getUser().getType().ordinal());
+        i.putExtra("first_login",true);
+        startActivityForResult(i, REQUEST_COMPLETE_PROFILE);
+    }
     private void doPaidNavigation(){
         switch (userHelper.getUser().getType()) {
 
@@ -195,10 +207,10 @@ public class LoginActivity extends SocialBaseActivity implements
                 break;
             default:
 
-                if(userHelper.getUserAccessType()== UserHelper.UserAccessType.PAID ){//&& UserHelper.isFirstLogin()
+                /*if(userHelper.getUserAccessType()== UserHelper.UserAccessType.PAID ){//&& UserHelper.isFirstLogin()
                     PopupDialogChangePassword picker = new PopupDialogChangePassword();
                     picker.show(getSupportFragmentManager(), null);
-                }
+                }*/
                 Intent paidIntent = new Intent(LoginActivity.this,
                         HomePageFreeVersion.class);
                 paidIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
@@ -227,6 +239,6 @@ public class LoginActivity extends SocialBaseActivity implements
 
 	@Override
 	public void onPaswordChanged() {
-        doPaidNavigation();
+        gotoCompleteProfile();
 	}
 }

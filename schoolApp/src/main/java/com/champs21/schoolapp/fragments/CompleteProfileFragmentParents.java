@@ -1,12 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,12 +25,12 @@ import com.champs21.schoolapp.fragments.DatePickerFragment.DatePickerOnSetDateLi
 import com.champs21.schoolapp.model.BaseType;
 import com.champs21.schoolapp.model.City;
 import com.champs21.schoolapp.model.Picker;
+import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.model.PickerType;
 import com.champs21.schoolapp.model.User;
 import com.champs21.schoolapp.model.UserAuthListener;
 import com.champs21.schoolapp.model.UserWrapper;
 import com.champs21.schoolapp.model.Wrapper;
-import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
@@ -51,6 +44,13 @@ import com.champs21.schoolapp.viewhelpers.GradeDialog;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 public class CompleteProfileFragmentParents extends Fragment implements
 		OnFocusChangeListener, OnClickListener, UserAuthListener {
@@ -560,14 +560,18 @@ public class CompleteProfileFragmentParents extends Fragment implements
 		if (uiHelper.isDialogActive()) {
 			uiHelper.dismissLoadingDialog();
 		}
-		Intent intent = new Intent(getActivity(),
-				HomePageFreeVersion.class);
-		// intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // To clean up all
-		// activities
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-				| Intent.FLAG_ACTIVITY_CLEAR_TASK);
-		startActivity(intent);
-		getActivity().finish();
+        if(((CompleteProfileActivityContainer)getActivity()).isFirstLogin){
+            ((CompleteProfileActivityContainer)getActivity()).backToLogin();
+        }else {
+            Intent intent = new Intent(getActivity(),
+                    HomePageFreeVersion.class);
+            // intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // To clean up all
+            // activities
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                    | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
+        getActivity().finish();
 
 	}
 
