@@ -3,8 +3,6 @@
  */
 package com.champs21.freeversion;
 
-import roboguice.inject.InjectView;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -27,6 +25,7 @@ public class CompleteProfileActivityContainer extends FragmentActivity{
 	private RelativeLayout container;
 	private UserTypeEnum type;
 	private boolean isFirstTime=false;
+    public boolean isFirstLogin = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +83,10 @@ public class CompleteProfileActivityContainer extends FragmentActivity{
 		if (getIntent().hasExtra("FIRST_TIME")) {
 			isFirstTime=true;
 		}
-	}
+        if (getIntent().hasExtra("first_login")) {
+            isFirstLogin = true;
+        }
+    }
 	
 	public void goToAfterLogIn()
 	{
@@ -93,13 +95,17 @@ public class CompleteProfileActivityContainer extends FragmentActivity{
         startActivity(intent);
         finish();
 	}
-	
+
+    public void backToLogin(){
+        setResult(RESULT_OK);
+    }
 	@Override
     public void onBackPressed() {
         super.onBackPressed();   
         Log.e("Back", "Chapse");
         if(UserHelper.isLoggedIn())
         {
+            backToLogin();
         	finish();
         }
         else

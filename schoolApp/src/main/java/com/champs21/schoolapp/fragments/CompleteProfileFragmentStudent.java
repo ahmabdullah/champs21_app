@@ -1,17 +1,8 @@
 package com.champs21.schoolapp.fragments;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
-import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
@@ -20,7 +11,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -55,6 +45,13 @@ import com.champs21.schoolapp.viewhelpers.QuickAction;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 public class CompleteProfileFragmentStudent extends Fragment implements
 		OnClickListener, UserAuthListener {
@@ -171,7 +168,7 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 			if (uiHelper.isDialogActive()) {
 				uiHelper.dismissLoadingDialog();
 			}
-			Log.e("RESPONSE USER IN COMPLETE PROFILE", responseString);
+			//Log.e("RESPONSE USER IN COMPLETE PROFILE", responseString);
 			Wrapper wrapper = GsonParser.getInstance().parseServerResponse(
 					responseString);
 			if (wrapper.getStatus().getCode() == AppConstant.RESPONSE_CODE_SUCCESS) {
@@ -608,13 +605,18 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 		if (uiHelper.isDialogActive()) {
 			uiHelper.dismissLoadingDialog();
 		}
-		Intent intent = new Intent(getActivity(), HomePageFreeVersion.class);
-		// intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // To clean up all
-		// activities
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-				| Intent.FLAG_ACTIVITY_CLEAR_TASK);
-		startActivity(intent);
-		getActivity().finish();
+        if(((CompleteProfileActivityContainer)getActivity()).isFirstLogin){
+            ((CompleteProfileActivityContainer)getActivity()).backToLogin();
+        }else {
+            Intent intent = new Intent(getActivity(),
+                    HomePageFreeVersion.class);
+            // intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // To clean up all
+            // activities
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                    | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
+        getActivity().finish();
 
 	}
 
