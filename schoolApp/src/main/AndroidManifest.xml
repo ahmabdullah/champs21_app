@@ -381,6 +381,18 @@
             android:screenOrientation="portrait">
             
         </activity>
+
+        <activity
+            android:name="com.champs21.freeversion.SingleLessonPlan"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.champs21.freeversion.EditLessonPlanActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
         
 
 

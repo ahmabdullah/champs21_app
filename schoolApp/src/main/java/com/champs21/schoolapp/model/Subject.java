@@ -2,14 +2,28 @@ package com.champs21.schoolapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import android.annotation.SuppressLint;
-
 public class Subject implements BaseType{
 	@SerializedName("id")
 	private String id;
 	@SerializedName("name")
 	private String name;
-	public String getId() {
+
+    @SerializedName("selected")
+    private int selected;
+
+    public int getSelected() {
+        return selected;
+    }
+
+    public void setSelected(int selected) {
+        this.selected = selected;
+    }
+
+
+
+
+
+    public String getId() {
 		return id;
 	}
 	public void setId(String id) {

@@ -186,6 +186,10 @@ public class AppConstant {
 	
 	//######################################## MeetingFragment
 	public static final String ID_SINGLE_MEETING_REQUEST = "id_single_meeting_request";
+
+
+    //######################################## LessonPlanView
+    public static final String ID_SINGLE_LESSON_PLAN = "id_single_lesson_plan";
 	
 	
 }

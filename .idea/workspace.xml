@@ -18,6 +18,21 @@
           <theme>@android:style/Theme.Holo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_teacher.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_view.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/row_lessonplan_view.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AndroidLogFilters">
@@ -26,13 +41,255 @@
   </component>
   <component name="ChangeListManager">
     <list id="b743d2f1-e4a6-497b-a929-b33b38506a09" name="Default" comment="" />
-    <list default="true" id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="1. Normal changes." />
-    <list id="c2f4b285-538f-47ce-ba2d-32f48454886c" name="Don't Commit" comment="Don't Commit">
+    <list default="true" id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="1. Normal changes.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/assign_class_deactive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/assign_class_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/assign_class_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/delete_lesson_deactive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/delete_lesson_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/delete_lesson_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lesson_plan_add_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lesson_plan_add_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lesson_plan_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lesson_plan_rombus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lesson_plan_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lesson_plan_view_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lesson_plan_view_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lessonplan_delete_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lessonplan_delete_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lessonplan_edit_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lessonplan_edit_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/lessonplan_icon_red.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/select_lesson_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/select_lesson_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/EditLessonPlanActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/LessonPlan.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanAdd.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/LessonPlanCategory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanTeacher.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/viewhelpers/PopupDialogLessonPlanConfirmation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/SingleLessonPlan.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_edit_lessonplan.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_single_lessonplan.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable/btn_assign_class.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable/btn_delete_lesson.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable/btn_delete_lesson_plan.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable/btn_edit_lesson_plan.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable/check_lessonplan.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_add.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_teacher.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_view.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/layout/popup_layout_lessonplan_confirmation.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/layout/row_lessonplan_view.xml" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\generated\source\buildConfig\test\debug\com\ipaulpro\afilechooser\test\BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\generated\source\r\test\debug\com\ipaulpro\afilechooser\R.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\generated\source\r\test\debug\com\ipaulpro\afilechooser\test\R.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\manifests\test\debug\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\resources-debug-test.ap_" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-hdpi-v4\ic_chooser.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-hdpi-v4\ic_file.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-hdpi-v4\ic_folder.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-hdpi-v4\ic_provider.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-mdpi-v4\ic_chooser.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-mdpi-v4\ic_file.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-mdpi-v4\ic_folder.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-mdpi-v4\ic_provider.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-xhdpi-v4\ic_chooser.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-xhdpi-v4\ic_file.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-xhdpi-v4\ic_folder.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-xhdpi-v4\ic_provider.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-xxhdpi-v4\ic_chooser.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-xxhdpi-v4\ic_file.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-xxhdpi-v4\ic_folder.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\drawable-xxhdpi-v4\ic_provider.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\layout\file.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-ca\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-de\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-es\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-fr\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-ga\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-it\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-ko\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-pl\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-pt-rBR\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-ru\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-v11\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values-v19\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\values\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\res\test\debug\xml\mimetypes.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\aFileChooser\build\intermediates\symbols\test\debug\R.txt" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\generated\source\buildConfig\test\debug\com\facebook\android\test\BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\generated\source\r\test\debug\com\facebook\android\R.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\generated\source\r\test\debug\com\facebook\android\test\R.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\manifests\test\debug\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\resources-debug-test.ap_" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-hdpi-v4\com_facebook_button_blue_focused.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-hdpi-v4\com_facebook_button_blue_normal.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-hdpi-v4\com_facebook_button_blue_pressed.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-hdpi-v4\com_facebook_button_grey_focused.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-hdpi-v4\com_facebook_button_grey_normal.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-hdpi-v4\com_facebook_button_grey_pressed.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-hdpi-v4\com_facebook_close.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-hdpi-v4\com_facebook_inverse_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-hdpi-v4\com_facebook_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-hdpi-v4\com_facebook_picker_magnifier.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-ldpi-v4\com_facebook_close.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-mdpi-v4\com_facebook_button_blue_focused.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-mdpi-v4\com_facebook_button_blue_normal.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-mdpi-v4\com_facebook_button_blue_pressed.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-mdpi-v4\com_facebook_inverse_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-mdpi-v4\com_facebook_picker_magnifier.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-xhdpi-v4\com_facebook_button_blue_focused.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-xhdpi-v4\com_facebook_button_blue_normal.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-xhdpi-v4\com_facebook_button_blue_pressed.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-xhdpi-v4\com_facebook_button_grey_focused.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-xhdpi-v4\com_facebook_button_grey_normal.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-xhdpi-v4\com_facebook_button_grey_pressed.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-xhdpi-v4\com_facebook_close.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-xhdpi-v4\com_facebook_inverse_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-xhdpi-v4\com_facebook_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable-xhdpi-v4\com_facebook_picker_magnifier.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_button_blue.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_button_blue_focused.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_button_blue_normal.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_button_blue_pressed.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_button_check.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_button_check_off.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_button_check_on.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_button_grey_focused.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_button_grey_normal.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_button_grey_pressed.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_close.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_inverse_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_list_divider.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_list_section_header_background.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_loginbutton_silver.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_picker_item_background.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_picker_list_focused.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_picker_list_longpressed.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_picker_list_pressed.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_picker_list_selector.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_picker_list_selector_background_transition.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_picker_list_selector_disabled.9.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_picker_top_button.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_place_default_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_profile_default_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_profile_picture_blank_portrait.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_profile_picture_blank_square.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_top_background.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_top_button.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\drawable\com_facebook_usersettingsfragment_background_gradient.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_friendpickerfragment.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_login_activity_layout.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_picker_activity_circle_row.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_picker_checkbox.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_picker_image.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_picker_list_row.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_picker_list_section_header.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_picker_search_box.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_picker_title_bar.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_picker_title_bar_stub.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_placepickerfragment.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_placepickerfragment_list_row.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_search_bar_layout.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\layout\com_facebook_usersettingsfragment.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\values-es\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\values-hdpi-v4\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\values-he\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\values-iw\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\values-ldpi-v4\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\values-mdpi-v4\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\values-xhdpi-v4\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\res\test\debug\values\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\facebookSDK\build\intermediates\symbols\test\debug\R.txt" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\generated\source\buildConfig\test\debug\uk\co\deanwild\flowtextview\flowtextview\test\BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\generated\source\r\test\debug\uk\co\deanwild\flowtextview\flowtextview\R.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\generated\source\r\test\debug\uk\co\deanwild\flowtextview\flowtextview\test\R.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\manifests\test\debug\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\resources-debug-test.ap_" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\test\debug\drawable-hdpi-v4\ic_action_search.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\test\debug\drawable-hdpi-v4\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\test\debug\drawable-mdpi-v4\ic_action_search.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\test\debug\drawable-mdpi-v4\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\test\debug\drawable-xhdpi-v4\ic_action_search.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\test\debug\drawable-xhdpi-v4\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\test\debug\menu\activity_main.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\test\debug\raw\template1.html" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\test\debug\values-v11\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\test\debug\values-v14\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\res\test\debug\values\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\flowTextView\build\intermediates\symbols\test\debug\R.txt" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\generated\source\buildConfig\test\debug\com\handmark\pulltorefresh\library\test\BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\generated\source\r\test\debug\com\handmark\pulltorefresh\library\R.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\generated\source\r\test\debug\com\handmark\pulltorefresh\library\test\R.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\manifests\test\debug\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\resources-debug-test.ap_" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\anim\slide_in_from_bottom.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\anim\slide_in_from_top.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\anim\slide_out_to_bottom.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\anim\slide_out_to_top.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\drawable-hdpi-v4\default_ptr_flip.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\drawable-hdpi-v4\default_ptr_rotate.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\drawable-hdpi-v4\indicator_arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\drawable-mdpi-v4\default_ptr_flip.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\drawable-mdpi-v4\default_ptr_rotate.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\drawable-mdpi-v4\indicator_arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\drawable-xhdpi-v4\default_ptr_flip.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\drawable-xhdpi-v4\default_ptr_rotate.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\drawable-xhdpi-v4\indicator_arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\drawable\indicator_bg_bottom.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\drawable\indicator_bg_top.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\layout\pull_to_refresh_header_horizontal.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\layout\pull_to_refresh_header_vertical.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-ar\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-cs\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-de\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-es\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-fi\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-fr\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-he\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-it\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-iw\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-ja\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-ko\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-nl\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-pl\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-pt-rBR\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-pt\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-ro\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-ru\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values-zh\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\res\test\debug\values\values.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\pullToRefreshLibrary\build\intermediates\symbols\test\debug\R.txt" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\schoolApp\build\generated\source\buildConfig\test\debug\com\champs21\schoolapp\test\BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\simpleFacebook\build\generated\source\buildConfig\test\debug\com\sromku\simple\fb\test\BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\simpleFacebook\build\generated\source\r\test\debug\com\facebook\android\R.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\simpleFacebook\build\generated\source\r\test\debug\com\sromku\simple\fb\R.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\simpleFacebook\build\generated\source\r\test\debug\com\sromku\simple\fb\test\R.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\simpleFacebook\build\intermediates\manifests\test\debug\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ovi\SchoolApp\SchoolApp\simpleFacebook\build\intermediates\symbols\test\debug\R.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/schoolApp/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/AppConstant.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/AppConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/champs21/schoolapp/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/champs21/schoolapp/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/facebook/android/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/facebook/android/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/google/android/gms/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/google/android/gms/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/handmark/pulltorefresh/library/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/handmark/pulltorefresh/library/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/sromku/simple/fb/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/sromku/simple/fb/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/uk/co/deanwild/flowtextview/flowtextview/R.java" afterPath="$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/uk/co/deanwild/flowtextview/flowtextview/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/Subject.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/Subject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/URLHelper.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/URLHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/res/drawable/check_btn.xml" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/drawable/check_btn.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/schoolApp/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SchoolApp.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +297,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -52,23 +314,138 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SyllabusFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SyllabusFragment.java">
+      <file leaf-file-name="LessonPlanAdd.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanAdd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2295" max-vertical-offset="8534">
-              <caret line="163" column="62" selection-start-line="163" selection-start-column="62" selection-end-line="163" selection-end-column="62" />
+            <state vertical-scroll-proportion="-7.714286" vertical-offset="3201" max-vertical-offset="11339">
+              <caret line="249" column="7" selection-start-line="249" selection-start-column="7" selection-end-line="266" selection-end-column="11" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#5262#6122#0" expanded="true" />
+                <element signature="e#6111#6112#0" expanded="true" />
+                <element signature="e#7053#7203#0" expanded="true" />
+                <element signature="e#7192#7193#0" expanded="true" />
+                <element signature="e#7264#7414#0" expanded="true" />
+                <element signature="e#7403#7404#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/values/strings.xml">
+      <file leaf-file-name="URLHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/URLHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.06727273" vertical-offset="3703" max-vertical-offset="8840">
-              <caret line="220" column="32" selection-start-line="220" selection-start-column="32" selection-end-line="220" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3548" max-vertical-offset="4318">
+              <caret line="221" column="31" selection-start-line="221" selection-start-column="31" selection-end-line="221" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SingleLessonPlan.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/SingleLessonPlan.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1219" max-vertical-offset="4862">
+              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+              <folding>
+                <element signature="e#4048#4507#0" expanded="true" />
+                <element signature="e#4496#4497#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditLessonPlanActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/EditLessonPlanActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.17344753" vertical-offset="1347" max-vertical-offset="13906">
+              <caret line="84" column="45" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5636#5791#0" expanded="true" />
+                <element signature="e#5780#5781#0" expanded="true" />
+                <element signature="e#5855#6010#0" expanded="true" />
+                <element signature="e#5999#6000#0" expanded="true" />
+                <element signature="e#6056#6206#0" expanded="true" />
+                <element signature="e#6195#6196#0" expanded="true" />
+                <element signature="e#6267#6417#0" expanded="true" />
+                <element signature="e#6406#6407#0" expanded="true" />
+                <element signature="e#6620#7480#0" expanded="true" />
+                <element signature="e#7469#7470#0" expanded="true" />
+                <element signature="e#8404#8599#0" expanded="true" />
+                <element signature="e#8588#8589#0" expanded="true" />
+                <element signature="e#8647#8840#0" expanded="true" />
+                <element signature="e#8829#8830#0" expanded="true" />
+                <element signature="e#10690#10710#0" expanded="true" />
+                <element signature="e#11231#11878#0" expanded="true" />
+                <element signature="e#11867#11868#0" expanded="true" />
+                <element signature="e#12201#12758#0" expanded="true" />
+                <element signature="e#12750#12751#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Subject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/Subject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="918">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+              <folding>
+                <element signature="e#312#313#0" expanded="true" />
+                <element signature="e#343#344#0" expanded="true" />
+                <element signature="e#388#389#0" expanded="true" />
+                <element signature="e#428#429#0" expanded="true" />
+                <element signature="e#461#462#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+                <element signature="e#509#510#0" expanded="true" />
+                <element signature="e#528#529#0" expanded="true" />
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#573#574#0" expanded="true" />
+                <element signature="e#609#610#0" expanded="true" />
+                <element signature="e#632#633#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppUtility.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/AppUtility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3429" max-vertical-offset="9231">
+              <caret line="239" column="38" selection-start-line="239" selection-start-column="25" selection-end-line="239" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LessonPlanCategory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/LessonPlanCategory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="697">
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_edit_lessonplan.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_edit_lessonplan.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.571429" vertical-offset="1782" max-vertical-offset="6919">
+              <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LessonPlanView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.0357143" vertical-offset="5632" max-vertical-offset="17850">
+              <caret line="405" column="16" selection-start-line="405" selection-start-column="16" selection-end-line="412" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -3723,15 +4100,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/schoolApp/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/schoolApp/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/flowTextView/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/AppConstant.java" />
-        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/social/PlusClientFragment.java" />
-        <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
         <option value="$PROJECT_DIR$/schoolApp/build.gradle" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/AccountSettingsActivity.java" />
-        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/MeetingFragment.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/UserPaidInfo.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/User.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/SPKeyHelper.java" />
@@ -3746,13 +4116,46 @@
         <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_children_selection2.xml" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/ChildSelectionActivity.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/row_upcoming_events.xml" />
-        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_syllabus_new.xml" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/row_archieved_events.xml" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SyllabusFragment.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/YearlyAttendanceReportFragment.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/RollCallTeacherFragment.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_syllabus_new.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/drawable/btn_assign_class.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/drawable/btn_delete_lesson.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_teacher.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/MeetingFragment.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/LessonPlanCategory.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/drawable/check_btn.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/drawable/check_lessonplan.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/popup_layout_lessonplan_confirmation.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/viewhelpers/PopupDialogLessonPlanConfirmation.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanTeacher.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_single_meeting_request.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/SingleMeetingRequestActivity.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/AppConstant.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/LessonPlan.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/row_lessonplan_view.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_view.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/drawable/btn_delete_lesson_plan.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/drawable/btn_edit_lesson_plan.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_add.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_single_lessonplan.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_edit_lessonplan.xml" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/URLHelper.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/SingleLessonPlan.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/Subject.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanAdd.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/EditLessonPlanActivity.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -3787,6 +4190,21 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3866,123 +4284,6 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champs21" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champs21" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champs21" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -4002,19 +4303,31 @@
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="options.lastSelected" value="editor" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="FullScreen" value="false" />
     <property name="android.project.structure.last.selected" value="pullToRefreshLibrary" />
     <property name="android.project.structure.proportion" value="0.15" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="323" />
+    <property name="LayoutCode.rearrangeEntriesXML" value="true" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.champs21.schoolapp.fragments" />
+      <recent name="com.champs21.schoolapp.viewhelpers" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ovi\SchoolApp\SchoolApp\schoolApp\src\main\res\layout" />
+      <recent name="E:\ovi\SchoolApp\SchoolApp\schoolApp\src\main\res\drawable" />
       <recent name="E:\ovi\SchoolApp\SchoolApp\schoolApp\src\main\res\drawable-xhdpi" />
       <recent name="E:\champs21_app\schoolApp\src\main\res\drawable-xhdpi" />
       <recent name="E:\TasvirulR&amp;DProject\Mine\SchoolApp\schoolApp\src\main\res\drawable-xhdpi" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="com.champs21.schoolapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\TasvirulR&amp;DProject\Mine\SchoolApp\schoolApp\src\main\res\drawable-xhdpi" />
@@ -4195,7 +4508,6 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="b743d2f1-e4a6-497b-a929-b33b38506a09" name="Default" comment="" />
       <changelist id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="" />
-      <changelist id="c2f4b285-538f-47ce-ba2d-32f48454886c" name="Don't Commit" comment="" />
       <created>1426686923142</created>
       <updated>1426686923142</updated>
     </task>
@@ -4255,7 +4567,11 @@
       <created>1427191714145</created>
       <updated>1427191714145</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Don't Commit">
+      <created>1427191819383</created>
+      <updated>1427191819383</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -4284,23 +4600,25 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20575693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5197802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37142858" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35934067" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48021978" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44615385" sideWeight="0.14925373" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685715" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3622857" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32307693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36153847" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45604396" sideWeight="0.8507463" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22742857" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973261" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1705757" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17697228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32637364" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -4308,8 +4626,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1401919" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -4337,397 +4653,512 @@
     <MESSAGE value="1. Added new layout for ChildSelection activity and associated java  codes." />
     <MESSAGE value="1. Some icons are changed in syllabus, event etc fragments.&#10;2. Some images are added to drawable folder." />
     <MESSAGE value="1. Normal changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Normal changes." />
+    <MESSAGE value="Don't Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Don't Commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="46" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/AlbumStorageDirFactory.java">
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/viewhelpers/PopupDialogAssessmentOk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09479554" vertical-offset="0" max-vertical-offset="538">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state vertical-scroll-proportion="-0.65767634" vertical-offset="1405" max-vertical-offset="2703">
+          <caret line="81" column="56" selection-start-line="81" selection-start-column="56" selection-end-line="81" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/BaseAlbumDirFactory.java">
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/QuizFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.6204691" vertical-offset="7393" max-vertical-offset="8024">
+          <caret line="508" column="41" selection-start-line="508" selection-start-column="41" selection-end-line="508" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/schoolApp/libs/android-async-http-1.4.3.jar!/com/loopj/android/http/RequestParams.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35416666" vertical-offset="187" max-vertical-offset="986">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/popup_layout_assessment_ok.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2142">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2108">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/viewhelpers/PopupDialogLessonPlanConfirmation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.631676" vertical-offset="2754" max-vertical-offset="6698">
-          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="622" max-vertical-offset="2244">
+          <caret line="77" column="64" selection-start-line="77" selection-start-column="64" selection-end-line="77" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/AssesmentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41043085" vertical-offset="28532" max-vertical-offset="32504">
+          <caret line="1780" column="16" selection-start-line="1780" selection-start-column="16" selection-end-line="1780" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable/btn_delete_lesson.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10580913" vertical-offset="0" max-vertical-offset="482">
+          <caret line="3" column="84" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/SPKeyHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33442622" vertical-offset="0" max-vertical-offset="1088">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/popup_layout_lessonplan_confirmation.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="988" max-vertical-offset="1717">
+          <caret line="66" column="12" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/viewhelpers/CustomTabButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5405405" vertical-offset="632" max-vertical-offset="1462">
+          <caret line="70" column="58" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.866554" vertical-offset="23293" max-vertical-offset="26537">
+          <caret line="1626" column="52" selection-start-line="1626" selection-start-column="52" selection-end-line="1626" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomePageFreeVersion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1314" max-vertical-offset="13668">
+          <caret line="150" column="33" selection-start-line="150" selection-start-column="33" selection-end-line="150" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/TeacherHomeWorkAddFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.04144144" vertical-offset="4919" max-vertical-offset="5474">
+          <caret line="338" column="4" selection-start-line="338" selection-start-column="4" selection-end-line="364" selection-end-column="6" />
+          <folding>
+            <element signature="e#11151#11978#0" expanded="false" />
+            <element signature="e#11478#11479#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/HomeworkFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8228782" vertical-offset="5255" max-vertical-offset="26248">
+          <caret line="343" column="17" selection-start-line="343" selection-start-column="17" selection-end-line="343" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../android_all/android-sdk/android-sdk/sources/android-19/android/text/TextUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="6304" max-vertical-offset="29240">
+          <caret line="447" column="26" selection-start-line="447" selection-start-column="26" selection-end-line="447" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/UserHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33200794" vertical-offset="10339" max-vertical-offset="13294">
+          <caret line="644" column="0" selection-start-line="644" selection-start-column="0" selection-end-line="644" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/SharedPreferencesHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33200794" vertical-offset="258" max-vertical-offset="1972">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../android_all/android-sdk/android-sdk/sources/android-19/android/widget/TextView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33200794" vertical-offset="20811" max-vertical-offset="151249">
+          <caret line="1372" column="0" selection-start-line="1372" selection-start-column="0" selection-end-line="1372" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/DatePickerFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="782">
+          <caret line="39" column="83" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../android_all/android-sdk/android-sdk/sources/android-19/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59621996" vertical-offset="261912" max-vertical-offset="325006">
+          <caret line="15784" column="45" selection-start-line="15784" selection-start-column="45" selection-end-line="15784" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_single_meeting_request.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.061261263" vertical-offset="0" max-vertical-offset="3893">
+          <caret line="2" column="76" selection-start-line="2" selection-start-column="76" selection-end-line="2" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_teacher.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2040" max-vertical-offset="2176">
+          <caret line="120" column="19" selection-start-line="8" selection-start-column="4" selection-end-line="120" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/SingleMeetingRequestActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6467154" vertical-offset="4397" max-vertical-offset="5338">
+          <caret line="179" column="5" selection-start-line="179" selection-start-column="5" selection-end-line="179" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/CreateMeetingRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="2178" max-vertical-offset="8840">
+          <caret line="194" column="27" selection-start-line="194" selection-start-column="22" selection-end-line="194" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/AppConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7518248" vertical-offset="2698" max-vertical-offset="3383">
+          <caret line="191" column="73" selection-start-line="191" selection-start-column="73" selection-end-line="191" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/MeetingFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6018868" vertical-offset="4917" max-vertical-offset="16014">
-          <caret line="384" column="8" selection-start-line="384" selection-start-column="8" selection-end-line="384" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.20618556" vertical-offset="3572" max-vertical-offset="16014">
+          <caret line="288" column="85" selection-start-line="288" selection-start-column="85" selection-end-line="288" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/CommonChildFragment.java">
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable/btn_delete_lesson_plan.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="6408" max-vertical-offset="36567">
-          <caret line="490" column="32" selection-start-line="490" selection-start-column="32" selection-end-line="490" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/SharedPreferencesHelper.java">
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable/btn_edit_lesson_plan.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="934" max-vertical-offset="1972">
-          <caret line="74" column="75" selection-start-line="74" selection-start-column="75" selection-end-line="74" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/User.java">
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/row_lessonplan_view.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="167" max-vertical-offset="2091">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_view.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3167" max-vertical-offset="5440">
+          <caret line="197" column="23" selection-start-line="197" selection-start-column="23" selection-end-line="197" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_add.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5290" max-vertical-offset="5899">
+          <caret line="319" column="62" selection-start-line="319" selection-start-column="62" selection-end-line="319" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="3331" max-vertical-offset="4233">
-          <caret line="305" column="16" selection-start-line="305" selection-start-column="16" selection-end-line="305" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.75559103" vertical-offset="6174" max-vertical-offset="6902">
+          <caret line="391" column="73" selection-start-line="391" selection-start-column="73" selection-end-line="391" selection-end-column="73" />
           <folding>
-            <element signature="e#2319#2320#0" expanded="false" />
-            <element signature="e#2341#2342#0" expanded="false" />
-            <element signature="e#2392#2393#0" expanded="false" />
-            <element signature="e#2423#2424#0" expanded="false" />
-            <element signature="e#3759#3760#0" expanded="false" />
-            <element signature="e#3782#3783#0" expanded="false" />
-            <element signature="e#5550#5551#0" expanded="false" />
-            <element signature="e#5581#5582#0" expanded="false" />
-            <element signature="e#6020#6021#0" expanded="false" />
-            <element signature="e#6053#6054#0" expanded="false" />
+            <element signature="e#2000#2018#0" expanded="true" />
+            <element signature="e#2214#2253#0" expanded="true" />
+            <element signature="e#2782#2800#0" expanded="true" />
+            <element signature="e#2987#3005#0" expanded="true" />
+            <element signature="e#3460#3478#0" expanded="true" />
+            <element signature="e#3639#3657#0" expanded="true" />
+            <element signature="e#3941#3959#0" expanded="true" />
+            <element signature="e#4136#4154#0" expanded="true" />
+            <element signature="e#4384#4402#0" expanded="true" />
+            <element signature="e#4628#4646#0" expanded="true" />
+            <element signature="e#4882#4900#0" expanded="true" />
+            <element signature="e#5136#5154#0" expanded="true" />
+            <element signature="e#5377#5416#0" expanded="true" />
+            <element signature="e#5587#5605#0" expanded="true" />
+            <element signature="e#6417#6435#0" expanded="true" />
+            <element signature="e#6854#6873#0" expanded="true" />
+            <element signature="e#7371#7402#0" expanded="true" />
+            <element signature="e#7592#7610#0" expanded="true" />
+            <element signature="e#8465#8511#0" expanded="true" />
+            <element signature="e#9305#9334#0" expanded="true" />
+            <element signature="e#11163#11181#0" expanded="true" />
+            <element signature="e#11526#11563#0" expanded="true" />
+            <element signature="e#11859#11892#0" expanded="true" />
+            <element signature="e#12258#12295#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/UserWrapper.java">
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/MyTagHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62589073" vertical-offset="0" max-vertical-offset="1071">
-          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/viewhelpers/CustomButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45486936" vertical-offset="1113" max-vertical-offset="1989">
-          <caret line="111" column="16" selection-start-line="111" selection-start-column="16" selection-end-line="111" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/viewhelpers/ExpandableTextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18171021" vertical-offset="0" max-vertical-offset="1241">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/AnyFragmentLoadActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08076009" vertical-offset="0" max-vertical-offset="1360">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/URLHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33254156" vertical-offset="1522" max-vertical-offset="4012">
-          <caret line="108" column="31" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.27567568" vertical-offset="0" max-vertical-offset="884">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/CandleFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="14467">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/UserPaidInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7672209" vertical-offset="501" max-vertical-offset="2312">
-          <caret line="183" column="18" selection-start-line="183" selection-start-column="18" selection-end-line="183" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/build/generated/source/r/debug/com/champs21/schoolapp/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42424244" vertical-offset="46538" max-vertical-offset="88060">
-          <caret line="2759" column="32" selection-start-line="2759" selection-start-column="32" selection-end-line="2759" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/schoolApp.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1921">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomePageFreeVersion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53138685" vertical-offset="1404" max-vertical-offset="13515">
-          <caret line="170" column="55" selection-start-line="170" selection-start-column="55" selection-end-line="170" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/FreeVersionPost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64857143" vertical-offset="11259" max-vertical-offset="13770">
-          <caret line="1027" column="43" selection-start-line="1027" selection-start-column="43" selection-end-line="1027" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/applied_leave.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/rool_call_bg.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/StudentAttendance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3328786" vertical-offset="997" max-vertical-offset="2567">
-          <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/on_leave.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/row_rollcall_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02425107" vertical-offset="0" max-vertical-offset="701">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_single_homework.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/TeachersAttendanceTabhostFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3111" max-vertical-offset="5100">
-          <caret line="250" column="28" selection-start-line="250" selection-start-column="28" selection-end-line="250" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_paidverision_summery.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="19461" max-vertical-offset="20162">
-          <caret line="1171" column="42" selection-start-line="1171" selection-start-column="42" selection-end-line="1171" selection-end-column="42" />
+        <state vertical-scroll-proportion="-3.3703704" vertical-offset="1167" max-vertical-offset="3094">
+          <caret line="74" column="70" selection-start-line="74" selection-start-column="70" selection-end-line="74" selection-end-column="70" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_single_lessonplan.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SchoolFeedFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="20978">
-          <caret line="102" column="31" selection-start-line="102" selection-start-column="30" selection-end-line="102" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/SPKeyHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.066895366" vertical-offset="454" max-vertical-offset="1071">
-          <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
+        <state vertical-scroll-proportion="-6.5185184" vertical-offset="1609" max-vertical-offset="3162">
+          <caret line="105" column="74" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="74" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/SingleHomeworkActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5372">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/UserHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5077187" vertical-offset="9972" max-vertical-offset="13158">
-          <caret line="630" column="25" selection-start-line="630" selection-start-column="25" selection-end-line="630" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/banner.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_children_selection2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28490567" vertical-offset="648" max-vertical-offset="4420">
-          <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/ChildSelectionActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2679" max-vertical-offset="6120">
-          <caret line="211" column="9" selection-start-line="211" selection-start-column="9" selection-end-line="211" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/event_row_icon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/ParentEventFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="7174">
-          <caret line="144" column="51" selection-start-line="144" selection-start-column="51" selection-end-line="144" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/syllabus.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/syllabus_normal.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/row_upcoming_events.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5185185" vertical-offset="255" max-vertical-offset="3621">
-          <caret line="29" column="40" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_syllabus_new.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4204793" vertical-offset="2068" max-vertical-offset="4556">
-          <caret line="133" column="51" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/adapters/UpcomingEventListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75308645" vertical-offset="382" max-vertical-offset="4709">
-          <caret line="82" column="78" selection-start-line="82" selection-start-column="78" selection-end-line="82" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/UpcomingEventsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29218107" vertical-offset="1660" max-vertical-offset="4403">
-          <caret line="147" column="33" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/row_archieved_events.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2703">
-          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/adapters/ArchievedEventListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6131687" vertical-offset="331" max-vertical-offset="1887">
-          <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/ArchievePageFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68106997" vertical-offset="1488" max-vertical-offset="4403">
-          <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/RollCallTeacherFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4674" max-vertical-offset="7973">
-          <caret line="333" column="14" selection-start-line="333" selection-start-column="14" selection-end-line="333" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/YearlyAttendanceReportFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13786764" vertical-offset="1370" max-vertical-offset="5457">
-          <caret line="122" column="31" selection-start-line="122" selection-start-column="31" selection-end-line="123" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25" vertical-offset="561" max-vertical-offset="1105">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.33693695" vertical-offset="1122" max-vertical-offset="5372">
+          <caret line="117" column="8" selection-start-line="116" selection-start-column="8" selection-end-line="117" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/drawable-xhdpi/syllabus_tap.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/viewhelpers/ExpandableTextView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24440895" vertical-offset="0" max-vertical-offset="1241">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="31" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/SyllabusFragment.java">
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanTeacher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2295" max-vertical-offset="8534">
-          <caret line="163" column="62" selection-start-line="163" selection-start-column="62" selection-end-line="163" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.04952077" vertical-offset="1703" max-vertical-offset="2329">
+          <caret line="125" column="11" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../android_all/android-sdk/android-sdk/sources/android-19/android/widget/EditText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.84190476" vertical-offset="0" max-vertical-offset="1734">
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../android_all/android-sdk/android-sdk/sources/android-19/java/text/SimpleDateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23619048" vertical-offset="5367" max-vertical-offset="22525">
+          <caret line="353" column="11" selection-start-line="353" selection-start-column="11" selection-end-line="353" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/LessonPlan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36571428" vertical-offset="335" max-vertical-offset="1275">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#622#623#0" expanded="false" />
+            <element signature="e#656#657#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06727273" vertical-offset="3703" max-vertical-offset="8840">
-          <caret line="220" column="32" selection-start-line="220" selection-start-column="32" selection-end-line="220" selection-end-column="32" />
+        <state vertical-scroll-proportion="-1.0357143" vertical-offset="5632" max-vertical-offset="17850">
+          <caret line="405" column="16" selection-start-line="405" selection-start-column="16" selection-end-line="412" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/SocialBaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321033" vertical-offset="5855" max-vertical-offset="9112">
+          <caret line="406" column="47" selection-start-line="406" selection-start-column="47" selection-end-line="406" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/adapters/AcademicCalendarListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="529" max-vertical-offset="1207">
+          <caret line="53" column="137" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="137" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/AppUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3429" max-vertical-offset="9231">
+          <caret line="239" column="38" selection-start-line="239" selection-start-column="25" selection-end-line="239" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/LessonPlanCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="697">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/utils/URLHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3548" max-vertical-offset="4318">
+          <caret line="221" column="31" selection-start-line="221" selection-start-column="31" selection-end-line="221" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/Subject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="918">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding>
+            <element signature="e#312#313#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#528#529#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/res/layout/activity_edit_lessonplan.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.571429" vertical-offset="1782" max-vertical-offset="6919">
+          <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.714286" vertical-offset="3201" max-vertical-offset="11339">
+          <caret line="249" column="7" selection-start-line="249" selection-start-column="7" selection-end-line="266" selection-end-column="11" />
+          <folding>
+            <element signature="e#5262#6122#0" expanded="true" />
+            <element signature="e#6111#6112#0" expanded="true" />
+            <element signature="e#7053#7203#0" expanded="true" />
+            <element signature="e#7192#7193#0" expanded="true" />
+            <element signature="e#7264#7414#0" expanded="true" />
+            <element signature="e#7403#7404#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/SingleLessonPlan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1219" max-vertical-offset="4862">
+          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding>
+            <element signature="e#4048#4507#0" expanded="true" />
+            <element signature="e#4496#4497#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/EditLessonPlanActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17344753" vertical-offset="1347" max-vertical-offset="13906">
+          <caret line="84" column="45" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5636#5791#0" expanded="true" />
+            <element signature="e#5780#5781#0" expanded="true" />
+            <element signature="e#5855#6010#0" expanded="true" />
+            <element signature="e#5999#6000#0" expanded="true" />
+            <element signature="e#6056#6206#0" expanded="true" />
+            <element signature="e#6195#6196#0" expanded="true" />
+            <element signature="e#6267#6417#0" expanded="true" />
+            <element signature="e#6406#6407#0" expanded="true" />
+            <element signature="e#6620#7480#0" expanded="true" />
+            <element signature="e#7469#7470#0" expanded="true" />
+            <element signature="e#8404#8599#0" expanded="true" />
+            <element signature="e#8588#8589#0" expanded="true" />
+            <element signature="e#8647#8840#0" expanded="true" />
+            <element signature="e#8829#8830#0" expanded="true" />
+            <element signature="e#10690#10710#0" expanded="true" />
+            <element signature="e#11231#11878#0" expanded="true" />
+            <element signature="e#11867#11868#0" expanded="true" />
+            <element signature="e#12201#12758#0" expanded="true" />
+            <element signature="e#12750#12751#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

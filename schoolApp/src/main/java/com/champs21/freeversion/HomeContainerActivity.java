@@ -82,7 +82,6 @@ import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.utils.UserHelper.UserAccessType;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.champs21.schoolapp.viewhelpers.CustomRhombusIcon;
-import com.champs21.schoolapp.viewhelpers.PopupDialogChangePassword;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.google.gson.JsonArray;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -574,7 +573,7 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 						int screenHeight = root.getRootView().getHeight();
 						int heightDifference = screenHeight
 								- (r.bottom - r.top);
-						Log.e("Keyboard Size", "Size: " + heightDifference);
+						//Log.e("Keyboard Size", "Size: " + heightDifference);
 						// Log.e("Keyboard Size popup", "height: " +
 						// popup.getHeight());
 
@@ -612,7 +611,7 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 						int screenHeight = root.getRootView().getHeight();
 						int heightDifference = screenHeight
 								- (r.bottom - r.top);
-						Log.e("Keyboard Size", "Size: " + heightDifference);
+						//Log.e("Keyboard Size", "Size: " + heightDifference);
 						// Log.e("Keyboard Size popup", "height: " +
 						// popup.getHeight());
 

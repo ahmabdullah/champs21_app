@@ -180,6 +180,7 @@
         <item>transport</item>
         <item>reportcard</item>
         <item>academic_calendar</item>
+        <item>lesson_plan</item>
     </string-array>
     
     <string-array name="diary_text_teacher">
@@ -197,6 +198,7 @@
         <item>Transport</item>
         <item>Reportcard</item>
         <item>Academic Calendar</item>
+        <item>Lesson Plan</item>
     </string-array>
     
     <string-array name="diary_class_teacher">
@@ -214,6 +216,7 @@
         <item>TransportFragment</item>
         <item>ParentReportCardFragment</item>
         <item>ParentAcademicCalender</item>
+        <item>LessonPlanTeacher</item>
     </string-array>
     
     <string-array name="free_menus_images">

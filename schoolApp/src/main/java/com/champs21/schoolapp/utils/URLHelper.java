@@ -209,9 +209,27 @@ public class URLHelper {
 	
 	
 	public final static String URL_LOGOUT = "user/logout";
-	
-	
-	
+
+
+    public final static String URL_LESSONPLAN = "syllabus/lessonplans";
+
+    public final static String URL_LESSON_CATEGORY = "syllabus/lessoncategory";
+
+    public final static String URL_LESSON_DELETE = "syllabus/lessonplandelete";
+
+    public final static String URL_LESSON_ASSIGN = "syllabus/assignlesson";
+
+    public final static String URL_LESSON_SUBJECT = "syllabus/getsubject";
+
+    public final static String URL_LESSON_ADD = "syllabus/addlessonplan";
+
+    public final static String URL_SINGLE_LESSON_PLAN = "syllabus/singlelessonplans";
+
+    public final static String URL_GET_LESSONPLAN_EDIT_DATA = "syllabus/lessonplanedit";
+
+
+
+
 	//&&&&&&&&&&&&&&&&&&&&&&&&&C_MART&&&&&&&&&&&&&&&&&&&&&
 		public final static String BASE_URL_CMART = "http://www.champs21.com/market/xmlconnect/";
 		public final static String URL_FREE_VERSION_C_MART_INIT = "configuration/index/app_code/defand1/updated_at/1408969783/screen_size/1280x800";
