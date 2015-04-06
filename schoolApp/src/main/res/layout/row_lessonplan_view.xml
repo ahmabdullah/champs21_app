@@ -28,8 +28,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
-                android:gravity="center"
-                android:button="@drawable/check_lessonplan"
+                android:gravity="center_vertical"
+                android:button="@null"
+                android:drawableLeft="@drawable/check_lessonplan"
                 android:checked="false"
                 android:clickable="true"
                 android:layout_centerInParent="true" />

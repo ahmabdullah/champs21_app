@@ -35,6 +35,8 @@ public class LessonPlanTeacher extends Fragment{
 
     private TextView txtDate;
 
+    private boolean isViewButtonClicked = false;
+
 
 
     @Override
@@ -91,8 +93,12 @@ public class LessonPlanTeacher extends Fragment{
                 btnAddLessonPlan.setButtonSelected(false, getResources().getColor(R.color.black), R.drawable.lesson_plan_add_normal);
 
 
+                if(isViewButtonClicked == true)
+                {
+                    loadFragment(new LessonPlanView());
+                    isViewButtonClicked = false;
+                }
 
-                loadFragment(new LessonPlanView());
 
 
 
@@ -115,8 +121,12 @@ public class LessonPlanTeacher extends Fragment{
                 btnAddLessonPlan.setButtonSelected(true, getResources().getColor(R.color.black), R.drawable.lesson_plan_add_tap);
 
 
+                if(isViewButtonClicked == false)
+                {
+                    loadFragment(new LessonPlanAdd());
+                    isViewButtonClicked = true;
+                }
 
-                loadFragment(new LessonPlanAdd());
 
 
 
