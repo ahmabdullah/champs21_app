@@ -41,12 +41,11 @@
   </component>
   <component name="ChangeListManager">
     <list id="b743d2f1-e4a6-497b-a929-b33b38506a09" name="Default" comment="1. Some view related issues are fixed in Lesson Plan for both layouts and associated java classes. &#10;" />
-    <list default="true" id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="1. Some view related issues are fixed in Lesson Plan for both layouts and associated java classes. &#10;">
+    <list default="true" id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="1. In LessonPlanView.java class some conditions are apply for assign button and delete button click. &#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
-    <list id="4f7ef0aa-2fe7-42dd-aeee-e2c2a03ee302" name="New changelist-Ovi" comment="New changelist-Ovi">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java" />
-    </list>
+    <list id="4f7ef0aa-2fe7-42dd-aeee-e2c2a03ee302" name="New changelist-Ovi" comment="New changelist-Ovi" />
     <ignored path="SchoolApp.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -126,23 +125,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LessonPlanView.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LessonPlanView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61904764" vertical-offset="2235" max-vertical-offset="17901">
-              <caret line="209" column="36" selection-start-line="209" selection-start-column="36" selection-end-line="209" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2235" max-vertical-offset="17901">
+              <caret line="212" column="60" selection-start-line="212" selection-start-column="60" selection-end-line="212" selection-end-column="60" />
               <folding>
+                <element signature="e#6264#6616#0" expanded="true" />
                 <element signature="e#6605#6606#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeContainerActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="HomeContainerActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="12131" max-vertical-offset="26537">
-              <caret line="850" column="31" selection-start-line="850" selection-start-column="31" selection-end-line="850" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.87794435" vertical-offset="9161" max-vertical-offset="26537">
+              <caret line="675" column="27" selection-start-line="675" selection-start-column="27" selection-end-line="675" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -3353,7 +3353,6 @@
         <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/fragment_lessonplan_teacher.xml" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/MeetingFragment.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/LessonPlanCategory.java" />
-        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/res/drawable/check_btn.xml" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/res/drawable/check_lessonplan.xml" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/popup_layout_lessonplan_confirmation.xml" />
@@ -3378,6 +3377,7 @@
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanTeacher.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomePageFreeVersion.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java" />
       </list>
     </option>
   </component>
@@ -3540,40 +3540,6 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champs21" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="freeversion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SchoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schoolApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -3588,7 +3554,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="T4A69S45GIFQ5PSO" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="BIGA45CUY9HILR65" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="adv4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
@@ -3879,7 +3845,11 @@
       <created>1428392158735</created>
       <updated>1428392158735</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="1. In LessonPlanView.java class some conditions are apply for assign button and delete button click. &#10;">
+      <created>1428392448856</created>
+      <updated>1428392448856</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -3917,14 +3887,14 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685715" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36153847" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5307692" sideWeight="0.83208954" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42527473" sideWeight="0.83208954" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22742857" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973261" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17110874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16577825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32637364" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45274726" sideWeight="0.3640725" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3964,7 +3934,8 @@
     <MESSAGE value="Don't Commit" />
     <MESSAGE value="1. Added lesson plan view fragment i.e. list of lesson plans.&#10;2. Added lesson plan add fragment i.e create lesson plans.&#10;3. In view lesson plan page added delete and assign functionalities for multiple selection.&#10;4. Added single page of each lesson plan.&#10;5. Added edit and delete functionalities in single page of lesson plan.&#10;6. For editing user is redirect to a new page.&#10;7. Some activities are added in menifest file.&#10;8. Added layouts and associated graphics for each view. &#10;" />
     <MESSAGE value="1. Some view related issues are fixed in Lesson Plan for both layouts and associated java classes. &#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Some view related issues are fixed in Lesson Plan for both layouts and associated java classes. &#10;" />
+    <MESSAGE value="1. In LessonPlanView.java class some conditions are apply for assign button and delete button click. &#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. In LessonPlanView.java class some conditions are apply for assign button and delete button click. &#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -4377,14 +4348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="12131" max-vertical-offset="26537">
-          <caret line="850" column="31" selection-start-line="850" selection-start-column="31" selection-end-line="850" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomePageFreeVersion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.392857" vertical-offset="7884" max-vertical-offset="13821">
@@ -4406,11 +4369,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61904764" vertical-offset="2235" max-vertical-offset="17901">
-          <caret line="209" column="36" selection-start-line="209" selection-start-column="36" selection-end-line="209" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2235" max-vertical-offset="17901">
+          <caret line="212" column="60" selection-start-line="212" selection-start-column="60" selection-end-line="212" selection-end-column="60" />
           <folding>
+            <element signature="e#6264#6616#0" expanded="true" />
             <element signature="e#6605#6606#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.87794435" vertical-offset="9161" max-vertical-offset="26537">
+          <caret line="675" column="27" selection-start-line="675" selection-start-column="27" selection-end-line="675" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

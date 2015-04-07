@@ -659,7 +659,7 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 
 	public void setActionBarTitle(String title) {
 		logo.setVisibility(View.GONE);
-		actionBar.setDisplayShowTitleEnabled(true);
+		actionBar.setDisplayShowTitleEnabled(false);
 		// actionBar.setTitle(Html.fromHtml("<html><body><marquee><font color='#312E2F'><b>"+title+"</b></font></marquee></body></html>"));
 		// actionBar.setTitle(title);
 		txtTitle.setVisibility(View.VISIBLE);
