@@ -196,8 +196,8 @@ public class LessonPlanView extends Fragment {
             @Override
             public void onClick(View v) {
 
-
-                showCustomDialogConfirmationDelete("LESSON PLAN", "Delete", "Are you sure you want to delete selected lesson plan(s)?", R.drawable.lessonplan_icon_red, getActivity());
+                if(listSelectedId.size() > 0)
+                    showCustomDialogConfirmationDelete("LESSON PLAN", "Delete", "Are you sure you want to delete selected lesson plan(s)?", R.drawable.lessonplan_icon_red, getActivity());
 
 
             }
@@ -209,8 +209,8 @@ public class LessonPlanView extends Fragment {
             @Override
             public void onClick(View v) {
 
-
-                showCustomDialogConfirmationAssign("LESSON PLAN", "Assign", "Are you sure you want to assign selected lesson plan(s)?", R.drawable.lessonplan_icon_red, getActivity());
+                if(listSelectedId.size() > 0)
+                    showCustomDialogConfirmationAssign("LESSON PLAN", "Assign", "Are you sure you want to assign selected lesson plan(s)?", R.drawable.lessonplan_icon_red, getActivity());
 
 
             }
