@@ -537,7 +537,16 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                         startActivity(assessmentScoreIntent);
                         break;
                     case 4:
-					/*mDrawerLayout.closeDrawer(Gravity.RIGHT);
+
+                    if(userHelper.getUserAccessType()== UserHelper.UserAccessType.PAID){
+                        if (AppUtility.isInternetConnected()) {
+                            initApiCallLogout();
+                        } else {
+                            Toast.makeText(context, "Sorry no internet connection found!", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }else {
+                        mDrawerLayout.closeDrawer(Gravity.RIGHT);
 					UserHelper.setLoggedIn(false);
 					UserHelper.saveIsJoinedSchool(false);
 					Intent intent = new Intent(HomePageFreeVersion.this,
@@ -550,14 +559,9 @@ public class HomePageFreeVersion extends HomeContainerActivity {
 					overridePendingTransition(0, 0);
 
 					startActivity(intent);
-					overridePendingTransition(0, 0);*/
+					overridePendingTransition(0, 0);
+                    }
 
-
-                        if (AppUtility.isInternetConnected()) {
-                            initApiCallLogout();
-                        } else {
-                            Toast.makeText(context, "Sorry no internet connection found!", Toast.LENGTH_SHORT).show();
-                        }
 
                         break;
 

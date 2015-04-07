@@ -40,18 +40,13 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.champs21.schoolapp" />
   </component>
   <component name="ChangeListManager">
-    <list id="b743d2f1-e4a6-497b-a929-b33b38506a09" name="Default" comment="" />
+    <list id="b743d2f1-e4a6-497b-a929-b33b38506a09" name="Default" comment="1. Some view related issues are fixed in Lesson Plan for both layouts and associated java classes. &#10;" />
     <list default="true" id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="1. Some view related issues are fixed in Lesson Plan for both layouts and associated java classes. &#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aFileChooser/aFileChooser.iml" afterPath="$PROJECT_DIR$/aFileChooser/aFileChooser.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/facebookSDK/facebookSDK.iml" afterPath="$PROJECT_DIR$/facebookSDK/facebookSDK.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flowTextView/flowTextView.iml" afterPath="$PROJECT_DIR$/flowTextView/flowTextView.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/build/intermediates/tmp/dex/debug/inputList.txt" afterPath="$PROJECT_DIR$/schoolApp/build/intermediates/tmp/dex/debug/inputList.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_6_1_71.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_6_1_71.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomePageFreeVersion.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomePageFreeVersion.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <list id="4f7ef0aa-2fe7-42dd-aeee-e2c2a03ee302" name="New changelist-Ovi" comment="New changelist-Ovi">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java" afterPath="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java" />
     </list>
     <ignored path="SchoolApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -132,14 +127,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LessonPlanView.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LessonPlanView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0451127" vertical-offset="2082" max-vertical-offset="17901">
-              <caret line="210" column="0" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2133" max-vertical-offset="17901">
+              <caret line="209" column="36" selection-start-line="209" selection-start-column="36" selection-end-line="209" selection-end-column="36" />
               <folding>
-                <element signature="e#6264#6616#0" expanded="true" />
                 <element signature="e#6605#6606#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeContainerActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="12131" max-vertical-offset="26537">
+              <caret line="850" column="31" selection-start-line="850" selection-start-column="31" selection-end-line="850" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomePageFreeVersion.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomePageFreeVersion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.99191374" vertical-offset="7843" max-vertical-offset="13821">
+              <caret line="554" column="59" selection-start-line="554" selection-start-column="59" selection-end-line="554" selection-end-column="59" />
+              <folding>
+                <element signature="e#22155#24392#0" expanded="true" />
+                <element signature="e#24381#24382#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -3311,7 +3328,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/schoolApp/build.gradle" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/AccountSettingsActivity.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/UserPaidInfo.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/model/User.java" />
@@ -3362,6 +3378,7 @@
         <option value="$PROJECT_DIR$/schoolApp/src/main/res/layout/row_lessonplan_view.xml" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanTeacher.java" />
         <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java" />
+        <option value="$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomePageFreeVersion.java" />
       </list>
     </option>
   </component>
@@ -3466,6 +3483,70 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="champs21" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SchoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schoolApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="champs21" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="freeversion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3719,6 +3800,7 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="b743d2f1-e4a6-497b-a929-b33b38506a09" name="Default" comment="" />
       <changelist id="6237998f-0eb2-4d5a-915c-cdc524570729" name="New changelist" comment="" />
+      <changelist id="4f7ef0aa-2fe7-42dd-aeee-e2c2a03ee302" name="New changelist-Ovi" comment="" />
       <created>1426686923142</created>
       <updated>1426686923142</updated>
     </task>
@@ -3790,7 +3872,11 @@
       <created>1428316598967</created>
       <updated>1428316598967</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="1. Some view related issues are fixed in Lesson Plan for both layouts and associated java classes. &#10;">
+      <created>1428390502530</created>
+      <updated>1428390502530</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -3815,7 +3901,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3828,7 +3914,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685715" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36153847" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5307692" sideWeight="0.83208954" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5307692" sideWeight="0.83208954" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22742857" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973261" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3892,20 +3978,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.866554" vertical-offset="23293" max-vertical-offset="26537">
-          <caret line="1626" column="52" selection-start-line="1626" selection-start-column="52" selection-end-line="1626" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomePageFreeVersion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1314" max-vertical-offset="13668">
-          <caret line="150" column="33" selection-start-line="150" selection-start-column="33" selection-end-line="150" selection-end-column="33" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/TeacherHomeWorkAddFragment.java">
@@ -4297,7 +4369,7 @@
         <state vertical-scroll-proportion="0.15178572" vertical-offset="0" max-vertical-offset="448">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -4312,11 +4384,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/schoolapp/fragments/LessonPlanView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0451127" vertical-offset="2082" max-vertical-offset="17901">
-          <caret line="210" column="0" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2133" max-vertical-offset="17901">
+          <caret line="209" column="36" selection-start-line="209" selection-start-column="36" selection-end-line="209" selection-end-column="36" />
           <folding>
-            <element signature="e#6264#6616#0" expanded="true" />
             <element signature="e#6605#6606#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomeContainerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="12131" max-vertical-offset="26537">
+          <caret line="850" column="31" selection-start-line="850" selection-start-column="31" selection-end-line="850" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolApp/src/main/java/com/champs21/freeversion/HomePageFreeVersion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.99191374" vertical-offset="7843" max-vertical-offset="13821">
+          <caret line="554" column="59" selection-start-line="554" selection-start-column="59" selection-end-line="554" selection-end-column="59" />
+          <folding>
+            <element signature="e#22155#24392#0" expanded="true" />
+            <element signature="e#24381#24382#0" expanded="true" />
           </folding>
         </state>
       </provider>
