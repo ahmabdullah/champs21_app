@@ -3,9 +3,6 @@
  */
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -42,6 +39,9 @@ import com.google.gson.JsonElement;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  */
@@ -66,6 +66,7 @@ public class StudentClassRoutineFragment extends UserVisibleHintFragment impleme
 	private String currentWeekDay;
 	private String selectedWeekDayId="current";
 	private TeacherRoutineAdapter adapter;
+    private Context mContext;
 
 	
 	public void showPicker(PickerType type) {
@@ -102,7 +103,9 @@ public class StudentClassRoutineFragment extends UserVisibleHintFragment impleme
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+        mContext = getActivity();
 		init();
+
 	}
 
 	/*
@@ -227,7 +230,7 @@ public class StudentClassRoutineFragment extends UserVisibleHintFragment impleme
 					weekDayName.toLowerCase(); 
 					weekDayName = weekDayName.substring(0,1).toUpperCase() + weekDayName.substring(1).toLowerCase();
 					
-					Resources res = getActivity().getResources();
+					Resources res = mContext.getResources();
 					String text = String.format(res.getString(R.string.teacher_routine_title), weekDayName);
 					
 					

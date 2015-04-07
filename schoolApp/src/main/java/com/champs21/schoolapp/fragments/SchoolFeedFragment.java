@@ -177,13 +177,12 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
     }
 
     private void processFetchPost(String url, String categoryIndex) {
-        // TODO Auto-generated method stub
 
         RequestParams params = new RequestParams();
 
         params.put(RequestKeyHelper.PAGE_NUMBER, pageNumber + "");
         params.put(RequestKeyHelper.PAGE_SIZE, pageSize + "");
-        params.put(RequestKeyHelper.SCHOOL_ID, "33");
+        params.put(RequestKeyHelper.SCHOOL_ID, getArguments().getInt("school_id") + "");
         // getArguments().getInt("school_id") + "");
         Log.e("SCHOOL_ID_FEED", getArguments().getInt("school_id") + "");
         params.put(RequestKeyHelper.TARGET, "school");
@@ -407,7 +406,6 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
         @Override
         public int getViewTypeCount() {
-            // TODO Auto-generated method stub
             return TYPE_MAX_COUNT;
         }
 
@@ -813,7 +811,6 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
                                         @Override
                                         public void onClick(View v) {
-                                            // TODO Auto-generated method stub
                                             list.get(0).setCurrentSummeryPosition(
                                                     Integer.parseInt(v.getTag()
                                                             .toString()));
@@ -871,15 +868,11 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                                     @Override
                                     public void onLoadingComplete(String arg0,
                                                                   View arg1, Bitmap arg2) {
-                                        // TODO Auto-generated method stub
-
                                     }
 
                                     @Override
                                     public void onLoadingCancelled(String arg0,
                                                                    View arg1) {
-                                        // TODO Auto-generated method stub
-
                                     }
                                 });
 					/*
@@ -1014,7 +1007,6 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
         }
 
         private void doWow(int i) {
-            // TODO Auto-generated method stub
             RequestParams params = new RequestParams();
             FreeVersionPost p = list.get(i);
             // params.put(RequestKeyHelper.USER_ID, UserHelper.getUserFreeId());
@@ -1028,7 +1020,6 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
         }
 
         private void doReadLater(int i) {
-            // TODO Auto-generated method stub
             RequestParams params = new RequestParams();
 
             params.put(RequestKeyHelper.USER_ID, UserHelper.getUserFreeId());
@@ -1299,25 +1290,21 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
     @Override
     public void onAuthenticationStart() {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void onAuthenticationSuccessful() {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void onAuthenticationFailed(String msg) {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void onPaswordChanged() {
-        // TODO Auto-generated method stub
 
     }
 
@@ -1328,7 +1315,6 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 if (UserHelper.isLoggedIn())
                     startActivity(new Intent(SchoolFeedFragment.this
                             .getActivity(), GoodReadActivity.class));
@@ -1352,8 +1338,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-				
+
 					/*Intent schoolIntent = new Intent(getActivity(),
 							SchoolFreeVersionActivity.class);
 					startActivity(schoolIntent);*/

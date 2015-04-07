@@ -1,17 +1,13 @@
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.Transport;
@@ -27,6 +23,9 @@ import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TransportFragment extends UserVisibleHintFragment implements
 		UserAuthListener {
@@ -47,12 +46,13 @@ public class TransportFragment extends UserVisibleHintFragment implements
 
 	private LinearLayout layoutListHolder;
 	private LinearLayout pbs;
+    private Context mContext;
 
-	@Override
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
+        mContext = getActivity();
 		userHelper = new UserHelper(this, getActivity());
 
 		
@@ -175,7 +175,7 @@ public class TransportFragment extends UserVisibleHintFragment implements
 
 				for (int i = 0; i < listSchedule.size(); i++) {
 
-					View row = getActivity().getLayoutInflater().inflate(
+					View row = LayoutInflater.from(mContext).inflate(
 							R.layout.fragment_transport_singledata, null);
 
 					TextView txtDayName = (TextView) row

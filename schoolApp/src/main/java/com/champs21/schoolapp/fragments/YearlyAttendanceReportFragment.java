@@ -1,17 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
-import org.achartengine.ChartFactory;
-import org.achartengine.GraphicalView;
-import org.achartengine.model.CategorySeries;
-import org.achartengine.model.SeriesSelection;
-import org.achartengine.renderer.DefaultRenderer;
-import org.achartengine.renderer.SimpleSeriesRenderer;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -38,6 +26,18 @@ import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import org.achartengine.ChartFactory;
+import org.achartengine.GraphicalView;
+import org.achartengine.model.CategorySeries;
+import org.achartengine.model.SeriesSelection;
+import org.achartengine.renderer.DefaultRenderer;
+import org.achartengine.renderer.SimpleSeriesRenderer;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class YearlyAttendanceReportFragment extends Fragment implements UserAuthListener{
 
@@ -215,7 +215,7 @@ public class YearlyAttendanceReportFragment extends Fragment implements UserAuth
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		Log.e(TAG, "OnCreateView");
+		//Log.e(TAG, "OnCreateView");
 		view = inflater.inflate(R.layout.yearly_attendance_layout, container,
 				false);
 		LinearLayout layout;
@@ -232,6 +232,7 @@ public class YearlyAttendanceReportFragment extends Fragment implements UserAuth
 		/*if (mChartView == null) {*/
 
 		mChartView = ChartFactory.getPieChartView(getActivity(), mSeries, mRenderer);//this, , mRenderer);
+
 		mRenderer.setClickEnabled(true);
 		mRenderer.setShowLegend(false);
 		mChartView.setOnClickListener(new View.OnClickListener() {
