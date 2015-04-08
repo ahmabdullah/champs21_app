@@ -73,6 +73,7 @@
         <item>reportcard</item>
         <item>academic_calendar</item>
         <item>transport</item>
+
     </string-array>
     
     <string-array name="diary_class_student">
@@ -89,6 +90,7 @@
         <item>ParentReportCardFragment</item>
         <item>ParentAcademicCalender</item>
         <item>TransportFragment</item>
+
     </string-array>
     
     <string-array name="diary_text_student">
@@ -105,6 +107,7 @@
         <item>Reportcard</item>
         <item>Academic Calendar</item>
         <item>Transport</item>
+
     </string-array>
     
     <string-array name="diary_images_parents">
@@ -124,6 +127,7 @@
         <item>transport</item>
         <item>leaveapplication</item>
         <item>fees</item>
+
     </string-array>
     
     <string-array name="diary_text_parents">
@@ -143,6 +147,7 @@
         <item>Transport</item>
         <item>Leave Application</item>
         <item>Fees</item>
+
     </string-array>
     
     <string-array name="diary_class_parents">
@@ -162,6 +167,7 @@
         <item>TransportFragment</item>
         <item>ApplyForLeaveFragment</item>
         <item>FeesTabhostFragment</item>
+
     </string-array>
     
     
@@ -180,7 +186,7 @@
         <item>transport</item>
         <item>reportcard</item>
         <item>academic_calendar</item>
-        <item>lesson_plan</item>
+
     </string-array>
     
     <string-array name="diary_text_teacher">
@@ -198,7 +204,7 @@
         <item>Transport</item>
         <item>Reportcard</item>
         <item>Academic Calendar</item>
-        <item>Lesson Plan</item>
+
     </string-array>
     
     <string-array name="diary_class_teacher">
@@ -216,7 +222,7 @@
         <item>TransportFragment</item>
         <item>ParentReportCardFragment</item>
         <item>ParentAcademicCalender</item>
-        <item>LessonPlanTeacher</item>
+
     </string-array>
     
     <string-array name="free_menus_images">

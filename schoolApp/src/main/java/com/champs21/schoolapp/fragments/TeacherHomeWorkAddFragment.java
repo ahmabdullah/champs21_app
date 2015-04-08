@@ -1,11 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -43,6 +37,11 @@ import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.ipaulpro.afilechooser.utils.FileUtils;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class TeacherHomeWorkAddFragment extends Fragment implements
 		OnClickListener {
@@ -129,6 +128,8 @@ public class TeacherHomeWorkAddFragment extends Fragment implements
 							Toast.makeText(getActivity(),
 									"Successfully posted Homework!",
 									Toast.LENGTH_SHORT).show();
+
+                                    clearDataFields();
 						} else
 							Toast.makeText(
 									getActivity(),
@@ -138,6 +139,21 @@ public class TeacherHomeWorkAddFragment extends Fragment implements
 					}
 				});
 	}
+
+    private void clearDataFields()
+    {
+        subjectNameTextView.setText("");
+        homeWorkTypeTextView.setText("");
+        subjectEditText.setText("");
+        homeworkDescriptionEditText.setText("");
+        choosenFileTextView.setText("No File Attached");
+
+        Date cDate = new Date();
+        String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
+        choosenDateTextView.setText(AppUtility.getDateString(fDate, AppUtility.DATE_FORMAT_APP, AppUtility.DATE_FORMAT_SERVER));
+
+    }
+
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -165,13 +181,13 @@ public class TeacherHomeWorkAddFragment extends Fragment implements
 					@Override
 					public void onFailure(Throwable arg0, String response) {
 						super.onFailure(arg0, response);
-						Log.e("GET_SUBJECT_RESPONSE_FAIL", response);
+						Log.e("GET_SUBJECT_FAIL", response);
 					}
 
 					@Override
 					public void onSuccess(int arg0, String response) {
 						super.onSuccess(arg0, response);
-						Log.e("GET_SUBJECT_RESPONSE_SUCCESS", response);
+						Log.e("GET_SUBJECT_SUCCESS", response);
 						Wrapper wrapper = GsonParser.getInstance()
 								.parseServerResponse(response);
 						if (wrapper.getStatus().getCode() == AppConstant.RESPONSE_CODE_SUCCESS) {
@@ -302,7 +318,7 @@ public class TeacherHomeWorkAddFragment extends Fragment implements
 									.setText(getFileNameFromPath(selectedFilePath));
 
 						} catch (Exception e) {
-							Log.e("FileSelectorTestActivity",
+							Log.e("FileSelectorTestAtivity",
 									"File select error", e);
 						}
 					} else {
