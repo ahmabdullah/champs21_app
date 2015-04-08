@@ -369,6 +369,7 @@ Get updates on recent on goings and feeds from your school teachers.</string>
 
     <!-- TERM REPORT -->
     <string name="title_term_report_tab">Term Report</string>
+    <string name="title_progress_graph_tab">Progress Graph</string>
 
     <!-- ROUTINE -->
     <string name="title_class_routine">Class Routine</string>

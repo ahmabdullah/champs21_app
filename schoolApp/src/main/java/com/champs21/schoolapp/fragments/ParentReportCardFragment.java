@@ -3,7 +3,6 @@
  */
 package com.champs21.schoolapp.fragments;
 
-import java.util.HashMap;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,30 +13,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.TabHost.TabContentFactory;
+import android.widget.TextView;
 
 import com.champs21.freeversion.PaidVersionHomeFragment;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.BaseType;
 import com.champs21.schoolapp.model.Batch;
 import com.champs21.schoolapp.model.Picker;
+import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.model.PickerType;
 import com.champs21.schoolapp.model.StudentAttendance;
-import com.champs21.schoolapp.model.Wrapper;
-import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
-import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
-import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
-import com.champs21.schoolapp.viewhelpers.CustomButton;
 import com.champs21.schoolapp.viewhelpers.MyFragmentTabHost;
-import com.champs21.schoolapp.viewhelpers.ResizableImageView;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.HashMap;
 
 public class ParentReportCardFragment extends UserVisibleHintFragment implements MyFragmentTabHost.OnTabChangeListener{
 
@@ -48,8 +43,9 @@ public class ParentReportCardFragment extends UserVisibleHintFragment implements
 	
 	private Batch selectedBatch;
 	private StudentAttendance selectedStudent;
-	
-	public void clearAllTabsData(){
+    private UserHelper userHelper;
+
+    public void clearAllTabsData(){
 		/*FragmentTransaction ft = this.getChildFragmentManager().beginTransaction();
 		ft.hide(mLastTab.fragment);
 		ft.detach(mLastTab.fragment);
@@ -102,7 +98,8 @@ public class ParentReportCardFragment extends UserVisibleHintFragment implements
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		uiHelper = new UIHelper(getActivity());
-	}
+        userHelper = new UserHelper(getActivity());
+    }
 	
 	public void showPicker(PickerType type) {
 
@@ -231,6 +228,13 @@ public class ParentReportCardFragment extends UserVisibleHintFragment implements
         spec   =   mTabHostReportCard.newTabSpec(AppConstant.TAB_TERM_REPORT);
         spec.setIndicator(getIndicatorView(getString(R.string.title_term_report_tab), R.drawable.tab_term_report));
         addTab(this.mTabHostReportCard, spec, ( tabInfo = new TabInfo(AppConstant.TAB_TERM_REPORT, ResultTermTesttFragment.class, args)));
+
+        if(userHelper.getUser().getType()!= UserHelper.UserTypeEnum.TEACHER){
+            spec   =   mTabHostReportCard.newTabSpec(AppConstant.TAB_PROGRESS_GRAPH);
+            spec.setIndicator(getIndicatorView(getString(R.string.title_progress_graph_tab), R.drawable.tab_progress_graph));
+            addTab(this.mTabHostReportCard, spec, ( tabInfo = new TabInfo(AppConstant.TAB_PROGRESS_GRAPH, ProgressGraphFragment.class, args)));
+        }
+
         
         // Default to first tab
         this.onTabChanged(AppConstant.TAB_CLASSTEST);
@@ -249,13 +253,7 @@ public class ParentReportCardFragment extends UserVisibleHintFragment implements
 		return tabIndicator;
 	}
 	
-	/**
-	 * @param activity
-	 * @param tabHost
-	 * @param tabSpec
-	 * @param clss
-	 * @param args
-	 */
+
 	private void addTab(MyFragmentTabHost tabHost, MyFragmentTabHost.TabSpec tabSpec, TabInfo tabInfo) {
 		// Attach a Tab view factory to the spec
 		tabSpec.setContent(new TabFactory(getActivity()));
