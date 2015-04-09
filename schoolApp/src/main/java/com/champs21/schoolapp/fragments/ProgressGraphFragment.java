@@ -221,7 +221,7 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
         //multiRenderer.setLegendHeight(150);
         multiRenderer.setFitLegend(true);
         multiRenderer.setMargins(new int[] { 50, 50, 50, 22 });
-
+        //multiRenderer.setPanEnabled(false);
 
         multiRenderer.setLabelsTextSize(val);
         multiRenderer.setLegendTextSize(val);
@@ -233,7 +233,8 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
         multiRenderer.setXAxisMin(-1);
         multiRenderer.setYAxisMax(120);
         multiRenderer.setYAxisMin(0);
-        multiRenderer.setBarWidth(100);
+        float barwidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 30, metrics);
+        multiRenderer.setBarWidth(barwidth);
 
 
 
