@@ -40,7 +40,7 @@
                 android:layout_marginTop="5dip"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/science" />
+                android:src="@drawable/science_old" />
 
             <!-- <TextView
                 android:id="@+id/date_value_text"

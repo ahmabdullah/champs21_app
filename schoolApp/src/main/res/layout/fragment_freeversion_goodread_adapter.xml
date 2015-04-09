@@ -17,7 +17,7 @@
             android:id="@+id/imgViewCategoryMenuIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/science" />
+            android:src="@drawable/science_old" />
 
         <LinearLayout
             android:layout_width="match_parent"

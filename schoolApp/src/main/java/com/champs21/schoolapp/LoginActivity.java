@@ -8,8 +8,8 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.champs21.freeversion.CompleteProfileActivityContainer;
 import com.champs21.freeversion.HomePageFreeVersion;
@@ -24,7 +24,7 @@ import com.champs21.schoolapp.viewhelpers.PopupDialogChangePassword;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 
 public class LoginActivity extends SocialBaseActivity implements
-		OnClickListener, UserTypeListener {
+		OnClickListener, UserTypeListener,PopupDialogChangePassword.PassChangeCallBack {
 
 	EditText etUserName;
 	EditText etPassword;
@@ -35,8 +35,8 @@ public class LoginActivity extends SocialBaseActivity implements
 	private final int DIALOG_FRAGMENT = 101;
 	SchoolApp app;
 	boolean isFirstTime;
-	UIHelper uiHelper;
-	UserHelper userHelper;
+	public UIHelper uiHelper;
+	public UserHelper userHelper;
 	String username = "", password = "";
     public static int REQUEST_COMPLETE_PROFILE=567;
 	
@@ -141,10 +141,10 @@ public class LoginActivity extends SocialBaseActivity implements
 					finish();
 					break;
 				case PAID:
-                    if ( UserHelper.isFirstLogin() ){
+                    //if ( UserHelper.isFirstLogin() ){
                         PopupDialogChangePassword picker = new PopupDialogChangePassword();
                         picker.show(getSupportFragmentManager(), null);
-                    }else doPaidNavigation();
+                    //}else doPaidNavigation();
                     break;
 
 				default:
@@ -239,6 +239,11 @@ public class LoginActivity extends SocialBaseActivity implements
 
 	@Override
 	public void onPaswordChanged() {
-        gotoCompleteProfile();
+
 	}
+
+    @Override
+    public void onPassChangeDialogDismiss() {
+        gotoCompleteProfile();uiHelper.dismissLoadingDialog();
+    }
 }

@@ -272,6 +272,28 @@ public class UserHelper {
             if (wrapper.getStatus().getCode() == 200) {
                 UserWrapper userData = GsonParser.getInstance()
                         .parseUserWrapper(wrapper.getData().toString());
+                User u = new User();
+                u = userData.getUser();
+                u.setUsername(logedInUser.getUsername());
+                u.setPassword(logedInUser.getPassword());
+                u.setSessionID(userData.getSession());
+                u.setChildren(userData.getChildren());
+                if (userData.getUserType() == 0)
+                    u.setAccessType(UserAccessType.FREE);
+                else {
+                    u.setAccessType(UserAccessType.PAID);
+                    u.setPaidInfo(userData.getInfo());
+                }
+                storeLoggedInUser(u);
+                setLoggedIn(true);
+                setRegistered(true);
+                uListener.onPaswordChanged();
+            } else {
+                uListener.onAuthenticationFailed(wrapper.getStatus().getMsg());
+            }
+            /*if (wrapper.getStatus().getCode() == 200) {
+                UserWrapper userData = GsonParser.getInstance()
+                        .parseUserWrapper(wrapper.getData().toString());
                 if (userData.getUserType() == 0) {
                     User u = new User();
                     if (userData.isRegistered()) {
@@ -293,7 +315,7 @@ public class UserHelper {
 
             } else {
                 uListener.onAuthenticationFailed(wrapper.getStatus().getMsg());
-            }
+            }*/
 
         }
 

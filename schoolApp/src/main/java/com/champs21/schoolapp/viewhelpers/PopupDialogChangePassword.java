@@ -42,7 +42,7 @@ public class PopupDialogChangePassword extends DialogFragment implements UserAut
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         userHelper = new UserHelper(this, getActivity());
-        uiHelper = new UIHelper(getActivity());
+        uiHelper = new UIHelper(getActivity());//((LoginActivity)getActivity()).uiHelper;
         this.setCancelable(false);
     }
 
@@ -61,6 +61,7 @@ public class PopupDialogChangePassword extends DialogFragment implements UserAut
             uiHelper.dismissLoadingDialog();
         }
         uiHelper.showLoadingDialog("Please wait...");
+
     }
 
     @Override
@@ -68,14 +69,15 @@ public class PopupDialogChangePassword extends DialogFragment implements UserAut
         if (uiHelper.isDialogActive()) {
             uiHelper.dismissLoadingDialog();
         }
+        uiHelper.dismissLoadingDialog();
      }
 
     @Override
     public void onAuthenticationFailed(String msg) {
 
-        if (uiHelper.isDialogActive()) {
+       // if (uiHelper.isDialogActive()) {
             uiHelper.dismissLoadingDialog();
-        }
+        //}
         uiHelper.showMessage(msg);
     }
 
@@ -85,8 +87,8 @@ public class PopupDialogChangePassword extends DialogFragment implements UserAut
             uiHelper.dismissLoadingDialog();
         }
         uiHelper.showMessage("Your password is changed successfully.");
-        ((LoginActivity)getActivity()).onPaswordChanged();
-        this.dismiss();
+        ((LoginActivity)getActivity()).onPassChangeDialogDismiss();
+        PopupDialogChangePassword.this.dismiss();
     }
     private void setUpEditProfileView(View view) {
         passwordEmainTextView = (TextView) view.findViewById(R.id.tv_pass_email);
@@ -97,14 +99,14 @@ public class PopupDialogChangePassword extends DialogFragment implements UserAut
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((LoginActivity)getActivity()).onPaswordChanged();
+                ((LoginActivity)getActivity()).onPassChangeDialogDismiss();
                 PopupDialogChangePassword.this.dismiss();
             }
         });
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((LoginActivity)getActivity()).onPaswordChanged();
+                ((LoginActivity)getActivity()).onPassChangeDialogDismiss();
                 PopupDialogChangePassword.this.dismiss();
             }
         });
