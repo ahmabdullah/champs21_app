@@ -141,10 +141,10 @@ public class LoginActivity extends SocialBaseActivity implements
 					finish();
 					break;
 				case PAID:
-                    //if ( UserHelper.isFirstLogin() ){
+                    if ( UserHelper.isFirstLogin() ){
                         PopupDialogChangePassword picker = new PopupDialogChangePassword();
                         picker.show(getSupportFragmentManager(), null);
-                    //}else doPaidNavigation();
+                    }else doPaidNavigation();
                     break;
 
 				default:
