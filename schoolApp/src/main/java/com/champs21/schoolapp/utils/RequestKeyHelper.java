@@ -69,6 +69,8 @@ public class RequestKeyHelper {
 	public final static String DATE = "date";
 	public final static String DAILY = "daily";
 
+
+    public final static String EXAM_CATEGORY = "exam_category";
 	//********************************** Parents **********************************
 
 	//@@@@@@@@@@@@@@@@@@@@@@@@@@ ACADEMIC CALENDAR @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

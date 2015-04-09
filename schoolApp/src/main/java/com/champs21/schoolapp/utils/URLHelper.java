@@ -19,6 +19,10 @@ public class URLHelper {
 	public final static String URL_GET_STUDENT_INFO = "calender/getstudentinfo";
 	
 	public final static String URL_GET_STUDENTS_ATTENDANCE = "calender/getbatchstudentattendence";
+
+    public final static String URL_GET_GRAPH_SUBJECTS = "report/getsubject";
+
+    public final static String URL_GET_REPORT_PROGRESS = "report/progress";
 	
 	public final static String URL_GET_STUDENT_LEAVE_LIST = "event/studentleaves";
 	

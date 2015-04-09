@@ -17,4 +17,5 @@ public enum PickerType {
 	LEAVE,
 	HOMEWORK_SUBJECT,
 	WEEK_DAYS,
+    GRAPH,
 }

@@ -3,11 +3,6 @@
  */
 package com.champs21.schoolapp.utils;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import com.champs21.schoolapp.model.AcademicCalendarDataItem;
 import com.champs21.schoolapp.model.AttendenceEvents;
 import com.champs21.schoolapp.model.Batch;
@@ -17,12 +12,14 @@ import com.champs21.schoolapp.model.ExamRoutine;
 import com.champs21.schoolapp.model.FolderList;
 import com.champs21.schoolapp.model.FreeVersionPost;
 import com.champs21.schoolapp.model.GoodReadPostAll;
+import com.champs21.schoolapp.model.GraphSubjectType;
 import com.champs21.schoolapp.model.LeaveType;
 import com.champs21.schoolapp.model.MainCategory;
 import com.champs21.schoolapp.model.MenuData;
 import com.champs21.schoolapp.model.ModelContainer;
 import com.champs21.schoolapp.model.NotificationReminder;
 import com.champs21.schoolapp.model.Period;
+import com.champs21.schoolapp.model.ProgressExam;
 import com.champs21.schoolapp.model.ReportCardModel;
 import com.champs21.schoolapp.model.RoutineTimeTable;
 import com.champs21.schoolapp.model.SchoolEvent;
@@ -45,6 +42,11 @@ import com.champs21.schoolapp.model.YearlyAttendanceData;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -174,6 +176,20 @@ public class GsonParser {
 		dataList = (List<LeaveType>) gson.fromJson(object, listType);
 		return dataList;
 	}
+    public List<GraphSubjectType> parseGraphSubjectList(String object) {
+
+        List<GraphSubjectType> dataList=new ArrayList<GraphSubjectType>();
+        Type listType = new TypeToken<List<GraphSubjectType>>(){}.getType();
+        dataList = (List<GraphSubjectType>) gson.fromJson(object, listType);
+        return dataList;
+    }
+    public List<ProgressExam> parseGraphDataList(String object) {
+
+        List<ProgressExam> dataList=new ArrayList<ProgressExam>();
+        Type listType = new TypeToken<List<ProgressExam>>(){}.getType();
+        dataList = (List<ProgressExam>) gson.fromJson(object, listType);
+        return dataList;
+    }
 	
 	public List<Subject> parseSubject(String object) {
 

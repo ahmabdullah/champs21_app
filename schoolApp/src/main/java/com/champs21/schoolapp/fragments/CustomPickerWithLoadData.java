@@ -1,8 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
@@ -28,6 +25,9 @@ import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomPickerWithLoadData extends DialogFragment {
 
@@ -116,8 +116,9 @@ public class CustomPickerWithLoadData extends DialogFragment {
 	private void fetchData() {
 		if (this.type == PickerType.LEAVE) {
 			AppRestClient.post(url, params, getLeaveTypeHnadler);
-		} else
-			AppRestClient.post(url, params, getStudentHandler);
+		} else if(this.type == PickerType.GRAPH)
+            AppRestClient.post(url,params,getGraphSubjectHandler);
+          else AppRestClient.post(url, params, getStudentHandler);
 	}
 	AsyncHttpResponseHandler getLeaveTypeHnadler = new AsyncHttpResponseHandler(){
 		public void onFailure(Throwable arg0, String arg1) {
@@ -140,6 +141,27 @@ public class CustomPickerWithLoadData extends DialogFragment {
 			adapter.notifyDataSetChanged();
 		};
 	};
+    AsyncHttpResponseHandler getGraphSubjectHandler = new AsyncHttpResponseHandler(){
+        public void onFailure(Throwable arg0, String arg1) {
+            pbLayout.setVisibility(View.GONE);
+            Log.e("error", arg1);
+        };
+
+        public void onStart() {
+            pbLayout.setVisibility(View.VISIBLE);
+
+        };
+
+        public void onSuccess(int arg0, String responseString) {
+
+            pbLayout.setVisibility(View.GONE);
+            Wrapper wrapper = GsonParser.getInstance().parseServerResponse(
+                    responseString);
+            items.addAll(GsonParser.getInstance().parseGraphSubjectList(
+                    (wrapper.getData().get("subjects")).toString()));
+            adapter.notifyDataSetChanged();
+        };
+    };
 	AsyncHttpResponseHandler getStudentHandler = new AsyncHttpResponseHandler() {
 		public void onFailure(Throwable arg0, String arg1) {
 			pbLayout.setVisibility(View.GONE);
