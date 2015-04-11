@@ -10,6 +10,7 @@
         android:layout_marginBottom="2dip"
         android:layout_marginRight="2dip"
         android:layout_weight="1.5"
+        android:id="@+id/date_bg_academic"
         android:background="@color/white"
         android:padding="10dip" >
 
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dip"
         android:layout_weight="3"
+        android:id="@+id/exam_bg_academic"
         android:background="@color/white"
         android:padding="10dip" >
 
@@ -46,6 +48,7 @@
         android:layout_marginBottom="2dip"
         android:layout_weight="1.8"
         android:gravity="center"
+        android:id="@+id/view_bg_academic"
         android:layout_marginLeft="2dp"
         android:background="@color/white"
         android:padding="10dip" >

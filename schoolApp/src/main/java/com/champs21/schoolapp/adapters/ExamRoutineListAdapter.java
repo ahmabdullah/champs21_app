@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
@@ -26,7 +27,8 @@ public class ExamRoutineListAdapter extends ArrayAdapter<ExamRoutine> {
 	    
 		TextView dateTextView;
 		TextView descriptionTextView;
-	  }
+        LinearLayout dateBg,examBg, viewBg;
+    }
 	
 	public ExamRoutineListAdapter(Context context, List<ExamRoutine> objects) {
 		super(context,  0, objects);
@@ -47,6 +49,9 @@ public class ExamRoutineListAdapter extends ArrayAdapter<ExamRoutine> {
 	      ViewHolder viewHolder = new ViewHolder();
 	      viewHolder.dateTextView = (TextView) rowView.findViewById(R.id.date_text);
 	      viewHolder.descriptionTextView=(TextView)rowView.findViewById(R.id.exam_text);
+            viewHolder.dateBg = (LinearLayout) rowView.findViewById(R.id.date_bg_academic);
+            viewHolder.examBg = (LinearLayout) rowView.findViewById(R.id.exam_bg_academic);
+            viewHolder.viewBg = (LinearLayout) rowView.findViewById(R.id.view_bg_academic);
 	      rowView.setTag(viewHolder);
 	    }
 
@@ -54,6 +59,9 @@ public class ExamRoutineListAdapter extends ArrayAdapter<ExamRoutine> {
 	    ExamRoutine temp=items.get(position);
 	    holder.dateTextView.setText(AppUtility.getDateString(temp.getExam_date(),AppUtility.DATE_FORMAT_APP,AppUtility.DATE_FORMAT_SERVER));
 	    holder.descriptionTextView.setText(temp.getName());
+        holder.dateBg.setBackgroundColor((position%2!=0)?context.getResources().getColor(R.color.bg_row_odd):context.getResources().getColor(R.color.white));
+        holder.examBg.setBackgroundColor((position%2!=0)?context.getResources().getColor(R.color.bg_row_odd):context.getResources().getColor(R.color.white));
+        holder.viewBg.setBackgroundColor((position%2!=0)?context.getResources().getColor(R.color.bg_row_odd):context.getResources().getColor(R.color.white));
 	    
 	    
 	    return rowView;

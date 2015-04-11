@@ -2,18 +2,19 @@ package com.champs21.schoolapp.adapters;
 
 
 
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.AcademicCalendarDataItem;
 import com.champs21.schoolapp.utils.AppUtility;
+
+import java.util.List;
 
 public class AcademicCalendarListAdapter extends ArrayAdapter<AcademicCalendarDataItem> {
 
@@ -25,6 +26,7 @@ public class AcademicCalendarListAdapter extends ArrayAdapter<AcademicCalendarDa
 	    
 		TextView dateTextView;
 		TextView descriptionTextView;
+        LinearLayout dateBg,examBg,viewBg;
 	  }
 	
 	public AcademicCalendarListAdapter(Context context, List<AcademicCalendarDataItem> objects) {
@@ -40,20 +42,27 @@ public class AcademicCalendarListAdapter extends ArrayAdapter<AcademicCalendarDa
 		// TODO Auto-generated method stub
 		
 		View rowView = convertView;
+
 	    if (rowView == null) {
 	      /*LayoutInflater inflater = context.getLayoutInflater();*/
 	      rowView = vi.inflate(R.layout.row_academic_calendar_exam_list, null);
 	      ViewHolder viewHolder = new ViewHolder();
 	      viewHolder.dateTextView = (TextView) rowView.findViewById(R.id.date_text);
-	      viewHolder.descriptionTextView=(TextView)rowView.findViewById(R.id.exam_text);
+          viewHolder.dateBg = (LinearLayout) rowView.findViewById(R.id.date_bg_academic);
+            viewHolder.examBg = (LinearLayout) rowView.findViewById(R.id.exam_bg_academic);
+            viewHolder.viewBg = (LinearLayout) rowView.findViewById(R.id.view_bg_academic);
+            viewHolder.descriptionTextView=(TextView)rowView.findViewById(R.id.exam_text);
 	      rowView.setTag(viewHolder);
 	    }
+
 
 	    final ViewHolder holder = (ViewHolder) rowView.getTag();
 	    AcademicCalendarDataItem temp=items.get(position);
 	    holder.dateTextView.setText(AppUtility.getDateString(temp.getEventDate(),AppUtility.DATE_FORMAT_APP,AppUtility.DATE_FORMAT_SERVER));
 	    holder.descriptionTextView.setText(temp.getEventDescription());
-	    
+        holder.dateBg.setBackgroundColor((position%2!=0)?context.getResources().getColor(R.color.bg_row_odd):context.getResources().getColor(R.color.white));
+        holder.examBg.setBackgroundColor((position%2!=0)?context.getResources().getColor(R.color.bg_row_odd):context.getResources().getColor(R.color.white));
+        holder.viewBg.setBackgroundColor((position%2!=0)?context.getResources().getColor(R.color.bg_row_odd):context.getResources().getColor(R.color.white));
 	    
 	    return rowView;
 	  }
