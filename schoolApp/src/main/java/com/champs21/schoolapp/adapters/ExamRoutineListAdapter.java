@@ -2,8 +2,6 @@ package com.champs21.schoolapp.adapters;
 
 
 
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.model.AcademicCalendarDataItem;
 import com.champs21.schoolapp.model.ExamRoutine;
 import com.champs21.schoolapp.utils.AppUtility;
+
+import java.util.List;
 
 public class ExamRoutineListAdapter extends ArrayAdapter<ExamRoutine> {
 

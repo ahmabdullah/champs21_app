@@ -1,19 +1,37 @@
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import uk.co.deanwild.flowtextview.FlowTextView;
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebSettings.LayoutAlgorithm;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.champs21.freeversion.SchoolAllActivities;
 import com.champs21.freeversion.SchoolFreeVersionActivity;
 import com.champs21.freeversion.SchoolPopulationActivity;
-import com.champs21.freeversion.SchoolScrollableDetailsActivity;
-import com.champs21.freeversion.SchoolScrollableDetailsActivity.ImageViewPagerAdapter;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.SchoolActivities;
-import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.model.SchoolDetails.SchoolPages;
+import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
@@ -24,7 +42,6 @@ import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.viewhelpers.CustomTextView;
 import com.champs21.schoolapp.viewhelpers.PagerContainer;
-import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.champs21.schoolapp.viewhelpers.UninterceptableViewPager;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -33,31 +50,10 @@ import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.text.Html;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebSettings.LayoutAlgorithm;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.ImageView.ScaleType;
+import java.util.ArrayList;
+import java.util.List;
+
+import uk.co.deanwild.flowtextview.FlowTextView;
 
 public class SchoolScrollableFragment extends Fragment {
 
@@ -183,6 +179,7 @@ public class SchoolScrollableFragment extends Fragment {
 					objSchool.get("cover").getAsString(), imgCover,
 					progressImgBar);
 			txtSchoolName.setText(objSchool.get("name").getAsString());
+            if(objSchool.get("location")!=null&&objSchool.get("division")!=null)
 			txtLocation.setText(objSchool.get("location").getAsString() + ", "
 					+ objSchool.get("division").getAsString());
 		} else {
@@ -379,11 +376,13 @@ public class SchoolScrollableFragment extends Fragment {
 
 	private void loadFlowTextData(String data, FlowTextView webView) {
 
-		Spanned html = Html.fromHtml(data);
-		webView.setText(html);
-		webView.setTextSize(AppUtility.getDeviceIndependentDpFromPixel(
-				getActivity(), 16));
-		TextPaint mTextPaint;
+        if(data!=null){
+            Spanned html = Html.fromHtml(data);
+            webView.setText(html);
+            webView.setTextSize(AppUtility.getDeviceIndependentDpFromPixel(
+                    getActivity(), 16));
+        }
+
 
 	}
 
