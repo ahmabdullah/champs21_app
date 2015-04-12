@@ -254,7 +254,7 @@ public class SchoolScrollableFragment extends Fragment {
 			}
 			else
 			{
-				imgView.setVisibility(View.GONE);
+                imgView.setVisibility(View.GONE);
 			}
 			
 			String strTitle = modelContainer.getData().getAsJsonObject().get("activity").getAsJsonArray().get(0).getAsJsonObject().get("title").getAsString();
