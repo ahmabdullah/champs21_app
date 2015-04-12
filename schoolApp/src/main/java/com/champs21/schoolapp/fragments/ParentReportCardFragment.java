@@ -235,6 +235,7 @@ public class ParentReportCardFragment extends UserVisibleHintFragment implements
             addTab(this.mTabHostReportCard, spec, ( tabInfo = new TabInfo(AppConstant.TAB_PROGRESS_GRAPH, ProgressGraphFragment.class, args)));
         }*/
 
+
         
         // Default to first tab
         this.onTabChanged(AppConstant.TAB_CLASSTEST);
