@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res/com.champs21.schoolapp"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -27,7 +27,7 @@
                     android:layout_height="75dp" />
 
                 <View
-                    android:id="@+id/divider"
+                    android:id="@+id/divider1"
                     android:layout_width="match_parent"
                     android:layout_height="1dip"
                     android:layout_below="@+id/layout1"
@@ -40,7 +40,7 @@
                     android:id="@+id/layout2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/divider"
+                    android:layout_below="@+id/divider1"
                     android:layout_marginBottom="0dip"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
@@ -272,7 +272,7 @@
                         <!--  -->
 
                         <LinearLayout
-                            android:id="@+id/layoutSolutionButtonHolder"
+                            android:id="@+id/layoutSolutionButtonHolder1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
@@ -283,13 +283,13 @@
                             android:visibility="gone" >
 
                             <ImageView
-                                android:id="@+id/btnSolution"
+                                android:id="@+id/btnSolution1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/btn_solution" />
 
                             <WebView
-                                android:id="@+id/webViewSolution"
+                                android:id="@+id/webViewSolution1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:visibility="gone" />
@@ -409,7 +409,7 @@
                         android:visibility="gone" >
 
                         <WebView
-                            android:id="@+id/webViewAttachContent"
+                            android:id="@+id/webViewAttachContent1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"

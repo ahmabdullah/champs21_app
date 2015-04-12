@@ -1034,7 +1034,7 @@ public class SingleFragmentTypeOne extends Fragment implements ObservableScrollV
 					responseString);
 
 			if (wrapper.getStatus().getCode() == 200) {
-				uiHelper.showMessage("The post has been folderized!");
+                uiHelper.showMessage("The article is in folder now.");
 				
 				//show remove button  here
 				goodreadBtn.setBackgroundResource(R.drawable.remove_normal);

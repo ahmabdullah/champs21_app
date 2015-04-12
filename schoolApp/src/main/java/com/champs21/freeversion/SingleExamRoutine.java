@@ -1,22 +1,19 @@
 package com.champs21.freeversion;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.model.AcademicCalendarDataItem;
 import com.champs21.schoolapp.model.ExamRoutine;
-import com.champs21.schoolapp.model.HomeworkData;
 import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
@@ -26,10 +23,11 @@ import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SingleExamRoutine extends ChildContainerActivity {
 	
@@ -187,6 +185,8 @@ public class SingleExamRoutine extends ChildContainerActivity {
 				convertView = mInflater.inflate(
 						R.layout.fragment_examroutine_singledata, null);
 
+
+
 				// Creates a ViewHolder and store references to the two children
 				// views
 				// we want to bind data to.
@@ -202,6 +202,9 @@ public class SingleExamRoutine extends ChildContainerActivity {
 				holder.tvDate = (TextView) convertView
 						.findViewById(R.id.txtDate);
 
+
+                holder.layoutTitle = (LinearLayout)convertView.findViewById(R.id.layoutTitle);
+
 				convertView.setTag(holder);
 			} else {
 				// Get the ViewHolder back to get fast access to the TextView
@@ -215,12 +218,19 @@ public class SingleExamRoutine extends ChildContainerActivity {
 			//holder.tvEndTime.setText(item.getExam_end_time());
 			holder.tvDate.setText(item.getExam_date());
 			holder.tvDay.setText(item.getExam_day());
-			
+
+
+            if(position%2 != 0)
+                holder.layoutTitle.setBackgroundColor(getResources().getColor(R.color.bg_row_odd));
+            else
+                holder.layoutTitle.setBackgroundColor(Color.WHITE);
 			
 			return convertView;
 		}
 
 		class ViewHolder {
+
+            LinearLayout layoutTitle;
 			TextView tvSubject;
 			TextView tvStartTime;
 			//TextView tvEndTime;

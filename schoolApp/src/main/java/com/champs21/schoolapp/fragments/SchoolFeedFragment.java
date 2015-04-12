@@ -248,7 +248,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 			 * if (fitnessAdapter.getPageNumber() == 1) {
 			 * fitnessAdapter.getList().clear(); // setupPoppyView(); }
 			 */
-            Log.e("Response CATEGORY", responseString);
+            //Log.e("Response CATEGORY", responseString);
             // app.showLog("Response", responseString);
             Wrapper modelContainer = GsonParser.getInstance()
                     .parseServerResponse(responseString);

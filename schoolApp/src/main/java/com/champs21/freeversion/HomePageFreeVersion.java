@@ -38,6 +38,7 @@ import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
+import com.champs21.schoolapp.utils.ReminderHelper;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
 import com.champs21.schoolapp.utils.SPKeyHelper;
 import com.champs21.schoolapp.utils.SharedPreferencesHelper;
@@ -321,6 +322,8 @@ public class HomePageFreeVersion extends HomeContainerActivity {
 
         context = getApplicationContext();
 
+
+
         // Check device for Play Services APK. If check succeeds, proceed with
         // GCM registration.
         if (checkPlayServices()) {
@@ -574,6 +577,8 @@ public class HomePageFreeVersion extends HomeContainerActivity {
 
 
         uiHelper = new UIHelper(this);
+
+        ReminderHelper.getInstance().constructReminderFromSharedPreference();
     }
 
 

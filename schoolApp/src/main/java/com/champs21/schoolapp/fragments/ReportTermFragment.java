@@ -3,8 +3,6 @@
  */
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,7 +13,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,8 +23,9 @@ import com.champs21.schoolapp.model.TermReportExamSubjectItem;
 import com.champs21.schoolapp.model.TermReportItem;
 import com.champs21.schoolapp.utils.SchoolApp;
 import com.champs21.schoolapp.viewhelpers.CustomButton;
-import com.champs21.schoolapp.viewhelpers.ExpandableTextView;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
+
+import java.util.ArrayList;
 
 /**
  * @author Amit
@@ -100,8 +98,8 @@ public class ReportTermFragment extends Fragment implements
 	private void arrangeAndShowTabholders() {
 		// TODO Auto-generated method stub
 
-		LinearLayout tabHolder = (LinearLayout) view
-				.findViewById(R.id.about_us_btn);//tab_holder will be here
+		/*LinearLayout tabHolder = (LinearLayout) view
+				.findViewById(R.id.about_us_btn);*///tab_holder will be here
 
 		for (int i = 0; i < items.size(); i++) {
 			final int j = i;
@@ -140,7 +138,7 @@ public class ReportTermFragment extends Fragment implements
 
 			button.setButtonSelected(false);
 
-			tabHolder.addView(button);
+			//tabHolder.addView(button);
 			tabList.add(button);
 
 			if (i < items.size() - 1) {
@@ -149,7 +147,7 @@ public class ReportTermFragment extends Fragment implements
 						LayoutParams.MATCH_PARENT));
 				divider.setBackgroundResource(R.color.gray_dark);
 
-				tabHolder.addView(divider);
+			//	tabHolder.addView(divider);
 			}
 		}
 	}
