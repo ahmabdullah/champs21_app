@@ -178,7 +178,7 @@ public class TransportFragment extends UserVisibleHintFragment implements
 					View row = LayoutInflater.from(mContext).inflate(
 							R.layout.fragment_transport_singledata, null);
                     if(i%2!=0)
-                    ((LinearLayout)row.findViewById(R.id.row_bg_transport)).setBackgroundColor(getResources().getColor(R.color.gray_2));
+                    ((LinearLayout)row.findViewById(R.id.row_bg_transport)).setBackgroundColor(getResources().getColor(R.color.bg_row_odd));
 					TextView txtDayName = (TextView) row
 							.findViewById(R.id.txtDayName);
 					TextView txtHomePickUp = (TextView) row

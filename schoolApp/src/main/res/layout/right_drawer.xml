@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res/com.champs21.schoolapp"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -363,7 +363,7 @@
                     android:src="@drawable/arow_right" />
 
                 <RelativeLayout
-                    android:id="@+id/left_icon_layout"
+                    android:id="@+id/left_icon_layout1"
                     android:layout_width="60dip"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -389,7 +389,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dip"
-                    android:layout_toRightOf="@+id/left_icon_layout"
+                    android:layout_toRightOf="@+id/left_icon_layout1"
                     android:text="@string/setting_drawer_pref_text"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -421,7 +421,7 @@
                     android:src="@drawable/arow_right" />
 
                 <RelativeLayout
-                    android:id="@+id/left_icon_layout"
+                    android:id="@+id/left_icon_layout2"
                     android:layout_width="60dip"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -446,7 +446,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dip"
-                    android:layout_toRightOf="@+id/left_icon_layout"
+                    android:layout_toRightOf="@+id/left_icon_layout2"
                     android:text="@string/setting_drawer_profile_text"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -478,7 +478,7 @@
                     android:src="@drawable/arow_right" />
 
                 <RelativeLayout
-                    android:id="@+id/left_icon_layout"
+                    android:id="@+id/left_icon_layout3"
                     android:layout_width="60dip"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -503,7 +503,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dip"
-                    android:layout_toRightOf="@+id/left_icon_layout"
+                    android:layout_toRightOf="@+id/left_icon_layout3"
                     android:text="@string/setting_drawer_about_us_text"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -535,7 +535,7 @@
                     android:src="@drawable/arow_right" />
 
                 <RelativeLayout
-                    android:id="@+id/left_icon_layout"
+                    android:id="@+id/left_icon_layout4"
                     android:layout_width="60dip"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -560,7 +560,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dip"
-                    android:layout_toRightOf="@+id/left_icon_layout"
+                    android:layout_toRightOf="@+id/left_icon_layout4"
                     android:text="@string/setting_drawer_term_text"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -571,7 +571,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="2dip"
                 android:background="@color/settings_grey_divider"
-                android:id="@+id/divider4" />
+                android:id="@+id/divider4_4" />
 
             <RelativeLayout
                 android:id="@+id/assessment_score_panel"
@@ -592,7 +592,7 @@
                     android:src="@drawable/arow_right" />
 
                 <RelativeLayout
-                    android:id="@+id/left_icon_layout"
+                    android:id="@+id/left_icon_layout5"
                     android:layout_width="60dip"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -617,7 +617,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dip"
-                    android:layout_toRightOf="@+id/left_icon_layout"
+                    android:layout_toRightOf="@+id/left_icon_layout5"
                     android:text="@string/setting_drawer_assessment_text"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -649,7 +649,7 @@
                     android:src="@drawable/arow_right" />
 
                 <RelativeLayout
-                    android:id="@+id/left_icon_layout"
+                    android:id="@+id/left_icon_layout6"
                     android:layout_width="60dip"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -674,7 +674,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dip"
-                    android:layout_toRightOf="@+id/left_icon_layout"
+                    android:layout_toRightOf="@+id/left_icon_layout6"
                     android:text="@string/setting_drawer_faq_text"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -705,7 +705,7 @@
                     android:src="@drawable/arow_right" />
 
                 <RelativeLayout
-                    android:id="@+id/left_icon_layout"
+                    android:id="@+id/left_icon_layout7"
                     android:layout_width="60dip"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -730,7 +730,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dip"
-                    android:layout_toRightOf="@+id/left_icon_layout"
+                    android:layout_toRightOf="@+id/left_icon_layout7"
                     android:text="@string/setting_drawer_logout_text"
                     android:textColor="@color/black"
                     android:textSize="14sp"

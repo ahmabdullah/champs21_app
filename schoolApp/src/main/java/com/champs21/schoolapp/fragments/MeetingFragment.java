@@ -1,10 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -58,6 +53,11 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 public class MeetingFragment extends Fragment implements UserAuthListener{
 	
@@ -893,7 +893,7 @@ public class MeetingFragment extends Fragment implements UserAuthListener{
 			
 			if(listStatus.get(position).getTimeOver() == 1)
 			{
-				holder.txtStatus.setText("Time Exceed");
+				holder.txtStatus.setText("Time Over");
 				holder.txtStatus.setTextColor(Color.BLACK);
 				holder.layoutStatus.setBackgroundColor(Color.parseColor("#fff200"));
 			}
@@ -926,7 +926,7 @@ public class MeetingFragment extends Fragment implements UserAuthListener{
 				
 				if(listStatus.get(position).getTimeOver() == 1)
 				{
-					holder.txtStatus.setText("Time Exceed");
+					holder.txtStatus.setText("Time Over");
 					holder.txtStatus.setTextColor(Color.BLACK);
 					holder.layoutStatus.setBackgroundColor(Color.parseColor("#fff200"));
 				}

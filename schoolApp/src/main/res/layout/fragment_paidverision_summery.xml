@@ -1045,7 +1045,6 @@
             android:background="@color/gray_2" />
 
         <ImageView
-            android:id="@+id/sum_iv_disable"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -1169,7 +1168,6 @@
         <TextView
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
-            android:id="@+id/sum_tv_event"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

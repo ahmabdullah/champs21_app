@@ -17,7 +17,6 @@
             android:orientation="vertical" >
 
             <LinearLayout
-                android:id="@+id/layoutLinearDataHolder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
@@ -37,7 +36,6 @@
                         android:gravity="center" >
 
                         <TextView
-                            android:id="@+id/txtNumPos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="1"
@@ -47,7 +45,6 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/txtViewLin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -64,7 +61,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/layoutLinearDataHolder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
@@ -84,7 +80,6 @@
                         android:gravity="center" >
 
                         <TextView
-                            android:id="@+id/txtNumPos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2"
@@ -94,7 +89,6 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/txtViewLin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -111,7 +105,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/layoutLinearDataHolder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
@@ -131,7 +124,6 @@
                         android:gravity="center" >
 
                         <TextView
-                            android:id="@+id/txtNumPos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="3"
@@ -141,7 +133,6 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/txtViewLin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -158,7 +149,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/layoutLinearDataHolder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
@@ -178,7 +168,6 @@
                         android:gravity="center" >
 
                         <TextView
-                            android:id="@+id/txtNumPos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="4"
@@ -188,7 +177,6 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/txtViewLin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -203,8 +191,7 @@
                 android:layout_height="2dp"
                 android:background="@color/gray_2" >
             </LinearLayout>
-<LinearLayout
-                android:id="@+id/layoutLinearDataHolder"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
@@ -224,7 +211,6 @@
                         android:gravity="center" >
 
                         <TextView
-                            android:id="@+id/txtNumPos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="5"
@@ -234,7 +220,6 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/txtViewLin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"

@@ -1,10 +1,8 @@
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -19,7 +17,6 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +41,9 @@ import com.champs21.schoolapp.viewhelpers.CustomTabButtonEllipsizeText;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SyllabusFragment extends Fragment {
 	
@@ -469,7 +469,8 @@ public class SyllabusFragment extends Fragment {
             { 
             	holder = new ViewHolder();
             	convertView = LayoutInflater.from(getActivity()).inflate(R.layout.row_term_syllabus,null,false);
-            	
+
+                holder.layoutRoot = (LinearLayout)convertView.findViewById(R.id.layoutRoot);
             	holder.txtDate = (TextView)convertView.findViewById(R.id.txtDate);
             	holder.txtExamName = (TextView)convertView.findViewById(R.id.txtExamName);
             	holder.layoutAction = (LinearLayout)convertView.findViewById(R.id.layoutAction);
@@ -483,6 +484,15 @@ public class SyllabusFragment extends Fragment {
             {
             	holder = (ViewHolder)convertView.getTag();
             }
+
+
+            if(position%2 != 0)
+                holder.layoutRoot.setBackgroundColor(getResources().getColor(R.color.bg_row_odd));
+            else
+                holder.layoutRoot.setBackgroundColor(Color.WHITE);
+
+
+
 			
             holder.layoutAction.setTag(listTerm.get(position).getTermId());
             
@@ -514,7 +524,8 @@ public class SyllabusFragment extends Fragment {
 	}
 	
 	class ViewHolder{
-		
+
+        LinearLayout layoutRoot;
 		TextView txtDate;
 		TextView txtExamName;
 		LinearLayout layoutAction;
