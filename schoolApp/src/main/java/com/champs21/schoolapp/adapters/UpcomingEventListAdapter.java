@@ -2,13 +2,6 @@ package com.champs21.schoolapp.adapters;
 
 
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-
-import roboguice.event.EventThread;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.Html;
@@ -21,26 +14,26 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.fragments.NoticeFragmentNew;
-import com.champs21.schoolapp.model.Notice;
 import com.champs21.schoolapp.model.SchoolEvent;
-import com.champs21.schoolapp.model.SchoolEventWrapper;
-import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.model.SchoolEvent.ackTypeEnum;
+import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
-import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.ReminderHelper;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
-import com.champs21.schoolapp.utils.SchoolApp;
 import com.champs21.schoolapp.utils.URLHelper;
-import com.champs21.schoolapp.viewhelpers.CustomButton;
+import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.viewhelpers.CustomButtonTest;
 import com.champs21.schoolapp.viewhelpers.ExpandableTextView;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 public class UpcomingEventListAdapter extends ArrayAdapter<SchoolEvent> {
 
@@ -178,12 +171,27 @@ public class UpcomingEventListAdapter extends ArrayAdapter<SchoolEvent> {
 	    
 	    
 	    holder.eventCatName.setText(temp.getEventyCatName());
+
+        //Log.e("JOIN_TYPE", "outer is: "+ackTypeEnum.JOIN_IN.ordinal());
 	    
-	    if(ackTypeEnum.JOIN_IN.ordinal() == 1)
+	    /*if(ackTypeEnum.JOIN_IN.ordinal() == 1)
 	    {
 	    	setButtonState(holder.joinInBtn, R.drawable.done_tap, false, "Joined");
 	    	holder.joinInBtn.setEnabled(false);
-	    }
+
+            Log.e("JOIN_TYPE", "inner is: "+ackTypeEnum.JOIN_IN.ordinal());
+	    }*/
+
+
+        Log.e("JOIN_TYPE", "outer is: " + temp.getEventAck().toString());
+
+        if(temp.getEventAck().equals(ackTypeEnum.JOIN_IN))
+        {
+            setButtonState(holder.joinInBtn, R.drawable.done_tap, false, "Joined");
+            holder.joinInBtn.setEnabled(false);
+
+            Log.e("JOIN_TYPE", "inner is: "+temp.getEventAck().JOIN_IN.ordinal());
+        }
 	    
 	    if (ReminderHelper.getInstance().reminder_map.containsKey(temp.getEventStartDate())){
 			setButtonState(holder.remainderBtn, R.drawable.btn_reminder_tap, false, "Reminder");
@@ -241,7 +249,7 @@ public class UpcomingEventListAdapter extends ArrayAdapter<SchoolEvent> {
 	private void notifyServerAboutAck(int ackType,String id)
 	{
 		RequestParams params=new RequestParams();
-		params.put(RequestKeyHelper.USER_SECRET, SchoolApp.getInstance().getUserSecret());
+		params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
 		params.put(RequestKeyHelper.EVENT_ID, id);
 		params.put(RequestKeyHelper.STATUS, String.valueOf(ackType));
 		

@@ -1,9 +1,5 @@
 package com.champs21.freeversion;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
@@ -29,6 +25,7 @@ import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.MyTagHandler;
+import com.champs21.schoolapp.utils.ReminderHelper;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
@@ -41,6 +38,10 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SingleHomeworkActivity extends ChildContainerActivity {
 	
@@ -201,9 +202,33 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 						.parse("http://api.champs21.com/api/freeuser/downloadattachment?id="+data.getId())));
 			}
 		});
-		
+
+
+        if (ReminderHelper.getInstance().reminder_map.containsKey(AppConstant.KEY_HOMEWORK+data.getId())){
+            setButtonState(btnReminder, R.drawable.btn_reminder_tap, false, "Reminder");
+
+        }else {
+            setButtonState(btnReminder, R.drawable.btn_reminder_normal, true, "Reminder");
+        }
+
 		
 	}
+
+    @SuppressLint("ResourceAsColor")
+    private void setButtonState(CustomButton btn, int imgResId, boolean enable , String btnText) {
+
+        btn.setImage(imgResId);
+        btn.setTitleText(btnText);
+        btn.setEnabled(enable);
+        if(enable) {
+            setBtnTitleColor(btn, R.color.gray_1);
+        } else {
+            setBtnTitleColor(btn, R.color.maroon);
+        }
+    }
+    private void setBtnTitleColor(CustomButton btn, int colorId) {
+        btn.setTitleColor(this.getResources().getColor(colorId));
+    }
 	
 	protected void processDoneButton(CustomButton button) {
 		// TODO Auto-generated method stub
