@@ -3,14 +3,6 @@
  */
 package com.champs21.schoolapp.fragments;
 
-import java.lang.reflect.Type;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
@@ -35,23 +27,19 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.champs21.freeversion.AssesmentActivity;
 import com.champs21.freeversion.AssesmentHomeworkActivity;
-import com.champs21.freeversion.AssessmentLeaderBoardActivity;
 import com.champs21.freeversion.SingleHomeworkActivity;
-import com.champs21.freeversion.SingleItemShowActivity;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.AssessmentHomework;
 import com.champs21.schoolapp.model.BaseType;
-import com.champs21.schoolapp.model.City;
 import com.champs21.schoolapp.model.HomeWorkSubject;
 import com.champs21.schoolapp.model.HomeworkData;
 import com.champs21.schoolapp.model.ModelContainer;
 import com.champs21.schoolapp.model.Picker;
+import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.model.PickerType;
 import com.champs21.schoolapp.model.UserAuthListener;
 import com.champs21.schoolapp.model.Wrapper;
-import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
@@ -63,10 +51,8 @@ import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.champs21.schoolapp.viewhelpers.CustomButton;
-import com.champs21.schoolapp.viewhelpers.CustomButtonTest;
 import com.champs21.schoolapp.viewhelpers.CustomTabButton;
 import com.champs21.schoolapp.viewhelpers.PopupDialogHomeworkAssessmentResult;
-import com.champs21.schoolapp.viewhelpers.PopupDialogSingleItemAssessmentInvok;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -78,6 +64,14 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 public class HomeworkFragment extends Fragment implements OnClickListener,UserAuthListener{
 
@@ -969,7 +963,7 @@ public class HomeworkFragment extends Fragment implements OnClickListener,UserAu
 			
 			 if (ReminderHelper.getInstance().reminder_map.containsKey(AppConstant.KEY_HOMEWORK+list.get(i).getId())){
 					setButtonState(holder.btnReminder, R.drawable.btn_reminder_tap, false, "Reminder");
-					
+
 				}else {
 					setButtonState(holder.btnReminder, R.drawable.btn_reminder_normal, true, "Reminder");
 				}

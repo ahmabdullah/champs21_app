@@ -1,10 +1,5 @@
 package com.champs21.schoolapp.utils;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -14,6 +9,12 @@ import android.util.Log;
 import com.champs21.schoolapp.model.Reminder;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 
 public class ReminderHelper {
 
@@ -72,28 +73,48 @@ public class ReminderHelper {
 		SharedPreferencesHelper.getInstance().setString(AppConstant.REMINDER_KEY, value);
 	}
 	
-	 private long getTimeDiffInMilliSec(String dtStart)
-	 {
-	  //SimpleDateFormat  format = new SimpleDateFormat("EEE, dd MMM, yyyy HH:mm a");  
-	  SimpleDateFormat  format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); 
-	  
-	     Date date = null;
-	  try {
-	   date = format.parse(dtStart);
-	  } catch (java.text.ParseException e) {
-	   // TODO Auto-generated catch block
-	   e.printStackTrace();
-	  }  
-	      
-	  Calendar c = Calendar.getInstance(); 
+	 private long getTimeDiffInMilliSec(String dtStart) {
+         //SimpleDateFormat  format = new SimpleDateFormat("EEE, dd MMM, yyyy HH:mm a");
+         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
+         Date date = null;
+         try {
+             date = format.parse(dtStart);
+         } catch (java.text.ParseException e) {
+             // TODO Auto-generated catch block
+             e.printStackTrace();
+         }
+
+	  Calendar c = Calendar.getInstance();
 	  long ms = c.getTimeInMillis();
-	  
-	  if(date.getTime() - ms < 0)
+
+      String ss = android.text.format.DateFormat.format("yyyy-MM-dd hh:mm:ss",c.getTime()).toString();
+         Date d2=null;
+         try {
+             d2 = format.parse(ss);
+         } catch (ParseException e) {
+             e.printStackTrace();
+         }
+         String sm = android.text.format.DateFormat.format("yyyy-MM-dd hh:mm:ss",date).toString();
+	  if(date.compareTo(d2) > 0)
 	  {
-	   return -1; // -1 is for invalid date i.e input date is greater than current date
+	   return (date.getTime() - d2.getTime()); // -1 is for invalid date i.e input date is greater than current date
 	  }
 	  else
-	   return (date.getTime() - ms);
+	   return -1;
 	 }
-	
+
+
+         /*Date currentDate = new Date();
+
+         long diff =  date.getTime() - currentDate.getTime();
+
+         if (diff < 0) {
+             return -1;
+         } else {
+             return diff;
+         }*/
+
+
+
 }
