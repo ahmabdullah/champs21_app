@@ -299,6 +299,9 @@ public class AppUtility {
 
 	}
 
+
+    public static  IDatePickerCancel listenerDatePickerCancel;
+
 	public static void showDateTimePicker(final String key, final String title,
 			final String description, final Context context) {
 		CustomDateTimePicker custom = new CustomDateTimePicker(context,
@@ -306,6 +309,8 @@ public class AppUtility {
 
 					@Override
 					public void onCancel() {
+
+                        listenerDatePickerCancel.onCancelCalled();
 
 					}
 
@@ -339,6 +344,15 @@ public class AppUtility {
 		custom.setDate(Calendar.getInstance());
 		custom.showDialog();
 	}
+
+
+
+    public interface IDatePickerCancel
+    {
+        public void onCancelCalled();
+    }
+
+
 
 	public static int getResourceImageId(int categoryId, boolean isIcon,
 			boolean isWhite) {

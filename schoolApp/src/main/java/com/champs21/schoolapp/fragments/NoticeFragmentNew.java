@@ -1,8 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -21,14 +18,13 @@ import android.widget.TextView;
 
 import com.champs21.freeversion.SingleNoticeActivity;
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.model.MeetingStatus;
 import com.champs21.schoolapp.model.ModelContainer;
 import com.champs21.schoolapp.model.Notice;
 import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
+import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
-import com.champs21.schoolapp.utils.MyTagHandler;
 import com.champs21.schoolapp.utils.ReminderHelper;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
@@ -46,6 +42,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
@@ -502,7 +501,7 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 		public View getView(int position, View convertView, ViewGroup parent) {
 			// TODO Auto-generated method stub
 			
-			ViewHolder holder;
+			final ViewHolder holder;
 			
 			Log.e("calling", "1");
 			
@@ -583,9 +582,25 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 							.getResources().getColor(R.color.maroon));
 					reminderBtn.setEnabled(false);
 					String content = ""+Html.fromHtml(rmNotice.getNoticeContent());
-					ReminderHelper.getInstance().setReminder(rmNotice.getPublishedAt(),
-							rmNotice.getNoticeTitle(), content,
-							rmNotice.getPublishedAt(), getActivity());
+
+                    /*ReminderHelper.getInstance().setReminder(rmNotice.getPublishedAt(),
+                            rmNotice.getNoticeTitle(), content,
+                            rmNotice.getPublishedAt(), getActivity());*/
+
+                    AppUtility.listenerDatePickerCancel = new AppUtility.IDatePickerCancel() {
+                        @Override
+                        public void onCancelCalled() {
+
+                            Log.e("CCCCC", "cancel called");
+                            holder.reminderBtn.setImage(R.drawable.btn_reminder_normal);
+                            holder.reminderBtn.setTitleColor(getActivity().getResources().getColor(R.color.gray_1));
+                            holder.reminderBtn.setEnabled(true);
+                        }
+                    };
+
+
+                    AppUtility.showDateTimePicker(rmNotice.getPublishedAt(), rmNotice.getNoticeTitle(), content, getActivity());
+
 				}
 			});
 			

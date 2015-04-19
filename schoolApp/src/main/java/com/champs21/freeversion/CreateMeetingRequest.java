@@ -356,7 +356,7 @@ public class CreateMeetingRequest extends ChildContainerActivity {
                                       String AM_PM) {
                         // TODO Auto-generated method stub
 
-                        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm");
                         String dateStr = format.format(dateSelected);
                         Log.e("DATE_SELECTED", "is: " + dateStr);
 

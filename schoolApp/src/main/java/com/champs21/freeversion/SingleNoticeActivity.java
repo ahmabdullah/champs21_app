@@ -8,12 +8,12 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.fragments.NoticeFragmentNew;
 import com.champs21.schoolapp.model.ModelContainer;
 import com.champs21.schoolapp.model.Notice;
 import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
+import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.MyTagHandler;
 import com.champs21.schoolapp.utils.ReminderHelper;
@@ -114,9 +114,26 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 						.getResources().getColor(R.color.maroon));
 				reminderBtn.setEnabled(false);
 				String content = ""+Html.fromHtml(rmNotice.getNoticeContent());
-				ReminderHelper.getInstance().setReminder(rmNotice.getPublishedAt(),
+				/*ReminderHelper.getInstance().setReminder(rmNotice.getPublishedAt(),
 						rmNotice.getNoticeTitle(), content,
-						rmNotice.getPublishedAt(), SingleNoticeActivity.this);
+						rmNotice.getPublishedAt(), SingleNoticeActivity.this);*/
+
+
+                AppUtility.listenerDatePickerCancel = new AppUtility.IDatePickerCancel() {
+                    @Override
+                    public void onCancelCalled() {
+
+                        Log.e("CCCCC", "cancel called");
+                        btnNoticeReminder.setImage(R.drawable.btn_reminder_normal);
+                        btnNoticeReminder.setTitleColor(SingleNoticeActivity.this.getResources().getColor(R.color.gray_1));
+                        btnNoticeReminder.setEnabled(true);
+                    }
+                };
+
+
+                AppUtility.showDateTimePicker(rmNotice.getPublishedAt(), rmNotice.getNoticeTitle(), content, SingleNoticeActivity.this);
+
+
 			}
 		});
 		
