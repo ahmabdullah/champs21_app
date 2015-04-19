@@ -884,7 +884,16 @@ public class MeetingFragment extends Fragment implements UserAuthListener{
 			
 			String[] separated = listStatus.get(position).getDate().split("\\s+");
 			holder.txtDate.setText(separated[0]);
-			holder.txtTime.setText(separated[1]);
+            //holder.txtTime.setText(separated[1]);
+
+            String time = separated[1];
+
+            if (time.length() > 0 ) {
+                time = time.substring(0, time.length()-3);
+            }
+            holder.txtTime.setText(time);
+
+
 			
 			
 			
