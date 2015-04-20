@@ -173,7 +173,16 @@ public class SingleMeetingRequestActivity extends ChildContainerActivity {
 		
 		txtName.setText(data.getName());
 		txtBatch.setText(data.getBatch());
-		txtDate.setText(data.getDate());
+		//txtDate.setText(data.getDate());
+
+        String time = data.getDate();
+
+        if (time.length() > 0 ) {
+            time = time.substring(0, time.length()-3);
+        }
+        txtDate.setText(time);
+
+
 		txtDescription.setText(data.getDescription());
 		
 		
