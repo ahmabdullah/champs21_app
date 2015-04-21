@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
@@ -42,6 +44,9 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 	private ExpandableTextView txtContent;
 	private CustomButton btnNoticeAcknowledge;
 	private CustomButton btnNoticeReminder;
+
+    private RelativeLayout layoutMessage;
+    private LinearLayout layoutDataContainer;
 	
 	
 	@Override
@@ -78,6 +83,9 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 		txtContent = (ExpandableTextView)this.findViewById(R.id.txtContent);
 		btnNoticeAcknowledge = (CustomButton)this.findViewById(R.id.btnNoticeAcknowledge);
 		btnNoticeReminder = (CustomButton)this.findViewById(R.id.btnNoticeReminder);
+
+        layoutMessage = (RelativeLayout)this.findViewById(R.id.layoutMessage);
+        layoutDataContainer = (LinearLayout)this.findViewById(R.id.layoutDataContainer);
 	}
 	
 	
@@ -278,6 +286,10 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 					.parseServerResponse(responseString);
 
 			if (modelContainer.getStatus().getCode() == 200) {
+
+
+                layoutDataContainer.setVisibility(View.VISIBLE);
+                layoutMessage.setVisibility(View.GONE);
 				
 				JsonObject objNotice = modelContainer.getData().get("notice").getAsJsonObject();
 				data = gson.fromJson(objNotice.toString(), Notice.class);
@@ -287,6 +299,12 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 				initAction();
 				
 			}
+
+            else if(modelContainer.getStatus().getCode() == 400 && modelContainer.getStatus().getCode() != 404)
+            {
+                layoutDataContainer.setVisibility(View.GONE);
+                layoutMessage.setVisibility(View.VISIBLE);
+            }
 			
 			else {
 

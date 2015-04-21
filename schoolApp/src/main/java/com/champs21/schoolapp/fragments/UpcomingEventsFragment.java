@@ -1,8 +1,5 @@
  package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -26,7 +23,6 @@ import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
-import com.champs21.schoolapp.utils.SchoolApp;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
@@ -37,6 +33,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressLint("ValidFragment")
 public class UpcomingEventsFragment extends Fragment implements UserAuthListener{
@@ -168,7 +167,12 @@ public class UpcomingEventsFragment extends Fragment implements UserAuthListener
 			if (userHelper.getUser().getType() == UserTypeEnum.STUDENT) {
 				params.put("school",userHelper.getUser().getPaidInfo().getSchoolId());
 			}
-			
+
+
+            if (userHelper.getUser().getType() == UserTypeEnum.TEACHER) {
+                params.put("school",userHelper.getUser().getPaidInfo().getSchoolId());
+            }
+
 			
 			if (userHelper.getUser().getType() == UserTypeEnum.PARENTS) {
 				params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());

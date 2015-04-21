@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
@@ -39,6 +40,9 @@ public class SingleExamRoutine extends ChildContainerActivity {
 	private List<ExamRoutine> listData;
 	private EfficientAdapter mAdapter;
 	private TextView examName;
+
+    private RelativeLayout layoutMessage;
+    private RelativeLayout layoutDataContainer;
 
 
 	@Override
@@ -103,12 +107,24 @@ public class SingleExamRoutine extends ChildContainerActivity {
 			Wrapper modelContainer = GsonParser.getInstance()
 					.parseServerResponse(responseString);
 			if (modelContainer.getStatus().getCode() == 200) {
+
+                layoutDataContainer.setVisibility(View.VISIBLE);
+                layoutMessage.setVisibility(View.GONE);
+
 				listData = GsonParser.getInstance().parseExam(
 						modelContainer.getData()
 								.getAsJsonArray("exam_time_table").toString());
 
 				Log.e("ListData SIZE: ", listData.size()+"");
-			} else {
+			}
+
+            else if(modelContainer.getStatus().getCode() != 200 || modelContainer.getStatus().getCode() != 404)
+            {
+                layoutDataContainer.setVisibility(View.GONE);
+                layoutMessage.setVisibility(View.VISIBLE);
+            }
+
+            else {
 
 			}
 			mAdapter.notifyDataSetChanged();
@@ -120,6 +136,10 @@ public class SingleExamRoutine extends ChildContainerActivity {
 	private void initView() {
 		// TODO Auto-generated method stub
 		listViewExamData = (ListView) findViewById(R.id.listViewExamData);
+
+        layoutMessage = (RelativeLayout)this.findViewById(R.id.layoutMessage);
+        layoutDataContainer = (RelativeLayout)this.findViewById(R.id.layoutDataContainer);
+
 	}
 
 	private class EfficientAdapter extends BaseAdapter {
