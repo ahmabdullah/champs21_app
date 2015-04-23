@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +53,8 @@ public class SingleLessonPlan extends ChildContainerActivity {
     private CustomTabButton btnDelete;
     private CustomTabButton btnEdit;
 
+    private LinearLayout layoutButtonHolder;
+
 
     @Override
     protected void onResume() {
@@ -97,6 +100,18 @@ public class SingleLessonPlan extends ChildContainerActivity {
 
         btnDelete.setButtonSelected(true, R.color.black);
         btnEdit.setButtonSelected(true, R.color.black);
+
+        layoutButtonHolder = (LinearLayout)this.findViewById(R.id.layoutButtonHolder);
+
+        if (userHelper.getUser().getType() != UserHelper.UserTypeEnum.TEACHER)
+        {
+            layoutButtonHolder.setVisibility(View.GONE);
+        }
+        else
+        {
+            layoutButtonHolder.setVisibility(View.VISIBLE);
+        }
+
     }
 
     private void initAction()

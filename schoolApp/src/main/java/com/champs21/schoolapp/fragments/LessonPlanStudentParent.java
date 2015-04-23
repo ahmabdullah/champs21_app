@@ -1,8 +1,10 @@
 package com.champs21.schoolapp.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +14,23 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.champs21.freeversion.LessonPlanSubjectDetailsActivity;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.LessonPlanStudentParentSubject;
+import com.champs21.schoolapp.model.Wrapper;
+import com.champs21.schoolapp.networking.AppRestClient;
+import com.champs21.schoolapp.utils.AppConstant;
+import com.champs21.schoolapp.utils.AppUtility;
+import com.champs21.schoolapp.utils.GsonParser;
+import com.champs21.schoolapp.utils.RequestKeyHelper;
+import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.reflect.TypeToken;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,17 +49,25 @@ public class LessonPlanStudentParent extends Fragment{
 
     private List<LessonPlanStudentParentSubject> listSubject;
 
+    private LessonPlanSubjectAdapter adapter;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         listSubject = new ArrayList<LessonPlanStudentParentSubject>();
+
+        userHelper = new UserHelper(getActivity());
+        uiHelper = new UIHelper(getActivity());
+
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        initApicall();
     }
 
     @Override
@@ -52,15 +75,109 @@ public class LessonPlanStudentParent extends Fragment{
 
         view = inflater.inflate(R.layout.fragment_lessonplan_student_parent, container, false);
 
-        initview(view);
+        initView(view);
 
         return view;
     }
 
 
-    private void initview(View view)
+    private void initView(View view)
     {
         listViewLessonPlanStudentParent = (ListView)view.findViewById(R.id.listViewLessonPlanStudentParent);
+        adapter = new LessonPlanSubjectAdapter();
+        listViewLessonPlanStudentParent.setAdapter(adapter);
+
+        /*listViewLessonPlanStudentParent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                LessonPlanStudentParentSubject data = (LessonPlanStudentParentSubject)adapter.getItem(position);
+
+                Intent intent = new Intent(getActivity(), LessonPlanSubjectDetailsActivity.class);
+                Gson gson = new Gson();
+                String strData = gson.toJson(data, LessonPlanStudentParentSubject.class);
+                intent.putExtra(AppConstant.DATA_LESSON_PLAN_SUBJECT, strData);
+                startActivity(intent);
+
+            }
+        });*/
+
+    }
+
+    private void initApicall()
+    {
+        RequestParams params = new RequestParams();
+        params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
+
+        if (userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+        {
+            params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+            params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+
+            Log.e("STU_ID", userHelper.getUser().getSelectedChild().getId());
+            Log.e("STU_PROFILE_ID", userHelper.getUser().getSelectedChild().getProfileId());
+            Log.e("STU_BATCH_ID", userHelper.getUser().getSelectedChild().getBatchId());
+        }
+
+
+        AppRestClient.post(URLHelper.URL_GET_LESSONPLAN_SUBJECT_STUDENT_PARENT, params, lessonPlanStudentParentHandler);
+    }
+
+    AsyncHttpResponseHandler lessonPlanStudentParentHandler = new AsyncHttpResponseHandler() {
+
+        @Override
+        public void onFailure(Throwable arg0, String arg1) {
+            uiHelper.showMessage(arg1);
+            if (uiHelper.isDialogActive()) {
+                uiHelper.dismissLoadingDialog();
+            }
+        };
+
+        @Override
+        public void onStart() {
+
+            uiHelper.showLoadingDialog("Please wait...");
+
+
+        };
+
+        @Override
+        public void onSuccess(int arg0, String responseString) {
+
+
+            uiHelper.dismissLoadingDialog();
+
+
+            Wrapper modelContainer = GsonParser.getInstance()
+                    .parseServerResponse(responseString);
+
+            if (modelContainer.getStatus().getCode() == 200) {
+
+
+                JsonArray arraySubject = modelContainer.getData().get("subject").getAsJsonArray();
+
+                for (int i = 0; i < arraySubject.size(); i++)
+                {
+                    listSubject.add(parseLessonPlanSubject(arraySubject.toString()).get(i));
+                }
+
+                adapter.notifyDataSetChanged();
+
+            }
+
+            else {
+
+            }
+
+
+
+        };
+    };
+
+    private ArrayList<LessonPlanStudentParentSubject> parseLessonPlanSubject(String object) {
+        ArrayList<LessonPlanStudentParentSubject> data = new ArrayList<LessonPlanStudentParentSubject>();
+        data = new Gson().fromJson(object, new TypeToken<ArrayList<LessonPlanStudentParentSubject>>() {}.getType());
+        return data;
     }
 
 
@@ -102,12 +219,32 @@ public class LessonPlanStudentParent extends Fragment{
                 holder = (ViewHolder) convertView.getTag();
             }
 
-            //holder.imgViewSubjectIcon.setImageResource(AppUtility.getImageResourceId(listSubject.get(position).getName(), getActivity()));
+            holder.btnView.setTag(position);
+
+            holder.imgViewSubjectIcon.setImageResource(AppUtility.getImageResourceId(listSubject.get(position).getIcon(), getActivity()));
+            holder.txtSubjectName.setText(listSubject.get(position).getName()+" ("+listSubject.get(position).getTotal()+")");
+            holder.txtPublishDate.setText("Last Updated "+AppUtility.getDateString(listSubject.get(position).getLastUpdated(), AppUtility.DATE_FORMAT_APP, AppUtility.DATE_FORMAT_SERVER));
+
+            holder.btnView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+
+                    ImageButton btn = (ImageButton)v;
+                    int position = Integer.parseInt(btn.getTag().toString());
+
+                    LessonPlanStudentParentSubject data = listSubject.get(position);
+
+                    Intent intent = new Intent(getActivity(), LessonPlanSubjectDetailsActivity.class);
+                    Gson gson = new Gson();
+                    String strData = gson.toJson(data, LessonPlanStudentParentSubject.class);
+                    intent.putExtra(AppConstant.DATA_LESSON_PLAN_SUBJECT, strData);
+                    startActivity(intent);
+
+                }
+            });
 
 
-
-
-            return null;
+            return convertView;
         }
 
 

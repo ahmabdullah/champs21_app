@@ -231,6 +231,10 @@ public class URLHelper {
 
     public final static String URL_GET_LESSONPLAN_EDIT_DATA = "syllabus/lessonplanedit";
 
+    public final static String URL_GET_LESSONPLAN_SUBJECT_STUDENT_PARENT = "syllabus/lsubjects";
+
+    public final static String URL_GET_LESSONPLAN_SUBJECT_DETAILS = "syllabus/lessonplansstd";
+
 
 
 
