@@ -107,7 +107,7 @@
                                 android:id="@+id/txtLastUpdate1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Last update: 05/07/2014"
+                                android:text="Last update: "
                                 android:textColor="#b1b8ba" />
                         </LinearLayout>
                     </LinearLayout>
@@ -215,7 +215,7 @@
                                 android:id="@+id/txtLastUpdate2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Last update: 05/07/2014"
+                                android:text="Last update: "
                                 android:textColor="#b1b8ba" />
                         </LinearLayout>
                     </LinearLayout>
