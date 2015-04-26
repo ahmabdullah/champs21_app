@@ -14,6 +14,7 @@ import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
@@ -65,6 +66,9 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 	
 	private ImageButton btnDownload;
 	private LinearLayout layoutDownloadHolder;
+
+    private RelativeLayout layoutMessage;
+    private LinearLayout layoutDataContainer;
 	
 	
 	@Override
@@ -108,6 +112,9 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 		this.bottmlay = (LinearLayout)this.findViewById(R.id.bottmlay);
 		this.btnDownload = (ImageButton)this.findViewById(R.id.btnDownload);
 		this.layoutDownloadHolder = (LinearLayout)this.findViewById(R.id.layoutDownloadHolder);
+
+        layoutMessage = (RelativeLayout)this.findViewById(R.id.layoutMessage);
+        layoutDataContainer = (LinearLayout)this.findViewById(R.id.layoutDataContainer);
 	}
 	
 	
@@ -360,6 +367,9 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 					.parseServerResponse(responseString);
 
 			if (modelContainer.getStatus().getCode() == 200) {
+
+                layoutDataContainer.setVisibility(View.VISIBLE);
+                layoutMessage.setVisibility(View.GONE);
 				
 				JsonObject objHomework = modelContainer.getData().get("homework").getAsJsonObject();
 				data = gson.fromJson(objHomework.toString(), HomeworkData.class);
@@ -369,6 +379,12 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 				initAction();
 				
 			}
+
+            else if(modelContainer.getStatus().getCode() == 400 && modelContainer.getStatus().getCode() != 404)
+            {
+                layoutDataContainer.setVisibility(View.GONE);
+                layoutMessage.setVisibility(View.VISIBLE);
+            }
 			
 			else {
 

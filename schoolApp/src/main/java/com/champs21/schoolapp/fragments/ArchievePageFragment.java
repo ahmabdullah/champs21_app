@@ -1,30 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.adapters.ArchievedEventListAdapter;
-import com.champs21.schoolapp.model.SchoolEvent;
-import com.champs21.schoolapp.model.SchoolEventWrapper;
-import com.champs21.schoolapp.model.UserAuthListener;
-import com.champs21.schoolapp.model.Wrapper;
-import com.champs21.schoolapp.networking.AppRestClient;
-import com.champs21.schoolapp.utils.AppUtility;
-import com.champs21.schoolapp.utils.GsonParser;
-import com.champs21.schoolapp.utils.RequestKeyHelper;
-import com.champs21.schoolapp.utils.SchoolApp;
-import com.champs21.schoolapp.utils.URLHelper;
-import com.champs21.schoolapp.utils.UserHelper;
-import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
-import com.champs21.schoolapp.viewhelpers.UIHelper;
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -37,6 +12,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+
+import com.champs21.schoolapp.R;
+import com.champs21.schoolapp.adapters.ArchievedEventListAdapter;
+import com.champs21.schoolapp.model.SchoolEvent;
+import com.champs21.schoolapp.model.SchoolEventWrapper;
+import com.champs21.schoolapp.model.UserAuthListener;
+import com.champs21.schoolapp.model.Wrapper;
+import com.champs21.schoolapp.networking.AppRestClient;
+import com.champs21.schoolapp.utils.AppUtility;
+import com.champs21.schoolapp.utils.GsonParser;
+import com.champs21.schoolapp.utils.RequestKeyHelper;
+import com.champs21.schoolapp.utils.URLHelper;
+import com.champs21.schoolapp.utils.UserHelper;
+import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
+import com.champs21.schoolapp.viewhelpers.UIHelper;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressLint("ValidFragment")
 public class ArchievePageFragment extends Fragment implements UserAuthListener{
@@ -169,6 +168,10 @@ public class ArchievePageFragment extends Fragment implements UserAuthListener{
 			if (userHelper.getUser().getType() == UserTypeEnum.STUDENT) {
 				params.put(RequestKeyHelper.SCHOOL,userHelper.getUser().getPaidInfo().getSchoolId());
 			}
+
+            if (userHelper.getUser().getType() == UserTypeEnum.TEACHER) {
+                params.put(RequestKeyHelper.SCHOOL,userHelper.getUser().getPaidInfo().getSchoolId());
+            }
 			
 			if (userHelper.getUser().getType() == UserTypeEnum.PARENTS) {
 				params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());

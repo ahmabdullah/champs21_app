@@ -191,6 +191,9 @@ public class AppConstant {
 
     //######################################## LessonPlanView
     public static final String ID_SINGLE_LESSON_PLAN = "id_single_lesson_plan";
+
+    //######################################## LessonPlanStudentParent
+    public static final String DATA_LESSON_PLAN_SUBJECT = "data_lesson_plan_subject";
 	
 	
 }

@@ -12,6 +12,15 @@ public class LessonPlanStudentParentSubject {
     @SerializedName("name")
     private String name;
 
+    @SerializedName("icon")
+    private String icon;
+
+    @SerializedName("total")
+    private String total;
+
+    @SerializedName("lastupdated")
+    private String lastUpdated;
+
 
     public String getName() {
         return name;
@@ -29,7 +38,28 @@ public class LessonPlanStudentParentSubject {
         this.id = id;
     }
 
+    public String getLastUpdated() {
+        return lastUpdated;
+    }
 
+    public void setLastUpdated(String lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
 
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
 }

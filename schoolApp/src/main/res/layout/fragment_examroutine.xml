@@ -12,92 +12,132 @@
         android:orientation="horizontal" >
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bull"
-        android:background="@color/white"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="10dp" >
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bull">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/exam_routine_tap" />
-
-        <TextView
-            android:id="@+id/tv_report_exam_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Mid Term Exam"
-            android:textColor="@color/red"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout1"
-        android:layout_centerHorizontal="true" >
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#f9fafb"
-            android:gravity="center" >
+        <RelativeLayout
+            android:id="@+id/layoutMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:visibility="gone" >
 
             <TextView
-                android:id="@+id/txtDateTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Date"
-                android:textColor="@color/maroon" />
-        </LinearLayout>
+                android:textSize="20sp"
+                android:textColor="@color/maroon"
+                android:text="No data available!"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"/>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="1dp"
-            android:layout_weight="2"
-            android:background="#f9fafb"
-            android:gravity="center" >
 
-            <TextView
-                android:id="@+id/txtTime"
-                android:layout_width="wrap_content"
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layoutDataContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Time"
-                android:textColor="@color/maroon" />
-        </LinearLayout>
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp" >
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="1dp"
-            android:layout_weight="1"
-            android:background="#f9fafb"
-            android:gravity="center" >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/exam_routine_tap" />
 
-            <TextView
-                android:id="@+id/txtSubjectTitle"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tv_report_exam_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Mid Term Exam"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutTitle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Subject"
-                android:textColor="@color/maroon" />
-        </LinearLayout>
-    </LinearLayout>
+                android:layout_below="@+id/linearLayout1"
+                android:layout_centerHorizontal="true" >
 
-    <ListView
-        android:id="@+id/listViewExamData"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layoutTitle" >
-    </ListView>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#f9fafb"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/txtDateTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date"
+                        android:textColor="@color/maroon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="2"
+                    android:background="#f9fafb"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/txtTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time"
+                        android:textColor="@color/maroon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="#f9fafb"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/txtSubjectTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subject"
+                        android:textColor="@color/maroon" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listViewExamData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutTitle" >
+            </ListView>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+
 
 </RelativeLayout>

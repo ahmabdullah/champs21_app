@@ -1,7 +1,6 @@
 package com.champs21.schoolapp.adapters;
 
 
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.Html;
@@ -38,7 +37,10 @@ import java.util.List;
 public class UpcomingEventListAdapter extends ArrayAdapter<SchoolEvent> {
 
 	private final Context context;
-	private List<SchoolEvent> items;
+
+
+
+    private List<SchoolEvent> items;
 	private LayoutInflater vi;
 	private UIHelper uiHelper;
 	private SchoolEvent selectedEvent;
@@ -164,9 +166,25 @@ public class UpcomingEventListAdapter extends ArrayAdapter<SchoolEvent> {
 				reminderBtn.setTitleColor(context.getResources().getColor(R.color.maroon));
 				reminderBtn.setEnabled(false);
 				String content = ""+Html.fromHtml(rmEvent.getEventDescription());
-				ReminderHelper.getInstance().setReminder(rmEvent.getEventStartDate(), rmEvent.getEventTitle(), content, rmEvent.getEventStartDate(), context);
-				
-			}
+				//ReminderHelper.getInstance().setReminder(rmEvent.getEventStartDate(), rmEvent.getEventTitle(), content, rmEvent.getEventStartDate(), context);
+
+                AppUtility.listenerDatePickerCancel = new AppUtility.IDatePickerCancel() {
+                    @Override
+                    public void onCancelCalled() {
+
+                        Log.e("CCCCC", "cancel called");
+                        holder.remainderBtn.setImage(R.drawable.btn_reminder_normal);
+                        holder.remainderBtn.setTitleColor(context.getResources().getColor(R.color.gray_1));
+                        holder.remainderBtn.setEnabled(true);
+                    }
+                };
+
+                AppUtility.showDateTimePicker(rmEvent.getEventStartDate(), rmEvent.getEventTitle(), content, context);
+
+
+
+
+            }
 		});
 	    
 	    
@@ -217,7 +235,9 @@ public class UpcomingEventListAdapter extends ArrayAdapter<SchoolEvent> {
 	    
 	    return rowView;
 	  }
-	
+
+
+
 	
 	@SuppressLint("ResourceAsColor")
 	private void setButtonState(CustomButtonTest btn, int imgResId, boolean enable , String btnText) {

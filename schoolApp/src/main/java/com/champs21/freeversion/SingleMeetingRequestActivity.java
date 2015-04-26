@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
@@ -45,6 +47,9 @@ public class SingleMeetingRequestActivity extends ChildContainerActivity {
 	private TextView txtStatus;
 	
 	private LinearLayout layoutBatch;
+
+    private RelativeLayout layoutMessage;
+    private ScrollView layoutDataContainer;
 	
 	
 	@Override
@@ -98,6 +103,9 @@ public class SingleMeetingRequestActivity extends ChildContainerActivity {
 		{
 			layoutBatch.setVisibility(View.VISIBLE);
 		}
+
+        layoutMessage = (RelativeLayout)this.findViewById(R.id.layoutMessage);
+        layoutDataContainer = (ScrollView)this.findViewById(R.id.layoutDataContainer);
 	}
 
 	private void initApiCall()
@@ -173,7 +181,16 @@ public class SingleMeetingRequestActivity extends ChildContainerActivity {
 		
 		txtName.setText(data.getName());
 		txtBatch.setText(data.getBatch());
-		txtDate.setText(data.getDate());
+		//txtDate.setText(data.getDate());
+
+        String time = data.getDate();
+
+        if (time.length() > 0 ) {
+            time = time.substring(0, time.length()-3);
+        }
+        txtDate.setText(time);
+
+
 		txtDescription.setText(data.getDescription());
 		
 		
@@ -209,6 +226,9 @@ public class SingleMeetingRequestActivity extends ChildContainerActivity {
 					.parseServerResponse(responseString);
 
 			if (modelContainer.getStatus().getCode() == 200) {
+
+                layoutDataContainer.setVisibility(View.VISIBLE);
+                layoutMessage.setVisibility(View.GONE);
 				
 				JsonObject objNotice = modelContainer.getData().get("meetings").getAsJsonObject();
 				data = gson.fromJson(objNotice.toString(), MeetingStatus.class);
@@ -218,6 +238,12 @@ public class SingleMeetingRequestActivity extends ChildContainerActivity {
 				initAction();
 				
 			}
+
+            else if(modelContainer.getStatus().getCode() != 200 || modelContainer.getStatus().getCode() != 404)
+            {
+                layoutDataContainer.setVisibility(View.GONE);
+                layoutMessage.setVisibility(View.VISIBLE);
+            }
 			
 			else {
 

@@ -5,15 +5,17 @@ import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.fragments.NoticeFragmentNew;
 import com.champs21.schoolapp.model.ModelContainer;
 import com.champs21.schoolapp.model.Notice;
 import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
+import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.MyTagHandler;
 import com.champs21.schoolapp.utils.ReminderHelper;
@@ -42,6 +44,9 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 	private ExpandableTextView txtContent;
 	private CustomButton btnNoticeAcknowledge;
 	private CustomButton btnNoticeReminder;
+
+    private RelativeLayout layoutMessage;
+    private LinearLayout layoutDataContainer;
 	
 	
 	@Override
@@ -78,6 +83,9 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 		txtContent = (ExpandableTextView)this.findViewById(R.id.txtContent);
 		btnNoticeAcknowledge = (CustomButton)this.findViewById(R.id.btnNoticeAcknowledge);
 		btnNoticeReminder = (CustomButton)this.findViewById(R.id.btnNoticeReminder);
+
+        layoutMessage = (RelativeLayout)this.findViewById(R.id.layoutMessage);
+        layoutDataContainer = (LinearLayout)this.findViewById(R.id.layoutDataContainer);
 	}
 	
 	
@@ -114,9 +122,26 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 						.getResources().getColor(R.color.maroon));
 				reminderBtn.setEnabled(false);
 				String content = ""+Html.fromHtml(rmNotice.getNoticeContent());
-				ReminderHelper.getInstance().setReminder(rmNotice.getPublishedAt(),
+				/*ReminderHelper.getInstance().setReminder(rmNotice.getPublishedAt(),
 						rmNotice.getNoticeTitle(), content,
-						rmNotice.getPublishedAt(), SingleNoticeActivity.this);
+						rmNotice.getPublishedAt(), SingleNoticeActivity.this);*/
+
+
+                AppUtility.listenerDatePickerCancel = new AppUtility.IDatePickerCancel() {
+                    @Override
+                    public void onCancelCalled() {
+
+                        Log.e("CCCCC", "cancel called");
+                        btnNoticeReminder.setImage(R.drawable.btn_reminder_normal);
+                        btnNoticeReminder.setTitleColor(SingleNoticeActivity.this.getResources().getColor(R.color.gray_1));
+                        btnNoticeReminder.setEnabled(true);
+                    }
+                };
+
+
+                AppUtility.showDateTimePicker(rmNotice.getPublishedAt(), rmNotice.getNoticeTitle(), content, SingleNoticeActivity.this);
+
+
 			}
 		});
 		
@@ -261,6 +286,10 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 					.parseServerResponse(responseString);
 
 			if (modelContainer.getStatus().getCode() == 200) {
+
+
+                layoutDataContainer.setVisibility(View.VISIBLE);
+                layoutMessage.setVisibility(View.GONE);
 				
 				JsonObject objNotice = modelContainer.getData().get("notice").getAsJsonObject();
 				data = gson.fromJson(objNotice.toString(), Notice.class);
@@ -270,6 +299,12 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 				initAction();
 				
 			}
+
+            else if(modelContainer.getStatus().getCode() == 400 && modelContainer.getStatus().getCode() != 404)
+            {
+                layoutDataContainer.setVisibility(View.GONE);
+                layoutMessage.setVisibility(View.VISIBLE);
+            }
 			
 			else {
 
