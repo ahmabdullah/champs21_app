@@ -137,8 +137,7 @@
                         <TextView
                             android:id="@+id/txtPickupLocation"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="House # 54, Road #10, Banani" />
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -166,8 +165,7 @@
                         <TextView
                             android:id="@+id/txtDropLocation"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="House # 4/5, Road #07, Mohammadpur" />
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
                 </LinearLayout>
 
