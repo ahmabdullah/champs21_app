@@ -1,13 +1,14 @@
 package com.champs21.freeversion;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
+
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.fragments.ParentAttendenceFragment;
 import com.champs21.schoolapp.fragments.YearlyAttendanceReportFragment;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 public class AnyFragmentLoadActivity extends ChildContainerActivity {
 
@@ -38,9 +39,23 @@ public class AnyFragmentLoadActivity extends ChildContainerActivity {
 										batchId, getIntent().getExtras()
 												.getString("student_id")), "")
 						.commit();
-			} else {
-				String value = getIntent().getExtras().getString("class_name");
-				loadFragment(value);
+			}
+
+            else {
+
+                if(getIntent().getExtras().containsKey("class_name_school_candle"))
+                {
+                    String value = getIntent().getExtras().getString("class_name_school_candle");
+                    loadFragmentSchoolCandle(value);
+                }
+                else
+                {
+                    String value = getIntent().getExtras().getString("class_name");
+                    loadFragment(value);
+                }
+
+
+
 			}
 
 		}
@@ -48,34 +63,75 @@ public class AnyFragmentLoadActivity extends ChildContainerActivity {
 	}
 
 	private void loadFragment(String name) {
-		String className = PACKAGE_NAME + "." + name;
-		try {
-			// Object xyz = Class.forName(className).newInstance();
+        String className = PACKAGE_NAME + "." + name;
+        try {
+            // Object xyz = Class.forName(className).newInstance();
 
-			Constructor<?> ctor = Class.forName(className).getConstructor();
-			Fragment object = (Fragment) ctor.newInstance(new Object[] {});
-			getSupportFragmentManager().beginTransaction()
-					.replace(R.id.pager_frame, object, "").commit();
+            Constructor<?> ctor = Class.forName(className).getConstructor();
+            Fragment object = (Fragment) ctor.newInstance(new Object[] {});
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.pager_frame, object, "").commit();
 
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+        } catch (InstantiationException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    private void loadFragmentSchoolCandle(String name) {
+        String className = PACKAGE_NAME + "." + name;
+        try {
+            // Object xyz = Class.forName(className).newInstance();
+
+            Constructor<?> ctor = Class.forName(className).getConstructor();
+            Fragment object = (Fragment) ctor.newInstance(new Object[] {});
+
+            Bundle bundle_new = new Bundle();
+            bundle_new.putInt("key_school_id", Integer.parseInt(userHelper.getJoinedSchool().getSchool_id()));
+            object.setArguments(bundle_new);
+
+
+
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.pager_frame, object, "").commit();
+
+        } catch (InstantiationException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+
+
 
 }

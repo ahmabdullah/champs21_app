@@ -25,7 +25,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.champs21.freeversion.CandleActivity;
+import com.champs21.freeversion.AnyFragmentLoadActivity;
 import com.champs21.freeversion.ChildContainerActivity;
 import com.champs21.freeversion.GoodReadActivity;
 import com.champs21.freeversion.HomePageFreeVersion;
@@ -1358,9 +1358,17 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
             @Override
             public void onClick(View v) {
-                if (UserHelper.isLoggedIn())
-                    startActivity(new Intent(getActivity(),
-                            CandleActivity.class));
+                if (UserHelper.isLoggedIn()) {
+                    /*startActivity(new Intent(getActivity(),
+                            CandleActivity.class));*/
+
+                    Intent intent = new Intent(getActivity(), AnyFragmentLoadActivity.class);
+                    intent.putExtra("class_name_school_candle", "SchoolCandleFragment");
+                    startActivity(intent);
+
+
+                }
+
                 else {
                     showCustomDialog(
                             "CANDLE",

@@ -1,15 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -64,6 +54,16 @@ import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.ipaulpro.afilechooser.utils.FileUtils;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class SchoolCandleFragment extends Fragment implements OnClickListener{
 
@@ -166,7 +166,20 @@ public class SchoolCandleFragment extends Fragment implements OnClickListener{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		schoolId= String.valueOf(getArguments().getInt("school_id", 0));
+
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+
+            if(bundle.containsKey("key_school_id"))
+            {
+                schoolId = String.valueOf(bundle.getInt("key_school_id", 0));
+            }
+
+
+        }
+        else
+            schoolId= String.valueOf(getArguments().getInt("school_id", 0));
+
 		uiHelper = new UIHelper(getActivity());
 		cats = new ArrayList<BaseType>();
 		userHelper = new UserHelper(getActivity());

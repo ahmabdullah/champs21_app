@@ -59,7 +59,7 @@ public class AcademicCalendarListAdapter extends ArrayAdapter<AcademicCalendarDa
 	    final ViewHolder holder = (ViewHolder) rowView.getTag();
 	    AcademicCalendarDataItem temp=items.get(position);
 	    holder.dateTextView.setText(AppUtility.getDateString(temp.getEventDate(),AppUtility.DATE_FORMAT_APP,AppUtility.DATE_FORMAT_SERVER));
-	    holder.descriptionTextView.setText(temp.getEventDescription());
+	    holder.descriptionTextView.setText(temp.getEventTitle());
         holder.dateBg.setBackgroundColor((position%2!=0)?context.getResources().getColor(R.color.bg_row_odd):context.getResources().getColor(R.color.white));
         holder.examBg.setBackgroundColor((position%2!=0)?context.getResources().getColor(R.color.bg_row_odd):context.getResources().getColor(R.color.white));
         holder.viewBg.setBackgroundColor((position%2!=0)?context.getResources().getColor(R.color.bg_row_odd):context.getResources().getColor(R.color.white));

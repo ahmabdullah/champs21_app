@@ -73,7 +73,6 @@
         <item>reportcard</item>
         <item>academic_calendar</item>
         <item>transport</item>
-        <item>lesson_plan</item>
 
     </string-array>
     
@@ -91,7 +90,6 @@
         <item>ParentReportCardFragment</item>
         <item>ParentAcademicCalender</item>
         <item>TransportFragment</item>
-        <item>LessonPlanStudentParent</item>
 
     </string-array>
     
@@ -109,7 +107,6 @@
         <item>Reportcard</item>
         <item>Academic Calendar</item>
         <item>Transport</item>
-        <item>Lesson Plan</item>
 
     </string-array>
     
@@ -130,7 +127,6 @@
         <item>transport</item>
         <item>leaveapplication</item>
         <item>fees</item>
-        <item>lesson_plan</item>
 
     </string-array>
     
@@ -151,7 +147,6 @@
         <item>Transport</item>
         <item>Leave Application</item>
         <item>Fees</item>
-        <item>Lesson Plan</item>
 
     </string-array>
     
@@ -172,7 +167,6 @@
         <item>TransportFragment</item>
         <item>ApplyForLeaveFragment</item>
         <item>FeesTabhostFragment</item>
-        <item>LessonPlanStudentParent</item>
 
     </string-array>
     
@@ -192,7 +186,6 @@
         <item>transport</item>
         <item>reportcard</item>
         <item>academic_calendar</item>
-        <item>lesson_plan</item>
 
     </string-array>
     
@@ -211,7 +204,6 @@
         <item>Transport</item>
         <item>Reportcard</item>
         <item>Academic Calendar</item>
-        <item>Lesson Plan</item>
 
     </string-array>
     
@@ -230,7 +222,6 @@
         <item>TransportFragment</item>
         <item>ParentReportCardFragment</item>
         <item>ParentAcademicCalender</item>
-        <item>LessonPlanTeacher</item>
 
     </string-array>
     
