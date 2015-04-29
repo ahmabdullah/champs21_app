@@ -73,6 +73,7 @@
         <item>reportcard</item>
         <item>academic_calendar</item>
         <item>transport</item>
+        <item>lesson_plan</item>
 
     </string-array>
     
@@ -90,6 +91,7 @@
         <item>ParentReportCardFragment</item>
         <item>ParentAcademicCalender</item>
         <item>TransportFragment</item>
+        <item>LessonPlanStudentParent</item>
 
     </string-array>
     
@@ -107,6 +109,7 @@
         <item>Reportcard</item>
         <item>Academic Calendar</item>
         <item>Transport</item>
+        <item>Lesson Plan</item>
 
     </string-array>
     
@@ -127,6 +130,7 @@
         <item>transport</item>
         <item>leaveapplication</item>
         <item>fees</item>
+        <item>lesson_plan</item>
 
     </string-array>
     
@@ -147,6 +151,7 @@
         <item>Transport</item>
         <item>Leave Application</item>
         <item>Fees</item>
+        <item>Lesson Plan</item>
 
     </string-array>
     
@@ -167,6 +172,7 @@
         <item>TransportFragment</item>
         <item>ApplyForLeaveFragment</item>
         <item>FeesTabhostFragment</item>
+        <item>LessonPlanStudentParent</item>
 
     </string-array>
     
@@ -177,6 +183,7 @@
         <item>attendance</item>
         <item>homework</item>
         <item>routine</item>
+        <item>exam_routine</item>
         <item>notice</item>
         <item>syllabus</item>
         <item>student_list</item>
@@ -186,6 +193,7 @@
         <item>transport</item>
         <item>reportcard</item>
         <item>academic_calendar</item>
+        <item>lesson_plan</item>
 
     </string-array>
     
@@ -195,6 +203,7 @@
         <item>Attendance</item>
         <item>Homework</item>
         <item>Routine</item>
+        <item>Exam Routine</item>
         <item>Notice</item>
         <item>Syllabus</item>
         <item>Student List</item>
@@ -204,6 +213,7 @@
         <item>Transport</item>
         <item>Reportcard</item>
         <item>Academic Calendar</item>
+        <item>Lesson Plan</item>
 
     </string-array>
     
@@ -213,6 +223,7 @@
         <item>TeachersAttendanceTabhostFragment</item>
         <item>TeacherHomeWorkFragment</item>
         <item>TeacherRoutineFragment</item>
+        <item>ExamRoutineTeacherFragment</item>
         <item>NoticeFragmentNew</item>
         <item>SyllabusFragment</item>
         <item>StudentListFragment</item>
@@ -222,6 +233,7 @@
         <item>TransportFragment</item>
         <item>ParentReportCardFragment</item>
         <item>ParentAcademicCalender</item>
+        <item>LessonPlanTeacher</item>
 
     </string-array>
     

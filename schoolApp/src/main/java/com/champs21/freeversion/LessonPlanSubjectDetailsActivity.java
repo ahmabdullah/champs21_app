@@ -1,6 +1,7 @@
 package com.champs21.freeversion;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.format.DateUtils;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -350,6 +352,8 @@ public class LessonPlanSubjectDetailsActivity extends ChildContainerActivity{
 
                 convertView = LayoutInflater.from(LessonPlanSubjectDetailsActivity.this).inflate(R.layout.row_lessonplan_subject_details, parent, false);
 
+
+                holder.layoutRoot = (LinearLayout)convertView.findViewById(R.id.layoutRoot);
                 holder.txtDate = (TextView)convertView.findViewById(R.id.txtDate);
                 holder.txtTitle = (TextView)convertView.findViewById(R.id.txtTitle);
 
@@ -357,6 +361,15 @@ public class LessonPlanSubjectDetailsActivity extends ChildContainerActivity{
                 convertView.setTag(holder);
             }else {
                 holder = (ViewHolder) convertView.getTag();
+            }
+
+            if(position%2 != 0)
+            {
+                holder.layoutRoot.setBackgroundColor(getResources().getColor(R.color.bg_row_odd));
+            }
+            else
+            {
+                holder.layoutRoot.setBackgroundColor(Color.WHITE);
             }
 
             holder.txtDate.setText(AppUtility.getDateString(listSubjectDetails.get(position).getPublishDate(), AppUtility.DATE_FORMAT_APP, AppUtility.DATE_FORMAT_SERVER));
@@ -368,6 +381,7 @@ public class LessonPlanSubjectDetailsActivity extends ChildContainerActivity{
 
         class ViewHolder {
 
+            LinearLayout layoutRoot;
             TextView txtDate;
             TextView txtTitle;
 

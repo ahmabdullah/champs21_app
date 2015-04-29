@@ -2,6 +2,7 @@ package com.champs21.schoolapp.fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -911,6 +912,8 @@ public class LessonPlanView extends Fragment {
                 convertView = LayoutInflater.from(LessonPlanView.this.getActivity()).inflate(R.layout.row_lessonplan_view, parent, false);
 
                 //holder.layoutSelect = (LinearLayout)convertView.findViewById(R.id.layoutSelect);
+
+                holder.layoutRoot = (LinearLayout)convertView.findViewById(R.id.layoutRoot);
                 holder.btnCheckSelect = (CheckBox)convertView.findViewById(R.id.btnCheckSelect);
                 holder.txtTitle = (TextView)convertView.findViewById(R.id.txtTitle);
                 holder.txtCategory = (TextView)convertView.findViewById(R.id.txtCategory);
@@ -927,6 +930,15 @@ public class LessonPlanView extends Fragment {
             //holder.layoutSelect.setTag(holder.imgViewSelect);
 
             //holder.layoutSelect.setTag(position);
+
+            if(position%2 != 0)
+            {
+                holder.layoutRoot.setBackgroundColor(getResources().getColor(R.color.bg_row_odd));
+            }
+            else
+            {
+                holder.layoutRoot.setBackgroundColor(Color.WHITE);
+            }
 
 
             holder.txtTitle.setText(listLessonPlan.get(position).getTitle());
@@ -1060,6 +1072,8 @@ public class LessonPlanView extends Fragment {
         class ViewHolder {
 
             //LinearLayout layoutSelect;
+            LinearLayout layoutRoot;
+
             CheckBox btnCheckSelect;
             TextView txtTitle;
             TextView txtCategory;

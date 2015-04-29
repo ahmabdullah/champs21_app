@@ -235,6 +235,8 @@ public class URLHelper {
 
     public final static String URL_GET_LESSONPLAN_SUBJECT_DETAILS = "syllabus/lessonplansstd";
 
+    public final static String URL_EXAM_ROUTINE_TEACHER = "routine/teacherexam";
+
 
 
 
