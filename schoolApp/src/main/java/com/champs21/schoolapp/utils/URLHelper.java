@@ -23,6 +23,8 @@ public class URLHelper {
     public final static String URL_GET_GRAPH_SUBJECTS = "report/getsubject";
 
     public final static String URL_GET_REPORT_PROGRESS = "report/progress";
+
+    public final static String URL_GET_REPORT_PROGRESS_ALL = "report/progressall";
 	
 	public final static String URL_GET_STUDENT_LEAVE_LIST = "event/studentleaves";
 	

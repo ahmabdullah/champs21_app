@@ -229,11 +229,11 @@ public class ParentReportCardFragment extends UserVisibleHintFragment implements
         spec.setIndicator(getIndicatorView(getString(R.string.title_term_report_tab), R.drawable.tab_term_report));
         addTab(this.mTabHostReportCard, spec, ( tabInfo = new TabInfo(AppConstant.TAB_TERM_REPORT, ResultTermTesttFragment.class, args)));
 
-        /*if(userHelper.getUser().getType()!= UserHelper.UserTypeEnum.TEACHER){
+        if(userHelper.getUser().getType()!= UserHelper.UserTypeEnum.TEACHER){
             spec   =   mTabHostReportCard.newTabSpec(AppConstant.TAB_PROGRESS_GRAPH);
             spec.setIndicator(getIndicatorView(getString(R.string.title_progress_graph_tab), R.drawable.tab_progress_graph));
             addTab(this.mTabHostReportCard, spec, ( tabInfo = new TabInfo(AppConstant.TAB_PROGRESS_GRAPH, ProgressGraphFragment.class, args)));
-        }*/
+        }
 
 
         

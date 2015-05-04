@@ -1,23 +1,14 @@
 package com.champs21.freeversion;
 
-import java.util.ArrayList;
-
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.champs21.schoolapp.BatchSelectionChangedBroadcastReceiver;
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.model.ReportCardModel;
 import com.champs21.schoolapp.model.TermReportExamSubjectItem;
 import com.champs21.schoolapp.model.TermReportItem;
 import com.champs21.schoolapp.model.Wrapper;
@@ -28,10 +19,11 @@ import com.champs21.schoolapp.utils.SchoolApp;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
-import com.champs21.schoolapp.viewhelpers.CustomButton;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
 
 public class SingleItemTermReportActivity extends ChildContainerActivity{
 	private SchoolApp app;
@@ -213,12 +205,12 @@ public class SingleItemTermReportActivity extends ChildContainerActivity{
 
 		for (int i = 0; i < size; i++) {
 			View childView = mInflater.inflate(R.layout.row_term_report, null);
-
+            View headerView = mInflater.inflate(R.layout.row_term_report,null);
 			ViewHolder holder = new ViewHolder();
 
 			if (i == 0) {
-				layoutReport.addView(childView);
-				continue;
+				layoutReport.addView(headerView);
+				//continue;
 			}
 
 			// *********************** Initialization ***********************

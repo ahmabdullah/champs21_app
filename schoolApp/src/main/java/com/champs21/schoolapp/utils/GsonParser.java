@@ -28,6 +28,7 @@ import com.champs21.schoolapp.model.Student;
 import com.champs21.schoolapp.model.StudentAttendance;
 import com.champs21.schoolapp.model.SubCategory;
 import com.champs21.schoolapp.model.Subject;
+import com.champs21.schoolapp.model.SubjectSeries;
 import com.champs21.schoolapp.model.Syllabus;
 import com.champs21.schoolapp.model.TeacherHomework;
 import com.champs21.schoolapp.model.Term;
@@ -190,6 +191,16 @@ public class GsonParser {
         dataList = (List<ProgressExam>) gson.fromJson(object, listType);
         return dataList;
     }
+
+    public List<SubjectSeries> parseGraphDataListAll(String object) {
+
+        List<SubjectSeries> dataList=new ArrayList<SubjectSeries>();
+        Type listType = new TypeToken<List<SubjectSeries>>(){}.getType();
+        dataList = (List<SubjectSeries>) gson.fromJson(object, listType);
+        return dataList;
+    }
+
+
 	
 	public List<Subject> parseSubject(String object) {
 

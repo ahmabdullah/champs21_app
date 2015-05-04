@@ -11,6 +11,11 @@ public class GraphSubjectType implements BaseType {
 
     @SerializedName("id")
     private String id;
+
+    public GraphSubjectType(String name, String id){
+        this.name = name;
+        this.id = id;
+    }
     @Override
     public PickerType getType() {
         return PickerType.GRAPH;

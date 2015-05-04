@@ -30,6 +30,27 @@ public class ProgressExam {
     private double avg_mark_percent;
     @SerializedName("category")
     private String category;
+    @SerializedName("point")
+    private String point;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPoint() {
+        return point;
+    }
+
+    public void setPoint(String point) {
+        this.point = point;
+    }
+
+    @SerializedName("name")
+    private String name;
 
     public String getTotal_mark() {
         return total_mark;

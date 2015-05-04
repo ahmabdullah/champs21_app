@@ -1,6 +1,7 @@
 package com.champs21.schoolapp.fragments;
 
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,10 +18,12 @@ import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.BaseType;
+import com.champs21.schoolapp.model.Batch;
 import com.champs21.schoolapp.model.GraphSubjectType;
 import com.champs21.schoolapp.model.Picker;
 import com.champs21.schoolapp.model.PickerType;
 import com.champs21.schoolapp.model.ProgressExam;
+import com.champs21.schoolapp.model.SubjectSeries;
 import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.GsonParser;
@@ -34,11 +37,14 @@ import com.loopj.android.http.RequestParams;
 import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
 import org.achartengine.chart.BarChart;
+import org.achartengine.chart.LineChart;
+import org.achartengine.chart.PointStyle;
 import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -52,6 +58,8 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
     private LinearLayout graphView;
     private UserHelper userHelper;
     private GraphicalView mChartView;
+    private String subjectTextString = "";
+    private String subjectIdString ="";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -107,19 +115,51 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
 
             switch (item.getType()) {
                 case GRAPH:
-                    subjectTextView.setText(item.getText());
-                    fetchGraphData(((GraphSubjectType)item).getId());
+                    subjectTextString = item.getText();
+                    subjectIdString = ((GraphSubjectType)item).getId();
+                    showPicker(PickerType.TEACHER_BATCH);
                     break;
                 default:
                     break;
             }
         }
     };
-    private void fetchGraphData(String subjectId){
+
+    public void showPicker(PickerType type) {
+
+        Picker picker = Picker.newInstance(0);
+        List<BaseType> examTypes = new ArrayList<BaseType>(2);
+        examTypes.add(new Batch("1","Class Test"));
+        examTypes.add(new Batch("3","Term Test"));
+        picker.setData(type, examTypes, PickerCallbackExamType , "Select Exam Type");
+        picker.show(getChildFragmentManager(), null);
+    }
+    Picker.PickerItemSelectedListener PickerCallbackExamType = new Picker.PickerItemSelectedListener() {
+
+        @Override
+        public void onPickerItemSelected(BaseType item) {
+
+            switch (item.getType()) {
+                case TEACHER_BATCH:
+                    subjectTextView.setText(subjectTextString);
+                    if(subjectTextString.equalsIgnoreCase("All")){
+                            fetchAllGraphData(((Batch)item).getId());
+                    }else {
+                           fetchGraphData(subjectIdString,((Batch)item).getId());
+                    }
+
+                    break;
+                default:
+                    break;
+            }
+
+        }
+    };
+    private void fetchGraphData(String subjectId,String examType){
         RequestParams params = new RequestParams();
         params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
         params.put(RequestKeyHelper.SUBJECT_ID, subjectId);
-        params.put(RequestKeyHelper.EXAM_CATEGORY,"0");
+        params.put(RequestKeyHelper.EXAM_CATEGORY,examType);
         if(userHelper.getUser().getType()== UserHelper.UserTypeEnum.PARENTS){
             params.put(RequestKeyHelper.BATCH_ID,userHelper.getUser().getSelectedChild().getBatchId());
             params.put(RequestKeyHelper.STUDENT_ID,userHelper.getUser().getSelectedChild().getProfileId());
@@ -149,6 +189,126 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
         });
 
     }
+
+    private void fetchAllGraphData(String examType){
+        RequestParams params = new RequestParams();
+        params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
+        params.put(RequestKeyHelper.EXAM_CATEGORY,examType);
+        if(userHelper.getUser().getType()== UserHelper.UserTypeEnum.PARENTS){
+            params.put(RequestKeyHelper.BATCH_ID,userHelper.getUser().getSelectedChild().getBatchId());
+            params.put(RequestKeyHelper.STUDENT_ID,userHelper.getUser().getSelectedChild().getProfileId());
+        }
+        AppRestClient.post(URLHelper.URL_GET_REPORT_PROGRESS_ALL, params,  new AsyncHttpResponseHandler(){
+            public void onFailure(Throwable arg0, String arg1) {
+                setGraphVisibility(true);
+//                Log.e("error", arg1);
+            };
+
+            public void onStart() {
+                setGraphVisibility(false);
+
+            };
+
+            public void onSuccess(int arg0, String responseString) {
+
+                setGraphVisibility(true);
+                Wrapper wrapper = GsonParser.getInstance().parseServerResponse(
+                        responseString);
+                JsonObject progress = wrapper.getData().getAsJsonObject("progress");
+               // Log.e("response graph",(progress.get("exam")).toString());
+                openChartAll(GsonParser.getInstance().parseGraphDataListAll(
+                        (progress.get("subject")).toString()));
+                //adapter.notifyDataSetChanged();
+            };
+        });
+    }
+
+    private void openChartAll(List<SubjectSeries> exam){
+        String[] titles = new String[exam.size()] ;//{ "Crete Air Temperature", "Skiathos Air Temperature" };
+        List<double[]> x = new ArrayList<double[]>();
+        List<double[]> values = new ArrayList<double[]>();
+        int[] colors = new int[exam.size()];
+        PointStyle[] styles = new PointStyle[exam.size()]; //{ PointStyle.CIRCLE, PointStyle.DIAMOND };
+        String[] types = new String[exam.size()];
+        for (int i = 0; i < exam.size(); i++) {
+            titles[i]=exam.get(i).getName();
+            double [] allDouble = new double[exam.get(i).getAllExam().size()];
+            double [] valuesDouble = new double[exam.get(i).getAllExam().size()];
+            colors[i]=Color.parseColor(exam.get(i).getColor());
+            styles[i]=PointStyle.CIRCLE;
+            types[i]= LineChart.TYPE;
+            for(int j=0;j<exam.get(i).getAllExam().size();j++){
+                    allDouble[j]=j;
+                    valuesDouble[j]=Double.parseDouble(exam.get(i).getAllExam().get(j).getPoint());
+            }
+            x.add(allDouble);
+            values.add(valuesDouble);
+        }
+
+        /*values.add(new double[] { 12.3, 12.5, 13.8, 16.8, 20.4, 24.4, 26.4, 26.1, 23.6, 20.3, 17.2,
+                13.9 });
+        values.add(new double[] { 9, 10, 11, 15, 19, 23, 26, 25, 22, 18, 13, 10 });*/
+        //int[] colors = new int[] { Color.GREEN, Color.rgb(200, 150, 0) };
+        //PointStyle[] styles = new PointStyle[] { PointStyle.CIRCLE, PointStyle.DIAMOND };
+        XYMultipleSeriesRenderer renderer = buildRenderer(colors, styles);
+        renderer.setPointSize(5.5f);
+        int length = renderer.getSeriesRendererCount();
+
+        for (int i = 0; i < length; i++) {
+            XYSeriesRenderer r = (XYSeriesRenderer) renderer.getSeriesRendererAt(i);
+            r.setLineWidth(5);
+            r.setFillPoints(true);
+            renderer.setXLabels(0);
+           // renderer.addXTextLabel(i,exam.get(i).getName());
+        }
+        SubjectSeries ss = getHighestExam(exam);
+        for(int i=0;i<ss.getAllExam().size();i++){
+            renderer.addXTextLabel(i,ss.getAllExam().get(i).getName());
+        }
+        setChartSettings(renderer, "All Subject Comparison Graph", "Exam Name", "Percentage", 0.5, 12.5, 0, 110,
+                Color.BLACK, Color.BLACK);
+
+        renderer.setXLabelsColor(Color.BLACK);
+        renderer.setYLabelsColor(0,Color.BLACK);
+        //renderer.setXLabels(0);
+        renderer.setXAxisMax(5);
+        renderer.setYLabels(10);
+        renderer.setXAxisMin(-.1);
+        renderer.setLabelsColor(Color.BLACK);
+        renderer.setShowGrid(false);
+        renderer.setXLabelsAlign(Paint.Align.RIGHT);
+        renderer.setYLabelsAlign(Paint.Align.RIGHT);
+        renderer.setZoomButtonsVisible(false);
+        renderer.setPanLimits(new double[] { -10, 20, -10, 40 });
+        renderer.setZoomLimits(new double[] { -10, 20, -10, 40 });
+        renderer.setShowLegend(true);
+        //multiRenderer.setLegendHeight(150);
+        renderer.setFitLegend(true);
+        renderer.setMargins(new int[] { 50, 50, 50, 22 });
+        renderer.setMarginsColor(Color.WHITE);
+
+
+
+        XYMultipleSeriesDataset dataset = buildDataset(titles, x, values);
+
+        if(mChartView!=null)graphView.removeView(mChartView);
+        mChartView = ChartFactory.getCombinedXYChartView(getActivity(),dataset,renderer,types);
+
+        graphView.addView(mChartView  , new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,
+                ViewGroup.LayoutParams.FILL_PARENT));
+    }
+    private SubjectSeries getHighestExam(List<SubjectSeries>exam){
+        int max = 0;
+        SubjectSeries m = null;
+        for(SubjectSeries s:exam){
+            if(s.getAllExam().size()>max){
+                max = s.getAllExam().size();
+                m = s;
+            }
+        }
+        return m;
+
+    }
     private void openChart(List<ProgressExam> exam){
         int[] x = { 0,1,2,3,4,5,6,7 };
         int[] income = { 2000,2500,2700,3000,2800,3500,3700,3800};
@@ -163,9 +323,12 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
         // Creating an  XYSeries for Income
         XYSeries expenseSeries = new XYSeries("Highest Percentage");
         // Adding data to Income and Expense Series
+
+        XYSeries averageSeries = new XYSeries("Average Percentage");
         for(int i=0;i<exam.size();i++){
             incomeSeries.add(i,exam.get(i).getYour_percent());//income[i]
             expenseSeries.add(i,exam.get(i).getMax_mark_percent());//expense[i]
+            averageSeries.add(i,exam.get(i).getAvg_mark_percent());
         }
 
 
@@ -175,6 +338,8 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
         dataset.addSeries(incomeSeries);
         // Adding Expense Series to dataset
         dataset.addSeries(expenseSeries);
+
+        dataset.addSeries(averageSeries);
 
 
         DisplayMetrics metrics = getActivity().getResources().getDisplayMetrics();
@@ -196,6 +361,14 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
         expenseRenderer.setDisplayChartValues(true);
         expenseRenderer.setChartValuesTextSize(val);
 
+
+        XYSeriesRenderer averageRenderer = new XYSeriesRenderer();
+        averageRenderer.setColor(Color.rgb(102, 0, 102));
+        averageRenderer.setFillPoints(false);
+        averageRenderer.setLineWidth(2);
+        averageRenderer.setDisplayChartValues(true);
+        averageRenderer.setChartValuesTextSize(val);
+
         // Creating a XYMultipleSeriesRenderer to customize the whole chart
         XYMultipleSeriesRenderer multiRenderer = new XYMultipleSeriesRenderer();
         multiRenderer.setXLabels(0);
@@ -214,6 +387,7 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
         multiRenderer.removeAllRenderers();
         multiRenderer.addSeriesRenderer(incomeRenderer);
         multiRenderer.addSeriesRenderer(expenseRenderer);
+        multiRenderer.addSeriesRenderer(averageRenderer);
 
         multiRenderer.setZoomButtonsVisible(false);
         multiRenderer.setDisplayValues(true);
@@ -229,11 +403,11 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
         multiRenderer.setApplyBackgroundColor(true);
         multiRenderer.setMarginsColor(Color.WHITE);
         multiRenderer.setBackgroundColor(Color.WHITE);
-        multiRenderer.setXAxisMax(exam.size());
+        multiRenderer.setXAxisMax(3);
         multiRenderer.setXAxisMin(-1);
         multiRenderer.setYAxisMax(120);
         multiRenderer.setYAxisMin(0);
-        float barwidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 30, metrics);
+        float barwidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 25, metrics);
         multiRenderer.setBarWidth(barwidth);
 
 
@@ -250,4 +424,51 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
                 ViewGroup.LayoutParams.FILL_PARENT));
 
     }
+    private XYMultipleSeriesDataset buildDataset(String[] titles, List<double[]> xValues,
+                                                   List<double[]> yValues) {
+        XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
+        int length = titles.length;
+        for (int i = 0; i < length; i++) {
+            XYSeries series = new XYSeries(titles[i]);
+            double[] xV = xValues.get(i);
+            double[] yV = yValues.get(i);
+            int seriesLength = xV.length;
+            for (int k = 0; k < seriesLength; k++) {
+                series.add(xV[k], yV[k]);
+            }
+            dataset.addSeries(series);
+        }
+        return dataset;
+    }
+    private XYMultipleSeriesRenderer buildRenderer(int[] colors, PointStyle[] styles) {
+        XYMultipleSeriesRenderer renderer = new XYMultipleSeriesRenderer();
+        renderer.setAxisTitleTextSize(16);
+        renderer.setChartTitleTextSize(20);
+        renderer.setLabelsTextSize(15);
+        renderer.setLegendTextSize(15);
+        renderer.setPointSize(5f);
+        renderer.setMargins(new int[] { 20, 30, 15, 0 });
+        int length = colors.length;
+        for (int i = 0; i < length; i++) {
+            XYSeriesRenderer r = new XYSeriesRenderer();
+            r.setColor(colors[i]);
+            r.setPointStyle(styles[i]);
+            renderer.addSeriesRenderer(r);
+        }
+        return renderer;
+    }
+    protected void setChartSettings(XYMultipleSeriesRenderer renderer, String title, String xTitle,
+                                    String yTitle, double xMin, double xMax, double yMin, double yMax, int axesColor,
+                                    int labelsColor) {
+        renderer.setChartTitle(title);
+        renderer.setXTitle(xTitle);
+        renderer.setYTitle(yTitle);
+        renderer.setXAxisMin(xMin);
+        renderer.setXAxisMax(xMax);
+        renderer.setYAxisMin(yMin);
+        renderer.setYAxisMax(yMax);
+        renderer.setAxesColor(axesColor);
+        renderer.setLabelsColor(labelsColor);
+    }
+
 }

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.adapters.PickerAdapter;
 import com.champs21.schoolapp.model.BaseType;
+import com.champs21.schoolapp.model.GraphSubjectType;
 import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.model.PickerType;
 import com.champs21.schoolapp.model.Wrapper;
@@ -157,8 +158,10 @@ public class CustomPickerWithLoadData extends DialogFragment {
             pbLayout.setVisibility(View.GONE);
             Wrapper wrapper = GsonParser.getInstance().parseServerResponse(
                     responseString);
+            items.add(new GraphSubjectType("All","-2"));
             items.addAll(GsonParser.getInstance().parseGraphSubjectList(
                     (wrapper.getData().get("subjects")).toString()));
+
             adapter.notifyDataSetChanged();
         };
     };
