@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.MeetingStatus;
 import com.champs21.schoolapp.model.Wrapper;
@@ -78,6 +79,19 @@ public class SingleMeetingRequestActivity extends ChildContainerActivity {
 		
 		initView();
 		initApiCall();
+
+        if(getIntent().getExtras()!=null)
+        {
+            if(getIntent().getExtras().containsKey("total_unread_extras"))
+            {
+                String rid = getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                String rtype = getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+
+                GcmIntentService.initApiCall(rid, rtype);
+            }
+        }
+
 		
 	}
 
@@ -311,7 +325,31 @@ public class SingleMeetingRequestActivity extends ChildContainerActivity {
 		
 		if (userHelper.getUser().getType() == UserTypeEnum.PARENTS) 
 		{
-			params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+            if(getIntent().getExtras()!=null)
+            {
+                if(getIntent().getExtras().containsKey("total_unread_extras"))
+                {
+                    String rid = getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                    String rtype = getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+                    params.put(RequestKeyHelper.STUDENT_ID, getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
+
+                    GcmIntentService.initApiCall(rid, rtype);
+                }
+                else
+                {
+                    params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+
+                }
+            }
+            else
+            {
+                params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+
+            }
+
+
+			//params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
 		}
 		
 		

@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.ModelContainer;
 import com.champs21.schoolapp.model.Notice;
@@ -72,7 +73,21 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 		
 		initView();
 		initApiCall();
-		
+
+
+        if(getIntent().getExtras()!=null)
+        {
+            if(getIntent().getExtras().containsKey("total_unread_extras"))
+            {
+                String rid = getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                String rtype = getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+
+                Log.e("SINGLE_NOTICE", "rtype: "+rtype+" "+"rid: "+rid);
+
+                GcmIntentService.initApiCall(rid, rtype);
+            }
+        }
 		
 	}
 	

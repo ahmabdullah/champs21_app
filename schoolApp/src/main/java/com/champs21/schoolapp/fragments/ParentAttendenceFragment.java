@@ -138,6 +138,9 @@ public class ParentAttendenceFragment extends Fragment implements MyFragmentTabH
         // initial state is that a tab isn't shown.
         tabInfo.fragment = getChildFragmentManager().findFragmentByTag(tag);
         if (tabInfo.fragment != null && !tabInfo.fragment.isDetached()) {
+
+            tabInfo.fragment.setArguments(getArguments());
+
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
             ft.detach(tabInfo.fragment);
             ft.commit();

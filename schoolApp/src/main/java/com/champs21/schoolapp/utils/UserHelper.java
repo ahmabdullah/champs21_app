@@ -457,6 +457,13 @@ public class UserHelper {
                 cover);
     }
 
+
+    public void saveTotalUnreadNotification(String totalUnread) {
+        SharedPreferencesHelper.getInstance().setString(SPKeyHelper.TOTAL_UNREAD_NOTIFICATION,
+                totalUnread);
+    }
+
+
     public void saveIsFirstLogin(String firstLogin) {
         SharedPreferencesHelper.getInstance().setBoolean(SPKeyHelper.IS_FIRST_LOGIN, "1".equals(firstLogin));
     }
@@ -678,6 +685,13 @@ public class UserHelper {
                 SPKeyHelper.SCHOOL_COVER, "");
     }
 
+
+    public static String getTotalUnreadNotification() {
+        return SharedPreferencesHelper.getInstance().getString(
+                SPKeyHelper.TOTAL_UNREAD_NOTIFICATION, "");
+    }
+
+
     public static boolean isFirstLogin() {
         return SharedPreferencesHelper.getInstance().getBoolean(
                 SPKeyHelper.IS_FIRST_LOGIN, true);
@@ -771,6 +785,7 @@ public class UserHelper {
                     saveSchoolLogo(user.getPaidInfo().getSchool_logo());
                     saveSchoolPicture(user.getPaidInfo().getSchool_picture());
                     saveSchoolCover(user.getPaidInfo().getSchool_cover());
+                    saveTotalUnreadNotification(user.getPaidInfo().getUnread_total_notification());
                     saveIsFirstLogin(user.getPaidInfo().getIs_first_login());
 
 

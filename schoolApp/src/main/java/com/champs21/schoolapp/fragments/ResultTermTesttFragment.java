@@ -3,9 +3,6 @@
  */
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,22 +16,19 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.champs21.freeversion.PaidVersionHomeFragment;
-import com.champs21.freeversion.SingleCalendarEvent;
-import com.champs21.freeversion.SingleExamRoutine;
 import com.champs21.freeversion.SingleItemTermReportActivity;
+import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.adapters.AcademicCalendarListAdapter;
 import com.champs21.schoolapp.adapters.ExamRoutineListAdapter;
-import com.champs21.schoolapp.model.AcademicCalendarDataItem;
 import com.champs21.schoolapp.model.BaseType;
 import com.champs21.schoolapp.model.Batch;
 import com.champs21.schoolapp.model.ExamRoutine;
 import com.champs21.schoolapp.model.Picker;
+import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.model.PickerType;
 import com.champs21.schoolapp.model.StudentAttendance;
 import com.champs21.schoolapp.model.UserAuthListener;
 import com.champs21.schoolapp.model.Wrapper;
-import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
@@ -42,11 +36,13 @@ import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
-import com.champs21.schoolapp.utils.UserHelper.UserAccessType;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -130,9 +126,37 @@ public class ResultTermTesttFragment extends UserVisibleHintFragment implements
 		params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
 		params.put(RequestKeyHelper.CATEGORY_ID, "3");
 		if (userHelper.getUser().getType() == UserTypeEnum.PARENTS) {
-			params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
-			params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser()
-					.getSelectedChild().getProfileId());
+
+
+            if(getActivity().getIntent().getExtras()!=null)
+            {
+                if(getActivity().getIntent().getExtras().containsKey("total_unread_extras"))
+                {
+                    String rid = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                    String rtype = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+                    params.put(RequestKeyHelper.STUDENT_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
+                    params.put(RequestKeyHelper.BATCH_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("batch_id"));
+
+
+                    GcmIntentService.initApiCall(rid, rtype);
+                }
+                else
+                {
+                    params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                    params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+                }
+            }
+            else
+            {
+                params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            }
+
+
+            //params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+			//params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+
 			/*Log.e("SCHOOL_BATCH_ID_STUDENT_ID", userHelper.getUser()
 					.getPaidInfo().getSchoolId()
 					+ " "

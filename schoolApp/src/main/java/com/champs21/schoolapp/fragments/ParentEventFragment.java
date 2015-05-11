@@ -8,15 +8,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.TabHost.TabContentFactory;
 
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.model.FreeVersionPost;
-import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.viewhelpers.CustomTabButton;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 
 public class ParentEventFragment extends Fragment {
@@ -31,6 +26,19 @@ public class ParentEventFragment extends Fragment {
 		@Override
 		public void onActivityCreated(Bundle savedInstanceState) {
 			super.onActivityCreated(savedInstanceState);
+
+
+            /*if(getActivity().getIntent().getExtras()!=null)
+            {
+                if(getActivity().getIntent().getExtras().containsKey("total_unread_extras"))
+                {
+                    String rid = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                    String rtype = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+
+                    GcmIntentService.initApiCall(rid, rtype);
+                }
+            }*/
 			
 		}
 
@@ -120,6 +128,7 @@ public class ParentEventFragment extends Fragment {
 					
 					
 					Fragment fragment = new UpcomingEventsFragment();
+                    fragment.setArguments(getArguments());
 					FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 					FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 					fragmentTransaction.replace(R.id.fragmentContainer, fragment);
@@ -143,6 +152,7 @@ public class ParentEventFragment extends Fragment {
 					
 					
 					Fragment fragment = new ArchievePageFragment();
+                    fragment.setArguments(getArguments());
 					FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 					FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 					fragmentTransaction.replace(R.id.fragmentContainer, fragment);

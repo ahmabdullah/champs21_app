@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.HomeworkData;
 import com.champs21.schoolapp.model.ModelContainer;
@@ -45,8 +46,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SingleHomeworkActivity extends ChildContainerActivity {
-	
-	private UIHelper uiHelper;
+
+
+    private UIHelper uiHelper;
 	private String id;
 	private TextView tvLesson;
 	//private WebView webViewContent;
@@ -78,8 +80,10 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
         homeBtn.setVisibility(View.VISIBLE);
         logo.setVisibility(View.GONE);
 	}
-	
-	@Override
+
+
+
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_single_homework);
@@ -93,6 +97,28 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 		
 		initView();
 		initApicall();
+
+
+
+        /*if(getIntent().getExtras()!=null)
+        {
+            Log.e("EXTRAS", "is: "+getIntent().getExtras().getBundle("total_unread_extras").getString("rid"));
+        }*/
+
+        if(getIntent().getExtras()!=null)
+        {
+            if(getIntent().getExtras().containsKey("total_unread_extras"))
+            {
+                String rid = getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                String rtype = getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+
+                GcmIntentService.initApiCall(rid, rtype);
+            }
+        }
+
+
+
 		
 		
 	}
@@ -326,12 +352,38 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 		
 		if (userHelper.getUser().getType() == UserTypeEnum.PARENTS) 
 		{
-			params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
-			params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            if(getIntent().getExtras()!=null)
+            {
+                if(getIntent().getExtras().containsKey("total_unread_extras"))
+                {
+                    String rid = getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                    String rtype = getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+                    params.put(RequestKeyHelper.STUDENT_ID, getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
+                    params.put(RequestKeyHelper.BATCH_ID, getIntent().getExtras().getBundle("total_unread_extras").getString("batch_id"));
+
+
+                    GcmIntentService.initApiCall(rid, rtype);
+                }
+                else
+                {
+                    params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                    params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+                }
+            }
+            else
+            {
+                params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            }
+
+
+			//params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+			//params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
 			
-			Log.e("STU_ID", userHelper.getUser().getSelectedChild().getId());
-			Log.e("STU_PROFILE_ID", userHelper.getUser().getSelectedChild().getProfileId());
-			Log.e("STU_BATCH_ID", userHelper.getUser().getSelectedChild().getBatchId());
+			//Log.e("STU_ID", userHelper.getUser().getSelectedChild().getId());
+			//Log.e("STU_PROFILE_ID", userHelper.getUser().getSelectedChild().getProfileId());
+			//Log.e("STU_BATCH_ID", userHelper.getUser().getSelectedChild().getBatchId());
 		}
 		
 		
@@ -401,5 +453,6 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 		super.onDestroy();
 		webViewContent.destroy();
 	};*/
+
 
 }

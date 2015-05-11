@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
+import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.fragments.YearlyAttendanceReportFragment;
 
@@ -60,6 +61,17 @@ public class AnyFragmentLoadActivity extends ChildContainerActivity {
 
 		}
 
+        if(getIntent().getExtras()!=null)
+        {
+            if(getIntent().getExtras().containsKey("total_unread_extras"))
+            {
+                String rid = getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                String rtype = getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+                GcmIntentService.initApiCall(rid, rtype);
+            }
+        }
+
 	}
 
 	private void loadFragment(String name) {
@@ -69,6 +81,10 @@ public class AnyFragmentLoadActivity extends ChildContainerActivity {
 
             Constructor<?> ctor = Class.forName(className).getConstructor();
             Fragment object = (Fragment) ctor.newInstance(new Object[] {});
+
+            object.setArguments(getIntent().getExtras());
+
+
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.pager_frame, object, "").commit();
 

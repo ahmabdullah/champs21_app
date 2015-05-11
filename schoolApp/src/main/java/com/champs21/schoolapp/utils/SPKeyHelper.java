@@ -22,6 +22,7 @@ public class SPKeyHelper {
 	public final static String SCHOOL_lOGO = "SCHOOL_lOGO";
     public final static String SCHOOL_PICTURE = "SCHOOL_PICTURE";
     public final static String SCHOOL_COVER = "SCHOOL_COVER";
+    public final static String TOTAL_UNREAD_NOTIFICATION = "TOTAL_UNREAD_NOTIFICATION";
     public final static String TOKEN = "TOKEN";
 	public final static String IS_ADMIN = "IS_ADMIN";
 	public final static String IS_PARENT = "IS_PARENT";

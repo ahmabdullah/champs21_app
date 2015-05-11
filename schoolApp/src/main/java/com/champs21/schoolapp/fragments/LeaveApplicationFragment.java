@@ -1,10 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -42,6 +37,11 @@ import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.ipaulpro.afilechooser.utils.FileUtils;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class LeaveApplicationFragment extends Fragment implements
 		OnClickListener {
@@ -100,13 +100,13 @@ public class LeaveApplicationFragment extends Fragment implements
 		}
 		if (startDateFormatServerString.equals("")) {
 			Toast.makeText(getActivity(),
-					"Please Choose a start date for Homework!",
+					"Please Choose a start date for leave!",
 					Toast.LENGTH_SHORT).show();
 			return false;
 		}
 		if (endDateFormatServerString.equals("")) {
 			Toast.makeText(getActivity(),
-					"Please Choose an end date for Homework!",
+					"Please Choose an end date for leave!",
 					Toast.LENGTH_SHORT).show();
 			return false;
 		}
@@ -170,7 +170,7 @@ public class LeaveApplicationFragment extends Fragment implements
 									.parseServerResponse(responseString);
 							if (wrapper.getStatus().getCode() == AppConstant.RESPONSE_CODE_SUCCESS) {
 								Toast.makeText(getActivity(),
-										"Successfully posted Homework!",
+										"Successfully posted application!",
 										Toast.LENGTH_SHORT).show();
 								leaveDescriptionEditText.setText("");
 								leaveId="";
@@ -179,7 +179,7 @@ public class LeaveApplicationFragment extends Fragment implements
 							} else
 								Toast.makeText(
 										getActivity(),
-										"Failed to post Homework! Please try again.",
+										"Failed to post leave application! Please try again.",
 										Toast.LENGTH_SHORT).show();
 							super.onSuccess(arg0, responseString);
 						}
@@ -214,7 +214,7 @@ public class LeaveApplicationFragment extends Fragment implements
 									.parseServerResponse(responseString);
 							if (wrapper.getStatus().getCode() == AppConstant.RESPONSE_CODE_SUCCESS) {
 								Toast.makeText(getActivity(),
-										"Successfully posted Homework!",
+										"Successfully posted application!",
 										Toast.LENGTH_SHORT).show();
 								leaveDescriptionEditText.setText("");
 								leaveId="";
@@ -223,7 +223,7 @@ public class LeaveApplicationFragment extends Fragment implements
 							} else
 								Toast.makeText(
 										getActivity(),
-										"Failed to post Homework! Please try again.",
+										"Failed to post leave application! Please try again.",
 										Toast.LENGTH_SHORT).show();
 							super.onSuccess(arg0, responseString);
 						}

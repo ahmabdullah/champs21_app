@@ -13,6 +13,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.UserAuthListener;
 import com.champs21.schoolapp.model.Wrapper;
@@ -91,9 +92,36 @@ public class YearlyAttendanceReportFragment extends Fragment implements UserAuth
 		params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
 
 		if (userHelper.getUser().getType() == UserTypeEnum.PARENTS) {
-			params.put(RequestKeyHelper.SCHOOL, userHelper.getUser().getSelectedChild().getSchoolId());
-			params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
-			params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+
+
+            if(getActivity().getIntent().getExtras()!=null)
+            {
+                if(getActivity().getIntent().getExtras().containsKey("total_unread_extras"))
+                {
+                    String rid = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                    String rtype = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+                    params.put(RequestKeyHelper.STUDENT_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
+                    params.put(RequestKeyHelper.BATCH_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("batch_id"));
+
+
+                    GcmIntentService.initApiCall(rid, rtype);
+                }
+                else
+                {
+                    params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                    params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+                }
+            }
+            else
+            {
+                params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            }
+
+            //params.put(RequestKeyHelper.SCHOOL, userHelper.getUser().getSelectedChild().getSchoolId());
+			//params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+			//params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
 		}
 		if(userHelper.getUser().getType() == UserTypeEnum.TEACHER) {
 			params.put(RequestKeyHelper.SCHOOL, userHelper.getUser().getPaidInfo().getSchoolId());

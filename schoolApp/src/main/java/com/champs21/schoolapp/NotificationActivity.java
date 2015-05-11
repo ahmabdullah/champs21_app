@@ -1,7 +1,5 @@
 package com.champs21.schoolapp;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -20,20 +18,20 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.champs21.freeversion.AnyFragmentLoadActivity;
 import com.champs21.freeversion.ChildContainerActivity;
 import com.champs21.freeversion.SingleExamRoutine;
 import com.champs21.freeversion.SingleHomeworkActivity;
 import com.champs21.freeversion.SingleMeetingRequestActivity;
 import com.champs21.freeversion.SingleNoticeActivity;
-import com.champs21.schoolapp.fragments.MyLeaveFragment;
-import com.champs21.schoolapp.fragments.StudentLeaveFragment;
 import com.champs21.schoolapp.model.NotificationReminder;
 import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
+import com.champs21.schoolapp.utils.SharedPreferencesHelper;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -42,6 +40,8 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
 
 public class NotificationActivity extends ChildContainerActivity{
 	
@@ -67,6 +67,20 @@ public class NotificationActivity extends ChildContainerActivity{
 		initviews();
 		setUpList();
 		fetchNotification();
+
+
+        if(getIntent().getExtras()!=null)
+        {
+            if(getIntent().getExtras().containsKey("total_unread_extras"))
+            {
+                String rid = getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                String rtype = getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+
+                GcmIntentService.initApiCall(rid, rtype);
+            }
+        }
+
 	}
 	private void fetchNotification() {
 		RequestParams params = new RequestParams();
@@ -389,10 +403,20 @@ public class NotificationActivity extends ChildContainerActivity{
 			
 			intent = new Intent(this, AnyFragmentLoadActivity.class);
 			intent.putExtra("class_name", "ParentEventFragment");
+
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(null, rType);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 			
@@ -400,10 +424,19 @@ public class NotificationActivity extends ChildContainerActivity{
 			
 			intent = new Intent(this, SingleExamRoutine.class);
 			intent.putExtra(AppConstant.ID_SINGLE_CALENDAR_EVENT, data.getRid());
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(data.getId(), null);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 			
@@ -411,10 +444,19 @@ public class NotificationActivity extends ChildContainerActivity{
 			
 			intent = new Intent(this, AnyFragmentLoadActivity.class);
 			intent.putExtra("class_name", "ParentReportCardFragment");
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(null, rType);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 			
@@ -422,31 +464,63 @@ public class NotificationActivity extends ChildContainerActivity{
 		case 4:
 			intent = new Intent(this, SingleHomeworkActivity.class);
 			intent.putExtra(AppConstant.ID_SINGLE_HOMEWORK, data.getRid());
+
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
 			
-				initApiCall(data.getId(), null);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 			
 		case 5:
 			intent = new Intent(this, SingleNoticeActivity.class);
 			intent.putExtra(AppConstant.ID_SINGLE_NOTICE, data.getRid());
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(data.getId(), null);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 			
 		case 6:
 			intent = new Intent(this, AnyFragmentLoadActivity.class);
 			intent.putExtra("class_name", "ParentAttendenceFragment");
+
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(null, rType);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 			
@@ -464,10 +538,20 @@ public class NotificationActivity extends ChildContainerActivity{
 			
 			intent = new Intent(this, AnyFragmentLoadActivity.class);
 			intent.putExtra("class_name", "MyLeaveFragment");
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(null, rType);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 			
@@ -478,10 +562,19 @@ public class NotificationActivity extends ChildContainerActivity{
 
 			intent = new Intent(this, AnyFragmentLoadActivity.class);
 			intent.putExtra("class_name", "StudentLeaveFragment");
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(null, rType);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 			
@@ -492,56 +585,120 @@ public class NotificationActivity extends ChildContainerActivity{
 			
 			intent = new Intent(this, AnyFragmentLoadActivity.class);
 			intent.putExtra("class_name", "MyLeaveFragment");
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(null, rType);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 			
 		case 11:
 			intent = new Intent(this, SingleMeetingRequestActivity.class);
 			intent.putExtra(AppConstant.ID_SINGLE_MEETING_REQUEST, data.getRid());
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 			
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(null, rType);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 			
 		case 12:
 			intent = new Intent(this, SingleMeetingRequestActivity.class);
 			intent.putExtra(AppConstant.ID_SINGLE_MEETING_REQUEST, data.getRid());
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(null, rType);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 			
 		case 13:
 			intent = new Intent(this, SingleMeetingRequestActivity.class);
 			intent.putExtra(AppConstant.ID_SINGLE_MEETING_REQUEST, data.getRid());
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(null, rType);
+				initApiCall(data.getRid(), rType);
 			
 			break;
 
 		case 14:
 			intent = new Intent(this, SingleMeetingRequestActivity.class);
 			intent.putExtra(AppConstant.ID_SINGLE_MEETING_REQUEST, data.getRid());
+
+            if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+            {
+                Bundle extra = new Bundle();
+                extra.putString("student_id", data.getStudentId());
+                extra.putString("batch_id", data.getBatchId());
+                intent.putExtra("total_unread_extras", extra);
+            }
+
 			startActivityForResult(intent, REQUEST_REMINDER);
 
 			
 			if(data.getIs_read().equalsIgnoreCase("0"))
-				initApiCall(null, rType);
+				initApiCall(data.getRid(), rType);
 			
 			break;
+
+            case 15:
+                intent = new Intent(this, AnyFragmentLoadActivity.class);
+                intent.putExtra("class_name", "QuizFragment");
+
+                if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+                {
+                    Bundle extra = new Bundle();
+                    extra.putString("student_id", data.getStudentId());
+                    extra.putString("batch_id", data.getBatchId());
+                    intent.putExtra("total_unread_extras", extra);
+                }
+
+                startActivityForResult(intent, REQUEST_REMINDER);
+
+                if(data.getIs_read().equalsIgnoreCase("0"))
+                    initApiCall(data.getRid(), rType);
+
+                break;
 
 		default:
 			break;
@@ -565,21 +722,23 @@ public class NotificationActivity extends ChildContainerActivity{
 	}
 	
 	
-	private void initApiCall(String id, String rTtype)
+	private void initApiCall(String rId, String rTtype)
 	{
 
 		RequestParams params = new RequestParams();
 		params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
-		
-		
-		if(rTtype != null)
+
+
+        if(rId != null)
+        {
+            params.put("rid", rId);
+        }
+
+        if(rTtype != null)
 		{
 			params.put("rtype", rTtype);
 		}
-		else if(id != null)
-		{
-			params.put("id", id);
-		}
+
 		
 		AppRestClient.post(URLHelper.URL_EVENT_REMINDER, params, reminderHandler);
 	
@@ -617,6 +776,14 @@ public class NotificationActivity extends ChildContainerActivity{
 			if (modelContainer.getStatus().getCode() == 200) {
 				
 				//fetchNotification();
+
+                modelContainer.getData().get("unread_total").getAsString();
+
+                SharedPreferencesHelper.getInstance().setString("total_unread", modelContainer.getData().get("unread_total").getAsString());
+
+                userHelper.saveTotalUnreadNotification( modelContainer.getData().get("unread_total").getAsString());
+
+                listenerActivity.onNotificationCountChangedFromActivity(Integer.parseInt(modelContainer.getData().get("unread_total").getAsString()));
 				
 			}
 			
@@ -628,4 +795,17 @@ public class NotificationActivity extends ChildContainerActivity{
 
 		};
 	};
+
+
+    public static INotificationCountChangedFromActivity listenerActivity;
+
+    public interface INotificationCountChangedFromActivity{
+
+        public void onNotificationCountChangedFromActivity(int count);
+
+
+    }
+
+
+
 }

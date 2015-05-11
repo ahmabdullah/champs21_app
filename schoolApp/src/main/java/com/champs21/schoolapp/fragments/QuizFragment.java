@@ -1,11 +1,23 @@
 package com.champs21.schoolapp.fragments;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.text.format.DateUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+
 import com.champs21.freeversion.AssesmentHomeworkActivity;
+import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.fragments.HomeworkFragment.ViewHolderAssessment;
 import com.champs21.schoolapp.model.AssessmentHomework;
 import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
@@ -21,25 +33,15 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-import android.content.Context;
-import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.text.format.DateUtils;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 public class QuizFragment extends Fragment {
 	
@@ -192,8 +194,34 @@ public class QuizFragment extends Fragment {
 		
 		if (userHelper.getUser().getType() == UserTypeEnum.PARENTS) 
 		{
-			params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
-			params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            if(getActivity().getIntent().getExtras()!=null)
+            {
+                if(getActivity().getIntent().getExtras().containsKey("total_unread_extras"))
+                {
+                    String rid = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                    String rtype = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+                    params.put(RequestKeyHelper.STUDENT_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
+                    params.put(RequestKeyHelper.BATCH_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("batch_id"));
+
+
+                    GcmIntentService.initApiCall(rid, rtype);
+                }
+                else
+                {
+                    params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                    params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+                }
+            }
+            else
+            {
+                params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            }
+
+
+			//params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+			//params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
 		}
 		
 		
@@ -294,8 +322,34 @@ public class QuizFragment extends Fragment {
 		
 		if (userHelper.getUser().getType() == UserTypeEnum.PARENTS) 
 		{
-			params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
-			params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            if(getActivity().getIntent().getExtras()!=null)
+            {
+                if(getActivity().getIntent().getExtras().containsKey("total_unread_extras"))
+                {
+                    String rid = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                    String rtype = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+                    params.put(RequestKeyHelper.STUDENT_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
+                    params.put(RequestKeyHelper.BATCH_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("batch_id"));
+
+
+                    GcmIntentService.initApiCall(rid, rtype);
+                }
+                else
+                {
+                    params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                    params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+                }
+            }
+            else
+            {
+                params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            }
+
+
+			//params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+			//params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
 		}
 		
 

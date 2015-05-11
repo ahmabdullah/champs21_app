@@ -45,6 +45,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -55,6 +56,7 @@ import android.widget.SearchView.OnQueryTextListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.LoginActivity;
 import com.champs21.schoolapp.NotificationActivity;
 import com.champs21.schoolapp.R;
@@ -105,9 +107,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class HomeContainerActivity extends SocialBaseActivity implements
-		OnQueryTextListener, OnClickListener, SearchView.OnCloseListener {
+		OnQueryTextListener, OnClickListener, SearchView.OnCloseListener, GcmIntentService.INotificationCount, NotificationActivity.INotificationCountChangedFromActivity {
 
-	public DrawerExpandableListViewAdapter listAdapter;
+
+    public DrawerExpandableListViewAdapter listAdapter;
 	public ExpandableListView expListView;
 
 	private static final String TAG = HomeContainerActivity.class
@@ -162,6 +165,9 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 	public List<DrawerGroup> groupItem;
 	public Map<String, List<DrawerChildBase>> childList;
 	public Map<String, List<Boolean>> childSelectionStates;
+
+
+    private TextView txtNotificationCount;
 
 	private void prepareListData() {
 		groupItem = new ArrayList<DrawerGroup>();
@@ -761,6 +767,51 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 			}
 		});
 
+
+        for (int i = 0; i < menu.size(); i++) {
+            MenuItem item = menu.getItem(i);
+            if (item.getItemId() == R.id.action_notification_new) {
+
+                item.getActionView().setOnClickListener(new OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+
+                        startActivity(new Intent(HomeContainerActivity.this,
+                                NotificationActivity.class));
+
+                    }
+                });
+
+                ImageButton ib = (ImageButton)item.getActionView().findViewById(R.id.btnNotification);
+                ib.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(HomeContainerActivity.this,
+                                NotificationActivity.class));
+
+                    }
+                });
+
+                txtNotificationCount = (TextView)item.getActionView().findViewById(R.id.txtNotificationCount);
+
+                txtNotificationCount.setText(UserHelper.getTotalUnreadNotification());
+
+                if(TextUtils.isEmpty(UserHelper.getTotalUnreadNotification()) || Integer.parseInt(UserHelper.getTotalUnreadNotification()) <= 0)
+                {
+                    txtNotificationCount.setVisibility(View.GONE);
+                }
+                else
+                {
+                    txtNotificationCount.setVisibility(View.VISIBLE);
+                }
+
+
+            }
+        }
+
+
+
+
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -777,10 +828,17 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 		} else if (item.getItemId() == R.id.action_login) {
 			startActivity(new Intent(HomeContainerActivity.this,
 					LoginActivity.class));
-		} else if (item.getItemId() == R.id.action_notification) {
+		}
+
+
+        /*else if (item.getItemId() == R.id.action_notification) {
 			startActivity(new Intent(HomeContainerActivity.this,
 					NotificationActivity.class));
-		}
+		}*/
+
+
+
+
 		// Handle your other action bar items...
 
 		return super.onOptionsItemSelected(item);
@@ -915,7 +973,52 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 
 	};
 
-	public class ScheduleTask implements Runnable {
+
+
+    @Override
+    public void onNotificationCountChanged(int count) {
+
+        updateTextField(count);
+
+
+    }
+
+
+
+    @Override
+    public void onNotificationCountChangedFromActivity(int count) {
+
+        updateTextField(count);
+
+    }
+
+
+    private void updateTextField(final int value)
+    {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+                txtNotificationCount.setText(String.valueOf(value));
+
+                if(value <= 0)
+                {
+                    txtNotificationCount.setVisibility(View.GONE);
+                }
+                else
+                {
+                    txtNotificationCount.setVisibility(View.VISIBLE);
+                }
+
+            }
+        });
+    }
+
+
+
+
+
+    public class ScheduleTask implements Runnable {
 
 		private String term = "";
 
@@ -1485,6 +1588,9 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 		mDrawerToggle.syncState();
+
+        GcmIntentService.listener = this;
+        NotificationActivity.listenerActivity = this;
 	}
 
 	@Override

@@ -114,7 +114,7 @@ public class LoginActivity extends SocialBaseActivity implements
 
 	@Override
 	public void onAuthenticationSuccessful() {
-		
+
 		
 		if (uiHelper.isDialogActive()) {
 			uiHelper.dismissLoadingDialog();

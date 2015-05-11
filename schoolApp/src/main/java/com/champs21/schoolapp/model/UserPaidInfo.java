@@ -21,7 +21,7 @@ public class UserPaidInfo {
 	@SerializedName("is_parent")
 	private boolean parent;
 	@SerializedName("school_id")
-	private String schoolId;
+	private String schoolId = "";
 	@SerializedName("secret")
 	private String secret;
 	@SerializedName("batch_id")
@@ -50,6 +50,11 @@ public class UserPaidInfo {
 
     @SerializedName("school_cover")
     private String school_cover;
+
+
+
+    @SerializedName("unread_total")
+    private String unread_total_notification;
 
     public String getIs_first_login() {
         return is_first_login;
@@ -195,8 +200,20 @@ public class UserPaidInfo {
         return school_cover;
     }
 
+
+
+
+
     public void setSchool_cover(String school_cover) {
         this.school_cover = school_cover;
+    }
+
+    public String getUnread_total_notification() {
+        return unread_total_notification;
+    }
+
+    public void setUnread_total_notification(String unread_total_notification) {
+        this.unread_total_notification = unread_total_notification;
     }
 
     public String getSchool_picture() {

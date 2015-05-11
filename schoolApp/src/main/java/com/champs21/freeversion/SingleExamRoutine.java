@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.ExamRoutine;
 import com.champs21.schoolapp.model.Wrapper;
@@ -61,7 +62,20 @@ public class SingleExamRoutine extends ChildContainerActivity {
 		examName = (TextView)findViewById(R.id.tv_report_exam_name);
 		examName.setText(getIntent().getExtras().getString("term_name"));
 		fetchExamRoutine();
+
+        if(getIntent().getExtras()!=null)
+        {
+            if(getIntent().getExtras().containsKey("total_unread_extras"))
+            {
+                String rid = getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                String rtype = getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+
+                GcmIntentService.initApiCall(rid, rtype);
+            }
+        }
 	}
+
 	private void fetchExamRoutine() {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
@@ -70,9 +84,35 @@ public class SingleExamRoutine extends ChildContainerActivity {
 		params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
 		params.put("exam_id", getIntent().getExtras().getString(AppConstant.ID_SINGLE_CALENDAR_EVENT));
 		if(userHelper.getUser().getType()==UserTypeEnum.PARENTS){
-			params.put(RequestKeyHelper.SCHOOL,userHelper.getUser().getPaidInfo().getSchoolId());
-			params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
-			params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+
+            if(getIntent().getExtras()!=null)
+            {
+                if(getIntent().getExtras().containsKey("total_unread_extras"))
+                {
+                    String rid = getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                    String rtype = getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+                    params.put(RequestKeyHelper.STUDENT_ID, getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
+                    params.put(RequestKeyHelper.BATCH_ID, getIntent().getExtras().getBundle("total_unread_extras").getString("batch_id"));
+
+
+                    GcmIntentService.initApiCall(rid, rtype);
+                }
+                else
+                {
+                    params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                    params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+                }
+            }
+            else
+            {
+                params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            }
+
+            //params.put(RequestKeyHelper.SCHOOL,userHelper.getUser().getPaidInfo().getSchoolId());
+			//params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+			//params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
 		}
 		AppRestClient.post(URLHelper.URL_ROUTINE_EXAM, params,
 				examRoutineHandler);

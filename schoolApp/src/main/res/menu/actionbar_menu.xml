@@ -21,12 +21,22 @@
         android:showAsAction="always"
         android:title="login">
     </item>
-    <item
+
+    <!--<item
         android:id="@+id/action_notification"
         android:icon="@drawable/notification_icon"
         android:showAsAction="always"
         android:title="Notification">
+    </item>-->
+
+    <item
+        android:id="@+id/action_notification_new"
+        android:actionLayout="@layout/action_notification_layout"
+        android:showAsAction="always"
+        android:title="Notification">
     </item>
+
+
     <item
         android:id="@+id/action_drawer"
         android:icon="@drawable/ic_drawer"

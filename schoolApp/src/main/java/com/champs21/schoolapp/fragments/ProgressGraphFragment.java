@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.BaseType;
 import com.champs21.schoolapp.model.Batch;
@@ -100,8 +101,35 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
         RequestParams params = new RequestParams();
         params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
         if(userHelper.getUser().getType()== UserHelper.UserTypeEnum.PARENTS){
-            params.put(RequestKeyHelper.BATCH_ID,userHelper.getUser().getSelectedChild().getBatchId());
-            params.put(RequestKeyHelper.STUDENT_ID,userHelper.getUser().getSelectedChild().getProfileId());
+
+            if(getActivity().getIntent().getExtras()!=null)
+            {
+                if(getActivity().getIntent().getExtras().containsKey("total_unread_extras"))
+                {
+                    String rid = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                    String rtype = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+                    params.put(RequestKeyHelper.STUDENT_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
+                    params.put(RequestKeyHelper.BATCH_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("batch_id"));
+
+
+                    GcmIntentService.initApiCall(rid, rtype);
+                }
+                else
+                {
+                    params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                    params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+                }
+            }
+            else
+            {
+                params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            }
+
+
+            //params.put(RequestKeyHelper.BATCH_ID,userHelper.getUser().getSelectedChild().getBatchId());
+            //params.put(RequestKeyHelper.STUDENT_ID,userHelper.getUser().getSelectedChild().getProfileId());
         }
 
 
@@ -161,8 +189,34 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
         params.put(RequestKeyHelper.SUBJECT_ID, subjectId);
         params.put(RequestKeyHelper.EXAM_CATEGORY,examType);
         if(userHelper.getUser().getType()== UserHelper.UserTypeEnum.PARENTS){
-            params.put(RequestKeyHelper.BATCH_ID,userHelper.getUser().getSelectedChild().getBatchId());
-            params.put(RequestKeyHelper.STUDENT_ID,userHelper.getUser().getSelectedChild().getProfileId());
+
+            if(getActivity().getIntent().getExtras()!=null)
+            {
+                if(getActivity().getIntent().getExtras().containsKey("total_unread_extras"))
+                {
+                    String rid = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                    String rtype = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+                    params.put(RequestKeyHelper.STUDENT_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
+                    params.put(RequestKeyHelper.BATCH_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("batch_id"));
+
+
+                    GcmIntentService.initApiCall(rid, rtype);
+                }
+                else
+                {
+                    params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                    params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+                }
+            }
+            else
+            {
+                params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            }
+
+            //params.put(RequestKeyHelper.BATCH_ID,userHelper.getUser().getSelectedChild().getBatchId());
+            //params.put(RequestKeyHelper.STUDENT_ID,userHelper.getUser().getSelectedChild().getProfileId());
         }
         AppRestClient.post(URLHelper.URL_GET_REPORT_PROGRESS, params,  new AsyncHttpResponseHandler(){
             public void onFailure(Throwable arg0, String arg1) {
@@ -195,8 +249,34 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
         params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
         params.put(RequestKeyHelper.EXAM_CATEGORY,examType);
         if(userHelper.getUser().getType()== UserHelper.UserTypeEnum.PARENTS){
-            params.put(RequestKeyHelper.BATCH_ID,userHelper.getUser().getSelectedChild().getBatchId());
-            params.put(RequestKeyHelper.STUDENT_ID,userHelper.getUser().getSelectedChild().getProfileId());
+
+            if(getActivity().getIntent().getExtras()!=null)
+            {
+                if(getActivity().getIntent().getExtras().containsKey("total_unread_extras"))
+                {
+                    String rid = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
+                    String rtype = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
+
+                    params.put(RequestKeyHelper.STUDENT_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
+                    params.put(RequestKeyHelper.BATCH_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("batch_id"));
+
+
+                    GcmIntentService.initApiCall(rid, rtype);
+                }
+                else
+                {
+                    params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                    params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+                }
+            }
+            else
+            {
+                params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+                params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
+            }
+
+            //params.put(RequestKeyHelper.BATCH_ID,userHelper.getUser().getSelectedChild().getBatchId());
+            //params.put(RequestKeyHelper.STUDENT_ID,userHelper.getUser().getSelectedChild().getProfileId());
         }
         AppRestClient.post(URLHelper.URL_GET_REPORT_PROGRESS_ALL, params,  new AsyncHttpResponseHandler(){
             public void onFailure(Throwable arg0, String arg1) {

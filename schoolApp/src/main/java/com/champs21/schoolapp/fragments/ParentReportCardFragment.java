@@ -219,6 +219,8 @@ public class ParentReportCardFragment extends UserVisibleHintFragment implements
         TabInfo tabInfo = null;
         MyFragmentTabHost.TabSpec spec   =   mTabHostReportCard.newTabSpec(AppConstant.TAB_CLASSTEST);
         spec.setIndicator(getIndicatorView(getString(R.string.title_classtest_tab), R.drawable.tab_classtest));
+
+
         addTab(this.mTabHostReportCard, spec, ( tabInfo = new TabInfo(AppConstant.TAB_CLASSTEST, ReportClassTestFragment.class, args)));
         
        /* spec   =   mTabHostReportCard.newTabSpec(AppConstant.TAB_PROJECT);
@@ -266,6 +268,9 @@ public class ParentReportCardFragment extends UserVisibleHintFragment implements
         
         tabInfo.fragment = getChildFragmentManager().findFragmentByTag(tag);
         if (tabInfo.fragment != null && !tabInfo.fragment.isDetached()) {
+
+            tabInfo.fragment.setArguments(getArguments());
+
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
             ft.detach(tabInfo.fragment);
             ft.commit();

@@ -17,9 +17,7 @@ package com.champs21.schoolapp;
  */
 
 
-
 import android.app.IntentService;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -29,9 +27,23 @@ import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.champs21.freeversion.AnyFragmentLoadActivity;
+import com.champs21.freeversion.SingleExamRoutine;
+import com.champs21.freeversion.SingleHomeworkActivity;
 import com.champs21.freeversion.SingleItemShowActivity;
+import com.champs21.freeversion.SingleMeetingRequestActivity;
+import com.champs21.freeversion.SingleNoticeActivity;
+import com.champs21.schoolapp.model.Wrapper;
+import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
+import com.champs21.schoolapp.utils.GsonParser;
+import com.champs21.schoolapp.utils.RequestKeyHelper;
+import com.champs21.schoolapp.utils.SharedPreferencesHelper;
+import com.champs21.schoolapp.utils.URLHelper;
+import com.champs21.schoolapp.utils.UserHelper;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 /**
  * This {@code IntentService} does the actual handling of the GCM message.
@@ -49,6 +61,8 @@ public class GcmIntentService extends IntentService {
         super("GcmIntentService");
     }
     public static final String TAG = "GCM Demo";
+
+    private static Context context;
 
     @Override
     protected void onHandleIntent(Intent intent) {
@@ -81,8 +95,45 @@ public class GcmIntentService extends IntentService {
                 }*/
                 Log.i(TAG, "Completed work @ " + SystemClock.elapsedRealtime());
                 // Post notification of received message.
+
+
+                for (String key: extras.keySet())
+                {
+                    Log.e("myApplication", key + " ---is a key in the bundle");
+                    Log.e("DDD", "d:"+extras.getString(key));
+                }
+
+                Log.e("GCS_DATA", "is: "+extras.getString("message"));
+
                 if(extras.getString("key").equals("news"))
                 	sendNotification(extras.getString("message"),extras.getString("post_id"));
+
+                else if(extras.getString("key").equals("paid") && UserHelper.isLoggedIn())
+                {
+                    sendNotificationPaid(extras, extras.getString("message"), extras.getString("rtype"), extras.getString("rid"));
+                }
+
+
+                Log.e("TOTAL_UNREAD", "is: "+extras.getString("total_unread"));
+
+                context = this;
+                UserHelper userHelper = new UserHelper(this);
+
+                userHelper.saveTotalUnreadNotification(extras.getString("total_unread"));
+                listener.onNotificationCountChanged(Integer.parseInt(extras.getString("total_unread")));
+
+                //SharedPreferencesHelper.getInstance().setString("total_unread", extras.getString("total_unread"));
+
+                //listener.onNotificationCountChanged(100);
+                //SharedPreferencesHelper.getInstance().setString("total_unread", "100");
+
+
+
+                //SharedPreferencesHelper.getInstance().setString("total_unread", extras.getString("total_unread"));
+
+
+
+
                 
                 Log.i(TAG, "Received: " + extras.toString());
             }
@@ -121,4 +172,306 @@ public class GcmIntentService extends IntentService {
         mBuilder.setAutoCancel(true);
         mNotificationManager.notify(NOTIFICATION_ID++, mBuilder.build());
     }
+
+    private void sendNotificationPaid(Bundle extras, String msg, String rType,String rId) {
+       // Log.e("PostID Notification", postId);
+
+
+        NotificationManager mNotificationManager = (NotificationManager)
+                this.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        Intent intent = invokeClassesPaidNotification(extras, rType, rId);//new Intent(getApplicationContext(), SingleItemShowActivity.class);
+        //intent.putExtra(AppConstant.ITEM_ID, postId);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
+                intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.icon)
+                        .setContentTitle("Champs21")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText(msg))
+                        .setContentText(msg);
+
+        mBuilder.setContentIntent(contentIntent);
+
+        //mBuilder.getNotification().flags |= Notification.FLAG_AUTO_CANCEL;
+        mBuilder.setAutoCancel(true);
+        mNotificationManager.notify(NOTIFICATION_ID++, mBuilder.build());
+
+
+
+
+    }
+
+
+
+
+
+    private Intent invokeClassesPaidNotification(Bundle extras, String rType, String rId)
+    {
+        int type = Integer.parseInt(rType);
+        Intent intent = null;
+
+        switch (type) {
+
+
+            case 0:
+                intent = new Intent(this, NotificationActivity.class);
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 1:
+
+                intent = new Intent(this, AnyFragmentLoadActivity.class);
+                intent.putExtra("class_name", "ParentEventFragment");
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 2:
+
+                intent = new Intent(this, SingleExamRoutine.class);
+                intent.putExtra(AppConstant.ID_SINGLE_CALENDAR_EVENT, rId);
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 3:
+
+                intent = new Intent(this, AnyFragmentLoadActivity.class);
+                intent.putExtra("class_name", "ParentReportCardFragment");
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+
+            case 4:
+                intent = new Intent(this, SingleHomeworkActivity.class);
+                intent.putExtra(AppConstant.ID_SINGLE_HOMEWORK, rId);
+                intent.putExtra("total_unread_extras", extras);
+
+
+               //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 5:
+                intent = new Intent(this, SingleNoticeActivity.class);
+                intent.putExtra(AppConstant.ID_SINGLE_NOTICE, rId);
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 6:
+                intent = new Intent(this, AnyFragmentLoadActivity.class);
+                intent.putExtra("class_name", "ParentAttendenceFragment");
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 7:
+			/*intent = new Intent(this, AnyFragmentLoadActivity.class);
+			intent.putExtra("class_name", "ApplyForLeaveFragment");
+			startActivity(intent);*/
+
+                break;
+
+            case 8:
+			/*intent = new Intent(this, AnyFragmentLoadActivity.class);
+			intent.putExtra("class_name", "ApplyForLeaveFragment");
+			startActivityForResult(intent, REQUEST_REMINDER);*/
+
+                intent = new Intent(this, AnyFragmentLoadActivity.class);
+                intent.putExtra("class_name", "MyLeaveFragment");
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 9:
+			/*intent = new Intent(this, AnyFragmentLoadActivity.class);
+			intent.putExtra("class_name", "ApplyForLeaveFragment");
+			startActivityForResult(intent, REQUEST_REMINDER);*/
+
+                intent = new Intent(this, AnyFragmentLoadActivity.class);
+                intent.putExtra("class_name", "StudentLeaveFragment");
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 10:
+			/*intent = new Intent(this, AnyFragmentLoadActivity.class);
+			intent.putExtra("class_name", "ApplyForLeaveFragment");
+			startActivityForResult(intent, REQUEST_REMINDER);*/
+
+                intent = new Intent(this, AnyFragmentLoadActivity.class);
+                intent.putExtra("class_name", "MyLeaveFragment");
+                intent.putExtra("total_unread_extras", extras);
+
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 11:
+                intent = new Intent(this, SingleMeetingRequestActivity.class);
+                intent.putExtra(AppConstant.ID_SINGLE_MEETING_REQUEST, rId);
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 12:
+                intent = new Intent(this, SingleMeetingRequestActivity.class);
+                intent.putExtra(AppConstant.ID_SINGLE_MEETING_REQUEST, rId);
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 13:
+                intent = new Intent(this, SingleMeetingRequestActivity.class);
+                intent.putExtra(AppConstant.ID_SINGLE_MEETING_REQUEST, rId);
+                intent.putExtra("total_unread_extras", extras);
+
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            case 14:
+                intent = new Intent(this, SingleMeetingRequestActivity.class);
+                intent.putExtra(AppConstant.ID_SINGLE_MEETING_REQUEST, rId);
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+
+                break;
+
+            case 15:
+                intent = new Intent(this, AnyFragmentLoadActivity.class);
+                intent.putExtra("class_name", "QuizFragment");
+                intent.putExtra("total_unread_extras", extras);
+
+                //initApiCall(extras.getString("rid"), rType);
+
+                break;
+
+            default:
+
+
+
+                break;
+        }
+
+
+
+        return  intent;
+    }
+
+
+    public static void initApiCall(String rId, String rTtype)
+    {
+
+        RequestParams params = new RequestParams();
+        params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
+
+
+        if(rId != null)
+        {
+            params.put("rid", rId);
+        }
+
+        if(rTtype != null)
+        {
+            params.put("rtype", rTtype);
+        }
+
+
+
+        AppRestClient.post(URLHelper.URL_EVENT_REMINDER, params, reminderHandler);
+
+    }
+
+
+    static AsyncHttpResponseHandler reminderHandler = new AsyncHttpResponseHandler() {
+
+        @Override
+        public void onFailure(Throwable arg0, String arg1) {
+
+        };
+
+        @Override
+        public void onStart() {
+
+
+        };
+
+        @Override
+        public void onSuccess(int arg0, String responseString) {
+
+
+            Wrapper modelContainer = GsonParser.getInstance()
+                    .parseServerResponse(responseString);
+
+            if (modelContainer.getStatus().getCode() == 200) {
+
+               //listener.onNotificationCountChanged(Integer.parseInt(modelContainer.getData().get("unread_total").getAsString()));
+               //SharedPreferencesHelper.getInstance().setString("total_unread", modelContainer.getData().get("unread_total").getAsString());
+
+               //
+               SharedPreferencesHelper.getInstance().setString("total_unread", modelContainer.getData().get("unread_total").getAsString());
+               UserHelper userHelper = new UserHelper(context);
+               userHelper.saveTotalUnreadNotification( modelContainer.getData().get("unread_total").getAsString());
+               listener.onNotificationCountChanged(Integer.parseInt(modelContainer.getData().get("unread_total").getAsString()));
+
+
+            }
+
+            else {
+
+            }
+
+
+
+        };
+    };
+
+
+    public static INotificationCount listener;
+
+    public interface INotificationCount{
+
+        public void onNotificationCountChanged(int count);
+
+
+    }
+
+
+
+
+
+
 }

@@ -16,8 +16,15 @@ public class NotificationReminder {
 	private String rtype;
 	@SerializedName("rid")
 	private String rid;
-	
-	public String getId() {
+
+    @SerializedName("student_id")
+    private String studentId;
+
+    @SerializedName("batch_id")
+    private String batchId;
+
+
+    public String getId() {
 		return id;
 	}
 	public void setId(String id) {
@@ -53,4 +60,20 @@ public class NotificationReminder {
 	public void setRid(String rid) {
 		this.rid = rid;
 	}
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public String getBatchId() {
+        return batchId;
+    }
+
+    public void setBatchId(String batchId) {
+        this.batchId = batchId;
+    }
 }
