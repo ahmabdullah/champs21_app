@@ -119,9 +119,12 @@ public class GcmIntentService extends IntentService {
                 context = this;
                 UserHelper userHelper = new UserHelper(this);
 
-                userHelper.saveTotalUnreadNotification(extras.getString("total_unread"));
-                listener.onNotificationCountChanged(Integer.parseInt(extras.getString("total_unread")));
+                if(userHelper.getUser().getAccessType() == UserHelper.UserAccessType.PAID)
+                {
+                    userHelper.saveTotalUnreadNotification(extras.getString("total_unread"));
+                    listener.onNotificationCountChanged(Integer.parseInt(extras.getString("total_unread")));
 
+                }
                 //SharedPreferencesHelper.getInstance().setString("total_unread", extras.getString("total_unread"));
 
                 //listener.onNotificationCountChanged(100);
@@ -445,7 +448,9 @@ public class GcmIntentService extends IntentService {
                SharedPreferencesHelper.getInstance().setString("total_unread", modelContainer.getData().get("unread_total").getAsString());
                UserHelper userHelper = new UserHelper(context);
                userHelper.saveTotalUnreadNotification( modelContainer.getData().get("unread_total").getAsString());
-               listener.onNotificationCountChanged(Integer.parseInt(modelContainer.getData().get("unread_total").getAsString()));
+
+               if(listener != null)
+                    listener.onNotificationCountChanged(Integer.parseInt(modelContainer.getData().get("unread_total").getAsString()));
 
 
             }

@@ -269,7 +269,8 @@ public class ParentReportCardFragment extends UserVisibleHintFragment implements
         tabInfo.fragment = getChildFragmentManager().findFragmentByTag(tag);
         if (tabInfo.fragment != null && !tabInfo.fragment.isDetached()) {
 
-            tabInfo.fragment.setArguments(getArguments());
+            if(!tabInfo.fragment.isAdded())
+                tabInfo.fragment.setArguments(getArguments());
 
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
             ft.detach(tabInfo.fragment);

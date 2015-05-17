@@ -1,7 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.util.HashMap;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,13 +7,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.TabHost.TabContentFactory;
+import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
-
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.viewhelpers.MyFragmentTabHost;
+
+import java.util.HashMap;
 
 
 public class ParentAttendenceFragment extends Fragment implements MyFragmentTabHost.OnTabChangeListener{
@@ -139,7 +138,8 @@ public class ParentAttendenceFragment extends Fragment implements MyFragmentTabH
         tabInfo.fragment = getChildFragmentManager().findFragmentByTag(tag);
         if (tabInfo.fragment != null && !tabInfo.fragment.isDetached()) {
 
-            tabInfo.fragment.setArguments(getArguments());
+            if(!tabInfo.fragment.isAdded())
+                tabInfo.fragment.setArguments(getArguments());
 
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
             ft.detach(tabInfo.fragment);

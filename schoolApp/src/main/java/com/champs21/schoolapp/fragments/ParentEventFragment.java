@@ -128,8 +128,10 @@ public class ParentEventFragment extends Fragment {
 					
 					
 					Fragment fragment = new UpcomingEventsFragment();
-                    fragment.setArguments(getArguments());
-					FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    if(!fragment.isAdded())
+                        fragment.setArguments(getArguments());
+
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 					FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 					fragmentTransaction.replace(R.id.fragmentContainer, fragment);
 		            fragmentTransaction.commit();
@@ -152,8 +154,10 @@ public class ParentEventFragment extends Fragment {
 					
 					
 					Fragment fragment = new ArchievePageFragment();
-                    fragment.setArguments(getArguments());
-					FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    if(!fragment.isAdded())
+                        fragment.setArguments(getArguments());
+
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 					FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 					fragmentTransaction.replace(R.id.fragmentContainer, fragment);
 		            fragmentTransaction.commit();
