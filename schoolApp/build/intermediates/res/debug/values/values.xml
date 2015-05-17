@@ -34,6 +34,8 @@
         <item>TransportFragment</item>
         <item>ApplyForLeaveFragment</item>
         <item>FeesTabhostFragment</item>
+        <item>LessonPlanStudentParent</item>
+
     </string-array>
     <string-array name="diary_class_student">
         <item>home</item>.
@@ -49,6 +51,8 @@
         <item>ParentReportCardFragment</item>
         <item>ParentAcademicCalender</item>
         <item>TransportFragment</item>
+        <item>LessonPlanStudentParent</item>
+
     </string-array>
     <string-array name="diary_class_teacher">
         <item>home</item>
@@ -56,6 +60,7 @@
         <item>TeachersAttendanceTabhostFragment</item>
         <item>TeacherHomeWorkFragment</item>
         <item>TeacherRoutineFragment</item>
+        <item>ExamRoutineTeacherFragment</item>
         <item>NoticeFragmentNew</item>
         <item>SyllabusFragment</item>
         <item>StudentListFragment</item>
@@ -65,6 +70,8 @@
         <item>TransportFragment</item>
         <item>ParentReportCardFragment</item>
         <item>ParentAcademicCalender</item>
+        <item>LessonPlanTeacher</item>
+
     </string-array>
     <string-array name="diary_images_parents">
         <item>home</item>
@@ -83,6 +90,8 @@
         <item>transport</item>
         <item>leaveapplication</item>
         <item>fees</item>
+        <item>lesson_plan</item>
+
     </string-array>
     <string-array name="diary_images_student">
         <item>home</item>
@@ -98,6 +107,8 @@
         <item>reportcard</item>
         <item>academic_calendar</item>
         <item>transport</item>
+        <item>lesson_plan</item>
+
     </string-array>
     <string-array name="diary_images_teacher">
         <item>home</item>
@@ -105,6 +116,7 @@
         <item>attendance</item>
         <item>homework</item>
         <item>routine</item>
+        <item>exam_routine</item>
         <item>notice</item>
         <item>syllabus</item>
         <item>student_list</item>
@@ -114,6 +126,8 @@
         <item>transport</item>
         <item>reportcard</item>
         <item>academic_calendar</item>
+        <item>lesson_plan</item>
+
     </string-array>
     <string-array name="diary_text_parents">
         <item>home</item>
@@ -132,6 +146,8 @@
         <item>Transport</item>
         <item>Leave Application</item>
         <item>Fees</item>
+        <item>Lesson Plan</item>
+
     </string-array>
     <string-array name="diary_text_student">
         <item>home</item>
@@ -147,6 +163,8 @@
         <item>Reportcard</item>
         <item>Academic Calendar</item>
         <item>Transport</item>
+        <item>Lesson Plan</item>
+
     </string-array>
     <string-array name="diary_text_teacher">
         <item>home</item>
@@ -154,6 +172,7 @@
         <item>Attendance</item>
         <item>Homework</item>
         <item>Routine</item>
+        <item>Exam Routine</item>
         <item>Notice</item>
         <item>Syllabus</item>
         <item>Student List</item>
@@ -163,6 +182,8 @@
         <item>Transport</item>
         <item>Reportcard</item>
         <item>Academic Calendar</item>
+        <item>Lesson Plan</item>
+
     </string-array>
     <string-array name="free_menus_id">
         <item>6</item>
@@ -298,6 +319,7 @@
     <color name="accepted_color">#017DB9</color>
     <color name="background_tab_pressed">#6633B5E5</color>
     <color name="bg_disable">#ecedee</color>
+    <color name="bg_row_odd">#F4F6F7</color>
     <color name="black">#312E2F</color>
     <color name="calender_offday_text_color">#C8C8C8</color>
     <color name="calender_onday_text_color">#808080</color>
@@ -712,6 +734,7 @@ Get updates on recent on goings and feeds from your school teachers.</string>
     <string name="title_monthly_attendance_tab">Monthly Attendance Report</string>
     <string name="title_my_leave">My Leave</string>
     <string name="title_others_calendar_tab">Others</string>
+    <string name="title_progress_graph_tab">Progress Graph</string>
     <string name="title_roll_call_tab">Roll Call</string>
     <string name="title_student_leave">Student leave</string>
     <string name="title_student_report_tab">Student Report</string>

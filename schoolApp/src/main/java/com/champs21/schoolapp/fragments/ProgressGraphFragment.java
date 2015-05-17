@@ -112,7 +112,6 @@ public class ProgressGraphFragment extends Fragment implements View.OnClickListe
                     params.put(RequestKeyHelper.STUDENT_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
                     params.put(RequestKeyHelper.BATCH_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("batch_id"));
 
-
                     GcmIntentService.initApiCall(rid, rtype);
                 }
                 else

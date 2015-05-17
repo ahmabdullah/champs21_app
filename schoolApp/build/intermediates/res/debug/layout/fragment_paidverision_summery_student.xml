@@ -390,7 +390,7 @@
             android:orientation="horizontal" >
 
             <ImageView
-                android:id="@+id/sum_iv_disable"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -424,7 +424,7 @@
         android:orientation="horizontal" >
 
         <ImageView
-            android:id="@+id/sum_iv_disable"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/sum_homework" />
@@ -475,7 +475,7 @@
             android:orientation="horizontal" >
 
             <ImageView
-                android:id="@+id/sum_iv_disable"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/sum_quiz" />
@@ -507,7 +507,7 @@
         android:orientation="horizontal" >
 
         <RelativeLayout
-            android:id="@+id/sum_iv_disable"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/red" >
@@ -545,7 +545,6 @@
         android:orientation="horizontal" >
 
         <ImageView
-            android:id="@+id/sum_iv_disable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/sum_event" />
@@ -576,7 +575,7 @@
         android:orientation="horizontal" >
 
         <LinearLayout
-            android:id="@+id/sum_iv_disable"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/red" >
@@ -628,7 +627,7 @@
         android:visibility="gone" >
 
         <LinearLayout
-            android:id="@+id/sum_iv_disable"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/red" >
@@ -695,7 +694,7 @@
             android:background="@color/gray_2" />
 
         <ImageView
-            android:id="@+id/sum_iv_disable"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

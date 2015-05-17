@@ -47,7 +47,6 @@ public class CustomPickerWithLoadData extends DialogFragment {
 					int position, long arg3) {
 				CustomPickerWithLoadData.this.dismiss();
 				listener.onPickerItemSelected(items.get(position));
-
 			}
 		});
 
@@ -56,7 +55,7 @@ public class CustomPickerWithLoadData extends DialogFragment {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+        // TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		items = new ArrayList<BaseType>();
 	}
@@ -98,7 +97,6 @@ public class CustomPickerWithLoadData extends DialogFragment {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				getDialog().dismiss();
 			}
 		});

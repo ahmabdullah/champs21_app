@@ -61,7 +61,7 @@
             android:background="@color/white" >
 
             <ImageView
-                android:id="@+id/rombus_icon"
+                android:id="@+id/rombus_icon_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

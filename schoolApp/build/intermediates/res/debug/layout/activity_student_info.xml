@@ -67,7 +67,6 @@
                     android:id="@+id/tv_profile_student_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Md. Taufiqur Rahman Ovi"
                     android:textColor="@color/gray_5"
                     android:textSize="16sp" />
 
@@ -75,7 +74,6 @@
                     android:id="@+id/tv_profile_student_class"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Class XI"
                     android:textColor="@color/gray_5"
                     android:textSize="12sp" />
             </LinearLayout>

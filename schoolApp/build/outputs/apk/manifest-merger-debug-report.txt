@@ -592,3 +592,21 @@ ADDED from AndroidManifest.xml:379:9
 		ADDED from AndroidManifest.xml:381:13
 	android:name
 		ADDED from AndroidManifest.xml:380:13
+activity#com.champs21.freeversion.SingleLessonPlan
+ADDED from AndroidManifest.xml:385:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:387:13
+	android:name
+		ADDED from AndroidManifest.xml:386:13
+activity#com.champs21.freeversion.EditLessonPlanActivity
+ADDED from AndroidManifest.xml:391:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:393:13
+	android:name
+		ADDED from AndroidManifest.xml:392:13
+activity#com.champs21.freeversion.LessonPlanSubjectDetailsActivity
+ADDED from AndroidManifest.xml:397:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:399:13
+	android:name
+		ADDED from AndroidManifest.xml:398:13

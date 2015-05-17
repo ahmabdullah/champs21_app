@@ -76,7 +76,6 @@
                 android:orientation="vertical" >
 
                 <LinearLayout
-                    android:id="@+id/linearLayout1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -88,7 +87,6 @@
                         android:orientation="horizontal" >
 
                         <ImageView
-                            android:id="@+id/imageView1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/location" />
@@ -101,7 +99,6 @@
                             android:orientation="vertical" >
 
                             <TextView
-                                android:id="@+id/textView1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Transport" />
@@ -110,7 +107,7 @@
                                 android:id="@+id/txtLastUpdate1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Last update: 05/07/2014"
+                                android:text="Last update: "
                                 android:textColor="#b1b8ba" />
                         </LinearLayout>
                     </LinearLayout>
@@ -127,7 +124,6 @@
                         android:layout_weight=".5" >
 
                         <TextView
-                            android:id="@+id/textView3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pick up location" />
@@ -141,8 +137,7 @@
                         <TextView
                             android:id="@+id/txtPickupLocation"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="House # 54, Road #10, Banani" />
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -157,7 +152,6 @@
                         android:layout_weight=".5" >
 
                         <TextView
-                            android:id="@+id/textView3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Drop location" />
@@ -171,8 +165,7 @@
                         <TextView
                             android:id="@+id/txtDropLocation"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="House # 4/5, Road #07, Mohammadpur" />
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -191,7 +184,6 @@
                 android:orientation="vertical" >
 
                 <LinearLayout
-                    android:id="@+id/linearLayout1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -203,7 +195,6 @@
                         android:orientation="horizontal" >
 
                         <ImageView
-                            android:id="@+id/imageView1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/location" />
@@ -216,7 +207,6 @@
                             android:orientation="vertical" >
 
                             <TextView
-                                android:id="@+id/textView1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Transportation Schedule" />
@@ -225,7 +215,7 @@
                                 android:id="@+id/txtLastUpdate2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Last update: 05/07/2014"
+                                android:text="Last update: "
                                 android:textColor="#b1b8ba" />
                         </LinearLayout>
                     </LinearLayout>
