@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- From: file:/E:/champs21_app/simpleFacebook/build/intermediates/exploded-aar/champs21_app/facebookSDK/unspecified/res/values-hdpi-v4/values.xml -->
-    <eat-comment/>
-    <dimen name="com_facebook_picker_divider_width">1px</dimen>
-</resources>

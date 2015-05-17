@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
-    <item android:title="Bangla"/>
-    <item android:title="English"/>
-    
-
-</menu><!-- From: file:/E:/champs21_app/schoolApp/src/main/res/menu/popup_menu_medium.xml -->

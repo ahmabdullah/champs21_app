@@ -3,7 +3,12 @@
  */
 package com.champs21.schoolapp.fragments;
 
+import java.util.ArrayList;
+
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,22 +17,22 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.champs21.freeversion.PaidVersionHomeFragment;
 import com.champs21.schoolapp.BatchSelectionChangedBroadcastReceiver;
 import com.champs21.schoolapp.BatchSelectionChangedBroadcastReceiver.onBatchIdChangeListener;
-import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.BaseType;
 import com.champs21.schoolapp.model.Batch;
 import com.champs21.schoolapp.model.ClassTestItem;
 import com.champs21.schoolapp.model.ClassTestReportItem;
 import com.champs21.schoolapp.model.Picker;
-import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.model.PickerType;
 import com.champs21.schoolapp.model.ReportCardModel;
 import com.champs21.schoolapp.model.StudentAttendance;
 import com.champs21.schoolapp.model.Wrapper;
+import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
@@ -42,8 +47,6 @@ import com.champs21.schoolapp.viewhelpers.ExpandableTextView;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-
-import java.util.ArrayList;
 
 /**
  * @author Amit
@@ -180,36 +183,8 @@ public class ReportClassTestFragment extends UserVisibleHintFragment implements 
 		params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
 		
 		if (userHelper.getUser().getType() == UserTypeEnum.PARENTS) {
-
-
-            if(getActivity().getIntent().getExtras()!=null)
-            {
-                if(getActivity().getIntent().getExtras().containsKey("total_unread_extras"))
-                {
-                    String rid = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rid");
-                    String rtype = getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("rtype");
-
-                    params.put(RequestKeyHelper.STUDENT_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("student_id"));
-                    params.put(RequestKeyHelper.BATCH_ID, getActivity().getIntent().getExtras().getBundle("total_unread_extras").getString("batch_id"));
-
-
-                    GcmIntentService.initApiCall(rid, rtype);
-                }
-                else
-                {
-                    params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
-                    params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
-                }
-            }
-            else
-            {
-                params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
-                params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
-            }
-
-            //params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
-			//params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
-
+			params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+			params.put(RequestKeyHelper.BATCH_ID, userHelper.getUser().getSelectedChild().getBatchId());
 		}else if(userHelper.getUser().getType() == UserTypeEnum.TEACHER){
 			params.put(RequestKeyHelper.BATCH_ID, selectedBatch.getId());
 			params.put(RequestKeyHelper.STUDENT_ID, selectedStudent.getId());
