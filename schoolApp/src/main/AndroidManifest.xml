@@ -399,6 +399,13 @@
             android:screenOrientation="portrait">
 
         </activity>
+
+
+        <activity
+            android:name="com.champs21.spellingbee.SpellingbeeTestActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
         
 
 

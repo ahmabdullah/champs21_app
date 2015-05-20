@@ -1,8 +1,5 @@
 package com.champs21.schoolapp;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +24,9 @@ import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class SplashScreenActivity extends Activity {
 	private boolean mIsBackButtonPressed;
@@ -58,6 +58,9 @@ public class SplashScreenActivity extends Activity {
 		}*/
 		getHashKey();
 		navigateToNextPage();
+
+        //startActivity(new Intent(this, SpellingbeeTestActivity.class));
+
 
 	}
 

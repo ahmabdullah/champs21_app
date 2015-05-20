@@ -119,12 +119,20 @@ public class GcmIntentService extends IntentService {
                 context = this;
                 UserHelper userHelper = new UserHelper(this);
 
-                if(userHelper.getUser().getAccessType() == UserHelper.UserAccessType.PAID)
+                if(userHelper.getUser().getAccessType() == UserHelper.UserAccessType.PAID && extras.getString("key").equals("paid"))
                 {
+
                     userHelper.saveTotalUnreadNotification(extras.getString("total_unread"));
                     listener.onNotificationCountChanged(Integer.parseInt(extras.getString("total_unread")));
 
+                    /*if(!TextUtils.isEmpty(extras.getString("total_unread")))
+                        listener.onNotificationCountChanged(Integer.parseInt(extras.getString("total_unread")));
+                    else
+                        listener.onNotificationCountChanged(Integer.parseInt(SharedPreferencesHelper.getInstance().getString(
+                                SPKeyHelper.TOTAL_UNREAD_NOTIFICATION_FREE, "")));*/
+
                 }
+
                 //SharedPreferencesHelper.getInstance().setString("total_unread", extras.getString("total_unread"));
 
                 //listener.onNotificationCountChanged(100);

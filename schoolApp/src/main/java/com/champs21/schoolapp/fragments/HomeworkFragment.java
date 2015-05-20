@@ -973,7 +973,22 @@ public class HomeworkFragment extends Fragment implements OnClickListener,UserAu
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					CustomButton btn = (CustomButton) v;
+					final CustomButton btn = (CustomButton) v;
+
+					setButtonState(btn, R.drawable.btn_reminder_tap, false, "Reminder");
+
+
+					AppUtility.listenerDatePickerCancel = new AppUtility.IDatePickerCancel() {
+						@Override
+						public void onCancelCalled() {
+
+							Log.e("CCCCC", "cancel called");
+							btn.setImage(R.drawable.btn_reminder_normal);
+							btn.setTitleColor(getActivity().getResources().getColor(R.color.gray_1));
+							btn.setEnabled(true);
+						}
+					};
+
 					
 					AppUtility.showDateTimePicker(AppConstant.KEY_HOMEWORK+list.get(i).getId(), list.get(i).getSubject()+ ": " + AppConstant.NOTIFICATION_HOMEWORK, list.get(i).getName(), HomeworkFragment.this.getActivity());
 				
