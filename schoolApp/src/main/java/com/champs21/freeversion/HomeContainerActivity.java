@@ -1787,7 +1787,7 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 
 	@Override
 	public void onBackPressed() {
-		if (!mSearchView.isIconified()) {
+		if (mSearchView!= null && !mSearchView.isIconified()) {
 			mSearchView.setIconified(true);
 
 			if (popup != null) {
