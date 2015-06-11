@@ -233,6 +233,8 @@
                         android:layout_toLeftOf="@+id/btnEnter"
                         android:inputType="textFilter|textCapCharacters"
                         android:layout_alignParentLeft="true"
+                        android:background="@android:color/transparent"
+                        android:textCursorDrawable="@drawable/color_cursor"
                         android:layout_alignParentStart="true" />
                 </RelativeLayout>
 
