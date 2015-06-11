@@ -1,23 +1,15 @@
 package com.champs21.freeversion;
 
 
-import java.lang.reflect.Type;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.backup.SharedPreferencesBackupHelper;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import android.util.Log;
@@ -25,11 +17,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.champs21.schoolapp.NotifyService;
 import com.champs21.schoolapp.NotifyServiceReceiver;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.AssessmentQuestion;
@@ -54,6 +44,12 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.lang.reflect.Type;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 public class AssesmentActivity extends ChildContainerActivity implements View.OnClickListener{
 	

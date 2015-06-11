@@ -8,6 +8,7 @@ public class SpellingbeeDataModel {
 
     private int id = 0;
     private String word;
+    private String wordTwo = "";
     private String banglaMeaning;
     private String definition;
     private String sentence;
@@ -15,7 +16,7 @@ public class SpellingbeeDataModel {
     private String level;
 
     public String getLevel() {
-        return level;
+        return level.trim();
     }
 
     public void setLevel(String level) {
@@ -23,7 +24,7 @@ public class SpellingbeeDataModel {
     }
 
     public String getwType() {
-        return wType;
+        return wType.trim();
     }
 
     public void setwType(String wType) {
@@ -31,7 +32,7 @@ public class SpellingbeeDataModel {
     }
 
     public String getSentence() {
-        return sentence;
+        return sentence.trim();
     }
 
     public void setSentence(String sentence) {
@@ -39,7 +40,7 @@ public class SpellingbeeDataModel {
     }
 
     public String getDefinition() {
-        return definition;
+        return definition.trim();
     }
 
     public void setDefinition(String definition) {
@@ -47,7 +48,7 @@ public class SpellingbeeDataModel {
     }
 
     public String getBanglaMeaning() {
-        return banglaMeaning;
+        return banglaMeaning.trim();
     }
 
     public void setBanglaMeaning(String banglaMeaning) {
@@ -55,11 +56,19 @@ public class SpellingbeeDataModel {
     }
 
     public String getWord() {
-        return word;
+        return word.trim();
     }
 
     public void setWord(String word) {
         this.word = word;
+    }
+
+    public String getWordTwo() {
+        return wordTwo.trim();
+    }
+
+    public void setWordTwo(String wordTwo) {
+        this.wordTwo = wordTwo;
     }
 
     public int getId() {

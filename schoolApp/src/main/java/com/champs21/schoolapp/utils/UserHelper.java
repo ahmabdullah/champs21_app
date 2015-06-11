@@ -686,6 +686,11 @@ public class UserHelper {
     }
 
 
+    public static String getSchoolName() {
+        return SharedPreferencesHelper.getInstance().getString(
+                SPKeyHelper.SCHOOL_NAME, "");
+    }
+
     public static String getTotalUnreadNotification() {
         return SharedPreferencesHelper.getInstance().getString(
                 SPKeyHelper.TOTAL_UNREAD_NOTIFICATION, "");
@@ -753,6 +758,11 @@ public class UserHelper {
         saveEmail(user.getEmail());
         saveGender(user.getGender());
         saveId(user.getUserId());
+
+        saveSchoolName(user.getSchoolName());
+
+
+
         saveProfilePicUrl(user.getProfilePicsUrl());
         if (user.getAccessType() != null) {
             saveUserAccessType(user.getAccessType().ordinal());

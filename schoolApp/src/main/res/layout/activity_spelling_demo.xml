@@ -1,11 +1,255 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/spellingbee_bg">
 
-    <TextView
-        android:id="@+id/txtView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal" />
-</LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollViewParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/layoutTopLayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_above="@+id/layoutWordTypeHolder"
+                    android:layout_alignParentStart="true">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/relativeLayout"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_toEndOf="@+id/relativeLayout">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="7dp"
+                            android:background="@drawable/spellingbee_text_field">
+
+                            <ScrollView
+                                android:id="@+id/scrollViewChild"
+                                android:layout_width="match_parent"
+                                android:layout_height="95dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="35dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_alignParentTop="true">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/txtPublish"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="New Text"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:gravity="center"
+                                        android:layout_centerVertical="true"
+                                        android:layout_centerHorizontal="true" />
+
+                                </LinearLayout>
+
+
+                            </ScrollView>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_alignParentStart="true"
+                                android:id="@+id/linearLayout5">
+
+                                <ImageButton
+                                    android:id="@+id/btnMeaning"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/spellingbee_btn_bangla_meaning" />
+
+                                <ImageButton
+                                    android:id="@+id/btnSayAgain"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginRight="2dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/spellingbee_btn_say_again" />
+
+                                <ImageButton
+                                    android:id="@+id/btnUseInSentence"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/spellingbee_btn_sentence"/>
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spellingbee_bee"
+                        android:id="@+id/relativeLayout"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="-18dp"
+                        android:layout_alignParentStart="true">
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spellingbee_timer"
+                        android:id="@+id/relativeLayout3"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true">
+
+                        <TextView
+                            android:id="@+id/txtTimer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="20"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutWordTypeHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:layout_centerHorizontal="true">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="2dp"
+                        android:gravity="center"
+                        android:background="@drawable/spellingbee_parts_of_speech">
+
+                        <TextView
+                            android:id="@+id/txtScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:text="New Text" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="2dp"
+                        android:gravity="center"
+                        android:background="@drawable/spellingbee_parts_of_speech">
+
+                        <TextView
+                            android:id="@+id/txtWordType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:text="New Text" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutSubmitTextHodler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layoutWordTypeHolder"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/spellingbee_edittext_bg"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageButton
+                        android:id="@+id/btnEnter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/spellingbee_btn_enter"/>
+
+                    <EditText
+                        android:id="@+id/txtSubmit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"
+                        android:layout_toLeftOf="@+id/btnEnter"
+                        android:inputType="textFilter|textCapCharacters"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

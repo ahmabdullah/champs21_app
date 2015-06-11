@@ -403,11 +403,34 @@
 
         <activity
             android:name="com.champs21.spellingbee.SpellingbeeTestActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+
+        <activity
+            android:name="com.champs21.spellingbee.ResultPageActivity"
             android:screenOrientation="portrait">
 
         </activity>
-        
 
+        <activity
+            android:name="com.champs21.spellingbee.LeaderBoardActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.champs21.spellingbee.AndroidFacebookConnectActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.champs21.spellingbee.SpellingbeeRulesActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
 
     </application>
 

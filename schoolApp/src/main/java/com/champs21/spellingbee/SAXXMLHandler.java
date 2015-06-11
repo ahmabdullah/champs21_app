@@ -62,6 +62,7 @@ public class SAXXMLHandler extends DefaultHandler {
 	        {
 	        	Log.e("NULL_PREF", "data: "+tempEmp.getId());
 	        	Log.e("NULL_PREF", "data: "+tempEmp.getWord());
+                Log.e("NULL_PREF", "data: "+tempEmp.getWordTwo());
 	        	Log.e("NULL_PREF", "data: "+tempEmp.getBanglaMeaning());
 	        	Log.e("NULL_PREF", "data: "+tempEmp.getDefinition());
 	        	Log.e("NULL_PREF", "data: "+tempEmp.getSentence());
@@ -79,6 +80,12 @@ public class SAXXMLHandler extends DefaultHandler {
 	    {
 	     	tempEmp.setWord(tempVal);
 	    }
+
+        else if(qName.equalsIgnoreCase("word2"))
+        {
+            tempEmp.setWordTwo(tempVal);
+        }
+
         else if(qName.equalsIgnoreCase("bangla_meaning"))
         {
         	tempEmp.setBanglaMeaning(tempVal);

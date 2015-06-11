@@ -240,6 +240,15 @@ public class URLHelper {
     public final static String URL_EXAM_ROUTINE_TEACHER = "routine/teacherexam";
 
 
+	//&&&&&&&&&&&&&&&&&&&&&&&&& SPELLING BEE STARTS &&&&&&&&&&&&&&&&&&&&&
+
+	public final static String SPELLINGBEE_SAVESCORE = "freeuser/savespellingbee";
+	public final static String SPELLINGBEE_LEADERBOARD = "freeuser/getleaderboard";
+
+
+	//&&&&&&&&&&&&&&&&&&&&&&&&& SPELLING BEE ENDS &&&&&&&&&&&&&&&&&&&&&
+
+
 
 
 	//&&&&&&&&&&&&&&&&&&&&&&&&&C_MART&&&&&&&&&&&&&&&&&&&&&

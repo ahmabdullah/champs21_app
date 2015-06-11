@@ -1,54 +1,395 @@
 package com.champs21.spellingbee;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.champs21.freeversion.ChildContainerActivity;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.SpellingbeeDataModel;
+import com.champs21.schoolapp.utils.CountDownTimerPausable;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
+import java.util.Random;
 
 /**
  * Created by BLACK HAT on 18-May-15.
  */
-public class SpellingbeeTestActivity extends Activity {
+public class SpellingbeeTestActivity extends ChildContainerActivity implements TextToSpeech.OnInitListener{
 
 
     private List<SpellingbeeDataModel> data = null;
 
 
-    private List<SpellingbeeDataModel> list2;
-    private List<SpellingbeeDataModel> list3;
+    private List<SpellingbeeDataModel> listEasyData;
+    private List<SpellingbeeDataModel> listMediumData;
+    private List<SpellingbeeDataModel> listHardData;
+    private List<SpellingbeeDataModel> listExtremeHardData;
+
+    private List<SpellingbeeDataModel> listCurrentData;
+
+    private List<SpellingbeeDataModel> listDeleteData;
 
 
-    private TextView txtView;
+
+
+    private CountDownTimerPausable countDownTimer = null;
+
+    private TextView txtTimer;
+
+    private int currentPosition = -1;
+
+
+    private ImageButton btnMeaning;
+    private ImageButton btnSayAgain;
+    private ImageButton btnUseInSentence;
+
+    private TextView txtScore;
+    private TextView txtWordType;
+
+    private TextView txtPublish;
+
+    private EditText txtSubmit;
+
+    private ImageButton btnEnter;
+
+    private TextToSpeech myTTS = null;
+
+    private boolean isToggleMeaningButton = false;
+
+
+    private ScrollView scrollViewParent;
+    private ScrollView scrollViewChild;
+
+    private int score = 0;
+
+    long tStart = 0; //= System.currentTimeMillis();
+    long tEnd = 0; //= System.currentTimeMillis();
+    long tDelta = 0;//tEnd - tStart;
+
+    private int multiplier = 0;
+
+    private Gson gson;
+
+
+
+
+    @Override
+    protected void onResume() {
+        // TODO Auto-generated method stub
+        super.onResume();
+        homeBtn.setVisibility(View.VISIBLE);
+        logo.setVisibility(View.GONE);
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_spelling_demo);
-        txtView = (TextView)this.findViewById(R.id.txtView);
+        PrefSingleton.getInstance().Initialize(this);
 
-        doTestData();
+        setContentView(R.layout.activity_spelling_demo);
+
+        gson = new Gson();
+
+        listEasyData = new ArrayList<SpellingbeeDataModel>();
+        listMediumData = new ArrayList<SpellingbeeDataModel>();
+        listHardData = new ArrayList<SpellingbeeDataModel>();
+        listExtremeHardData = new ArrayList<SpellingbeeDataModel>();
+        listCurrentData = new ArrayList<SpellingbeeDataModel>();
+
+        listDeleteData = new ArrayList<SpellingbeeDataModel>();
+
+
+        listEasyData.clear();
+        listMediumData.clear();
+        listHardData.clear();
+        listExtremeHardData.clear();
+        listCurrentData.clear();
+        listDeleteData.clear();
+
+
+        initView();
+        initAction();
+        loadData();
+
+
     }
 
 
-    private void doTestData()
+    private void initView()
+    {
+        txtTimer = (TextView)this.findViewById(R.id.txtTimer);
+
+        btnMeaning  =(ImageButton)this.findViewById(R.id.btnMeaning);
+        btnSayAgain = (ImageButton)this.findViewById(R.id.btnSayAgain);
+        btnUseInSentence = (ImageButton)this.findViewById(R.id.btnUseInSentence);
+
+        txtScore = (TextView)this.findViewById(R.id.txtScore);
+        txtWordType = (TextView)this.findViewById(R.id.txtWordType);
+
+        txtPublish = (TextView)this.findViewById(R.id.txtPublish);
+
+        txtSubmit = (EditText)this.findViewById(R.id.txtSubmit);
+
+        btnEnter = (ImageButton)this.findViewById(R.id.btnEnter);
+
+        scrollViewParent = (ScrollView)this.findViewById(R.id.scrollViewParent);
+        scrollViewChild = (ScrollView)this.findViewById(R.id.scrollViewChild);
+
+
+        scrollViewParent.setOnTouchListener(new View.OnTouchListener() {
+
+            public boolean onTouch(View v, MotionEvent event) {
+                //Log.e("PARENT", "PARENT TOUCH");
+                findViewById(R.id.scrollViewChild).getParent()
+                        .requestDisallowInterceptTouchEvent(false);
+                return false;
+            }
+        });
+        scrollViewChild.setOnTouchListener(new View.OnTouchListener() {
+
+            public boolean onTouch(View v, MotionEvent event) {
+                //Log.e("CHILD", "CHILD TOUCH");
+                // Disallow the touch request for parent scroll on touch of
+                // child view
+                v.getParent().requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+        });
+    }
+
+    private void initAction()
+    {
+        initTimer();
+
+        btnMeaning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                isToggleMeaningButton = !isToggleMeaningButton;
+
+                if (isToggleMeaningButton) {
+                    btnMeaning.setBackgroundResource(R.drawable.spellingbee_btn_english_meaning);
+
+                    txtPublish.setText(listCurrentData.get(currentPosition).getBanglaMeaning());
+                } else {
+                    btnMeaning.setBackgroundResource(R.drawable.spellingbee_btn_bangla_meaning);
+
+                    txtPublish.setText(listCurrentData.get(currentPosition).getDefinition());
+                }
+
+
+            }
+        });
+
+        btnSayAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(SpellingbeeTestActivity.this, listCurrentData.get(currentPosition).getWord(), Toast.LENGTH_SHORT).show();
+                speakWords(listCurrentData.get(currentPosition).getWord());
+            }
+        });
+
+
+        /*btnUseInSentence.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtPublish.setText(data.get(currentPosition).getSentence());
+            }
+        });*/
+
+
+        btnEnter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isCurrectWord()) {
+                    initTimer();
+
+                    score++;
+                    initCurrentData();
+                } else {
+
+                    //Toast.makeText(SpellingbeeTestActivity.this, "Game Over: Time Taken = "+ getEllaspsedSeconds(), Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(SpellingbeeTestActivity.this, ResultPageActivity.class);
+
+                    intent.putExtra(SpellingbeeConstants.KEY_RESULT_PAGE_TYPED_WORD, txtSubmit.getText().toString());
+                    intent.putExtra(SpellingbeeConstants.KEY_RESULT_PAGE_ACTUAL_WORD, listCurrentData.get(currentPosition).getWord());
+                    intent.putExtra(SpellingbeeConstants.KEY_RESULT_PAGE_TIME_TAKEN, String.valueOf(getEllaspsedSeconds()));
+                    intent.putExtra(SpellingbeeConstants.KEY_RESULT_PAGE_CURRENT_SCORE, String.valueOf(score));
+
+
+                    startActivity(intent);
+
+                    finish();
+
+                    //Log.e("TIME_TAKEN", "is: " + getEllaspsedSeconds());
+                }
+
+
+            }
+        });
+
+
+        tStart = System.currentTimeMillis();
+
+        if(!TextUtils.isEmpty(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_SAVE_FULL_SCORE)))
+        {
+            score = getFullScore()+1;
+        }
+
+    }
+
+    private long getEllaspsedSeconds()
+    {
+        tEnd = System.currentTimeMillis();
+        tDelta = tEnd - tStart;
+        long elapsedSeconds = (tDelta);
+
+        return elapsedSeconds;
+    }
+
+    private void initTimer()
+    {
+
+
+        if(this.countDownTimer != null)
+        {
+            this.countDownTimer.cancel();
+            this.countDownTimer = null;
+        }
+
+
+        if(this.countDownTimer == null)
+        {
+            this.countDownTimer = new CountDownTimerPausable(SpellingbeeConstants.SPELLINGBEE_TIMER, 1) {
+                public void onTick(long millisUntilFinished) {
+
+                    txtTimer.setText(String.valueOf(millisUntilFinished / 1000));
+
+
+                }
+
+                public void onFinish() {
+                    txtTimer.setText("00");
+
+                    //Toast.makeText(SpellingbeeTestActivity.this, "Game Over: Time Taken = "+ getEllaspsedSeconds(), Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(SpellingbeeTestActivity.this, ResultPageActivity.class);
+
+                    intent.putExtra(SpellingbeeConstants.KEY_RESULT_PAGE_TYPED_WORD, txtSubmit.getText().toString());
+                    intent.putExtra(SpellingbeeConstants.KEY_RESULT_PAGE_ACTUAL_WORD, listCurrentData.get(currentPosition).getWord());
+                    intent.putExtra(SpellingbeeConstants.KEY_RESULT_PAGE_TIME_TAKEN, String.valueOf(getEllaspsedSeconds()));
+                    intent.putExtra(SpellingbeeConstants.KEY_RESULT_PAGE_CURRENT_SCORE, String.valueOf(score));
+
+                    startActivity(intent);
+
+                    finish();
+
+                }
+            };
+
+            this.countDownTimer.start();
+        }
+    }
+
+
+    private void loadData()
     {
         BgLoadData bgData = new BgLoadData();
-        bgData.execute("demo.xml");
+        if(PrefSingleton.getInstance().containsKey(SpellingbeeConstants.CURRENT_BANK_NUMBER))
+        {
+            String str = PrefSingleton.getInstance().getPreference(SpellingbeeConstants.CURRENT_BANK_NUMBER);
 
-        list2 = new ArrayList<SpellingbeeDataModel>();
-        list3 = new ArrayList<SpellingbeeDataModel>();
+            switch (Integer.parseInt(str))
+            {
+                case 1:
+                    //bgData.execute("demo_3_mod.xml");
+                    bgData.execute("year_1.xml");
+                    break;
+                case 2:
+                    //bgData.execute("demo_4_mod.xml");
+                    bgData.execute("year_2.xml");
+                    break;
+                case 3:
+                    //bgData.execute("demo_5_mod.xml");
+                    bgData.execute("year_3.xml");
+                    break;
+
+            }
+        }
+        else
+        {
+            PrefSingleton.getInstance().savePreference(SpellingbeeConstants.CURRENT_BANK_NUMBER, "1");
+            bgData.execute("year_1.xml");
+        }
+
+
+
+
+        /*if(!TextUtils.isEmpty(PrefSingleton.getInstance().getPreference("1876"+SpellingbeeConstants.KEY_SAVE_FULL_DATA)))
+        {
+            //data = getFullData();
+
+
+            data.removeAll(getFullData());
+
+            splitDataIntoCategories();
+
+            Log.e("DATA_SIZE_IF", "is: "+data.size());
+        }
+
+        else
+        {
+            if(PrefSingleton.getInstance().containsKey(SpellingbeeConstants.CURRENT_BANK_NUMBER))
+            {
+                String str = PrefSingleton.getInstance().getPreference(SpellingbeeConstants.CURRENT_BANK_NUMBER);
+
+                switch (Integer.parseInt(str))
+                {
+                    case 1:
+                        bgData.execute("demo_3_mod.xml");
+                        break;
+                    case 2:
+                        bgData.execute("demo_4_mod.xml");
+                        break;
+                    case 3:
+                        bgData.execute("demo_5_mod.xml");
+                        break;
+
+                }
+            }
+            else
+            {
+                PrefSingleton.getInstance().savePreference(SpellingbeeConstants.CURRENT_BANK_NUMBER, "1");
+                bgData.execute("demo_3_mod.xml");
+            }
+
+
+
+        }*/
+
 
 
     }
@@ -70,6 +411,7 @@ public class SpellingbeeTestActivity extends Activity {
                 {
                     Log.e("FROM_XML", "data: " + data.get(i).getId());
                     Log.e("FROM_XML", "data: " + data.get(i).getWord());
+                    Log.e("FROM_XML", "data: " + data.get(i).getWordTwo());
                     Log.e("FROM_XML", "data: " + data.get(i).getBanglaMeaning());
                     Log.e("FROM_XML", "data: " + data.get(i).getDefinition());
                     Log.e("FROM_XML", "data: " + data.get(i).getSentence());
@@ -84,7 +426,7 @@ public class SpellingbeeTestActivity extends Activity {
                 e.printStackTrace();
             }
 
-            Collections.shuffle(data);
+            //Collections.shuffle(data);
 
             return true;
         }
@@ -102,14 +444,39 @@ public class SpellingbeeTestActivity extends Activity {
 
         protected void onPostExecute(Boolean result)
         {
-            if(pd.isShowing())
+            /*if(pd.isShowing())
             {
                 pd.dismiss();
+            }*/
+
+            pd.dismiss();
+            Log.e("DATA_SIZE_ELSE", "is: " + data.size());
+
+            if(!TextUtils.isEmpty(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_SAVE_FULL_DATA)))
+            {
+                //data = getFullData();
+                //data.removeAll(getFullData());
+                for(int j=0; j< data.size();j++)
+                {
+                    for(int i=0;i<getFullData().size();i++)
+                    {
+                        if(data.get(j).getId() == (getFullData().get(i).getId()))
+                            data.remove(j);
+                    }
+                }
+
+                Log.e("SAVED DATA", "size is: " + getFullData().size());
+
+
+
+                splitDataIntoCategories();
+
+                Log.e("DATA_SIZE_IF", "is: "+data.size());
             }
+            else
+                splitDataIntoCategories();
 
-            enlist(data);
 
-            populate();
 
         }
 
@@ -117,39 +484,510 @@ public class SpellingbeeTestActivity extends Activity {
     }
 
 
-    private void enlist(List<SpellingbeeDataModel> data)
+    private void splitDataIntoCategories()
     {
+
+
         for(SpellingbeeDataModel obj : data)
         {
+            if(obj.getLevel().equalsIgnoreCase("0"))
+            {
+                listEasyData.add(obj);
+            }
+
+            if(obj.getLevel().equalsIgnoreCase("1"))
+            {
+                listMediumData.add(obj);
+            }
             if(obj.getLevel().equalsIgnoreCase("2"))
             {
-                list2.add(obj);
+                listHardData.add(obj);
             }
 
-            if(obj.getLevel().equalsIgnoreCase("3"))
-            {
-                list3.add(obj);
+            if(obj.getLevel().equalsIgnoreCase("3")) {
+                listExtremeHardData.add(obj);
             }
         }
 
-        Log.e("TOTAL_LIST_SIZE", "size: "+data.size());
+        Log.e("EASY_SIZE", "is: " + listEasyData.size());
+        Log.e("EASY_SIZE", "is: " + listMediumData.size());
+        Log.e("EASY_SIZE", "is: " + listHardData.size());
+        Log.e("EASY_SIZE", "is: " + listExtremeHardData.size());
 
-        Log.e("LIST_2", "size: "+list2.size());
-        Log.e("LIST_3", "size: "+list3.size());
+        /*Collections.reverse(listEasyData);
+        Collections.reverse(listMediumData);
+        Collections.reverse(listHardData);
+        Collections.reverse(listExtremeHardData);
+        */
 
 
+
+        buildCurrentList();
+
+        initCurrentData();
     }
 
-    private void populate()
+
+    private void buildCurrentList()
     {
-        for(SpellingbeeDataModel obj : data)
+
+        /*for (int i = 0; i < SpellingbeeConstants.PER_ITEM_PICK_COUNT;i++)
         {
-            if(obj.getId() == 104)
+            listCurrentData.add(listEasyData.get(i));
+            listCurrentData.add(listMediumData.get(i));
+            listCurrentData.add(listHardData.get(i));
+
+        }*/
+
+
+        /*int cal = listEasyData.size()/SpellingbeeConstants.PER_ITEM_PICK_COUNT;
+
+
+        for(int j = 0; j < cal ;j++)
+        {
+            for (int i = SpellingbeeConstants.PER_ITEM_PICK_COUNT * j; i < SpellingbeeConstants.PER_ITEM_PICK_COUNT * (j+1);i++)
             {
-                txtView.setText(obj.getBanglaMeaning());
+                listCurrentData.add(listEasyData.get(i));
+
             }
+
+            for (int i = SpellingbeeConstants.PER_ITEM_PICK_COUNT * j; i < SpellingbeeConstants.PER_ITEM_PICK_COUNT * (j+1);i++)
+            {
+
+                listCurrentData.add(listMediumData.get(i));
+
+
+            }
+
+            for (int i = SpellingbeeConstants.PER_ITEM_PICK_COUNT * j; i < SpellingbeeConstants.PER_ITEM_PICK_COUNT * (j+1);i++)
+            {
+
+                listCurrentData.add(listHardData.get(i));
+
+            }
+
+        }
+
+
+
+        if(!TextUtils.isEmpty(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_CHECKPOINT_POSITION)))
+        {
+            currentPosition = Integer.parseInt(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_CHECKPOINT_POSITION));
+        }
+
+
+
+        multiplier++;*/
+
+        multiplier++;
+
+        Collections.shuffle(listEasyData);
+        Collections.shuffle(listMediumData);
+        Collections.shuffle(listHardData);
+        Collections.shuffle(listExtremeHardData);
+
+
+        /*if(!TextUtils.isEmpty(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_CHECKPOINT_POSITION)))
+        {
+            int pos = Integer.parseInt(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_CHECKPOINT_POSITION));
+            Log.e("SAVED_POS", "is: "+pos);
+
+            currentPosition = pos;
+
+            buildList();
+
+        }*/
+
+
+        for(int i=0;i<SpellingbeeConstants.PER_ITEM_PICK_COUNT_EASY;i++)
+        {
+            if(i<listEasyData.size())
+                listCurrentData.add(listEasyData.get(i));
+            //listEasyData.remove(i);
+
+        }
+
+        for(int i=0;i<SpellingbeeConstants.PER_ITEM_PICK_COUNT_MEDIUM;i++)
+        {
+            if(i<listMediumData.size())
+                listCurrentData.add(listMediumData.get(i));
+            //listMediumData.remove(i);
+
+        }
+
+        for(int i=0;i<SpellingbeeConstants.PER_ITEM_PICK_COUNT_HARD;i++)
+        {
+            if(i<listHardData.size())
+                listCurrentData.add(listHardData.get(i));
+            //listHardData.remove(i);
+
+        }
+
+        for(int i=0;i<SpellingbeeConstants.PER_ITEM_PICK_COUNT_EXTREME_HARD;i++)
+        {
+            if(i<listExtremeHardData.size())
+                listCurrentData.add(listExtremeHardData.get(i));
+            //listExtremeHardData.remove(i);
+
+        }
+
+
+
+
+
+
+
+
+
+
+        Log.e("CURRENT_SIZE", "is: " + listCurrentData.size());
+
+        for(int i=0;i<listCurrentData.size();i++)
+        {
+            Log.e("CURRENT_LIST_DATA_ARE", "is: " + listCurrentData.get(i).getId());
+            Log.e("CURRENT_LIST_DATA_ARE", "is: " + listCurrentData.get(i).getWord());
+            Log.e("CURRENT_LIST_DATA_ARE", "is: " + listCurrentData.get(i).getLevel());
+            Log.e("CURRENT_LIST_DATA_ARE", "___________________________________________");
+        }
+
+    }
+
+
+    /*private void buildList()
+    {
+
+        for(int i=currentPosition;i<currentPosition+SpellingbeeConstants.PER_ITEM_PICK_COUNT ;i++)
+        {
+            listCurrentData.add(listEasyData.get(i));
+            listCurrentData.add(listMediumData.get(i));
+            listCurrentData.add(listHardData.get(i));
+
+        }
+
+
+
+    }*/
+
+
+    private void buildList()
+    {
+
+        /*for(int i=currentPosition;i<currentPosition+SpellingbeeConstants.PER_ITEM_PICK_COUNT_EASY ;i++)
+        {
+            listCurrentData.add(listEasyData.get(i));
+            listEasyData.remove(i);
+
+        }
+
+        for(int i=currentPosition;i<currentPosition+SpellingbeeConstants.PER_ITEM_PICK_COUNT_MEDIUM ;i++)
+        {
+            listCurrentData.add(listMediumData.get(i));
+            listMediumData.remove(i);
+
+        }
+
+        for(int i=currentPosition;i<currentPosition+SpellingbeeConstants.PER_ITEM_PICK_COUNT_HARD ;i++)
+        {
+            listCurrentData.add(listHardData.get(i));
+            listHardData.remove(i);
+
+        }
+
+        for(int i=currentPosition;i<currentPosition+SpellingbeeConstants.PER_ITEM_PICK_COUNT_EXTREME_HARD ;i++)
+        {
+            listCurrentData.add(listExtremeHardData.get(i));
+            listExtremeHardData.remove(i);
+
+        }*/
+
+        Log.e("ZZZZZZZ", "size: "+listEasyData.size());
+        Log.e("ZZZZZZZ", "mult: "+SpellingbeeConstants.PER_ITEM_PICK_COUNT_EASY*multiplier);
+        Log.e("ZZZZZZZ", "mult+: "+SpellingbeeConstants.PER_ITEM_PICK_COUNT_EASY*(multiplier+1));
+
+        for(int i=SpellingbeeConstants.PER_ITEM_PICK_COUNT_EASY*multiplier ;i<SpellingbeeConstants.PER_ITEM_PICK_COUNT_EASY*(multiplier+1) ;i++)
+        {
+            Log.e("ZZZZZZZ", "pos: " + i);
+
+            if(i<listEasyData.size())
+                listCurrentData.add(listEasyData.get(i));
+            //listEasyData.remove(i);
+
+        }
+
+        for(int i=SpellingbeeConstants.PER_ITEM_PICK_COUNT_MEDIUM*multiplier;i<SpellingbeeConstants.PER_ITEM_PICK_COUNT_MEDIUM*(multiplier+1) ;i++)
+        {
+            if(i<listMediumData.size())
+                listCurrentData.add(listMediumData.get(i));
+            //listMediumData.remove(i);
+
+        }
+
+        for(int i=SpellingbeeConstants.PER_ITEM_PICK_COUNT_HARD*multiplier;i<SpellingbeeConstants.PER_ITEM_PICK_COUNT_HARD*(multiplier+1) ;i++)
+        {
+            if(i<listHardData.size())
+                listCurrentData.add(listHardData.get(i));
+            //listHardData.remove(i);
+
+        }
+
+        for(int i=SpellingbeeConstants.PER_ITEM_PICK_COUNT_EXTREME_HARD*multiplier;i<SpellingbeeConstants.PER_ITEM_PICK_COUNT_EXTREME_HARD*(multiplier+1) ;i++)
+        {
+            if(i<listExtremeHardData.size())
+                listCurrentData.add(listExtremeHardData.get(i));
+            //listExtremeHardData.remove(i);
+
+        }
+
+
+
+        Log.e("CURRENT_SIZE_buildList", "is: " + listCurrentData.size());
+
+        for(int i=0;i<listCurrentData.size();i++)
+        {
+            Log.e("CURRENT_LIST_DATA_ARE", "is: " + listCurrentData.get(i).getId());
+            Log.e("CURRENT_LIST_DATA_ARE", "is: " + listCurrentData.get(i).getWord());
+            Log.e("CURRENT_LIST_DATA_ARE", "is: " + listCurrentData.get(i).getLevel());
+            Log.e("CURRENT_LIST_DATA_ARE", "___________________________________________");
         }
 
 
     }
+
+
+
+    private void initCurrentData()
+    {
+
+        Log.e("KKKKKKKK", "data size: "+data.size());
+        Log.e("KKKKKKKK", "currentpos: "+currentPosition);
+
+        if(currentPosition == data.size()-1)
+        {
+            loadDataOnDemand();
+
+            return;
+        }
+
+        if(currentPosition < listCurrentData.size())
+        {
+            currentPosition++;
+        }
+
+        if(currentPosition < data.size() && currentPosition == listCurrentData.size())
+        {
+            //currentPosition++;
+            //multiplier++;
+
+            buildList();
+        }
+
+
+
+        /*if(currentPosition >= listCurrentData.size())
+        {
+            multiplier++;
+            currentPosition++;
+
+            buildList();
+
+        }*/
+
+
+        if(currentPosition<listCurrentData.size())
+            listDeleteData.add(listCurrentData.get(currentPosition));
+
+
+
+        if(currentPosition>= 0 && ((currentPosition+1)  % SpellingbeeConstants.CHECK_POINT  == 0))
+        {
+            PrefSingleton.getInstance().savePreference(SpellingbeeConstants.KEY_CHECKPOINT_POSITION, String.valueOf(currentPosition));
+
+            //data.removeAll(listDeleteData);
+
+            saveFullData();
+            saveFullScore();
+
+
+        }
+
+
+
+        txtPublish.setText(listCurrentData.get(currentPosition).getDefinition());
+        txtSubmit.setText("");
+
+
+        txtScore.setText("Score: "+String.valueOf(score));
+
+        txtWordType.setText(listCurrentData.get(currentPosition).getwType().toUpperCase());
+
+        if(myTTS == null)
+            myTTS = new TextToSpeech(this, this);
+
+        speakWords(listCurrentData.get(currentPosition).getWord());
+
+
+        String star = "*";
+        String sentence = listCurrentData.get(currentPosition).getSentence();
+
+        for(int i = 0; i<listCurrentData.get(currentPosition).getWord().length() - 1; i++) {
+            star = star+"*";
+        }
+
+        final String newString = sentence.replaceAll("(?i)"+listCurrentData.get(currentPosition).getWord(), star);
+
+
+
+        btnUseInSentence.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtPublish.setText(newString);
+            }
+        });
+
+
+        Log.e("CURRENT_MULTIPLIER", "is: " + multiplier);
+        Log.e("CURRENT_LIST_SIZE", "is: " + listCurrentData.size());
+        Log.e("CURRENT_POSITION", "is: " + currentPosition);
+        Log.e("CURRENT_WORD", "is: " + listCurrentData.get(currentPosition).getWord());
+        Log.e("CURRENT_LEVEL", "is: "+listCurrentData.get(currentPosition).getLevel());
+        Log.e("CURRENT_DATA", "__________________________________________");
+
+    }
+
+
+    private void removeUsedData()
+    {
+
+    }
+
+
+    private void loadDataOnDemand()
+    {
+        data.clear();
+        listEasyData.clear();
+        listMediumData.clear();
+        listHardData.clear();
+        listExtremeHardData.clear();
+        listCurrentData.clear();
+        listDeleteData.clear();
+
+        currentPosition = -1;
+
+        if(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.CURRENT_BANK_NUMBER).equalsIgnoreCase("1"))
+        {
+            PrefSingleton.getInstance().savePreference(SpellingbeeConstants.CURRENT_BANK_NUMBER, "2");
+            BgLoadData bgData = new BgLoadData();
+            //bgData.execute("demo_4_mod.xml");
+            bgData.execute("year_2.xml");
+        }
+        else if(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.CURRENT_BANK_NUMBER).equalsIgnoreCase("2"))
+        {
+
+            PrefSingleton.getInstance().savePreference(SpellingbeeConstants.CURRENT_BANK_NUMBER, "3");
+            BgLoadData bgData = new BgLoadData();
+            //bgData.execute("demo_5_mod.xml");
+            bgData.execute("year_3.xml");
+        }
+
+        else if(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.CURRENT_BANK_NUMBER).equalsIgnoreCase("3"))
+        {
+            PrefSingleton.getInstance().savePreference(SpellingbeeConstants.CURRENT_BANK_NUMBER, "1");
+            BgLoadData bgData = new BgLoadData();
+            //bgData.execute("demo_3_mod.xml");
+            bgData.execute("year_1.xml");
+        }
+
+
+    }
+
+
+
+
+    private void saveFullData()
+    {
+
+        String val = gson.toJson(listDeleteData);
+        PrefSingleton.getInstance().savePreference(SpellingbeeConstants.KEY_SAVE_FULL_DATA, val);
+
+    }
+
+    private List<SpellingbeeDataModel> getFullData()
+    {
+        Type type = new TypeToken<List<SpellingbeeDataModel>>(){}.getType();
+        List<SpellingbeeDataModel> list = gson.fromJson(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_SAVE_FULL_DATA), type);
+
+        return list;
+    }
+
+    private void saveFullScore()
+    {
+        PrefSingleton.getInstance().savePreference(SpellingbeeConstants.KEY_SAVE_FULL_SCORE, String.valueOf(score));
+
+    }
+
+    private int getFullScore()
+    {
+        int score = Integer.parseInt(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_SAVE_FULL_SCORE));
+
+        return score;
+    }
+
+
+
+
+    private boolean isCurrectWord()
+    {
+        boolean isCorrect = false;
+
+        if(listCurrentData.get(currentPosition).getWord().equalsIgnoreCase(txtSubmit.getText().toString().trim()) || (!TextUtils.isEmpty(listCurrentData.get(currentPosition).getWordTwo()) &&
+                listCurrentData.get(currentPosition).getWordTwo().equalsIgnoreCase(txtSubmit.getText().toString().trim())))
+            isCorrect = true;
+
+        return isCorrect;
+    }
+
+    private void speakWords(String speech)
+    {
+        myTTS.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    @Override
+    public void onInit(int initStatus) {
+        // TODO Auto-generated method stub
+        if (initStatus == TextToSpeech.SUCCESS) {
+            if(myTTS.isLanguageAvailable(Locale.UK)==TextToSpeech.LANG_AVAILABLE)
+                myTTS.setLanguage(Locale.UK);
+
+            speakWords(listCurrentData.get(currentPosition).getWord());
+        }
+        else if (initStatus == TextToSpeech.ERROR) {
+            Toast.makeText(this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    @Override
+    protected void onDestroy() {
+
+
+        if(this.countDownTimer != null)
+        {
+            this.countDownTimer.cancel();
+            this.countDownTimer = null;
+        }
+
+        if(myTTS != null)
+            myTTS.shutdown();
+
+        super.onDestroy();
+    }
+
+    private int getRandomNumberInRange(int minVal, int maxVal)
+    {
+        Random r = new Random();
+        int num = r.nextInt(maxVal - minVal) + minVal;
+
+        return num;
+    }
+
 }

@@ -3,12 +3,12 @@
  */
 package com.champs21.schoolapp.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.champs21.schoolapp.utils.UserHelper.UserAccessType;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class User {
 	@SerializedName("user_id")
