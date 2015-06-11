@@ -104,6 +104,7 @@ public class RequestKeyHelper {
 	public final static String TEACHING_FOR = "teaching_for";
 	public final static String NICK_NAME = "nick_name";
 	public final static String CITY = "district";
+	public final static String DIVISION = "division";
 	public final static String PROFILE_IMAGE = "profile_image";
 	public final static String DAY_ID = "day_id";
 	public final static String POST_ID = "post_id";

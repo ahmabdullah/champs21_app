@@ -145,6 +145,7 @@ public class UserHelper {
         params.put(RequestKeyHelper.MEDIUM, user.getMedium());
         params.put(RequestKeyHelper.TEACHING_FOR, user.getTeachinFor());
         params.put(RequestKeyHelper.CITY, user.getCity());
+        params.put(RequestKeyHelper.DIVISION,user.getDivision());
         params.put(RequestKeyHelper.IS_JOINED_SPELLING_BEE,user.getIs_joined_spellbee());
 
         this.logedInUser = user;

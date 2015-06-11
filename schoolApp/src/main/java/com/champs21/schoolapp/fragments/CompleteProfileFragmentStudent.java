@@ -232,7 +232,7 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 		String temp = user.getDivision();
 		if (!TextUtils.isEmpty(temp)) {
 			tvCity.setText(temp);
-		}
+		}else tvCity.setText("");
 	}
 
 	private void updateBirthDatePanel(String dob) {

@@ -1480,6 +1480,9 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                                                     CompleteProfileActivityContainer.class);
                                             i.putExtra(SPKeyHelper.USER_TYPE, userHelper.getUser().getType().ordinal());
                                             startActivity(i);
+                                        }else {
+                                            startActivity(new Intent(getActivity(),
+                                                    SpellingbeeTestActivity.class));
                                         }
                                     }else {
                                         startActivity(new Intent(getActivity(),
