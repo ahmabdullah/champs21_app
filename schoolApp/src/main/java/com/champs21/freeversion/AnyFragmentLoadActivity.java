@@ -54,9 +54,6 @@ public class AnyFragmentLoadActivity extends ChildContainerActivity {
                     String value = getIntent().getExtras().getString("class_name");
                     loadFragment(value);
                 }
-
-
-
 			}
 
 		}
@@ -83,7 +80,6 @@ public class AnyFragmentLoadActivity extends ChildContainerActivity {
             Fragment object = (Fragment) ctor.newInstance(new Object[] {});
 
             object.setArguments(getIntent().getExtras());
-
 
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.pager_frame, object, "").commit();

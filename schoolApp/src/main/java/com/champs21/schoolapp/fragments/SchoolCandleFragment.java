@@ -888,9 +888,4 @@ public class SchoolCandleFragment extends Fragment implements OnClickListener{
 			}
 		}
 	}
-
-	
-
-	
-
 }

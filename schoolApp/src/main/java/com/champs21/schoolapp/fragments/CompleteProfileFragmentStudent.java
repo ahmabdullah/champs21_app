@@ -11,10 +11,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.champs21.freeversion.CompleteProfileActivityContainer;
 import com.champs21.freeversion.HomePageFreeVersion;
@@ -76,9 +79,15 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 	private User user;
 	private View view;
 	private String gradeStr = "";
+	int[] starIds = {R.id.sbstar2,R.id.sbstar6,R.id.sbstar7,R.id.sbstar8,R.id.sbstar10,R.id.sbstar12};
+	ImageView [] allStarImageView = new ImageView[6];
 	private List<Integer> selectedGrades;
 	private int selectedMediumId = 0;
 	private List<BaseType> cities;
+	private RadioGroup rGSbStatus;
+	private RadioButton rbYes;
+	private RadioButton rbNo;
+	private boolean willplay = true;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -86,6 +95,7 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 		super.onCreate(savedInstanceState);
 		cities = new ArrayList<BaseType>();
 		String[] myResArray = getResources().getStringArray(R.array.city_list);
+
 		for (String string : myResArray) {
 			City city = new City();
 			city.setName(string);
@@ -122,8 +132,14 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 
 		btnBirthday = (Button) view.findViewById(R.id.btn_birthday);
 		rGGender = (RadioGroup) view.findViewById(R.id.radioGroup1);
+		rGSbStatus = (RadioGroup) view.findViewById(R.id.radioGroup2);
+		rbYes = (RadioButton) view.findViewById(R.id.radio20);
+		rbNo = (RadioButton) view.findViewById(R.id.radio21);
 		rBMale = (RadioButton) view.findViewById(R.id.radio0);
 		rBFemale = (RadioButton) view.findViewById(R.id.radio1);
+		for(int i=0;i<6;i++){
+			allStarImageView[i]= (ImageView) view.findViewById(starIds[i]);
+		}
 		return view;
 	}
 
@@ -206,14 +222,17 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 		else
 			((RadioButton) rGGender.getChildAt(user.getGender()))
 					.setChecked(true);
-		if (!user.getGradeIds().equals(""))
+		if (!user.getGradeIds().equals("")){
 			btnSelectGrade.setText("Grades: " + user.getGradeIds());
+			gradeStr=user.getGradeIds();
+		}
 
-		String temp = user.getCity();
+
+
+		String temp = user.getDivision();
 		if (!TextUtils.isEmpty(temp)) {
 			tvCity.setText(temp);
 		}
-
 	}
 
 	private void updateBirthDatePanel(String dob) {
@@ -247,6 +266,26 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 		radioFirstName.setOnClickListener(this);
 		radioMiddleName.setOnClickListener(this);
 		radioLastName.setOnClickListener(this);
+		rbYes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+				if(b)
+				for(int i=0;i<6;i++){
+					allStarImageView[i].setVisibility(View.VISIBLE);
+				}
+				willplay = b;
+			}
+		});
+		rbNo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+				if(b)
+					for(int i=0;i<6;i++){
+						allStarImageView[i].setVisibility(View.INVISIBLE);
+					}
+                willplay = !b;
+			}
+		});
 		/*
 		 * radioFirstName.setEnabled(false); radioMiddleName.setEnabled(false);
 		 * radioLastName.setEnabled(false);
@@ -429,7 +468,10 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 		String mobileNum = etMobile.getText().toString().trim();
 		if (!TextUtils.isEmpty(temp)) {
 			user.setFirstName(temp);
-		}
+		}else if(willplay){
+            Toast.makeText(getActivity(),"Username cannot be Empty!",Toast.LENGTH_LONG).show();
+            return;
+        }
 		temp = etMiddleName.getText().toString().trim();
 		if (!TextUtils.isEmpty(temp)) {
 			user.setMiddleName(temp);
@@ -441,7 +483,10 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 		temp = etSchool.getText().toString().trim();
 		if (!TextUtils.isEmpty(temp)) {
 			user.setSchoolName(temp);
-		}
+		}else if(willplay){
+            Toast.makeText(getActivity(),"School Name cannot be Empty!",Toast.LENGTH_LONG).show();
+            return;
+        }
 		temp = tvYear.getText().toString() + tvMonth.getText().toString()
 				+ tvday.getText().toString();
 		if (!TextUtils.isEmpty(temp)) {
@@ -449,13 +494,30 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 					+ "-"
 					+ AppUtility.getMonthNumberFromName(tvMonth.getText()
 							.toString().trim()) + "-" + tvday.getText());
-		}
+		}else if(willplay){
+            Toast.makeText(getActivity(),"Birthday cannot be Empty!",Toast.LENGTH_LONG).show();
+            return;
+        }
 		temp = tvCity.getText().toString().trim();
 		if (!TextUtils.isEmpty(temp))
-			user.setCity(temp);
+			user.setDivision(temp);
+        else if(willplay){
+            Toast.makeText(getActivity(),"Division cannot be Empty!",Toast.LENGTH_LONG).show();
+            return;
+        }
 		user.setMedium(selectedMediumId + "");
+        if(!TextUtils.isEmpty(gradeStr))
 		user.setGradeIds(gradeStr);
-		user.setMobileNum(mobileNum);
+        else if(willplay){
+            Toast.makeText(getActivity(),"Grade cannot be Empty!",Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(!TextUtils.isEmpty(mobileNum))
+		    user.setMobileNum(mobileNum);
+        else if(willplay){
+            Toast.makeText(getActivity(),"Mobile number cannot be Empty!",Toast.LENGTH_LONG).show();
+            return;
+        }
 		if (radioFirstName.isChecked()) {
 			user.setNickName("1");
 		} else if (radioMiddleName.isChecked()) {
@@ -476,7 +538,7 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 		default:
 			break;
 		}
-
+		if(willplay)user.setIs_joined_spellbee("1");
 		userHelper.updateUser(user);
 
 		// params.put(RequestKeyHelper.DOB, user.getDob());

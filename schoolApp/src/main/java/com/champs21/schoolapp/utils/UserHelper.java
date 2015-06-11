@@ -145,6 +145,8 @@ public class UserHelper {
         params.put(RequestKeyHelper.MEDIUM, user.getMedium());
         params.put(RequestKeyHelper.TEACHING_FOR, user.getTeachinFor());
         params.put(RequestKeyHelper.CITY, user.getCity());
+        params.put(RequestKeyHelper.IS_JOINED_SPELLING_BEE,user.getIs_joined_spellbee());
+
         this.logedInUser = user;
 
         AppRestClient.post(URLHelper.FREE_USER_CREATE, params, registerHandler);
@@ -276,6 +278,7 @@ public class UserHelper {
                 u = userData.getUser();
                 u.setUsername(logedInUser.getUsername());
                 u.setPassword(logedInUser.getPassword());
+                saveSpellingStatus(userData.getCan_play_spellingbee());
                 u.setSessionID(userData.getSession());
                 u.setChildren(userData.getChildren());
                 if (userData.getUserType() == 0)
@@ -380,6 +383,7 @@ public class UserHelper {
                 u.setPassword(logedInUser.getPassword());
                 u.setSessionID(userData.getSession());
                 u.setChildren(userData.getChildren());
+                saveSpellingStatus(userData.getCan_play_spellingbee());
                 if (userData.getUserType() == 0)
                     u.setAccessType(UserAccessType.FREE);
                 else {
@@ -572,6 +576,11 @@ public class UserHelper {
                 .setString(SPKeyHelper.FREE_ID, id);
     }
 
+    public void saveSpellingStatus (int status){
+        SharedPreferencesHelper.getInstance()
+                .setInt(SPKeyHelper.SPELLING_STATUS, status);
+    }
+
 	/*
      * public void saveJoinedSchools(List<School> schools) { School
 	 * school=schools.get(0); SharedPreferencesHelper.getInstance()
@@ -670,6 +679,11 @@ public class UserHelper {
 
     }
 
+    public static int getSpellingStatus(){
+        return SharedPreferencesHelper.getInstance().getInt(
+                SPKeyHelper.SPELLING_STATUS, 0);
+    }
+
     public static String getSchoolLogo() {
         return SharedPreferencesHelper.getInstance().getString(
                 SPKeyHelper.SCHOOL_lOGO, "");
@@ -758,6 +772,7 @@ public class UserHelper {
         saveEmail(user.getEmail());
         saveGender(user.getGender());
         saveId(user.getUserId());
+
 
         saveSchoolName(user.getSchoolName());
 

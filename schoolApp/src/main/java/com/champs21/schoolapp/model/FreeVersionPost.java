@@ -1,10 +1,10 @@
 package com.champs21.schoolapp.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.champs21.schoolapp.utils.AppUtility;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FreeVersionPost {
 
@@ -13,6 +13,28 @@ public class FreeVersionPost {
 
 	@SerializedName("title_color")
 	private String titleColor;
+
+    public String getIsSpellingbee() {
+        return isSpellingbee;
+    }
+
+    public void setIsSpellingbee(String isSpellingbee) {
+        this.isSpellingbee = isSpellingbee;
+    }
+
+    @SerializedName("is_spelling_bee")
+	private String isSpellingbee;
+
+    public List<FreeVersionPost> getSubpost() {
+        return subpost;
+    }
+
+    public void setSubpost(List<FreeVersionPost> subpost) {
+        this.subpost = subpost;
+    }
+
+    @SerializedName("related_news_spelling_bee")
+    private List<FreeVersionPost> subpost;
 
 	@SerializedName("author")
 	private String author;

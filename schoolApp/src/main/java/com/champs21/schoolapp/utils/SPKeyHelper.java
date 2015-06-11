@@ -48,6 +48,7 @@ public class SPKeyHelper {
 	public final static String ACCESS_TYPE = "ACCESS_TYPE";
 	public final static String EMAIL = "EMAIL";
 	public final static String FREE_ID = "FREE_ID";
+	public final static String SPELLING_STATUS = "SPELLING_STATUS";
 	public final static String PROFILE_PICS = "PROFILE_PICS";
 	public final static String NICK_NAME = "NICK_NAME";
 	public final static String CITY = "CITY";

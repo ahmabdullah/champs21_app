@@ -1,14 +1,24 @@
 package com.champs21.schoolapp.model;
 
-import java.util.ArrayList;
-
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class UserWrapper {
-	
-	
+
+
+	public int getCan_play_spellingbee() {
+		return can_play_spellingbee;
+	}
+
+	public void setCan_play_spellingbee(int can_play_spellingbee) {
+		this.can_play_spellingbee = can_play_spellingbee;
+	}
+
 	/*@SerializedName("countries")
-	private ArrayList<String> countryList;*/
+        private ArrayList<String> countryList;*/
+	@SerializedName("can_play_spellingbee")
+	private int can_play_spellingbee;
 	@SerializedName("free_id")
 	private String freeId;
 	@SerializedName("user_type")

@@ -16,8 +16,6 @@ package com.champs21.schoolapp;
  * limitations under the License.
  */
 
-import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.WakefulBroadcastReceiver;
@@ -33,7 +31,7 @@ public class BatchSelectionChangedBroadcastReceiver extends
 
 	public interface onBatchIdChangeListener {
 		public void update(String batchId, String schoolId);
-	};
+	}
 
 	onBatchIdChangeListener mListener;
 

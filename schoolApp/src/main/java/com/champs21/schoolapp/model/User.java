@@ -31,6 +31,8 @@ public class User {
 	private String countryId;
 	@SerializedName("district")
 	private String city;
+	@SerializedName("division")
+	private String division;
 	@SerializedName("grade_ids")
 	private String gradeIds;
 	@SerializedName("dob")
@@ -53,6 +55,16 @@ public class User {
 	private String profilePicsUrl;
 	@SerializedName("paid_user")
 	private UserPaidInfo paidInfo;
+
+	public String getIs_joined_spellbee() {
+		return is_joined_spellbee;
+	}
+
+	public void setIs_joined_spellbee(String is_joined_spellbee) {
+		this.is_joined_spellbee = is_joined_spellbee;
+	}
+
+	private String is_joined_spellbee="0";
 
 	@SerializedName("user_schools")
 	private List<School> joinedSchool;
@@ -366,5 +378,13 @@ public class User {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public String getDivision() {
+		return division;
+	}
+
+	public void setDivision(String division) {
+		this.division = division;
 	}
 }

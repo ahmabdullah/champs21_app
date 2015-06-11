@@ -1,25 +1,12 @@
 package com.champs21.schoolapp.utils;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-
 import android.app.Dialog;
-import android.content.ContentUris;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -28,6 +15,13 @@ import android.view.WindowManager;
 
 import com.champs21.schoolapp.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AppUtility {
 
@@ -201,9 +195,10 @@ public class AppUtility {
 	}
 
 	public static int getMonthNumberFromName(String month) {
-		HashMap<String, Integer> hm = new HashMap<String, Integer>();
+        Map<String, Integer> hm = new HashMap<String, Integer>();
+
 		hm.put("January", 1);
-		hm.put("Febraury", 2);
+		hm.put("February", 2);
 		hm.put("March", 3);
 		hm.put("April", 4);
 		hm.put("May", 5);

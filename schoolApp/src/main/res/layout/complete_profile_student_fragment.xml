@@ -10,27 +10,34 @@
   
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_gravity="center"
-        android:layout_weight="1" >
+        android:layout_height="wrap_content"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingLeft="10dip"
-            android:paddingRight="10dip" >
-
-            <TextView
+            android:paddingRight="10dp"
+             >
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dip"
                 android:layout_marginLeft="2dip"
                 android:layout_marginTop="5dip"
-                android:text="@string/choose_user_name_text"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/choose_user_name_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/radioGroup_name"
@@ -43,9 +50,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" 
                     >
-
+                    <ImageView
+                        android:id="@+id/sbstar2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/spellingbee_star"/>
                     <RadioButton
+                        android:layout_marginLeft="5dp"
                         android:id="@+id/radio_first"
+                        android:layout_toRightOf="@+id/sbstar2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:button="@drawable/radio_btn_name"
@@ -62,6 +78,8 @@
                         android:paddingRight="5dip"
                         android:textColorHint="@color/hint_color"
                         android:textSize="12sp" />
+
+
                 </RelativeLayout>
 
                 <LinearLayout
@@ -73,7 +91,19 @@
                     android:layout_height="match_parent" 
                     android:layout_marginTop="5dip">
 
+                    <ImageView
+                        android:visibility="invisible"
+                        android:id="@+id/sbstar4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/spellingbee_star"/>
+
                     <RadioButton
+                        android:layout_toRightOf="@id/sbstar4"
+                        android:layout_marginLeft="5dp"
                         android:id="@+id/radio_middle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -100,9 +130,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" 
                     android:layout_marginTop="5dip">
+                    <ImageView
+                        android:visibility="invisible"
+                        android:id="@+id/sbstar3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/spellingbee_star"/>
 
                     <RadioButton
+                        android:layout_marginLeft="5dp"
                         android:id="@+id/radio_last"
+                        android:layout_toRightOf="@+id/sbstar3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:button="@drawable/radio_btn_name" />
@@ -130,8 +171,16 @@
                 android:paddingLeft="5dip"
                 android:paddingRight="5dip" 
                 android:layout_marginTop="20dip">
-
+                <ImageView
+                    android:visibility="invisible"
+                    android:id="@+id/sbstar5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/spellingbee_star"/>
                 <LinearLayout
+                    android:layout_marginLeft="5dp"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -139,6 +188,9 @@
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="5dip" >
+
+
+
 
                     <TextView
                         android:id="@+id/tv_country"
@@ -192,8 +244,14 @@
                 <LinearLayout
                     android:layout_width="5dip"
                     android:layout_height="match_parent" />
-
+                <ImageView
+                    android:id="@+id/sbstar6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/spellingbee_star"/>
                 <LinearLayout
+                    android:layout_marginLeft="3dp"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -230,8 +288,15 @@
                 android:paddingBottom="5dip"
                 android:paddingLeft="5dip"
                 android:paddingRight="5dip" >
+                <ImageView
+                    android:id="@+id/sbstar7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/spellingbee_star"/>
 
                 <LinearLayout
+                    android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/name_edit"
@@ -267,8 +332,22 @@
                     android:textSize="16sp" 
                     android:inputType="number"/>
             </LinearLayout>
-
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:visibility="invisible"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/sbstar9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/spellingbee_star"/>
+            <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dip"
@@ -362,10 +441,16 @@
                     android:layout_height="0dip"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingBottom="1dip" >
-
+                    <ImageView
+                        android:id="@+id/sbstar8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/spellingbee_star"/>
                     <Button
+                        android:layout_marginLeft="5dp"
                         android:id="@+id/btn_birthday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -374,7 +459,23 @@
                         android:textColor="@color/gray_5" />
                 </LinearLayout>
             </LinearLayout>
-            
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/sbstar10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/spellingbee_star"/>
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -386,7 +487,22 @@
                 android:textColorHint="@color/hint_color"
                 android:textSize="15sp"
                 android:id="@+id/et_school_name" />
-
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:visibility="invisible"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/sbstar11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:src="@drawable/spellingbee_star"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -415,7 +531,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/spinner_btn" />
             </LinearLayout>
-
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -461,7 +577,52 @@
                 </RadioGroup>
 
             </LinearLayout>
-            
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I want to play Spelling Bee"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:padding="5dip" >
+
+                    <RadioButton
+                        android:id="@+id/radio20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:button="@drawable/radio_btn"
+                        android:checked="true"
+                        android:padding="5dip"
+                        android:text="Yes"
+                        android:textSize="13sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:button="@drawable/radio_btn"
+                        android:padding="5dip"
+                        android:text="No"
+                        android:textSize="13sp" />
+                </RadioGroup>
+
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -469,7 +630,18 @@
                 android:gravity="center"
                 android:orientation="horizontal" >
 
+                    <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:id="@+id/sbstar12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/spellingbee_star"/>
+
                 <Button
+                    android:layout_marginLeft="5dp"
                     android:id="@+id/btn_select_grade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

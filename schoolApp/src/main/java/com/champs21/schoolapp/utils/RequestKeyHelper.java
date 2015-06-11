@@ -111,5 +111,6 @@ public class RequestKeyHelper {
 	public final static String FOLDER_ID = "folder_id";
 	public final static String ALREADY_SHOWED ="already_showed";
 	public final static String CANDLE_TYPE="candle_type";
+	public final static String IS_JOINED_SPELLING_BEE = "is_joined_spellbee";
 	
 }

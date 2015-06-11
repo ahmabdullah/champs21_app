@@ -154,7 +154,17 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                 loadHome();
             } else super.onBackPressed();
 
-        } else super.onBackPressed();
+        } else{
+            Fragment homeFragment = getSupportFragmentManager().findFragmentByTag("HOME");
+            if(homeFragment==null){
+                loadHome();
+
+            }else {
+                if(homeFragment.isVisible())super.onBackPressed();
+                else loadHome();
+            }
+
+        }
     }
 
     public void loadFragment(Fragment frag) {
@@ -283,7 +293,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.pager_frame,
-                                CommonChildFragment.newInstance(-1, ""), "COMMON")
+                                CommonChildFragment.newInstance(-1, ""), "HOME")
                         .commit();
                 break;
             case 1:
@@ -868,7 +878,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
 
                 .beginTransaction()
                 .replace(R.id.pager_frame,
-                        CommonChildFragment.newInstance(-1, ""), TAG).commit();
+                        CommonChildFragment.newInstance(-1, ""), "HOME").commit();
 
         listAdapter.initializeStates();
         listAdapter.notifyDataSetChanged();

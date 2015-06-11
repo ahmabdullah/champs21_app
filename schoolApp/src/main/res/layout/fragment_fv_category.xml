@@ -5,6 +5,7 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/header_block"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/gray_bg"
@@ -136,12 +137,13 @@
                 </LinearLayout>
             </LinearLayout>
         </RelativeLayout>
-    </LinearLayout>
 
+    </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/red" />
+
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -180,7 +182,7 @@
 
         <include
             android:id="@+id/quick_return_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             layout="@layout/poppyview_free" />
