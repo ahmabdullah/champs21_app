@@ -125,16 +125,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/spellingbee_lb_top"
+        android:background="@drawable/spellingbee_top_universal"
         android:layout_alignParentTop="true"
         android:id="@+id/relativeLayout4">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="175dp"
             android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
             android:id="@+id/imageView3"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/spellingbee_lb_leader_board_header"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>

@@ -141,14 +141,8 @@ public class AndroidFacebookConnectActivity extends Activity {
 			mAsyncRunner = new AsyncFacebookRunner(facebook);
 
 			final Bundle params = new Bundle();
-			
 
-
-			//I scored ……. in Spelling Bee and climbed the ranks! Divisionals here I come! The Bee is Buzzing!!
-
-
-			params.putString("message", "I scored "+currentScore+" in Spelling Bee and climbed the ranks! Divisionals here I come! The Bee is Buzzing!!" );
-			//params.putString("message", "I just played 'Spelling Bee' scored " + currentScore + ".");
+			params.putString("message", "I scored " + currentScore + " in Spelling Bee and climbed the ranks! Divisionals here I come! The Bee is Buzzing!!");
 			mAsyncRunner.request("me/feed", params, "POST", new WallPostListener(), null);
 
 

@@ -45,7 +45,7 @@ public class SpellingbeeRulesActivity extends ChildContainerActivity {
     private void initAction()
     {
         String html = "<font color='white'>"+
-                "<p><b><font color = #fbaf30>OnlineRound</font></b></p>\n" +
+                "<p><b><font color = #fbaf30>Online Round</font></b></p>\n" +
                 "\n" +
                 "<p>The 1st round consists of an online competition. Here, students will have to register at Champs21.com. And get an ID and a password. With this ID and password to play 'Spelling Bee Online Round' - an online vocabulary game where spellers have to spell words correctly after listening to an audio clip. Spellers can play the game as many times as they want. Only their best scores from the game will be considered. Top spellers from each division will be selected for the 2nd Round. </p>\n" +
                 "\n" +
@@ -67,11 +67,9 @@ public class SpellingbeeRulesActivity extends ChildContainerActivity {
                 "\n" +
                 "<p>8. Champs21.com reserves all rights to alter/change the competition format at any point of time</p>\n" +
                 "\n" +
-                "<p><b><font color = #47f791>Note:</font></b> For Non Resident Bangladeshi (N.R.B) students who are willing to participate in the competition, the following apply: </p>\n" +
+                "<p><b><font color = #fbaf30>Note:</font></b> For Non Resident Bangladeshi (N.R.B) students who are willing to participate in the competition, the following apply: </p>\n" +
                 "\n" +
                 "<p>* N.R.B students from student from class VI-X can participate.</p>\n" +
-                "\n" +
-                "<p>* In the event of qualifying to the divisional round, the student must bring <b><font color = #47f791>a letter from the school</font></b> confirming student status, detailing the <b><font color = #47f791>class</font></b> and <b><font color = #47f791>curriculum of education</font></b> for verification purposes on the school letterhead.</p>\n" +
                 "\n" +
                 "<p>* Please note that upon qualifying to the divisional round, you will have to travel to Bangladesh to participate in the divisional round. </p>\n" +
                 "\n" +

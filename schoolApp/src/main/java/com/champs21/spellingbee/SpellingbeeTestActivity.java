@@ -1,5 +1,6 @@
 package com.champs21.spellingbee;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -9,13 +10,15 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.champs21.freeversion.ChildContainerActivity;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.SpellingbeeDataModel;
 import com.champs21.schoolapp.utils.CountDownTimerPausable;
@@ -33,7 +36,7 @@ import java.util.Random;
 /**
  * Created by BLACK HAT on 18-May-15.
  */
-public class SpellingbeeTestActivity extends ChildContainerActivity implements TextToSpeech.OnInitListener{
+public class SpellingbeeTestActivity extends Activity implements TextToSpeech.OnInitListener{
 
 
     private List<SpellingbeeDataModel> data = null;
@@ -92,18 +95,22 @@ public class SpellingbeeTestActivity extends ChildContainerActivity implements T
 
 
 
-    @Override
+    /*@Override
     protected void onResume() {
         // TODO Auto-generated method stub
         super.onResume();
         homeBtn.setVisibility(View.VISIBLE);
         logo.setVisibility(View.GONE);
-    }
+    }*/
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         PrefSingleton.getInstance().Initialize(this);
 
@@ -258,6 +265,10 @@ public class SpellingbeeTestActivity extends ChildContainerActivity implements T
         {
             score = getFullScore()+1;
         }
+
+        txtSubmit.setInputType(txtSubmit.getInputType()
+                | EditorInfo.TYPE_TEXT_FLAG_NO_SUGGESTIONS
+                | EditorInfo.TYPE_TEXT_VARIATION_FILTER);
 
     }
 
