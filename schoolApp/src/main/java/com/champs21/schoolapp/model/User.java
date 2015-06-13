@@ -3,6 +3,8 @@
  */
 package com.champs21.schoolapp.model;
 
+import android.util.Log;
+
 import com.champs21.schoolapp.utils.UserHelper.UserAccessType;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.google.gson.annotations.SerializedName;
@@ -73,7 +75,7 @@ public class User {
 
 	/*
 	 * public String getUserTypeString() { return userTypeString; }
-	 * 
+	 *
 	 * public void setUserTypeString(String userTypeString) {
 	 * this.userTypeString = userTypeString; }
 	 */
@@ -333,11 +335,13 @@ public class User {
 
 	public void setType(UserTypeEnum type) {
 		this.type = type;
+		Log.e("HERESOMETHING",this.type.toString());
 	}
 
 	public void setType() {
 		if (userTypeString != null)
 			this.type = UserTypeEnum.values()[Integer.parseInt(userTypeString)];
+			Log.e("ENUMSTRING", this.type.toString());
 	}
 
 	public void setChildren(ArrayList<UserPaidInfo> children) {

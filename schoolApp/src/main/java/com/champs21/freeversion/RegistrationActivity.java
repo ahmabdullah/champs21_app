@@ -1,9 +1,5 @@
 package com.champs21.freeversion;
 
-import java.util.ArrayList;
-
-import roboguice.activity.RoboFragmentActivity;
-import roboguice.inject.InjectView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,24 +10,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioGroup;
-import com.champs21.schoolapp.LoginActivity;
+
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.SocialBaseActivity;
 import com.champs21.schoolapp.fragments.UserTypeSelectionDialog;
 import com.champs21.schoolapp.fragments.UserTypeSelectionDialog.UserTypeListener;
 import com.champs21.schoolapp.model.User;
-import com.champs21.schoolapp.model.UserAuthListener;
-import com.champs21.schoolapp.model.Wrapper;
-import com.champs21.schoolapp.networking.AppRestClient;
-import com.champs21.schoolapp.utils.GsonParser;
-import com.champs21.schoolapp.utils.RequestKeyHelper;
 import com.champs21.schoolapp.utils.SPKeyHelper;
 import com.champs21.schoolapp.utils.SchoolApp;
+import com.champs21.schoolapp.utils.SharedPreferencesHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
 
 
 public class RegistrationActivity extends SocialBaseActivity implements OnClickListener,UserTypeListener{
@@ -182,7 +174,10 @@ public class RegistrationActivity extends SocialBaseActivity implements OnClickL
 			uiHelper.dismissLoadingDialog();
 		}
 		if (UserHelper.isRegistered()) {
-			if (UserHelper.isLoggedIn()) {/*
+			if (UserHelper.isLoggedIn()) {
+
+			/*
+
 				switch (UserHelper.getUserAccessType()) {
 				case FREE:
 					startActivity(new Intent(RegistrationActivity.this,
@@ -220,11 +215,15 @@ public class RegistrationActivity extends SocialBaseActivity implements OnClickL
 					break;
 				}*/
 			} else {
-				finish();
+
 				Intent intent=new Intent(RegistrationActivity.this,CompleteProfileActivityContainer.class);
-				intent.putExtra(SPKeyHelper.USER_TYPE, userHelper.getUser().getType().ordinal());
+				int mm = SharedPreferencesHelper.getInstance().getInt(
+						SPKeyHelper.USER_TYPE, 2);
+				intent.putExtra(SPKeyHelper.USER_TYPE, SharedPreferencesHelper.getInstance().getInt(
+						SPKeyHelper.USER_TYPE, 2));
 				intent.putExtra("FIRST_TIME", true);
 				startActivity(intent);
+				finish();
 
 			}
 		} else {

@@ -384,6 +384,8 @@ public class UserHelper {
                 u.setPassword(logedInUser.getPassword());
                 u.setSessionID(userData.getSession());
                 u.setChildren(userData.getChildren());
+
+                u.setType();
                 saveSpellingStatus(userData.getCan_play_spellingbee());
                 if (userData.getUserType() == 0)
                     u.setAccessType(UserAccessType.FREE);
@@ -391,9 +393,9 @@ public class UserHelper {
                     u.setAccessType(UserAccessType.PAID);
                     u.setPaidInfo(userData.getInfo());
                 }
+                setLoggedIn(userData.isLoggedIn());
+                setRegistered(userData.isRegistered());
                 storeLoggedInUser(u);
-                setLoggedIn(true);
-                setRegistered(true);
                 uListener.onAuthenticationSuccessful();
             } else {
                 uListener.onAuthenticationFailed(wrapper.getStatus().getMsg());
@@ -773,14 +775,17 @@ public class UserHelper {
         saveEmail(user.getEmail());
         saveGender(user.getGender());
         saveId(user.getUserId());
-
-
+        int kk = user.getType().ordinal();
+        SharedPreferencesHelper.getInstance().setInt(
+                SPKeyHelper.USER_TYPE, user.getType().ordinal());
+        int mm = SharedPreferencesHelper.getInstance().getInt(SPKeyHelper.USER_TYPE,2);
         saveSchoolName(user.getSchoolName());
 
 
 
         saveProfilePicUrl(user.getProfilePicsUrl());
         if (user.getAccessType() != null) {
+            int kol = user.getAccessType().ordinal();
             saveUserAccessType(user.getAccessType().ordinal());
             switch (user.getAccessType()) {
                 case FREE:

@@ -371,7 +371,8 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                     boolean childState = childSelectionStates.get(
                             groupItem.get(groupPosition).getText()).get(
                             childPosition);
-
+                    if(selectedMenu!=null) if(Integer.parseInt(((DrawerChildMenu) selectedMenu)
+                                    .getId())==7)childState=false;
                     if (!childState) {
                         listAdapter.initializeStates();
                         childSelectionStates.get(
