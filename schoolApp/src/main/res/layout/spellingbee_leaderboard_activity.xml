@@ -46,7 +46,6 @@
                     android:id="@+id/txtName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Narendra Modi"
                     android:textColor="#ffd200"
                     android:textStyle="bold"
                     android:textSize="18sp" />
@@ -55,8 +54,7 @@
                     android:id="@+id/txtSchoolName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#717273"
-                    android:text="Zilla School" />
+                    android:textColor="#717273" />
                 <TextView
                     android:id="@+id/txtDivisionUpper"
                     android:layout_width="wrap_content"
@@ -68,8 +66,7 @@
                     android:id="@+id/txtScoreDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/white"
-                    android:text="Current Score:1000, Best Score: 5000" />
+                    android:textColor="@android:color/white" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -86,7 +83,6 @@
                         android:id="@+id/txtRank"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rank: 83"
                         android:layout_marginLeft="5dp"
                         android:textColor="@android:color/white" />
                 </LinearLayout>

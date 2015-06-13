@@ -13,12 +13,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.facebook.FacebookException;
+import com.facebook.SessionDefaultAudience;
 import com.facebook.android.AsyncFacebookRunner;
 import com.facebook.android.AsyncFacebookRunner.RequestListener;
 import com.facebook.android.DialogError;
 import com.facebook.android.Facebook;
 import com.facebook.android.Facebook.DialogListener;
 import com.facebook.android.FacebookError;
+import com.facebook.widget.WebDialog;
+import com.sromku.simple.fb.Permission;
+import com.sromku.simple.fb.SimpleFacebook;
+import com.sromku.simple.fb.SimpleFacebookConfiguration;
+import com.sromku.simple.fb.entities.Feed;
+import com.sromku.simple.fb.listeners.OnLoginListener;
+import com.sromku.simple.fb.listeners.OnPublishListener;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -51,6 +60,14 @@ public class AndroidFacebookConnectActivity extends Activity {
 	private String currentScore = "";
 
 
+	private SimpleFacebook mSimpleFacebook;
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		mSimpleFacebook = SimpleFacebook.getInstance(this);
+	}
+
 
 
 	@Override
@@ -62,6 +79,9 @@ public class AndroidFacebookConnectActivity extends Activity {
 		{
 			currentScore = getIntent().getExtras().getString(SpellingbeeConstants.KEY_SCORE_FOR_FB_SHARE);
 		}
+
+		mSimpleFacebook = SimpleFacebook.getInstance();
+		//mSimpleFacebook.login(onLoginListener);
 
 		/*btnFbLogin = (Button) findViewById(R.id.btn_fblogin);
 		btnFbGetProfile = (Button) findViewById(R.id.btn_get_profile);
@@ -119,8 +139,50 @@ public class AndroidFacebookConnectActivity extends Activity {
 
 		
 		loginAndPostToWall();
-		
-		
+
+		/*Session session = Session.getActiveSession();
+
+		if(session==null){
+			// try to restore from cache
+			session = Session.openActiveSessionFromCache(this);
+		}
+
+		if(session!=null && session.isOpened()){
+			publishFeedDialog();
+		}
+		else{
+			facebook.authorize(this, PERMISSIONS,  Facebook.FORCE_DIALOG_AUTH,
+					new LoginDialogListener());
+		}
+
+		publishFeedDialog();*/
+	}
+
+	private void publishFeedDialog() {
+		Bundle params = new Bundle();
+		params.putString("name", "Champs21");
+		params.putString("description", "I scored " + currentScore + " in Spelling Bee and climbed the ranks! Divisionals here I come! The Bee is Buzzing!!");
+		params.putString("link", "https://play.google.com/store/apps/details?id=com.champs21.schoolapp");
+		//params.putString("picture", "https://fbcdn-photos-h-a.akamaihd.net/hphotos-ak-xtf1/t39.2081-0/p128x128/11409182_1049346648427585_1532478104_n.png");
+
+		WebDialog feedDialog = (
+				new WebDialog.FeedDialogBuilder(this,
+						/*Session.getActiveSession(),*/
+						facebook.getSession(),
+
+
+						params))
+				.setOnCompleteListener(new WebDialog.OnCompleteListener() {
+					@Override
+					public void onComplete(Bundle values, FacebookException error) {
+
+						Toast.makeText(AndroidFacebookConnectActivity.this, AppMessages.ANDROIDFACEBOOKCONNECTACTIVITY_POSTED_TO_FB, Toast.LENGTH_SHORT).show();
+						AndroidFacebookConnectActivity.this.finish();
+
+					}
+				})
+				.build();
+		feedDialog.show();
 	}
 
 	/**
@@ -128,8 +190,10 @@ public class AndroidFacebookConnectActivity extends Activity {
 	 * */
 
 	public void loginAndPostToWall() {
-		facebook.authorize(this, PERMISSIONS,
+		facebook.authorize(this, PERMISSIONS,  Facebook.FORCE_DIALOG_AUTH,
 				new LoginDialogListener());
+
+		//mSimpleFacebook.login(onLoginListener);
 	}
 
 	class LoginDialogListener implements DialogListener {
@@ -138,12 +202,17 @@ public class AndroidFacebookConnectActivity extends Activity {
 			saveCredentials(facebook);
 
 			// postToWall(messageToPost);
-			mAsyncRunner = new AsyncFacebookRunner(facebook);
+			/*mAsyncRunner = new AsyncFacebookRunner(facebook);
 
 			final Bundle params = new Bundle();
 
 			params.putString("message", "I scored " + currentScore + " in Spelling Bee and climbed the ranks! Divisionals here I come! The Bee is Buzzing!!");
-			mAsyncRunner.request("me/feed", params, "POST", new WallPostListener(), null);
+			mAsyncRunner.request("me/feed", params, "POST", new WallPostListener(), null);*/
+
+
+
+			publishFeedDialog();
+
 
 
 		}
@@ -163,6 +232,93 @@ public class AndroidFacebookConnectActivity extends Activity {
 			finish();
 		}
 	}
+
+
+	/*@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		mSimpleFacebook.onActivityResult(this, requestCode, resultCode, data);
+		super.onActivityResult(requestCode, resultCode, data);
+	}*/
+
+
+	OnLoginListener onLoginListener = new OnLoginListener() {
+		@Override
+		public void onLogin() {
+
+			Permission[] permissions = new Permission[] {
+					Permission.PUBLISH_ACTION
+			};
+
+			SimpleFacebookConfiguration configuration = new SimpleFacebookConfiguration.Builder()
+					.setAppId(APP_ID)
+					.setNamespace("champs_schoolapp")
+					.setPermissions(permissions)
+					.setDefaultAudience(SessionDefaultAudience.EVERYONE)
+					.setAskForAllPermissionsAtOnce(false)
+					.build();
+
+			SimpleFacebook.setConfiguration(configuration);
+
+
+
+			Feed feed = new Feed.Builder()
+					.setMessage("Clone it out...")
+					.setName("Simple Facebook for Android")
+					.setCaption("Code less, do the same.")
+					.setDescription("The Simple Facebook library project makes the life much easier by coding less code for being able to login, publish feeds and open graph stories, invite friends and more.")
+					.setPicture("https://raw.github.com/sromku/android-simple-facebook/master/Refs/android_facebook_sdk_logo.png")
+					.setLink("https://github.com/sromku/android-simple-facebook")
+					.build();
+
+			mSimpleFacebook.getInstance().publish(feed, onPublishListener);
+
+
+		}
+
+		@Override
+		public void onNotAcceptingPermissions(Permission.Type type) {
+
+		}
+
+		@Override
+		public void onThinking() {
+
+		}
+
+		@Override
+		public void onException(Throwable throwable) {
+
+		}
+
+		@Override
+		public void onFail(String reason) {
+
+		}
+	};
+
+
+	OnPublishListener onPublishListener = new OnPublishListener() {
+		@Override
+		public void onComplete(String postId) {
+			Log.e("FB_OVI", "Published successfully. The new post id = " + postId);
+		}
+
+		@Override
+		public void onException(Throwable throwable) {
+			super.onException(throwable);
+		}
+
+		@Override
+		public void onFail(String reason) {
+			super.onFail(reason);
+			Log.e("FB_OVI", "reason: "+reason);
+		}
+
+		/*
+     * You can override other methods here:
+     * onThinking(), onFail(String reason), onException(Throwable throwable)
+     */
+	};
 
 	private Handler mRunOnUi = new Handler();
 	private final class WallPostListener implements RequestListener {

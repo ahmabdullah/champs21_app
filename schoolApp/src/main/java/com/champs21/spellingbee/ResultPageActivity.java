@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -43,6 +44,7 @@ public class ResultPageActivity extends ChildContainerActivity {
     private ImageButton btnShare;
     private ImageButton btnPlayAgain;
 
+    private Button btnLeaderBoard;
 
 
     @Override
@@ -108,6 +110,8 @@ public class ResultPageActivity extends ChildContainerActivity {
 
         btnShare = (ImageButton)this.findViewById(R.id.btnShare);
         btnPlayAgain = (ImageButton)this.findViewById(R.id.btnPlayAgain);
+
+        btnLeaderBoard = (Button)this.findViewById(R.id.btnLeaderBoard);
     }
 
     private void initAction()
@@ -145,6 +149,14 @@ public class ResultPageActivity extends ChildContainerActivity {
                 finish();
 
 
+            }
+        });
+
+        btnLeaderBoard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResultPageActivity.this, LeaderBoardActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -210,8 +222,12 @@ public class ResultPageActivity extends ChildContainerActivity {
     private void initApicall()
     {
         UserIdGeneration usd = new UserIdGeneration();
-        Map<String, String> map = usd.createUserToken(259);
+        //Map<String, String> map = usd.createUserToken(259);
 
+
+        //int userId = Integer.parseInt(UserHelper.getUserFreeId().trim());
+
+        Map<String, String> map = usd.createUserToken(259);
         RequestParams params = new RequestParams();
 
         params.put("left", map.get("left"));

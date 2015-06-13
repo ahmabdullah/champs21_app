@@ -20,6 +20,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+
+
     <!-- Keeps the processor from sleeping when a message is received. -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -432,6 +434,9 @@
 
         </activity>
 
+        <provider android:authorities="com.facebook.app.NativeAppCallContentProvider850059515022967"
+            android:name="com.facebook.NativeAppCallContentProvider"
+            android:exported="true"/>
 
 
     </application>
