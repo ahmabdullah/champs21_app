@@ -273,12 +273,15 @@
 
     </ScrollView>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnLeaderBoard"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Leaderboard"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp"
         android:layout_alignParentBottom="true"
+        android:src="@drawable/spellingbee_btn_result_leaderboard"
         android:layout_centerHorizontal="true" />
 
 

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -44,7 +43,7 @@ public class ResultPageActivity extends ChildContainerActivity {
     private ImageButton btnShare;
     private ImageButton btnPlayAgain;
 
-    private Button btnLeaderBoard;
+    private ImageButton btnLeaderBoard;
 
 
     @Override
@@ -111,7 +110,7 @@ public class ResultPageActivity extends ChildContainerActivity {
         btnShare = (ImageButton)this.findViewById(R.id.btnShare);
         btnPlayAgain = (ImageButton)this.findViewById(R.id.btnPlayAgain);
 
-        btnLeaderBoard = (Button)this.findViewById(R.id.btnLeaderBoard);
+        btnLeaderBoard = (ImageButton)this.findViewById(R.id.btnLeaderBoard);
     }
 
     private void initAction()

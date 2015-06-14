@@ -14,6 +14,21 @@ public class LeaderBoardModel {
     @SerializedName("school_name")
     private String schoolName;
 
+    @SerializedName("high_score")
+    private String highScore;
+
+    public String getHighScore() {
+        return highScore;
+    }
+
+    public void setHighScore(String highScore) {
+        this.highScore = highScore;
+    }
+
+
+
+
+
     public String getName() {
         return userFullname;
     }

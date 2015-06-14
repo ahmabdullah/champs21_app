@@ -153,16 +153,21 @@ public class LeaderBoardActivity extends ChildContainerActivity {
         //txtSchoolName.setText(userHelper.getUser().getSchoolName());
 
 
-        if(!TextUtils.isEmpty(userHelper.getUser().getMedium()))
+        /*if(!TextUtils.isEmpty(userHelper.getUser().getMedium()))
         {
             userFullName = userHelper.getUser().getFirstName()+" "+userHelper.getUser().getMiddleName()+" "+userHelper.getUser().getLastName();
         }
         else
         {
             userFullName = userHelper.getUser().getFirstName()+" "+userHelper.getUser().getLastName();
-        }
+        }*/
+
+        userFullName = userHelper.getUser().getFirstName()+" "+userHelper.getUser().getLastName();
 
         txtSchoolName.setText(UserHelper.getSchoolName());
+
+
+
         txtName.setText(userFullName);
 
         Log.e("FULL NAME", "is: "+UserHelper.getSchoolName());
@@ -337,6 +342,7 @@ public class LeaderBoardActivity extends ChildContainerActivity {
                 holder.txtPosition = (TextView)convertView.findViewById(R.id.txtPosition);
                 holder.txtName = (TextView)convertView.findViewById(R.id.txtName);
                 holder.txtSchoolName = (TextView)convertView.findViewById(R.id.txtSchoolName);
+                holder.txtHighScore = (TextView)convertView.findViewById(R.id.txtHighScore);
 
                 convertView.setTag(holder);
             }
@@ -347,6 +353,7 @@ public class LeaderBoardActivity extends ChildContainerActivity {
             holder.txtPosition.setText(String.valueOf(position+1)+".");
             holder.txtName.setText(listLeaderBoard.get(position).getName());
             holder.txtSchoolName.setText(listLeaderBoard.get(position).getSchoolName());
+            holder.txtHighScore.setText("High Score: "+listLeaderBoard.get(position).getHighScore());
 
 
             return convertView;
@@ -358,6 +365,7 @@ public class LeaderBoardActivity extends ChildContainerActivity {
             TextView txtPosition;
             TextView txtName;
             TextView txtSchoolName;
+            TextView txtHighScore;
 
         }
 
