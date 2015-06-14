@@ -159,11 +159,18 @@ public class AndroidFacebookConnectActivity extends Activity {
 	}
 
 	private void publishFeedDialog() {
+
+		//I have scored " + score + " in Spell Bangladesh at www.champs21.com. Beat me if you can!
+
+
+		String str = "I have scored " + currentScore + " in Spell Bangladesh at www.champs21.com. Beat me if you can!";
+
 		Bundle params = new Bundle();
-		params.putString("name", "Champs21");
-		params.putString("description", "I scored " + currentScore + " in Spelling Bee and climbed the ranks! Divisionals here I come! The Bee is Buzzing!!");
+		params.putString("name", "Meet the new spelling genius!");
+		params.putString("caption",str);
+		/*params.putString("description", "I scored " + currentScore + " in Spelling Bee and climbed the ranks! Divisionals here I come! The Bee is Buzzing!!");*/
 		params.putString("link", "https://play.google.com/store/apps/details?id=com.champs21.schoolapp");
-		//params.putString("picture", "https://fbcdn-photos-h-a.akamaihd.net/hphotos-ak-xtf1/t39.2081-0/p128x128/11409182_1049346648427585_1532478104_n.png");
+		params.putString("picture", "http://www.champs21.com/swf/spellingbee_2015/sbee.png");
 
 		WebDialog feedDialog = (
 				new WebDialog.FeedDialogBuilder(this,
