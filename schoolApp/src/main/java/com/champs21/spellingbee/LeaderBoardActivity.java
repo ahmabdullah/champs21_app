@@ -353,7 +353,7 @@ public class LeaderBoardActivity extends ChildContainerActivity {
             holder.txtPosition.setText(String.valueOf(position+1)+".");
             holder.txtName.setText(listLeaderBoard.get(position).getName());
             holder.txtSchoolName.setText(listLeaderBoard.get(position).getSchoolName());
-            holder.txtHighScore.setText("High Score: "+listLeaderBoard.get(position).getHighScore());
+            holder.txtHighScore.setText("Best Score: "+listLeaderBoard.get(position).getHighScore());
 
 
             return convertView;
