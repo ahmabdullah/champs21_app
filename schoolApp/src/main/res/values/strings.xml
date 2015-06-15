@@ -254,7 +254,7 @@
         <!-- <item>video</item> -->
     </string-array>
     <string-array name="free_menus_text">
-        <item>Play Spelling Bee</item>
+        <item>Play Online Round</item>
         <item>Spelling Bee</item>
         <item>Resource Centre</item>
         <item>News \u0026 Articles</item>
