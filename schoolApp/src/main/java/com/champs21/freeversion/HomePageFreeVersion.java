@@ -372,7 +372,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                             groupItem.get(groupPosition).getText()).get(
                             childPosition);
                     if(selectedMenu!=null) if(Integer.parseInt(((DrawerChildMenu) selectedMenu)
-                                    .getId())==7)childState=false;
+                                    .getId())==-7)childState=false;
                     if (!childState) {
                         listAdapter.initializeStates();
                         childSelectionStates.get(
@@ -395,7 +395,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                                                 VideoFragment.newInstance(menuId),
                                                 TAG).commit();
                                 break;
-                            case 7:
+                            case -7:
                                 if (UserHelper.isLoggedIn()){
                                     if(userHelper.getUser().getType()== UserHelper.UserTypeEnum.STUDENT){
                                         if(UserHelper.getSpellingStatus()==0){
@@ -411,7 +411,6 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                                         startActivity(new Intent(HomePageFreeVersion.this,
                                                 SpellingbeeTestActivity.class));
                                     }
-
                                 }
                                 else {
                                     startActivity(new Intent(HomePageFreeVersion.this,

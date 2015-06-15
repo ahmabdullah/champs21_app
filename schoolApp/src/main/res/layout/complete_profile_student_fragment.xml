@@ -266,7 +266,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="5dip"
                         android:layout_weight="1"
-                        android:hint="Dhaka"
+                        android:hint="Select Division"
                         android:textColor="@color/hint_color"
                         android:textColorHint="@color/hint_color"
                         android:textSize="12sp" />
