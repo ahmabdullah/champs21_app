@@ -60,6 +60,8 @@ public class SplashScreenActivity extends Activity {
 		navigateToNextPage();
 
         //startActivity(new Intent(this, SpellingbeeTestActivity.class));
+		//startActivity(new Intent(this, LeaderBoardActivity.class));
+		//startActivity(new Intent(this, SpellingbeeRulesActivity.class));
 
 
 	}

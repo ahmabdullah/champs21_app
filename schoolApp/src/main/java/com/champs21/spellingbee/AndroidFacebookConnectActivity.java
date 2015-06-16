@@ -167,7 +167,8 @@ public class AndroidFacebookConnectActivity extends Activity {
 
 		Bundle params = new Bundle();
 		params.putString("name", "Meet the new spelling genius!");
-		params.putString("caption",str);
+		params.putString("caption","Meet the new spelling genius!");
+		params.putString("description",str);
 		/*params.putString("description", "I scored " + currentScore + " in Spelling Bee and climbed the ranks! Divisionals here I come! The Bee is Buzzing!!");*/
 		params.putString("link", "https://play.google.com/store/apps/details?id=com.champs21.schoolapp");
 		params.putString("picture", "http://www.champs21.com/swf/spellingbee_2015/sbee.png");

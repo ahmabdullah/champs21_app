@@ -65,7 +65,6 @@
                                         android:id="@+id/txtPublish"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="New Text"
                                         android:textColor="@android:color/white"
                                         android:textSize="18sp"
                                         android:textStyle="bold"
@@ -148,7 +147,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="20"
+                            android:text="30"
                             android:textColor="@android:color/white"
                             android:textStyle="bold"
                             android:textSize="18sp"
@@ -179,8 +178,7 @@
                             android:id="@+id/txtScore"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="16sp"
-                            android:text="New Text" />
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -196,8 +194,7 @@
                             android:id="@+id/txtWordType"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="16sp"
-                            android:text="New Text" />
+                            android:textSize="16sp" />
                     </LinearLayout>
                 </LinearLayout>
 

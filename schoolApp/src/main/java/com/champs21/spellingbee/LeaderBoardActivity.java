@@ -1,5 +1,6 @@
 package com.champs21.spellingbee;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,10 +17,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.champs21.freeversion.ChildContainerActivity;
+import com.champs21.freeversion.CompleteProfileActivityContainer;
+import com.champs21.schoolapp.LoginActivity;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.GsonParser;
+import com.champs21.schoolapp.utils.SPKeyHelper;
 import com.champs21.schoolapp.utils.SchoolApp;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
@@ -65,6 +69,8 @@ public class LeaderBoardActivity extends ChildContainerActivity {
 
 
     private RelativeLayout layoutTop;
+
+    private ImageButton btnPlayNow;
 
 
     @Override
@@ -140,6 +146,8 @@ public class LeaderBoardActivity extends ChildContainerActivity {
             layoutTop.setVisibility(View.GONE);
 
 
+        btnPlayNow = (ImageButton)this.findViewById(R.id.btnPlayNow);
+
     }
 
     private void initAction()
@@ -170,10 +178,10 @@ public class LeaderBoardActivity extends ChildContainerActivity {
 
         txtName.setText(userFullName);
 
-        Log.e("FULL NAME", "is: "+UserHelper.getSchoolName());
+        Log.e("FULL NAME", "is: " + UserHelper.getSchoolName());
         Log.e("FULL NAME", "is: " + userHelper.getUser().getFirstName());
 
-        btnDropDown.setOnClickListener(new View.OnClickListener(){
+        btnDropDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PopupMenu popup = new PopupMenu(LeaderBoardActivity.this, btnDropDown);
@@ -185,17 +193,15 @@ public class LeaderBoardActivity extends ChildContainerActivity {
                     public boolean onMenuItemClick(MenuItem item) {
                         //Toast.makeText(SchoolSearchFragment.this.getActivity(),"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
 
-                        txtDivisionName.setText(item.getTitle().toString()+" Division");
+                        txtDivisionName.setText(item.getTitle().toString() + " Division");
 
-                        if(!selectedDivision.equalsIgnoreCase(item.getTitle().toString()))
+                        if (!selectedDivision.equalsIgnoreCase(item.getTitle().toString()))
                             initApicall(item.getTitle().toString());
 
                         selectedDivision = item.getTitle().toString();
 
 
-
                         Log.e("SELECTED_DIVISION", "id: " + selectedDivision);
-
 
 
                         return true;
@@ -203,6 +209,38 @@ public class LeaderBoardActivity extends ChildContainerActivity {
                 });
 
                 popup.show();
+            }
+        });
+
+
+        btnPlayNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                if (UserHelper.isLoggedIn()){
+                    if(userHelper.getUser().getType()== UserHelper.UserTypeEnum.STUDENT){
+                        if(UserHelper.getSpellingStatus()==0){
+                            Intent i = new Intent(LeaderBoardActivity.this,
+                                    CompleteProfileActivityContainer.class);
+                            i.putExtra(SPKeyHelper.USER_TYPE, userHelper.getUser().getType().ordinal());
+                            startActivity(i);
+                        }else {
+                            startActivity(new Intent(LeaderBoardActivity.this,
+                                    SpellingbeeTestActivity.class));
+                        }
+                    }else {
+                        startActivity(new Intent(LeaderBoardActivity.this,
+                                SpellingbeeTestActivity.class));
+                    }
+                }
+                else {
+                    startActivity(new Intent(LeaderBoardActivity.this,
+                            LoginActivity.class));
+                }
+
+                finish();
+
             }
         });
 
@@ -217,6 +255,8 @@ public class LeaderBoardActivity extends ChildContainerActivity {
 
         params.put("division", divisionName);
 
+
+        params.put("free_id", UserHelper.getUserFreeId());
 
         AppRestClient.post(URLHelper.SPELLINGBEE_LEADERBOARD, params, leaderBoardHandler);
     }
@@ -284,7 +324,10 @@ public class LeaderBoardActivity extends ChildContainerActivity {
 
                 String str = division.toLowerCase();
 
-                String upperString = str.substring(0,1).toUpperCase() + str.substring(1);
+                String upperString = "";
+
+                if(!TextUtils.isEmpty(str))
+                    upperString = str.substring(0,1).toUpperCase() + str.substring(1);
 
                 populateData(rank, bestScore, upperString);
 
@@ -381,9 +424,15 @@ public class LeaderBoardActivity extends ChildContainerActivity {
         else
             score = PrefSingleton.getInstance().getPreference(UserHelper.getUserFreeId()+SpellingbeeConstants.CURRENT_SCORE_LEADERBOARD);
 
-        txtRank.setText("Rank: "+rank);
+        //txtRank.setText("Rank: "+rank);
         txtScoreDetails.setText("Current Score: "+score+", "+"Best Score: "+bestScore);
         txtDivisionUpper.setText("Division: "+division);
+
+        if(!division.equalsIgnoreCase(selectedDivision))
+            txtRank.setText("Rank: N/A");
+        else
+            txtRank.setText("Rank: "+rank);
+
 
 
     }

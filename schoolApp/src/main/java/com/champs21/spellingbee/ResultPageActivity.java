@@ -224,9 +224,9 @@ public class ResultPageActivity extends ChildContainerActivity {
         //Map<String, String> map = usd.createUserToken(259);
 
 
-        //int userId = Integer.parseInt(UserHelper.getUserFreeId().trim());
+        int userId = Integer.parseInt(UserHelper.getUserFreeId().trim());
 
-        Map<String, String> map = usd.createUserToken(259);
+        Map<String, String> map = usd.createUserToken(userId);
         RequestParams params = new RequestParams();
 
         params.put("left", map.get("left"));
@@ -236,13 +236,23 @@ public class ResultPageActivity extends ChildContainerActivity {
         params.put("send_id", map.get("user_id_token"));
 
 
+
+        Log.e("MAPPPP", "right: " + map.get("right"));
+        Log.e("MAPPPP", "left: " + map.get("left"));
+        Log.e("MAPPPP", "user_id_token: " + map.get("user_id_token"));
+        Log.e("MAPPPP", "method: " + map.get("method"));
+        Log.e("MAPPPP", "operator: " + map.get("operator"));
+
+
         long tLong = Long.parseLong(timeTaken);
         int time = (int)tLong/1000;
-        Log.e("TIME_TAKEN_API", "is: "+time);
+        Log.e("TIME_TAKEN_API", "is: " + time);
 
         params.put("total_time", String.valueOf(time));
         params.put("score", currentScore);
 
+
+        params.put("free_id", UserHelper.getUserFreeId());
 
         AppRestClient.post(URLHelper.SPELLINGBEE_SAVESCORE, params, resultHandler);
     }
@@ -288,6 +298,13 @@ public class ResultPageActivity extends ChildContainerActivity {
 
 
             else {
+
+                /*String highScore = modelContainer.getData().get("highestScore").getAsString();
+
+                Log.e("SCCCCC", "is: "+highScore);
+
+                txtHighScore.setText(highScore);*/
+
 
             }
 

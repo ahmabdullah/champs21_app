@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -183,6 +184,10 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
                 return false;
             }
         });
+
+        txtSubmit.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+
+
     }
 
     private void initAction()
@@ -213,7 +218,7 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(SpellingbeeTestActivity.this, listCurrentData.get(currentPosition).getWord(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SpellingbeeTestActivity.this, listCurrentData.get(currentPosition).getWord(), Toast.LENGTH_SHORT).show();
                 speakWords(listCurrentData.get(currentPosition).getWord());
             }
         });
@@ -263,7 +268,8 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
         if(!TextUtils.isEmpty(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_SAVE_FULL_SCORE)))
         {
-            score = getFullScore()+1;
+            //score = getFullScore()+1;
+            score = getFullScore();
         }
 
         txtSubmit.setInputType(txtSubmit.getInputType()
@@ -346,6 +352,11 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
                 case 3:
                     //bgData.execute("demo_5_mod.xml");
                     bgData.execute("year_3.xml");
+                    break;
+
+                case 4:
+                    //bgData.execute("demo_5_mod.xml");
+                    bgData.execute("year_4.xml");
                     break;
 
             }
@@ -467,7 +478,9 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
             {
                 //data = getFullData();
                 //data.removeAll(getFullData());
-                for(int j=0; j< data.size();j++)
+
+
+                /*for(int j=0; j< data.size();j++)
                 {
                     for(int i=0;i<getFullData().size();i++)
                     {
@@ -476,7 +489,13 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
                     }
                 }
 
-                Log.e("SAVED DATA", "size is: " + getFullData().size());
+                Log.e("SAVED DATA", "size is: " + getFullData().size());*/
+
+                data.clear();
+                data = null;
+                data = new ArrayList<SpellingbeeDataModel>();
+                data = getFullData();
+
 
 
 
@@ -809,7 +828,19 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
 
 
-        if(currentPosition>= 0 && ((currentPosition+1)  % SpellingbeeConstants.CHECK_POINT  == 0))
+        /*if(currentPosition>= 0 && ((currentPosition+1)  % SpellingbeeConstants.CHECK_POINT  == 0))
+        {
+            PrefSingleton.getInstance().savePreference(SpellingbeeConstants.KEY_CHECKPOINT_POSITION, String.valueOf(currentPosition));
+
+            //data.removeAll(listDeleteData);
+
+            saveFullData();
+            saveFullScore();
+
+
+        }*/
+
+        if(score>= 0 && (score  % SpellingbeeConstants.CHECK_POINT  == 0))
         {
             PrefSingleton.getInstance().savePreference(SpellingbeeConstants.KEY_CHECKPOINT_POSITION, String.valueOf(currentPosition));
 
@@ -902,11 +933,20 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
         else if(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.CURRENT_BANK_NUMBER).equalsIgnoreCase("3"))
         {
+            PrefSingleton.getInstance().savePreference(SpellingbeeConstants.CURRENT_BANK_NUMBER, "4");
+            BgLoadData bgData = new BgLoadData();
+            //bgData.execute("demo_3_mod.xml");
+            bgData.execute("year_4.xml");
+        }
+
+        else if(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.CURRENT_BANK_NUMBER).equalsIgnoreCase("4"))
+        {
             PrefSingleton.getInstance().savePreference(SpellingbeeConstants.CURRENT_BANK_NUMBER, "1");
             BgLoadData bgData = new BgLoadData();
             //bgData.execute("demo_3_mod.xml");
             bgData.execute("year_1.xml");
         }
+
 
 
     }
@@ -917,8 +957,13 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
     private void saveFullData()
     {
 
-        String val = gson.toJson(listDeleteData);
+        /*String val = gson.toJson(listDeleteData);
+        PrefSingleton.getInstance().savePreference(SpellingbeeConstants.KEY_SAVE_FULL_DATA, val);*/
+
+        data.removeAll(listDeleteData);
+        String val = gson.toJson(data);
         PrefSingleton.getInstance().savePreference(SpellingbeeConstants.KEY_SAVE_FULL_DATA, val);
+
 
     }
 

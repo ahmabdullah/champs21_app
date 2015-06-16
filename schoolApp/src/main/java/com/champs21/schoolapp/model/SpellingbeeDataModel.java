@@ -79,10 +79,11 @@ public class SpellingbeeDataModel {
         this.id = id;
     }
 
-    public SpellingbeeDataModel(int id, String word, String banglaMeaning, String definition, String sentence, String wType, String level)
+    public SpellingbeeDataModel(int id, String word, String wordTwo, String banglaMeaning, String definition, String sentence, String wType, String level)
     {
         this.id = id;
         this.word = word;
+        this.wordTwo = wordTwo;
         this.banglaMeaning = banglaMeaning;
         this.definition = definition;
         this.sentence = sentence;
