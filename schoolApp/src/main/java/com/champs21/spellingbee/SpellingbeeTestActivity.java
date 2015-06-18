@@ -37,7 +37,7 @@ import java.util.Random;
 /**
  * Created by BLACK HAT on 18-May-15.
  */
-public class SpellingbeeTestActivity extends Activity implements TextToSpeech.OnInitListener{
+public class SpellingbeeTestActivity extends Activity implements TextToSpeech.OnInitListener, IOnSkipButtonClick{
 
 
     private List<SpellingbeeDataModel> data = null;
@@ -93,7 +93,7 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
     private Gson gson;
 
-
+    private CustomDialog customDialog;
 
 
     /*@Override
@@ -188,6 +188,9 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
         txtSubmit.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
 
 
+        customDialog = new CustomDialog(this, this);
+
+
     }
 
     private void initAction()
@@ -218,7 +221,7 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
             @Override
             public void onClick(View v) {
 
-                //Toast.makeText(SpellingbeeTestActivity.this, listCurrentData.get(currentPosition).getWord(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SpellingbeeTestActivity.this, listCurrentData.get(currentPosition).getWord(), Toast.LENGTH_SHORT).show();
                 speakWords(listCurrentData.get(currentPosition).getWord());
             }
         });
@@ -840,7 +843,19 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
         }*/
 
-        if(score>= 0 && (score  % SpellingbeeConstants.CHECK_POINT  == 0))
+
+
+
+        if(score != getFullScore() && ((score  % SpellingbeeConstants.CHECK_POINT  == 0)))
+        {
+            countDownTimer.pause();
+
+            new CustomDialog(this, this).show();
+        }
+
+
+
+        if(score> 0 && (score  % SpellingbeeConstants.CHECK_POINT  == 0))
         {
             PrefSingleton.getInstance().savePreference(SpellingbeeConstants.KEY_CHECKPOINT_POSITION, String.valueOf(currentPosition));
 
@@ -851,6 +866,8 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
 
         }
+
+
 
 
 
@@ -896,6 +913,14 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
     }
 
+
+    @Override
+    public void onSkipButtonClicked() {
+
+      if(countDownTimer.isPaused())
+            countDownTimer.start();
+
+    }
 
     private void removeUsedData()
     {
@@ -983,7 +1008,12 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
     private int getFullScore()
     {
-        int score = Integer.parseInt(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_SAVE_FULL_SCORE));
+        int score = 0;
+
+        if(!TextUtils.isEmpty(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_SAVE_FULL_SCORE)))
+            score = Integer.parseInt(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_SAVE_FULL_SCORE));
+        else
+            score = 0;
 
         return score;
     }
