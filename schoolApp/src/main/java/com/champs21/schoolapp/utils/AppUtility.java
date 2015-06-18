@@ -524,6 +524,10 @@ public class AppUtility {
 		case 62:
 			return isIcon ? (isWhite ? R.drawable.personality_normal
 					: R.drawable.candle_icon_red) : R.raw.edu_banner;
+			case 7:
+				return isIcon ? (isWhite ? R.drawable.spellingbee_head
+						: R.drawable.spellingbee_head) : R.raw.edu_banner;
+
 		default:
 			return -1;
 		}
