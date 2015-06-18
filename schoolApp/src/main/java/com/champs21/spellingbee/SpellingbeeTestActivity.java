@@ -95,6 +95,8 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
     private CustomDialog customDialog;
 
+    private boolean isDialogShowing = false;
+
 
     /*@Override
     protected void onResume() {
@@ -850,7 +852,10 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
         {
             countDownTimer.pause();
 
+            isDialogShowing = true;
             new CustomDialog(this, this).show();
+
+
         }
 
 
@@ -882,7 +887,8 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
         if(myTTS == null)
             myTTS = new TextToSpeech(this, this);
 
-        speakWords(listCurrentData.get(currentPosition).getWord());
+        if(isDialogShowing == false)
+            speakWords(listCurrentData.get(currentPosition).getWord());
 
 
         String star = "*";
@@ -917,7 +923,12 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
     @Override
     public void onSkipButtonClicked() {
 
-      if(countDownTimer.isPaused())
+        isDialogShowing = false;
+
+        if(isDialogShowing == false)
+            speakWords(listCurrentData.get(currentPosition).getWord());
+
+        if(countDownTimer.isPaused())
             countDownTimer.start();
 
     }
