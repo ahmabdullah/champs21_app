@@ -223,7 +223,7 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(SpellingbeeTestActivity.this, listCurrentData.get(currentPosition).getWord(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SpellingbeeTestActivity.this, listCurrentData.get(currentPosition).getWord(), Toast.LENGTH_SHORT).show();
                 speakWords(listCurrentData.get(currentPosition).getWord());
             }
         });

@@ -195,7 +195,7 @@
 	</data>
 	<data id="25">
 		<word>Buckle</word>
-		<bangla_meaning>আবৃত করা, মিলিত হওয়া</bangla_meaning>
+		<bangla_meaning>বিশেষ ভাবে বাঁধা ( জুতা বা বেল্ট সম্বন্ধে )</bangla_meaning>
 		<definition>flat rectangular frame with a pin, for tying two ends.</definition>
 		<sentence>His shoe sported a shiny new silver buckle.</sentence>
 		<wtype>noun</wtype>
@@ -291,7 +291,7 @@
 	</data>
 	<data id="37">
 		<word>Cardigan</word>
-		<bangla_meaning>কার্ডিগ্যান</bangla_meaning>
+		<bangla_meaning>হাতাওয়ালা পশমী জামা</bangla_meaning>
 		<definition>a knitted jacket..</definition>
 		<sentence>All jumpers, cardigans and socks were knitted by hand.</sentence>
 		<wtype>noun</wtype>
@@ -859,7 +859,7 @@
 	</data>
 	<data id="108">
 		<word>Draught</word>
-		<bangla_meaning>ঘরে বা কোন স্থানে বায়ুপ্রবাহ</bangla_meaning>
+		<bangla_meaning>ঘরে বা কোন স্থানে বায়ুপ্রবাহ </bangla_meaning>
 		<definition>movement of cool air in a room .</definition>
 		<sentence>Even though the windows are shut I can feel a draught coming from somewhere.</sentence>
 		<wtype>noun</wtype>
@@ -1723,7 +1723,7 @@
 	</data>
 	<data id="216">
 		<word>Insoluble</word>
-		<bangla_meaning>ব্যাখ্যাতীত; সমাধানের অতীত</bangla_meaning>
+		<bangla_meaning>অদ্রবণীয়</bangla_meaning>
 		<definition>impossible to dissolve.</definition>
 		<sentence>Sand particles are insoluble in water.</sentence>
 		<wtype>adjective</wtype>
@@ -2932,7 +2932,7 @@
 	</data>
 	<data id="367">
 		<word>Antiquated</word>
-		<bangla_meaning>পুরোনো বলে অচল</bangla_meaning>
+		<bangla_meaning>অপ্রচলিত </bangla_meaning>
 		<definition>(of things or ideas) old-fashioned and no longer suitable for modern conditions.</definition>
 		<sentence>The antiquated filing system at the office has been a source of frustration.</sentence>
 		<wtype>adjective</wtype>
@@ -3110,7 +3110,7 @@
 		<word>Avuncular</word>
 		<bangla_meaning>পিতৃব্য সম্পর্কিত</bangla_meaning>
 		<definition>kind and friendly, in the manner of an uncle.</definition>
-		<sentence>His avuncular approach towards leadership quickly but them at ease.</sentence>
+		<sentence>His friendly avuncular bearded figure was recognised throughout the town.</sentence>
 		<wtype>adjective</wtype>
 		<level>1</level>
 	</data>
@@ -3253,7 +3253,7 @@
 	<data id="407">
 		<word>Beseech</word>
 		<bangla_meaning>মিনতি করা</bangla_meaning>
-		<definition>ask urgently .</definition>
+		<definition>to ask somebody for something in an anxious way because you want or need it very much.</definition>
 		<sentence>I beseech you, please help me out of this mess!</sentence>
 		<wtype>verb</wtype>
 		<level>1</level>
@@ -3268,8 +3268,8 @@
 	</data>
 	<data id="409">
 		<word>Bevy</word>
-		<bangla_meaning>দল</bangla_meaning>
-		<definition>a large group .</definition>
+		<bangla_meaning>সমবেত সভা</bangla_meaning>
+		<definition>a large group of people or things of the same kind.</definition>
 		<sentence>The handsome actor was surrounded by a bevy of pretty women.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
@@ -3316,7 +3316,7 @@
 	</data>
 	<data id="415">
 		<word>Blimp</word>
-		<bangla_meaning>ছোট বিমান</bangla_meaning>
+		<bangla_meaning>অতি হালকা ছোট বিমান</bangla_meaning>
 		<definition>small airship or barrage balloon.</definition>
 		<sentence>The blimp was flying above the stadium.</sentence>
 		<wtype>noun</wtype>
@@ -3492,7 +3492,7 @@
 	</data>
 	<data id="437">
 		<word>Cephalic</word>
-		<bangla_meaning>মাথার সাথে সম্পর্কিত</bangla_meaning>
+		<bangla_meaning>মস্তিষ্ক সংক্রান্ত</bangla_meaning>
 		<definition>related to the head .</definition>
 		<sentence>We wanted to examine the MRI for an cephalic abnormalities.</sentence>
 		<wtype>adjective</wtype>
@@ -3516,7 +3516,7 @@
 	</data>
 	<data id="440">
 		<word>Chant</word>
-		<bangla_meaning>একটি বুলি কে পুনরাবৃত্তি করা</bangla_meaning>
+		<bangla_meaning>একই সুরে - বাঁধা মাত্রা ভা শব্দগুচ্ছ </bangla_meaning>
 		<definition>a repeated rhythmic phrase .</definition>
 		<sentence>The students' muttered recitation sounded eerily like a chant.</sentence>
 		<wtype>verb</wtype>
@@ -3627,7 +3627,7 @@
 		<level>1</level>
 	</data>
 	<data id="454">
-		<word>Coffers</word>
+		<word>Coffer</word>
 		<bangla_meaning>অর্থ-ভাণ্ডার</bangla_meaning>
 		<definition>funds or financial reserves.</definition>
 		<sentence>Their successful business ventures have filled their coffers.</sentence>
@@ -3660,7 +3660,7 @@
 	</data>
 	<data id="458">
 		<word>Congenital</word>
-		<bangla_meaning>জন্মগত</bangla_meaning>
+		<bangla_meaning>জন্মগত (ব্যাধি ইত্যাদি )</bangla_meaning>
 		<definition>(of a disease or medical condition) existing since or before birth.</definition>
 		<sentence>Half of all fetuses with the syndrome have a congenital heart defect.</sentence>
 		<wtype>adjective</wtype>
@@ -3668,7 +3668,7 @@
 	</data>
 	<data id="459">
 		<word>Conical</word>
-		<bangla_meaning>মোচাকার</bangla_meaning>
+		<bangla_meaning>চোঙাকৃতি</bangla_meaning>
 		<definition>shaped like a cone .</definition>
 		<sentence>The huts they had built had conical roofs and mud walls.</sentence>
 		<wtype>adjective</wtype>
@@ -3676,7 +3676,7 @@
 	</data>
 	<data id="460">
 		<word>Conjunction</word>
-		<bangla_meaning>যুগপত্সংঘটন</bangla_meaning>
+		<bangla_meaning>(গঘটনাদির ) সমাপতন ; সংযোগ</bangla_meaning>
 		<definition>when two or more events occur at the same time and place.</definition>
 		<sentence>They started their journey in conjunction but separated near the city gates.</sentence>
 		<wtype>noun</wtype>
@@ -3692,7 +3692,7 @@
 	</data>
 	<data id="462">
 		<word>Consolidate</word>
-		<bangla_meaning>দৃঢ় করা</bangla_meaning>
+		<bangla_meaning>দৃঢ় করা বা হওয়া ; সংহত করা</bangla_meaning>
 		<definition>to make a position of power or success stronger so that it is more likely to continue.</definition>
 		<sentence>Akbar managed to consolidate his power within the state and rule for a long time.</sentence>
 		<wtype>verb</wtype>
@@ -3764,16 +3764,16 @@
 	</data>
 	<data id="471">
 		<word>Corrugated</word>
-		<bangla_meaning>ঢেউ-তোলা</bangla_meaning>
-		<definition>shaped into alternate ridges and groves.</definition>
+		<bangla_meaning>ঢেউ খেলানো আকৃতি দান করা</bangla_meaning>
+		<definition>shaped into a series of regular folds that look like waves.</definition>
 		<sentence>The use of corrugated tin ensures that water slides down to the ground.</sentence>
 		<wtype>adjective</wtype>
 		<level>1</level>
 	</data>
 	<data id="472">
 		<word>Courteous</word>
-		<bangla_meaning>শিষ্ট</bangla_meaning>
-		<definition>polite and considerate .</definition>
+		<bangla_meaning>ভদ্র ; নম্র</bangla_meaning>
+		<definition>polite, especially in a way that shows respect.</definition>
 		<sentence>We have been taught to be courteous and respectful with everyone we meet.</sentence>
 		<wtype>adjective</wtype>
 		<level>1</level>
@@ -3788,7 +3788,7 @@
 	</data>
 	<data id="474">
 		<word>Cremate</word>
-		<bangla_meaning>শবদাহ করা</bangla_meaning>
+		<bangla_meaning>শবদাহ করা ; পোড়ানো</bangla_meaning>
 		<definition>dispose of something by burning .</definition>
 		<sentence>We decided to cremate the remains of the carcass.</sentence>
 		<wtype>verb</wtype>
@@ -3804,7 +3804,7 @@
 	</data>
 	<data id="476">
 		<word>Crescent</word>
-		<bangla_meaning>বালেন্দু</bangla_meaning>
+		<bangla_meaning>অর্ধচন্দ্রাকার</bangla_meaning>
 		<definition>a thing which has the shape of a single curve.</definition>
 		<sentence>The crescent is one of the symbols on the flag of Turkey.</sentence>
 		<wtype>noun</wtype>
@@ -3812,8 +3812,8 @@
 	</data>
 	<data id="477">
 		<word>Criterion</word>
-		<bangla_meaning>বিচারের মান বা নীতি</bangla_meaning>
-		<definition>principle or standard by which something is judged.</definition>
+		<bangla_meaning>বিচারের মান বা নীতি ; বিচারের মাপকাঠি</bangla_meaning>
+		<definition>a standard or principle by which something is judged, or with the help of which a decision is made.</definition>
 		<sentence>I failed to meet their criterion at the job interview.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
@@ -3868,7 +3868,7 @@
 	</data>
 	<data id="484">
 		<word>Dastardly</word>
-		<bangla_meaning>কাপুধ়ষোচিত</bangla_meaning>
+		<bangla_meaning>কাপুষোচিত ভাবে</bangla_meaning>
 		<definition>evil and cruel.</definition>
 		<sentence>He will not get away with his dastardly deeds any longer.</sentence>
 		<wtype>adjective</wtype>
@@ -3876,7 +3876,7 @@
 	</data>
 	<data id="485">
 		<word>Decadence</word>
-		<bangla_meaning>বিলাসবহুল ভোগপরায়ণতা</bangla_meaning>
+		<bangla_meaning>অবক্ষয়</bangla_meaning>
 		<definition>luxurious self-indulgence .</definition>
 		<sentence>We fully anticipated the decadence of staying and dining at a posh resort.</sentence>
 		<wtype>noun</wtype>
@@ -3908,7 +3908,7 @@
 	</data>
 	<data id="489">
 		<word>Deferential</word>
-		<bangla_meaning>শ্রদ্ধাবনত</bangla_meaning>
+		<bangla_meaning>শ্রদ্ধাবান</bangla_meaning>
 		<definition>showing respect and submission .</definition>
 		<sentence>The guest received deferential treatment because of his age.</sentence>
 		<wtype>adjective</wtype>
@@ -3948,7 +3948,7 @@
 	</data>
 	<data id="494">
 		<word>Deluge</word>
-		<bangla_meaning>মহাপ্লাবন</bangla_meaning>
+		<bangla_meaning>মহাপ্লাবন ; জলোচ্ছ্বাস</bangla_meaning>
 		<definition>very heavy rainfall that causes flooding .</definition>
 		<sentence>We were not prepared for the deluge and were soaked within minutes.</sentence>
 		<wtype>noun</wtype>
@@ -3988,7 +3988,7 @@
 	</data>
 	<data id="499">
 		<word>Depreciate</word>
-		<bangla_meaning>অবচয় ঘটা</bangla_meaning>
+		<bangla_meaning>মূল্য হ্রাস হওয়া / করা</bangla_meaning>
 		<definition>diminish in value .</definition>
 		<sentence>Gold does not usually depreciate, but rather increases in value over time.</sentence>
 		<wtype>verb</wtype>
@@ -3996,7 +3996,7 @@
 	</data>
 	<data id="500">
 		<word>Depredation</word>
-		<bangla_meaning>বিধ্বস্ততা</bangla_meaning>
+		<bangla_meaning>লন্ঠন ; ধ্বংস </bangla_meaning>
 		<definition>act of attacking or destroying .</definition>
 		<sentence>The depredation of wildlife by forest communities is causing problems with the ecosystem.</sentence>
 		<wtype>noun</wtype>
@@ -4052,7 +4052,7 @@
 	</data>
 	<data id="507">
 		<word>Destitute</word>
-		<bangla_meaning>নিঃস্ব</bangla_meaning>
+		<bangla_meaning>বস্ত্র ও অন্যান্য নিত্যপ্রয়োজনীয় দ্রব্য থেকে বঞ্চিত</bangla_meaning>
 		<definition>extremely poor and lacking means to survive.</definition>
 		<sentence>They lost everything in the flood and are now destitute.</sentence>
 		<wtype>adjective</wtype>
@@ -4116,7 +4116,7 @@
 	</data>
 	<data id="515">
 		<word>Dissension</word>
-		<bangla_meaning>মতদ্বৈধ</bangla_meaning>
+		<bangla_meaning>ক্রুদ্ধ বাদানুবাদ ; ঝগড়া</bangla_meaning>
 		<definition>disagreement that leads to unrest .</definition>
 		<sentence>There has been dissension amongst the villagers regarding politics for ages.</sentence>
 		<wtype>noun</wtype>
@@ -4124,7 +4124,7 @@
 	</data>
 	<data id="516">
 		<word>Diuretic</word>
-		<bangla_meaning>মূত্রবর্ধক</bangla_meaning>
+		<bangla_meaning>মূত্রবর্ধক ওষুধ </bangla_meaning>
 		<definition>substance that causes loss of water from the body.</definition>
 		<sentence>Tea is a known diuretic.</sentence>
 		<wtype>noun</wtype>
@@ -4148,7 +4148,7 @@
 	</data>
 	<data id="519">
 		<word>Drought</word>
-		<bangla_meaning>খরা</bangla_meaning>
+		<bangla_meaning>অনাবৃষ্টি </bangla_meaning>
 		<definition>long period of very low rainfall.</definition>
 		<sentence>These places have been suffering severe drought for years.</sentence>
 		<wtype>noun</wtype>
@@ -4188,7 +4188,7 @@
 	</data>
 	<data id="524">
 		<word>Edacious</word>
-		<bangla_meaning>আহারসঙক্রান্ত</bangla_meaning>
+		<bangla_meaning>আহার সংক্রান্ত </bangla_meaning>
 		<definition>relating to or given to eating.</definition>
 		<sentence>His edacious enthusiasm for the meal gratified the cook.</sentence>
 		<wtype>adjective</wtype>
@@ -4204,9 +4204,9 @@
 	</data>
 	<data id="526">
 		<word>Effervescence</word>
-		<bangla_meaning>ফেনায়িত হওয়া</bangla_meaning>
-		<definition>giving off bubbles.</definition>
-		<sentence>When the two chemicals are mixed, the resulting effervescence indicates a reaction.</sentence>
+		<bangla_meaning>অতিরিক্ত উত্তেজনা</bangla_meaning>
+		<definition>the quality of being excited, enthusiastic and full of energy.</definition>
+		<sentence>I sense a tension between the two of them, despite their apparent effervescence.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
 	</data>
@@ -4300,7 +4300,7 @@
 	</data>
 	<data id="538">
 		<word>Endurance</word>
-		<bangla_meaning>সহন</bangla_meaning>
+		<bangla_meaning>ধৈর্য ; সহ্যক্ষমতা </bangla_meaning>
 		<definition>ability to tolerate .</definition>
 		<sentence>It requires tremendous amount of endurance to run a marathon.</sentence>
 		<wtype>noun</wtype>
@@ -4308,7 +4308,7 @@
 	</data>
 	<data id="539">
 		<word>Enigmatic</word>
-		<bangla_meaning>হেঁয়ালিমূলক</bangla_meaning>
+		<bangla_meaning>বিভ্রান্তিকার </bangla_meaning>
 		<definition>difficult to understand .</definition>
 		<sentence>He has always presented himself as an enigmatic personality.</sentence>
 		<wtype>adjective</wtype>
@@ -4316,7 +4316,7 @@
 	</data>
 	<data id="540">
 		<word>Entail</word>
-		<bangla_meaning>ফলস্বরূপ ঘটা</bangla_meaning>
+		<bangla_meaning>কিছু চাপিয়ে দেয়া </bangla_meaning>
 		<definition>involve something as a consequence .</definition>
 		<sentence>Accepting this job would entail being at the client's disposal all day.</sentence>
 		<wtype>verb</wtype>
@@ -4324,8 +4324,8 @@
 	</data>
 	<data id="541">
 		<word>Entourage</word>
-		<bangla_meaning>অনুগামী লোকজন</bangla_meaning>
-		<definition>group of people surrounding and following an important person.</definition>
+		<bangla_meaning>সহচর </bangla_meaning>
+		<definition>a group of people who travel with an important person.</definition>
 		<sentence>The actor never goes anywhere without an entourage.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
@@ -4404,7 +4404,7 @@
 	</data>
 	<data id="551">
 		<word>Exacerbate</word>
-		<bangla_meaning>খারাপ কিছুকে আর খারাপ করা</bangla_meaning>
+		<bangla_meaning>(দুঃখ, রোগ ইত্যাদির ক্ষেত্রে )  খারাপ কিছুকে আর খারাপ করা </bangla_meaning>
 		<definition>make something bad worse .</definition>
 		<sentence>Our fussing only managed to exacerbate his bad mood.</sentence>
 		<wtype>verb</wtype>
@@ -4460,7 +4460,7 @@
 	</data>
 	<data id="558">
 		<word>Exonerate</word>
-		<bangla_meaning>দোষক্ষালন করা</bangla_meaning>
+		<bangla_meaning>(অভিযোগাদি হতে) মুক্তি দেওয়া </bangla_meaning>
 		<definition>officially declare someone not guilty .</definition>
 		<sentence>The lawyer tried his best to exonerate his client in court, but failed.</sentence>
 		<wtype>verb</wtype>
@@ -4468,7 +4468,7 @@
 	</data>
 	<data id="559">
 		<word>Expiate</word>
-		<bangla_meaning>শোধরানো ; প্রতিকার করা</bangla_meaning>
+		<bangla_meaning>প্রায়শ্চিত্ত করা</bangla_meaning>
 		<definition>to accept punishment for something that you have done wrong in order to show that you are sorry</definition>
 		<sentence>He was instructed to increase his charitable works in order to expiate his wrongs.</sentence>
 		<wtype>verb</wtype>
@@ -4596,16 +4596,16 @@
 	</data>
 	<data id="575">
 		<word>Finagle</word>
-		<bangla_meaning>বঁচনা করা</bangla_meaning>
-		<definition>obtain or act dishonestly or deviously .</definition>
+		<bangla_meaning>প্রতারণা করা</bangla_meaning>
+		<definition>to behave dishonestly or to obtain something dishonestly.</definition>
 		<sentence>I have no idea how he managed to finagle the license.</sentence>
 		<wtype>verb</wtype>
 		<level>1</level>
 	</data>
 	<data id="576">
 		<word>Finite</word>
-		<bangla_meaning>সসীম</bangla_meaning>
-		<definition>limited in size or extent .</definition>
+		<bangla_meaning>সীমাবদ্ধ ; সসীম</bangla_meaning>
+		<definition>having a definite limit or fixed size.</definition>
 		<sentence>Our resources are finite and therefore cannot support such big projects.</sentence>
 		<wtype>adjective</wtype>
 		<level>1</level>
@@ -4620,7 +4620,7 @@
 	</data>
 	<data id="578">
 		<word>Flamboyant</word>
-		<bangla_meaning>সাজপোশাক ও চলনে অতিপ্রকাশিত</bangla_meaning>
+		<bangla_meaning>(ব্যক্তি, চরিত্র ইত্তাদি সম্বন্ধে ) জৌলুসপূর্ণ </bangla_meaning>
 		<definition>(of people or their behaviour) different, confident and exciting in a way that attracts attention.</definition>
 		<sentence>The children's flamboyant dancing amused everyone.</sentence>
 		<wtype>adjective</wtype>
@@ -4628,7 +4628,7 @@
 	</data>
 	<data id="579">
 		<word>Fluorescent</word>
-		<bangla_meaning>প্রতিপ্রভ</bangla_meaning>
+		<bangla_meaning>(পদার্থ সম্বন্ধে) বিকিরণ গ্রহণ করে তা আলরুপে ফিরিয়ে দেয় এমন </bangla_meaning>
 		<definition>emitting light through radiation .</definition>
 		<sentence>This room's fluorescent bulbs have not been working.</sentence>
 		<wtype>adjective</wtype>
@@ -4636,7 +4636,7 @@
 	</data>
 	<data id="580">
 		<word>Fluster</word>
-		<bangla_meaning>বিক্ষুব্ধ হওয়া</bangla_meaning>
+		<bangla_meaning>হতবম্ব/ কিংকর্তব্যবিমূঢ় / বিচলিত হওয়া </bangla_meaning>
 		<definition>make agitated or confused .</definition>
 		<sentence>The man's unwanted attentions managed to fluster me even more.</sentence>
 		<wtype>verb</wtype>
@@ -4644,7 +4644,7 @@
 	</data>
 	<data id="581">
 		<word>Foliage</word>
-		<bangla_meaning>বৃক্ষপত্রাবলী</bangla_meaning>
+		<bangla_meaning>গোছের সকল পাতা</bangla_meaning>
 		<definition>plant leaves collectively .</definition>
 		<sentence>The forest was as the thick foliage prevented light from reaching in.</sentence>
 		<wtype>noun</wtype>
@@ -4652,8 +4652,8 @@
 	</data>
 	<data id="582">
 		<word>Foment</word>
-		<bangla_meaning>প্ররোচিত করা</bangla_meaning>
-		<definition>instigate or stir up .</definition>
+		<bangla_meaning>(বিশৃঙ্খলা ইত্যাদি ) উদ্দিপ্ত করা </bangla_meaning>
+		<definition>to create trouble or violence or make it worse.</definition>
 		<sentence>Before the rebels could foment worse riots, they were all arrested and jailed.</sentence>
 		<wtype>verb</wtype>
 		<level>1</level>
@@ -4692,7 +4692,7 @@
 	</data>
 	<data id="587">
 		<word>Foundry</word>
-		<bangla_meaning>ঢালাইয়ের কারখানা</bangla_meaning>
+		<bangla_meaning>ধাতু বা কাচ ঢালাইয়ের কারখানা</bangla_meaning>
 		<definition>workshop or factory for metal works.</definition>
 		<sentence>The workers at the foundry were furious about the wage cuts.</sentence>
 		<wtype>noun</wtype>
@@ -4740,7 +4740,7 @@
 	</data>
 	<data id="593">
 		<word>Frugal</word>
-		<bangla_meaning>মিতব্যয়ী</bangla_meaning>
+		<bangla_meaning>(বিশেষ খাদ্য, ব্যয় ইত্যাদি সম্বন্ধে ) হিসাবি </bangla_meaning>
 		<definition>using only as much money or food as is necessary.</definition>
 		<sentence>I am used to being frugal and saving most of my money instead of spending it.</sentence>
 		<wtype>adjective</wtype>
@@ -4748,7 +4748,7 @@
 	</data>
 	<data id="594">
 		<word>Furtive</word>
-		<bangla_meaning>গোপন বা চোরা</bangla_meaning>
+		<bangla_meaning>চোরা ; অলক্ষিত </bangla_meaning>
 		<definition>characterised by guilty or evasive secrecy.</definition>
 		<sentence>His furtive behaviour alerted me to the fact that something was wrong.</sentence>
 		<wtype>adjective</wtype>
@@ -4756,7 +4756,7 @@
 	</data>
 	<data id="595">
 		<word>Fuselage</word>
-		<bangla_meaning>বিমানদেহ</bangla_meaning>
+		<bangla_meaning>বিমানের মূল অবয়ব </bangla_meaning>
 		<definition>main body of an aircraft .</definition>
 		<sentence>The plane crash resulted in the fuselage breaking into two halves.</sentence>
 		<wtype>noun</wtype>
@@ -4773,22 +4773,22 @@
 	<data id="597">
 		<word>Galore</word>
 		<bangla_meaning>প্রচুর পরিমাণে</bangla_meaning>
-		<definition>in abundance .</definition>
+		<definition>in large quantities.</definition>
 		<sentence>We made sure that there were food and drinks galore at the dinner party.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
 	</data>
 	<data id="598">
 		<word>Garish</word>
-		<bangla_meaning>জাঁকাল</bangla_meaning>
-		<definition>unpleasantly bright or showy .</definition>
+		<bangla_meaning>অপ্রীতিকরভাবে উজ্জ্বল </bangla_meaning>
+		<definition>very brightly coloured in an unpleasant way.</definition>
 		<sentence>She was wearing rather garish costume with multi-coloured feathers.</sentence>
-		<wtype>verb</wtype>
+		<wtype>adjective</wtype>
 		<level>1</level>
 	</data>
 	<data id="599">
 		<word>Garner</word>
-		<bangla_meaning>অর্জন করা</bangla_meaning>
+		<bangla_meaning>অর্জন করা ; সংগ্রহ করা</bangla_meaning>
 		<definition>gather or collect .</definition>
 		<sentence>Our idea did not garner the support and approval we had hoped it would.</sentence>
 		<wtype>verb</wtype>
@@ -4821,7 +4821,7 @@
 	<data id="603">
 		<word>Geranium</word>
 		<bangla_meaning>একজাতের গাছ যা সারসচঞ্চু-আকৃতির ফল দেয়</bangla_meaning>
-		<definition>a small shrub .</definition>
+		<definition>a garden plant with a mass of red, pink or white flowers on the end of each stem.</definition>
 		<sentence>Geraniums had been planted along the driveway of their house.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
@@ -4844,16 +4844,16 @@
 	</data>
 	<data id="606">
 		<word>Gimmick</word>
-		<bangla_meaning>মনোযোগ আকর্ষণের কায়দা বা চতুরী</bangla_meaning>
+		<bangla_meaning>জনপ্রিয়তা লাভের বা দৃষ্টি আকর্ষণের উপায় </bangla_meaning>
 		<definition>an unusual trick or unnecessary device that is intended to attract attention or to persuade people to buy something.</definition>
 		<sentence>The store uses its mascot as a gimmick to attract customers.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
 	</data>
 	<data id="607">
-		<word>Gladiola</word>
-		<bangla_meaning>এক ধরণের রঙ্গিন ফুল</bangla_meaning>
-		<definition>a type of brightly coloured flower.</definition>
+		<word>Gladioli</word>
+		<bangla_meaning>এক ধরণের রঙ্গিন ফুলের গাছ </bangla_meaning>
+		<definition>a tall garden plant with long thin leaves and brightly coloured flowers.</definition>
 		<sentence>A bouquet of gladiolas arrived for you today.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
@@ -4876,7 +4876,7 @@
 	</data>
 	<data id="610">
 		<word>Grandeur</word>
-		<bangla_meaning>আড়ম্বর</bangla_meaning>
+		<bangla_meaning>মহিমা ; বিশালতা </bangla_meaning>
 		<definition>the quality of being great and impressive in appearance.</definition>
 		<sentence>The sheer grandeur of the mansion stunned us.</sentence>
 		<wtype>noun</wtype>
@@ -4892,7 +4892,7 @@
 	</data>
 	<data id="612">
 		<word>Guttural</word>
-		<bangla_meaning>গলার পেছন থেকে আসা শব্দ বা ধ্বনি</bangla_meaning>
+		<bangla_meaning>কণ্ঠ্যবর্ণ</bangla_meaning>
 		<definition>sound produced at the back of the throat.</definition>
 		<sentence>He made guttural noises due to the pain.</sentence>
 		<wtype>adjective</wtype>
@@ -4900,8 +4900,8 @@
 	</data>
 	<data id="613">
 		<word>Harangue</word>
-		<bangla_meaning>বাজে ভাবে বকা-ঝকা করা</bangla_meaning>
-		<definition>lecture someone aggressively .</definition>
+		<bangla_meaning>লম্বা-চওড়া বক্তিতা বা কথা </bangla_meaning>
+		<definition>a lengthy and aggressive speech.</definition>
 		<sentence>She has continued to harangue me about my unhealthy sleeping habits.</sentence>
 		<wtype>verb</wtype>
 		<level>1</level>
@@ -4909,7 +4909,7 @@
 	<data id="614">
 		<word>Harbinger</word>
 		<bangla_meaning>অগ্রদূত</bangla_meaning>
-		<definition>something that announces the approach of something.</definition>
+		<definition>a person or thing that announces or signals the approach of another.</definition>
 		<sentence>The dark clouds were harbingers of the heavy rainfall to follow.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
@@ -4924,8 +4924,8 @@
 	</data>
 	<data id="616">
 		<word>Icicle</word>
-		<bangla_meaning>তুষার-শলাকা</bangla_meaning>
-		<definition>hanging piece of ice .</definition>
+		<bangla_meaning>পানি জমাট বেঁধে গঠিত বরফখণ্ড </bangla_meaning>
+		<definition>hanging piece of ice formed by the freezing of dripping water. </definition>
 		<sentence>The icicles hanging from the porch were a sight to see.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
@@ -4944,7 +4944,7 @@
 		<bangla_meaning>মূর্খ বা বোকা</bangla_meaning>
 		<definition>very stupid.</definition>
 		<sentence>If you act like an imbecile, then people will treat you like one.</sentence>
-		<wtype>noun</wtype>
+		<wtype>adjective</wtype>
 		<level>1</level>
 	</data>
 	<data id="619">
@@ -4957,7 +4957,7 @@
 	</data>
 	<data id="620">
 		<word>Impinge</word>
-		<bangla_meaning>প্রভাবিত করা</bangla_meaning>
+		<bangla_meaning>পরিচ্ছন্ন স্বভাব </bangla_meaning>
 		<definition>have an effect on .</definition>
 		<sentence>My extracurricular activities will not impinge on my studies at all.</sentence>
 		<wtype>verb</wtype>
@@ -4965,7 +4965,7 @@
 	</data>
 	<data id="621">
 		<word>Incandescent</word>
-		<bangla_meaning>ভাস্বর</bangla_meaning>
+		<bangla_meaning>উত্তপ্ত হলে আলো দেয় বা দিতে পারে এমন ;  ভাস্বর</bangla_meaning>
 		<definition>emitting light due to being heated.</definition>
 		<sentence>We changed to the incandescent light bulbs.</sentence>
 		<wtype>adjective</wtype>
@@ -4981,8 +4981,8 @@
 	</data>
 	<data id="623">
 		<word>Inclement</word>
-		<bangla_meaning>ঝড়ো বা শৈত্যময়</bangla_meaning>
-		<definition>unpleasantly cold .</definition>
+		<bangla_meaning>(আবহাওয়া বা জলবায়ু সম্বন্ধে) ঠাণ্ডা ও ঝড়ো </bangla_meaning>
+		<definition>(of the weather) not pleasant; cold, wet, etc.</definition>
 		<sentence>I do not think you should go outside in inclement weather.</sentence>
 		<wtype>adjective</wtype>
 		<level>1</level>
@@ -5013,7 +5013,7 @@
 	</data>
 	<data id="627">
 		<word>Indubitable</word>
-		<bangla_meaning>সন্দেহাতীত</bangla_meaning>
+		<bangla_meaning>নিঃসংশয় ; সন্দেহাতীত</bangla_meaning>
 		<definition>cannot be doubted.</definition>
 		<sentence>Our idea is so good that it is indubitable that we shall succeed.</sentence>
 		<wtype>adjective</wtype>
@@ -5021,7 +5021,7 @@
 	</data>
 	<data id="628">
 		<word>Ineptitude</word>
-		<bangla_meaning>অক্ষমতা</bangla_meaning>
+		<bangla_meaning>অপটুতা ; অযুক্ততা </bangla_meaning>
 		<definition>lack of the ability to do something successfully.</definition>
 		<sentence>When his ineptitude comes to light, they will fire him.</sentence>
 		<wtype>noun</wtype>
@@ -5037,7 +5037,7 @@
 	</data>
 	<data id="630">
 		<word>Ingratiate</word>
-		<bangla_meaning>তোষামোদ করে নিজেকে কারো নেকনজরে আনা</bangla_meaning>
+		<bangla_meaning>তোষামোদ করে কারো নেকনজরে আনা</bangla_meaning>
 		<definition>bring oneself into favour through flattery.</definition>
 		<sentence>You have to ingratiate yourself to him or you will never get his help.</sentence>
 		<wtype>verb</wtype>
@@ -5045,7 +5045,7 @@
 	</data>
 	<data id="631">
 		<word>Injudicious</word>
-		<bangla_meaning>সুবিবেচনাহীন</bangla_meaning>
+		<bangla_meaning>বিবেচনাহীন</bangla_meaning>
 		<definition>not sensible or wise; not appropriate in a particular situation.</definition>
 		<sentence>His injudicious decision has cost the company a lot of money.</sentence>
 		<wtype>adjective</wtype>
@@ -5078,7 +5078,7 @@
 	<data id="635">
 		<word>Jetsam</word>
 		<bangla_meaning>জাহাজ থেকে নিক্ষিপ্ত মাল যা সাগরের তীরে এসে পড়ে</bangla_meaning>
-		<definition>objects thrown overboard that wash ashore from sea.</definition>
+		<definition>things that are thrown away, especially from a ship at sea and that float towards land.</definition>
 		<sentence>The beach was covered with jetsam after the storm.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
@@ -5125,31 +5125,31 @@
 	</data>
 	<data id="641">
 		<word>Lacrosse</word>
-		<bangla_meaning>লাঠি নিয়ে খেলা একটি ক্রীড়া</bangla_meaning>
-		<definition>a team game played with a ball and long sticks.</definition>
+		<bangla_meaning>ঘরের বাইরে অনুষ্ঠান হয় এমন খেলা </bangla_meaning>
+		<definition>a team game played on field with a ball and long sticks.</definition>
 		<sentence>The tournament consists of several team sports such as football, lacrosse, etc.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
 	</data>
 	<data id="642">
 		<word>Lacuna</word>
-		<bangla_meaning>ফাঁক</bangla_meaning>
-		<definition>a gap or missing portion.</definition>
+		<bangla_meaning>ফাঁক , শূন্যস্থান </bangla_meaning>
+		<definition>a place where something is missing in a piece of writing or in an idea, a theory, etc.</definition>
 		<sentence>We have stumbled upon an unexpected lacuna in the research review.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
 	</data>
 	<data id="643">
-		<word>Larcenous</word>
-		<bangla_meaning>জোচ্চুরা</bangla_meaning>
-		<definition>related to theft of personal property.</definition>
-		<sentence>He was arrested for his larcenous activities.</sentence>
-		<wtype>adjective</wtype>
+		<word>Larceny</word>
+		<bangla_meaning>চুরি </bangla_meaning>
+		<definition>the crime of stealing something from somebody.</definition>
+		<sentence>The couple were charged with grand/petty larceny.</sentence>
+		<wtype>noun</wtype>
 		<level>1</level>
 	</data>
 	<data id="644">
 		<word>Larynx</word>
-		<bangla_meaning>বাগ্যন্ত্র</bangla_meaning>
+		<bangla_meaning>স্বরযন্ত্র</bangla_meaning>
 		<definition>air passage to the lungs.</definition>
 		<sentence>The doctor will check my larynx during the examination.</sentence>
 		<wtype>noun</wtype>
@@ -5174,14 +5174,14 @@
 	<data id="647">
 		<word>Legume</word>
 		<bangla_meaning>শিম্ব</bangla_meaning>
-		<definition>seed, pod, or other edible parts of a plant.</definition>
+		<definition>any plant that has seeds in long pods.</definition>
 		<sentence>The lentil is a commonly eaten legume.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
 	</data>
 	<data id="648">
 		<word>Libation</word>
-		<bangla_meaning>দেবতার উদ্দেশ্যে পানীয় ইত্যাদি নৈবেদ্য</bangla_meaning>
+		<bangla_meaning>দেবতার উদ্দেশ্যে পানীয় ইত্যাদি ঢালা </bangla_meaning>
 		<definition>a drink given as offering to a deity.</definition>
 		<sentence>Pagan rituals often require libation to be offered at the start of a ceremony.</sentence>
 		<wtype>noun</wtype>
@@ -5197,9 +5197,9 @@
 	</data>
 	<data id="650">
 		<word>Libretto</word>
-		<bangla_meaning>গীতিনাট্য ইত্যাদির বই</bangla_meaning>
-		<definition>text of an opera.</definition>
-		<sentence>We scanned the libretto to check the lyrics.</sentence>
+		<bangla_meaning>অপেরা বা  গীতিনাটকের বই বা কথা </bangla_meaning>
+		<definition>the words that are sung or spoken in an opera or a musical play.</definition>
+		<sentence>The collection contains hundreds of Italian opera librettos.</sentence>
 		<wtype>noun</wtype>
 		<level>1</level>
 	</data>
@@ -5750,7 +5750,7 @@
 	</data>
 	<data id="719">
 		<word>Carburettor</word>
-		<bangla_meaning>গাড়ির ইঞ্জিনের যে অংশে বিস্ফোরক মিশ্রণ তৈরির জন্য পেট্রোলের সঙ্গে বায়ু মিশ্রিত করা হয়</bangla_meaning>
+		<bangla_meaning>গাড়ির ইঞ্জিনের যে অংশে বিস্ফোরক মিশ্রণ তৈরির জন্য পেট্রোলের সঙ্গে বায়ু মিশ্রিত করা হয় </bangla_meaning>
 		<definition>part of internal combustion engine in a vehicle.</definition>
 		<sentence>The mechanic informed us that the carburetter was causing all the problems.</sentence>
 		<wtype>noun</wtype>
@@ -5763,7 +5763,7 @@
 		<sentence>The lion left the carcass of the dead zebra for the scavengers.</sentence>
 		<wtype>noun</wtype>
 		<level>2</level>
-		<word2>Carcase</word2>
+                <word2>Carcase</word2>
 	</data>
 	<data id="721">
 		<word>Cenacle</word>
@@ -5780,7 +5780,7 @@
 		<sentence>The cesspit is usually covered with a heavy iron lid.</sentence>
 		<wtype>noun</wtype>
 		<level>2</level>
-		<word2>Cesspool</word2>
+                <word2>Cesspool</word2>
 	</data>
 	<data id="723">
 		<word>Chamomile</word>
@@ -5789,7 +5789,7 @@
 		<sentence>Chamomile gives a distinct scent to this ointment.</sentence>
 		<wtype>noun</wtype>
 		<level>2</level>
-		<word2>Camomile</word2>
+                <word2>Camomile</word2>
 	</data>
 	<data id="724">
 		<word>Chauvinism</word>
@@ -5982,7 +5982,8 @@
 		<sentence>I prefer cheesy sauce with my fettuccine.</sentence>
 		<wtype>noun</wtype>
 		<level>2</level>
-		<word2>Fettuccini</word2>
+                <word2>Fettuccini</word2>
+
 	</data>
 	<data id="748">
 		<word>Ficus</word>
@@ -6082,7 +6083,7 @@
 	</data>
 	<data id="760">
 		<word>Intransigent</word>
-		<bangla_meaning>অপোসহীন ; অনমনীয়</bangla_meaning>
+		<bangla_meaning>অপোসহীন ; অনমনীয় </bangla_meaning>
 		<definition>(of people) unwilling to change their opinions or behaviour in a way that would be helpful to others.</definition>
 		<sentence>It is no use arguing with this intransigent man about anything.</sentence>
 		<wtype>adjective</wtype>
@@ -6098,8 +6099,8 @@
 	</data>
 	<data id="762">
 		<word>Inwrought</word>
-		<bangla_meaning>(বস্ত্র বা নির্মিতি সম্বন্ধে ) (নকশা ইত্যাদি দিয়ে) বিজড়িত/ খচিত</bangla_meaning>
-		<definition>(of a fabric or garment)  intricately  embroidered  with a pattern or decoration.</definition>
+		<bangla_meaning>(বস্ত্র বা নির্মিতি সম্বন্ধে ) (নকশা ইত্যাদি দিয়ে) বিজড়িত/ খচিত </bangla_meaning>
+		<definition>(of a fabric or garment)  intricately  embroidered  with a pattern or decoration.</definition>
 		<sentence>Her exquisitely inwrought shawl was admired by everyone at the party.</sentence>
 		<wtype>adjective</wtype>
 		<level>2</level>
@@ -6130,7 +6131,7 @@
 	</data>
 	<data id="766">
 		<word>Judder</word>
-		<bangla_meaning>সশব্দে কম্পিত হওয়া</bangla_meaning>
+		<bangla_meaning>সশব্দে কম্পিত হওয়া </bangla_meaning>
 		<definition>shake and vibrate rapidly.</definition>
 		<sentence>The boat continued to judder every time we hit a wave.</sentence>
 		<wtype>verb</wtype>
@@ -6146,7 +6147,7 @@
 	</data>
 	<data id="768">
 		<word>Junket</word>
-		<bangla_meaning>ভোজ বা আনন্দ - উৎসব ; বনভোজন</bangla_meaning>
+		<bangla_meaning>ভোজ বা আনন্দ - উৎসব ; বনভোজন </bangla_meaning>
 		<definition>a trip that is made for pleasure by somebody who works for the government, etc. and that is paid using public money.</definition>
 		<sentence>Several reporters accompanied the official on the junket.</sentence>
 		<wtype>noun</wtype>
@@ -6154,7 +6155,7 @@
 	</data>
 	<data id="769">
 		<word>Junta</word>
-		<bangla_meaning>শাসন পরিচালনাকারী পরিষদ</bangla_meaning>
+		<bangla_meaning>শাসন পরিচালনাকারী পরিষদ </bangla_meaning>
 		<definition>a military government that has taken power by force.</definition>
 		<sentence>The civilian junta appointed a prime minister.</sentence>
 		<wtype>noun</wtype>
@@ -6170,7 +6171,7 @@
 	</data>
 	<data id="771">
 		<word>Liaison</word>
-		<bangla_meaning>দুই পক্ষের সংযোগ বা যোগাযোগ</bangla_meaning>
+		<bangla_meaning>দুই পক্ষের সংযোগ বা যোগাযোগ </bangla_meaning>
 		<definition>communication between two organisations or different departments in an organisation, involving the exchange of information or ideas.</definition>
 		<sentence>Our role is to ensure liaison between schools and parents.</sentence>
 		<wtype>noun</wtype>
@@ -6308,7 +6309,7 @@
 	<data id="788">
 		<word>Macchiato</word>
 		<bangla_meaning>দুধ মেশানো এসপ্রেসো কফি</bangla_meaning>
-		<definition>a drink made with espresso coffee and a small amount of milk.</definition>
+		<definition>a drink made with espresso coffee and a small amount of milk.</definition>
 		<sentence>I am still waiting for the macchiato I ordered.</sentence>
 		<wtype>noun</wtype>
 		<level>2</level>
@@ -6416,7 +6417,7 @@
 		<sentence>They were an eeyorish bunch, always looking on the dark side of life.</sentence>
 		<wtype>adjective</wtype>
 		<level>2</level>
-		<word2>Eeyoreish</word2>
+                <word2>Eeyoreish</word2>
 	</data>
 	<data id="802">
 		<word>Effleurage</word>
@@ -6461,7 +6462,7 @@
 	<data id="807">
 		<word>Maguey</word>
 		<bangla_meaning>এক ধরনের ক্যাকটাস</bangla_meaning>
-		<definition>an agave plant, especially one yielding pulque.</definition>
+		<definition>an agave plant, especially one yielding pulque.</definition>
 		<sentence>They cannot grow maguey in their gardens.</sentence>
 		<wtype>noun</wtype>
 		<level>2</level>
@@ -6509,7 +6510,7 @@
 	<data id="813">
 		<word>Matriarchal</word>
 		<bangla_meaning>মাতৃতন্ত্রিক</bangla_meaning>
-		<definition>(of a society or system) controlled by women rather than men.</definition>
+		<definition>(of a society or system) controlled by women rather than men.</definition>
 		<sentence>The wealth will be passed down the matriarchal line of descent.</sentence>
 		<wtype>adjective</wtype>
 		<level>2</level>
@@ -6524,8 +6525,8 @@
 	</data>
 	<data id="815">
 		<word>Militia</word>
-		<bangla_meaning>বেসামরিক বাহিনী, যার সদস্যরা সামরিক প্রশিক্ষাণপ্রাপ্ত হলেও নিয়মিত সেনাবাহিনীর অন্তর্ভুক্ত হয় না</bangla_meaning>
-		<definition>a military force that is raised from the civil population to supplement a regular army in an emergency.</definition>
+		<bangla_meaning>বেসামরিক বাহিনী, যার সদস্যরা সামরিক প্রশিক্ষাণপ্রাপ্ত হলেও নিয়মিত সেনাবাহিনীর অন্তর্ভুক্ত হয় না </bangla_meaning>
+		<definition>a military force that is raised from the civil population to supplement a regular army in an emergency.</definition>
 		<sentence>The militia may not be made up of soldiers, but was trained by soldiers.</sentence>
 		<wtype>noun</wtype>
 		<level>2</level>
@@ -6548,7 +6549,7 @@
 	</data>
 	<data id="818">
 		<word>Notch</word>
-		<bangla_meaning>অর্জন বা প্রতিষ্ঠা করা</bangla_meaning>
+		<bangla_meaning>অর্জন বা প্রতিষ্ঠা করা </bangla_meaning>
 		<definition>a level on a scale, often marking quality or achievement.</definition>
 		<sentence>I want you to smooth out this notch on the table top.</sentence>
 		<wtype>noun</wtype>
@@ -6580,7 +6581,7 @@
 	</data>
 	<data id="822">
 		<word>Perfidious</word>
-		<bangla_meaning>বিশ্বাসঘাতক ; প্রতারণাপূর্ণ</bangla_meaning>
+		<bangla_meaning>বিশ্বাসঘাতক ; প্রতারণাপূর্ণ </bangla_meaning>
 		<definition>deceitful and untrustworthy.</definition>
 		<sentence>After their perfidious dealings with us we have lost all respect for them.</sentence>
 		<wtype>adjective</wtype>
@@ -6588,7 +6589,7 @@
 	</data>
 	<data id="823">
 		<word>Perturbed</word>
-		<bangla_meaning>উত্তেজিত করা ; বিঘ্ন সৃষ্টি করা</bangla_meaning>
+		<bangla_meaning>উত্তেজিত করা ; বিঘ্ন সৃষ্টি করা </bangla_meaning>
 		<definition>worried or anxious.</definition>
 		<sentence>She didn't seem perturbed at the change of plan.</sentence>
 		<wtype>adjective</wtype>
@@ -6653,7 +6654,7 @@
 	<data id="831">
 		<word>Padre</word>
 		<bangla_meaning>খ্রীষ্টান যাজক</bangla_meaning>
-		<definition>the title of a priest or chaplain in some countries.</definition>
+		<definition>the title of a priest or chaplain in some countries.</definition>
 		<sentence>The padre is always willing to listen to our problems.</sentence>
 		<wtype>noun</wtype>
 		<level>2</level>
@@ -6772,7 +6773,7 @@
 	</data>
 	<data id="846">
 		<word>Pillage</word>
-		<bangla_meaning>লুণ্ঠন ( বিশেষত যুদ্ধের সময় )</bangla_meaning>
+		<bangla_meaning>লুণ্ঠন ( বিশেষত যুদ্ধের সময় ) </bangla_meaning>
 		<definition>the act of stealing things from a place or region, especially in a war, using violence.</definition>
 		<sentence>The rioters continued to pillage across several villages.</sentence>
 		<wtype>noun</wtype>
@@ -6780,7 +6781,7 @@
 	</data>
 	<data id="847">
 		<word>Cadge</word>
-		<bangla_meaning>ভিক্ষা করা ; ভিক্ষা নেওয়ার বা নেবার চেষ্টা করা</bangla_meaning>
+		<bangla_meaning>ভিক্ষা করা ; ভিক্ষা নেওয়ার বা নেবার চেষ্টা করা </bangla_meaning>
 		<definition>to ask somebody for food, money, etc. especially because you cannot or do not want to pay for something yourself.</definition>
 		<sentence>I managed to cadge some money off my dad.</sentence>
 		<wtype>verb</wtype>
@@ -6876,7 +6877,7 @@
 	</data>
 	<data id="859">
 		<word>Demagogue</word>
-		<bangla_meaning>বক্তৃতাবাগীস নেতা</bangla_meaning>
+		<bangla_meaning>বক্তৃতাবাগীস নেতা </bangla_meaning>
 		<definition>political leader who only appeals to popular desires.</definition>
 		<sentence>We need less demagogues and more true visionaries to lead us.</sentence>
 		<wtype>noun</wtype>
@@ -6885,7 +6886,7 @@
 	<data id="860">
 		<word>Derringer</word>
 		<bangla_meaning>ছোট পিস্তল</bangla_meaning>
-		<definition>a small pistol with a large bore, which is very effective at close range.</definition>
+		<definition>a small pistol with a large bore, which is very effective at close range.</definition>
 		<sentence>I carry a derringer with myself for protection.</sentence>
 		<wtype>noun</wtype>
 		<level>3</level>
@@ -6893,7 +6894,7 @@
 	<data id="861">
 		<word>Dissonance</word>
 		<bangla_meaning>সুরের অমিল</bangla_meaning>
-		<definition>lack of harmony among musical notes.</definition>
+		<definition>lack of harmony among musical notes.</definition>
 		<sentence>There is severe dissonance between these two notes played by the artist.</sentence>
 		<wtype>noun</wtype>
 		<level>3</level>
@@ -6917,7 +6918,7 @@
 	<data id="864">
 		<word>Epinephrine</word>
 		<bangla_meaning>প্রাণীদেহজ রসবিশেষ</bangla_meaning>
-		<definition>another term for adrenaline.</definition>
+		<definition>another term for adrenaline.</definition>
 		<sentence>Epinephrine is administered to patients who have had an allergic reaction.</sentence>
 		<wtype>noun</wtype>
 		<level>3</level>
@@ -6932,7 +6933,7 @@
 	</data>
 	<data id="866">
 		<word>Ermine</word>
-		<bangla_meaning>এক ধরণের প্রাণীর লোম দিয়ে তৈরি পোশাক</bangla_meaning>
+		<bangla_meaning>এক ধরণের প্রাণীর লোম দিয়ে তৈরি পোশাক </bangla_meaning>
 		<definition>the fur of a stoat used in clothing .</definition>
 		<sentence>She was wearing a rather expensive coat lined with ermine.</sentence>
 		<wtype>noun</wtype>
@@ -6948,7 +6949,7 @@
 	</data>
 	<data id="868">
 		<word>Eviscerate</word>
-		<bangla_meaning>নাড়িভুঁড়ি বেরকরে ফেলা</bangla_meaning>
+		<bangla_meaning>নাড়িভুঁড়ি বেরকরে ফেলা </bangla_meaning>
 		<definition>to remove the inner organs of a body.</definition>
 		<sentence>The soldier moved to eviscerate his victim.</sentence>
 		<wtype>verb</wtype>
@@ -6956,7 +6957,7 @@
 	</data>
 	<data id="869">
 		<word>Exalted</word>
-		<bangla_meaning>মর্যাদাসম্পন্ন</bangla_meaning>
+		<bangla_meaning>মর্যাদাসম্পন্ন </bangla_meaning>
 		<definition>at a high level .</definition>
 		<sentence>He holds an exalted position at the corporation.</sentence>
 		<wtype>adjective</wtype>
@@ -6964,16 +6965,16 @@
 	</data>
 	<data id="870">
 		<word>Exorbitant</word>
-		<bangla_meaning>(মূল ইত্যাদি সম্বন্ধে) অত্যধিক</bangla_meaning>
-		<definition>(of a price) much too high.</definition>
+		<bangla_meaning>(মূল ইত্যাদি সম্বন্ধে) অত্যধিক  </bangla_meaning>
+		<definition>(of a price) much too high.</definition>
 		<sentence>I am not willing to pay such an exorbitant amount of money for a simple watch.</sentence>
 		<wtype>adjective</wtype>
 		<level>3</level>
 	</data>
 	<data id="871">
 		<word>Expedient</word>
-		<bangla_meaning>উপযোগী বা সুবিধা জনক পরিকল্পনা, কৌশল ইত্যাদি</bangla_meaning>
-		<definition>(of an action) convenient and practical although possibly improper or immoral.</definition>
+		<bangla_meaning>উপযোগী বা সুবিধা জনক পরিকল্পনা, কৌশল ইত্যাদি </bangla_meaning>
+		<definition>(of an action) convenient and practical although possibly improper or immoral.</definition>
 		<sentence>We haven’t been able to make expedient arrangements for the school trip yet.</sentence>
 		<wtype>adjective</wtype>
 		<level>3</level>
@@ -7004,7 +7005,7 @@
 	</data>
 	<data id="875">
 		<word>Iatrogenic</word>
-		<bangla_meaning>চিকিৎসা যা অসুস্থতা কারণ হয়ে দাড়ায়</bangla_meaning>
+		<bangla_meaning>চিকিৎসা যা অসুস্থতা কারণ হয়ে দাড়ায় </bangla_meaning>
 		<definition>illness caused by medical treatment.</definition>
 		<sentence>This medicine is known for its iatrogenic side effects.</sentence>
 		<wtype>adjective</wtype>
@@ -7021,7 +7022,7 @@
 	<data id="877">
 		<word>Immiscible</word>
 		<bangla_meaning>একসাথে মিশ্রিত করা যায় না এমন</bangla_meaning>
-		<definition>(of liquids) that cannot be mixed together.</definition>
+		<definition>(of liquids) that cannot be mixed together.</definition>
 		<sentence>Oil and water are immiscible when put together.</sentence>
 		<wtype>adjective</wtype>
 		<level>3</level>
@@ -7029,7 +7030,7 @@
 	<data id="878">
 		<word>Incur</word>
 		<bangla_meaning>অর্জন করা, নিজের ঘাড়ে টেনে আনা</bangla_meaning>
-		<definition>become subject to (something unwelcome or unpleasant) as a result of one’s own behaviour or actions.</definition>
+		<definition>become subject to (something unwelcome or unpleasant) as a result of one’s own behaviour or actions.</definition>
 		<sentence>You do not wish to incur his wrath by ignoring his wishes.</sentence>
 		<wtype>verb</wtype>
 		<level>3</level>
@@ -7068,7 +7069,7 @@
 	</data>
 	<data id="883">
 		<word>Iridescent</word>
-		<bangla_meaning>রংধনুর মতো রঙিন</bangla_meaning>
+		<bangla_meaning>রংধনুর মতো রঙিন </bangla_meaning>
 		<definition>showing many bright colours that seem to change in different lights.</definition>
 		<sentence>The iridescent street sign attracted a lot of attention.</sentence>
 		<wtype>adjective</wtype>
@@ -7101,7 +7102,7 @@
 	<data id="887">
 		<word>Litigious</word>
 		<bangla_meaning>মামলাবাজ</bangla_meaning>
-		<definition>tending or too ready to take legal action to settle disputes.</definition>
+		<definition>tending or too ready to take legal action to settle disputes.</definition>
 		<sentence>They have been aggressively litigious regarding this matter in the past.</sentence>
 		<wtype>adjective</wtype>
 		<level>3</level>
