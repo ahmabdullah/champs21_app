@@ -23,7 +23,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.champs21.schoolapp.ChildSelectionActivity;
-import com.champs21.schoolapp.LoginActivity;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.fragments.CommonChildFragment;
 import com.champs21.schoolapp.fragments.VideoFragment;
@@ -46,7 +45,6 @@ import com.champs21.schoolapp.utils.SharedPreferencesHelper;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
-import com.champs21.spellingbee.SpellingbeeTestActivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -396,7 +394,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                                                 TAG).commit();
                                 break;
                             case -7:
-                                if (UserHelper.isLoggedIn()){
+                               /* if (UserHelper.isLoggedIn()){
                                     if(userHelper.getUser().getType()== UserHelper.UserTypeEnum.STUDENT){
                                         if(UserHelper.getSpellingStatus()==0){
                                             Intent i = new Intent(HomePageFreeVersion.this,
@@ -415,7 +413,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                                 else {
                                     startActivity(new Intent(HomePageFreeVersion.this,
                                             LoginActivity.class));
-                                }
+                                }*/
                                 break;
                             default:
                                 getSupportFragmentManager()

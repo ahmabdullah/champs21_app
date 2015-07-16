@@ -51,6 +51,7 @@
                     android:layout_height="match_parent" 
                     >
                     <ImageView
+                        android:visibility="invisible"
                         android:id="@+id/sbstar2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -245,6 +246,7 @@
                     android:layout_width="5dip"
                     android:layout_height="match_parent" />
                 <ImageView
+                    android:visibility="invisible"
                     android:id="@+id/sbstar6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -289,6 +291,7 @@
                 android:paddingLeft="5dip"
                 android:paddingRight="5dip" >
                 <ImageView
+                    android:visibility="invisible"
                     android:id="@+id/sbstar7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -444,6 +447,7 @@
                     android:orientation="horizontal"
                     android:paddingBottom="1dip" >
                     <ImageView
+                        android:visibility="invisible"
                         android:id="@+id/sbstar8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -467,6 +471,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <ImageView
+                    android:visibility="invisible"
                     android:layout_marginLeft="5dp"
                     android:id="@+id/sbstar10"
                     android:layout_width="wrap_content"
@@ -581,7 +586,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:visibility="gone"
                 android:gravity="center"
                 android:orientation="horizontal" >
 
@@ -631,6 +636,7 @@
                 android:orientation="horizontal" >
 
                     <ImageView
+                        android:visibility="invisible"
                         android:layout_marginLeft="5dp"
                         android:id="@+id/sbstar12"
                         android:layout_width="wrap_content"

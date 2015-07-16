@@ -87,7 +87,7 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 	private RadioGroup rGSbStatus;
 	private RadioButton rbYes;
 	private RadioButton rbNo;
-	private boolean willplay = true;
+	private boolean willplay = false;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

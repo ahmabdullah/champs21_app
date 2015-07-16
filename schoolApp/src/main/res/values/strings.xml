@@ -238,7 +238,6 @@
     </string-array>
     
     <string-array name="free_menus_images">
-        <item>spellingbee_bee_icon</item>
         <item>spellingbee_newbee_icon</item>
         <item>resource</item>
         <item>newsarticle</item>
@@ -254,7 +253,6 @@
         <!-- <item>video</item> -->
     </string-array>
     <string-array name="free_menus_text">
-        <item>Play Online Round</item>
         <item>Spelling Bee</item>
         <item>Resource Centre</item>
         <item>News \u0026 Articles</item>
@@ -270,7 +268,6 @@
         <!-- <item>Videos</item> -->
     </string-array>
     <string-array name="free_menus_id">
-        <item>-7</item>
         <item>7</item>
         <item>6</item>
         <item>38</item>
