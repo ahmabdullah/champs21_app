@@ -63,7 +63,7 @@ public class CompleteProfileActivityContainer extends FragmentActivity{
              fragmentTransaction.commit();
         	 break;
          case OTHER:
-        	 CompleteProfileFragmentParents others=new CompleteProfileFragmentParents();.0
+        	 CompleteProfileFragmentParents others=new CompleteProfileFragmentParents();
         	 fragmentTransaction.add(R.id.container, others, "Parents");
              fragmentTransaction.commit();
         	 break;
