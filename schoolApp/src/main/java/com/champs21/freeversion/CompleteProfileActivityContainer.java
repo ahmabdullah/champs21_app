@@ -34,8 +34,7 @@ public class CompleteProfileActivityContainer extends FragmentActivity{
 		container=(RelativeLayout)findViewById(R.id.container);
 		getIntentData();
 		updateUI();
-		
-		
+
 	}
 
 	public boolean isFirstTimeUpdate()
@@ -64,7 +63,7 @@ public class CompleteProfileActivityContainer extends FragmentActivity{
              fragmentTransaction.commit();
         	 break;
          case OTHER:
-        	 CompleteProfileFragmentParents others=new CompleteProfileFragmentParents();
+        	 CompleteProfileFragmentParents others=new CompleteProfileFragmentParents();.0
         	 fragmentTransaction.add(R.id.container, others, "Parents");
              fragmentTransaction.commit();
         	 break;
@@ -101,7 +100,7 @@ public class CompleteProfileActivityContainer extends FragmentActivity{
     }
 	@Override
     public void onBackPressed() {
-        super.onBackPressed();   
+        super.onBackPressed();
         Log.e("Back", "Chapse");
         if(UserHelper.isLoggedIn())
         {
@@ -112,11 +111,9 @@ public class CompleteProfileActivityContainer extends FragmentActivity{
         {
         	UserHelper.setLoggedIn(true);
         	goToAfterLogIn();
-        }
+	}
 
     }
-
-	
 
 
 }
