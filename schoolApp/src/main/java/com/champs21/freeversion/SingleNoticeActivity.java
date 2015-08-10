@@ -106,6 +106,8 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 	
 	private void initAction()
 	{
+		if(ReminderHelper.getInstance().reminder_map == null)
+			ReminderHelper.getInstance().constructReminderFromSharedPreference();
 		
 		Log.e("TITLE", "is: "+data.getNoticeTitle());
 		

@@ -123,7 +123,9 @@ public class GcmIntentService extends IntentService {
                 {
 
                     userHelper.saveTotalUnreadNotification(extras.getString("total_unread"));
-                    listener.onNotificationCountChanged(Integer.parseInt(extras.getString("total_unread")));
+
+                    if(listener != null)
+                        listener.onNotificationCountChanged(Integer.parseInt(extras.getString("total_unread")));
 
                     /*if(!TextUtils.isEmpty(extras.getString("total_unread")))
                         listener.onNotificationCountChanged(Integer.parseInt(extras.getString("total_unread")));
