@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -18,13 +19,11 @@ import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
-import com.champs21.schoolapp.utils.MyTagHandler;
 import com.champs21.schoolapp.utils.ReminderHelper;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.viewhelpers.CustomButton;
-import com.champs21.schoolapp.viewhelpers.ExpandableTextView;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -42,7 +41,8 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 	
 	private TextView txtNoticeTitle;
 	private TextView txtDate;
-	private ExpandableTextView txtContent;
+	//private ExpandableTextView txtContent;
+	private WebView txtContent;
 	private CustomButton btnNoticeAcknowledge;
 	private CustomButton btnNoticeReminder;
 
@@ -95,7 +95,8 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 	{
 		txtNoticeTitle = (TextView)this.findViewById(R.id.txtNoticeTitle);
 		txtDate = (TextView)this.findViewById(R.id.txtDate);
-		txtContent = (ExpandableTextView)this.findViewById(R.id.txtContent);
+		//txtContent = (ExpandableTextView)this.findViewById(R.id.txtContent);
+		txtContent = (WebView)this.findViewById(R.id.txtContent);
 		btnNoticeAcknowledge = (CustomButton)this.findViewById(R.id.btnNoticeAcknowledge);
 		btnNoticeReminder = (CustomButton)this.findViewById(R.id.btnNoticeReminder);
 
@@ -106,15 +107,16 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 	
 	private void initAction()
 	{
-		if(ReminderHelper.getInstance().reminder_map == null)
-			ReminderHelper.getInstance().constructReminderFromSharedPreference();
+		/*if(ReminderHelper.getInstance().reminder_map == null)
+			ReminderHelper.getInstance().constructReminderFromSharedPreference();*/
 		
-		Log.e("TITLE", "is: "+data.getNoticeTitle());
+		Log.e("TITLE", "is: " + data.getNoticeTitle());
 		
 		
 		txtNoticeTitle.setText(data.getNoticeTitle());
 		txtDate.setText(data.getPublishedAt());
-		txtContent.setText(" "+ Html.fromHtml(data.getNoticeContent(), null, new MyTagHandler()));
+		//txtContent.setText(" "+ Html.fromHtml(data.getNoticeContent(), null, new MyTagHandler()));
+		txtContent.loadData(data.getNoticeContent(), "text/html; charset=utf-8", "UTF-8");
 		
 		btnNoticeAcknowledge.setOnClickListener(new View.OnClickListener() {
 			

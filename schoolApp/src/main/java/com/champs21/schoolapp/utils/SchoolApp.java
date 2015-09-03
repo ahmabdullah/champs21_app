@@ -4,9 +4,6 @@
 package com.champs21.schoolapp.utils;
 
 
-import java.util.ArrayList;
-
-import roboguice.activity.RoboFragmentActivity;
 import android.app.Activity;
 import android.app.Application;
 import android.app.ProgressDialog;
@@ -35,6 +32,7 @@ import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.ReportCardModel;
 import com.champs21.schoolapp.model.User;
 import com.champs21.schoolapp.networking.LruBitmapCache;
+import com.crashlytics.android.Crashlytics;
 import com.facebook.SessionDefaultAudience;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -45,6 +43,11 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.sromku.simple.fb.Permission;
 import com.sromku.simple.fb.SimpleFacebook;
 import com.sromku.simple.fb.SimpleFacebookConfiguration;
+
+import java.util.ArrayList;
+
+import io.fabric.sdk.android.Fabric;
+import roboguice.activity.RoboFragmentActivity;
 
 
 public class SchoolApp extends Application {
@@ -246,6 +249,7 @@ public class SchoolApp extends Application {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
+		Fabric.with(this, new Crashlytics());
 		singleton = this;
 		
 		initUnivarsalIamgeLoader();

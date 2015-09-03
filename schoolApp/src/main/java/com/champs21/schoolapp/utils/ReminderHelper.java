@@ -25,7 +25,8 @@ public class ReminderHelper {
 		if(instance==null) {
 			instance = new ReminderHelper();
 		}
-			
+		if(instance.reminder_map==null)
+			instance.constructReminderFromSharedPreference();
 		return instance;
 	}
 	

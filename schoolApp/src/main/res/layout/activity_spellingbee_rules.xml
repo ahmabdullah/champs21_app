@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/spellingbee_rules_header"
             android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
             android:id="@+id/imageView5" />
     </LinearLayout>
 

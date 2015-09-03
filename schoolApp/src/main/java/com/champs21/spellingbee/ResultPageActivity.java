@@ -254,7 +254,7 @@ public class ResultPageActivity extends ChildContainerActivity {
 
         params.put("free_id", UserHelper.getUserFreeId());
 
-        AppRestClient.post(URLHelper.SPELLINGBEE_SAVESCORE, params, resultHandler);
+        AppRestClient.post(URLHelper.SPELLINGBEE_SAVESCORE_NEW, params, resultHandler);
     }
 
     AsyncHttpResponseHandler resultHandler = new AsyncHttpResponseHandler() {

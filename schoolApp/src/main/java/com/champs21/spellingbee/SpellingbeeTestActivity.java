@@ -22,9 +22,17 @@ import android.widget.Toast;
 
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.SpellingbeeDataModel;
+import com.champs21.schoolapp.model.Wrapper;
+import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.CountDownTimerPausable;
+import com.champs21.schoolapp.utils.GsonParser;
+import com.champs21.schoolapp.utils.URLHelper;
+import com.champs21.schoolapp.utils.UserHelper;
+import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -97,6 +105,11 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
     private boolean isDialogShowing = false;
 
+    public UIHelper uiHelper;
+    public UserHelper userHelper;
+
+    private int tempScore = 0;
+
 
     /*@Override
     protected void onResume() {
@@ -110,6 +123,9 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        userHelper = new UserHelper(this);
+        uiHelper = new UIHelper(this);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -138,12 +154,67 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
         listDeleteData.clear();
 
 
+        initApiCallGetInit();
+
         initView();
         initAction();
         loadData();
 
 
     }
+
+    private void initApiCallGetInit()
+    {
+        RequestParams params = new RequestParams();
+
+        params.put("free_id", UserHelper.getUserFreeId());
+
+        AppRestClient.post(URLHelper.SPELLINGBEE_INIT, params, initHandler);
+    }
+    AsyncHttpResponseHandler initHandler = new AsyncHttpResponseHandler() {
+
+        @Override
+        public void onFailure(Throwable arg0, String arg1) {
+            uiHelper.showMessage(arg1);
+            if (uiHelper.isDialogActive()) {
+                uiHelper.dismissLoadingDialog();
+            }
+        };
+
+        @Override
+        public void onStart() {
+
+            uiHelper.showLoadingDialog("Please wait...");
+
+
+        };
+
+        @Override
+        public void onSuccess(int arg0, String responseString) {
+
+            Log.e("SCCCCC", "response: " + responseString);
+
+            uiHelper.dismissLoadingDialog();
+
+
+            Wrapper modelContainer = GsonParser.getInstance()
+                    .parseServerResponse(responseString);
+
+            if (modelContainer.getStatus().getCode() == 200) {
+
+                score = modelContainer.getData().get("user_checkpoint").getAsInt();
+                txtScore.setText("Score: "+String.valueOf(score));
+            }
+
+
+            else {
+
+            }
+
+
+
+        };
+    };
 
 
     private void initView()
@@ -197,7 +268,7 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
     private void initAction()
     {
-        initTimer();
+        //initTimer();
 
         btnMeaning.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -223,7 +294,7 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
             @Override
             public void onClick(View v) {
 
-                //Toast.makeText(SpellingbeeTestActivity.this, listCurrentData.get(currentPosition).getWord(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SpellingbeeTestActivity.this, listCurrentData.get(currentPosition).getWord(), Toast.LENGTH_SHORT).show();
                 speakWords(listCurrentData.get(currentPosition).getWord());
             }
         });
@@ -244,6 +315,7 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
                     initTimer();
 
                     score++;
+                    tempScore++;
                     initCurrentData();
                 } else {
 
@@ -271,11 +343,11 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
         tStart = System.currentTimeMillis();
 
-        if(!TextUtils.isEmpty(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_SAVE_FULL_SCORE)))
+        /*if(!TextUtils.isEmpty(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_SAVE_FULL_SCORE)))
         {
             //score = getFullScore()+1;
             score = getFullScore();
-        }
+        }*/
 
         txtSubmit.setInputType(txtSubmit.getInputType()
                 | EditorInfo.TYPE_TEXT_FLAG_NO_SUGGESTIONS
@@ -475,6 +547,9 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
             {
                 pd.dismiss();
             }*/
+
+            initTimer();
+
 
             pd.dismiss();
             Log.e("DATA_SIZE_ELSE", "is: " + data.size());
@@ -848,7 +923,7 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
 
 
-        if(score != getFullScore() && ((score  % SpellingbeeConstants.CHECK_POINT  == 0)))
+        if(tempScore != 0 && ((score  % SpellingbeeConstants.CHECK_POINT  == 0)))
         {
             countDownTimer.pause();
 
@@ -867,7 +942,7 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
             //data.removeAll(listDeleteData);
 
             saveFullData();
-            saveFullScore();
+            //saveFullScore();
 
 
         }
@@ -1011,13 +1086,13 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
         return list;
     }
 
-    private void saveFullScore()
+    /*private void saveFullScore()
     {
         PrefSingleton.getInstance().savePreference(SpellingbeeConstants.KEY_SAVE_FULL_SCORE, String.valueOf(score));
 
-    }
+    }*/
 
-    private int getFullScore()
+   /* private int getFullScore()
     {
         int score = 0;
 
@@ -1027,7 +1102,7 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
             score = 0;
 
         return score;
-    }
+    }*/
 
 
 

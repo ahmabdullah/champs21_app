@@ -17,6 +17,19 @@ public class LeaderBoardModel {
     @SerializedName("high_score")
     private String highScore;
 
+    @SerializedName("time")
+    private String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+
+
     public String getHighScore() {
         return highScore;
     }

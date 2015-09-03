@@ -24,8 +24,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_vertical">
+            android:layout_marginBottom="10dp">
 
 
             <ImageView
@@ -41,43 +40,30 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/txtName"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:textColor="#ffd200"
                     android:textStyle="bold"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/txtSchoolName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:ellipsize="marquee"
-                    android:marqueeRepeatLimit ="marquee_forever"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:textColor="#717273" />
-                <TextView
-                    android:id="@+id/txtDivisionUpper"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#717273"
-                    android:text="Division: " />
+                    android:textSize="22sp" />
 
                 <TextView
                     android:id="@+id/txtScoreDetails"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
                     android:textColor="@android:color/white" />
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -90,39 +76,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
+                        android:textSize="18sp"
                         android:textColor="@android:color/white" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layoutTop"
-        android:gravity="center_vertical"
-        android:padding="10dp"
-        android:id="@+id/linearLayout12">
-
-        <TextView
-            android:id="@+id/txtDivisionName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:text="Dhaka Division" />
-
-        <ImageButton
-            android:id="@+id/btnDropDown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:src="@drawable/spellingbee_btn_dropdown_division"
-            android:background="@android:color/transparent"/>
-
-    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -132,7 +91,7 @@
         android:id="@+id/relativeLayout4">
 
         <ImageView
-            android:layout_width="175dp"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:scaleType="fitCenter"
             android:id="@+id/imageView3"
@@ -147,9 +106,9 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout12"
         android:background="@drawable/spellingbee_lbdivider"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/layoutTop">
 
     </LinearLayout>
 

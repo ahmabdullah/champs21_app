@@ -72,7 +72,7 @@ public class GcmIntentService extends IntentService {
         // in your BroadcastReceiver.
         String messageType = gcm.getMessageType(intent);
 
-        if (!extras.isEmpty() && (extras != null || extras.equals("null"))) {  // has effect of unparcelling Bundle
+        if (!extras.isEmpty()) {  // has effect of unparcelling Bundle
             /*
              * Filter messages based on message type. Since it is likely that GCM will be
              * extended in the future with new message types, just ignore any message types you're
@@ -105,27 +105,30 @@ public class GcmIntentService extends IntentService {
 
                 Log.e("GCS_DATA", "is: "+extras.getString("message"));
 
-                if(extras.getString("key").equals("news"))
-                	sendNotification(extras.getString("message"),extras.getString("post_id"));
 
-                else if(extras.getString("key").equals("paid") && UserHelper.isLoggedIn())
+                if(extras.getString("key") != null)
                 {
-                    sendNotificationPaid(extras, extras.getString("message"), extras.getString("rtype"), extras.getString("rid"));
-                }
+                    if(extras.getString("key").equals("news"))
+                        sendNotification(extras.getString("message"),extras.getString("post_id"));
+
+                    else if(extras.getString("key").equals("paid") && UserHelper.isLoggedIn())
+                    {
+                        sendNotificationPaid(extras, extras.getString("message"), extras.getString("rtype"), extras.getString("rid"));
+                    }
 
 
-                Log.e("TOTAL_UNREAD", "is: "+extras.getString("total_unread"));
+                    Log.e("TOTAL_UNREAD", "is: "+extras.getString("total_unread"));
 
-                context = this;
-                UserHelper userHelper = new UserHelper(this);
+                    context = this;
+                    UserHelper userHelper = new UserHelper(this);
 
-                if(userHelper.getUser().getAccessType() == UserHelper.UserAccessType.PAID && extras.getString("key").equals("paid"))
-                {
+                    if(userHelper.getUser().getAccessType() == UserHelper.UserAccessType.PAID && extras.getString("key").equals("paid"))
+                    {
 
-                    userHelper.saveTotalUnreadNotification(extras.getString("total_unread"));
+                        userHelper.saveTotalUnreadNotification(extras.getString("total_unread"));
 
-                    if(listener != null)
-                        listener.onNotificationCountChanged(Integer.parseInt(extras.getString("total_unread")));
+                        if(listener != null)
+                            listener.onNotificationCountChanged(Integer.parseInt(extras.getString("total_unread")));
 
                     /*if(!TextUtils.isEmpty(extras.getString("total_unread")))
                         listener.onNotificationCountChanged(Integer.parseInt(extras.getString("total_unread")));
@@ -133,16 +136,20 @@ public class GcmIntentService extends IntentService {
                         listener.onNotificationCountChanged(Integer.parseInt(SharedPreferencesHelper.getInstance().getString(
                                 SPKeyHelper.TOTAL_UNREAD_NOTIFICATION_FREE, "")));*/
 
+                    }
+
+                    //SharedPreferencesHelper.getInstance().setString("total_unread", extras.getString("total_unread"));
+
+                    //listener.onNotificationCountChanged(100);
+                    //SharedPreferencesHelper.getInstance().setString("total_unread", "100");
+
+
+
+                    //SharedPreferencesHelper.getInstance().setString("total_unread", extras.getString("total_unread"));
+
+
                 }
 
-                //SharedPreferencesHelper.getInstance().setString("total_unread", extras.getString("total_unread"));
-
-                //listener.onNotificationCountChanged(100);
-                //SharedPreferencesHelper.getInstance().setString("total_unread", "100");
-
-
-
-                //SharedPreferencesHelper.getInstance().setString("total_unread", extras.getString("total_unread"));
 
 
 

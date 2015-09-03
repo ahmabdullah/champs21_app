@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -45,10 +43,10 @@ public class LeaderBoardActivity extends ChildContainerActivity {
 
     private ImageView imgProfileImage;
     private TextView txtName;
-    private TextView txtSchoolName;
+
     private TextView txtScoreDetails;
     private TextView txtRank;
-    private TextView txtDivisionName;
+
     private ListView listViewLeaderBoard;
     private  UserHelper userHelper;
 
@@ -57,15 +55,15 @@ public class LeaderBoardActivity extends ChildContainerActivity {
 
     private TextView txtMessage;
 
-    private ImageButton btnDropDown;
 
     private List<String> listDivision;
 
-    private String selectedDivision = "Dhaka";
+    //private String selectedDivision = "Dhaka";
 
     private String userFullName = "";
 
-    private TextView txtDivisionUpper;
+
+
 
 
     private RelativeLayout layoutTop;
@@ -105,7 +103,7 @@ public class LeaderBoardActivity extends ChildContainerActivity {
         initView();
         initAction();
 
-        initApicall(selectedDivision);
+        initApicall();
     }
 
 
@@ -113,10 +111,10 @@ public class LeaderBoardActivity extends ChildContainerActivity {
     {
         imgProfileImage = (ImageView)this.findViewById(R.id.imgProfileImage);
         txtName = (TextView)this.findViewById(R.id.txtName);
-        txtSchoolName = (TextView)this.findViewById(R.id.txtSchoolName);
+
         txtScoreDetails  =(TextView)this.findViewById(R.id.txtScoreDetails);
         txtRank = (TextView)this.findViewById(R.id.txtRank);
-        txtDivisionName = (TextView)this.findViewById(R.id.txtDivisionName);
+
         listViewLeaderBoard  = (ListView)this.findViewById(R.id.listViewLeaderBoard);
 
         adapter = new AdapterLeaderBoard();
@@ -124,9 +122,6 @@ public class LeaderBoardActivity extends ChildContainerActivity {
 
         txtMessage = (TextView)this.findViewById(R.id.txtMessage);
 
-        btnDropDown = (ImageButton)this.findViewById(R.id.btnDropDown);
-
-        txtDivisionUpper = (TextView)this.findViewById(R.id.txtDivisionUpper);
 
         layoutTop = (RelativeLayout)this.findViewById(R.id.layoutTop);
 
@@ -135,12 +130,12 @@ public class LeaderBoardActivity extends ChildContainerActivity {
         {
             layoutTop.setVisibility(View.VISIBLE);
 
-            if (userHelper.getUser().getType() == UserHelper.UserTypeEnum.STUDENT)
+            /*if (userHelper.getUser().getType() == UserHelper.UserTypeEnum.STUDENT)
             {
                 layoutTop.setVisibility(View.VISIBLE);
             }
             else
-                layoutTop.setVisibility(View.GONE);
+                layoutTop.setVisibility(View.GONE);*/
         }
         else
             layoutTop.setVisibility(View.GONE);
@@ -172,46 +167,10 @@ public class LeaderBoardActivity extends ChildContainerActivity {
 
         userFullName = userHelper.getUser().getFirstName()+" "+userHelper.getUser().getLastName();
 
-        txtSchoolName.setText(UserHelper.getSchoolName());
-
-
-
         txtName.setText(userFullName);
 
         Log.e("FULL NAME", "is: " + UserHelper.getSchoolName());
         Log.e("FULL NAME", "is: " + userHelper.getUser().getFirstName());
-
-        btnDropDown.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(LeaderBoardActivity.this, btnDropDown);
-                //popup.getMenuInflater().inflate(R.menu.popup_menu_medium, popup.getMenu());
-                for (int i = 0; i < listDivision.size(); i++)
-                    popup.getMenu().add(listDivision.get(i));
-
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem item) {
-                        //Toast.makeText(SchoolSearchFragment.this.getActivity(),"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
-
-                        txtDivisionName.setText(item.getTitle().toString() + " Division");
-
-                        if (!selectedDivision.equalsIgnoreCase(item.getTitle().toString()))
-                            initApicall(item.getTitle().toString());
-
-                        selectedDivision = item.getTitle().toString();
-
-
-                        Log.e("SELECTED_DIVISION", "id: " + selectedDivision);
-
-
-                        return true;
-                    }
-                });
-
-                popup.show();
-            }
-        });
-
 
         btnPlayNow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -247,18 +206,18 @@ public class LeaderBoardActivity extends ChildContainerActivity {
     }
 
 
-    private void initApicall(String divisionName)
+    private void initApicall()
     {
 
 
         RequestParams params = new RequestParams();
 
-        params.put("division", divisionName);
+        //params.put("division", divisionName);
 
 
         params.put("free_id", UserHelper.getUserFreeId());
 
-        AppRestClient.post(URLHelper.SPELLINGBEE_LEADERBOARD, params, leaderBoardHandler);
+        AppRestClient.post(URLHelper.SPELLINGBEE_LEADERBOARD_NEW, params, leaderBoardHandler);
     }
 
     AsyncHttpResponseHandler leaderBoardHandler = new AsyncHttpResponseHandler() {
@@ -299,7 +258,7 @@ public class LeaderBoardActivity extends ChildContainerActivity {
                 if(arrayLeader.size() <= 0)
                 {
                     txtMessage.setVisibility(View.VISIBLE);
-                    txtMessage.setText("No Leaderboard found for "+selectedDivision+" division.");
+                    txtMessage.setText("No Leaderboard found.");
                 }
                 else
                 {
@@ -386,6 +345,7 @@ public class LeaderBoardActivity extends ChildContainerActivity {
                 holder.txtName = (TextView)convertView.findViewById(R.id.txtName);
                 holder.txtSchoolName = (TextView)convertView.findViewById(R.id.txtSchoolName);
                 holder.txtHighScore = (TextView)convertView.findViewById(R.id.txtHighScore);
+                holder.txtTimeTaken = (TextView)convertView.findViewById(R.id.txtTimeTaken);
 
                 convertView.setTag(holder);
             }
@@ -397,7 +357,7 @@ public class LeaderBoardActivity extends ChildContainerActivity {
             holder.txtName.setText(listLeaderBoard.get(position).getName());
             holder.txtSchoolName.setText(listLeaderBoard.get(position).getSchoolName());
             holder.txtHighScore.setText("Best Score: "+listLeaderBoard.get(position).getHighScore());
-
+            holder.txtTimeTaken.setText("Time: "+listLeaderBoard.get(position).getTime());
 
             return convertView;
         }
@@ -409,6 +369,7 @@ public class LeaderBoardActivity extends ChildContainerActivity {
             TextView txtName;
             TextView txtSchoolName;
             TextView txtHighScore;
+            TextView txtTimeTaken;
 
         }
 
@@ -425,13 +386,14 @@ public class LeaderBoardActivity extends ChildContainerActivity {
             score = PrefSingleton.getInstance().getPreference(UserHelper.getUserFreeId()+SpellingbeeConstants.CURRENT_SCORE_LEADERBOARD);
 
         //txtRank.setText("Rank: "+rank);
-        txtScoreDetails.setText("Current Score: "+score+", "+"Best Score: "+bestScore);
-        txtDivisionUpper.setText("Division: "+division);
+        txtScoreDetails.setText("Best Score: "+bestScore);
 
-        if(!division.equalsIgnoreCase(selectedDivision))
+        if(rank.equalsIgnoreCase("0"))
             txtRank.setText("Rank: N/A");
         else
             txtRank.setText("Rank: "+rank);
+
+
 
 
 
