@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.champs21.schoolapp.GcmIntentService;
 import com.champs21.schoolapp.R;
@@ -43,6 +44,8 @@ public class ArchievePageFragment extends Fragment implements UserAuthListener{
 	
 	
 	private ProgressBar progressBar;
+
+	private TextView txtMessage;
 
 
 	@Override
@@ -100,6 +103,8 @@ public class ArchievePageFragment extends Fragment implements UserAuthListener{
 		loadDataInToList();
 		
 		progressBar = (ProgressBar)view.findViewById(R.id.progressBar);
+
+		txtMessage = (TextView)view.findViewById(R.id.txtMessage);
 		
 		return view;
 	}
@@ -265,10 +270,14 @@ public class ArchievePageFragment extends Fragment implements UserAuthListener{
 			if(items.size() > 0)
 			{
 				progressBar.setVisibility(View.GONE);
+
+				txtMessage.setVisibility(View.GONE);
 			}
 			else
 			{
-				progressBar.setVisibility(View.VISIBLE);
+				progressBar.setVisibility(View.GONE);
+
+				txtMessage.setVisibility(View.VISIBLE);
 			}
 			
 			

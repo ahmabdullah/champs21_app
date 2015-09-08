@@ -128,7 +128,7 @@ public class CustomDialog extends Dialog{
 
         if(this.countDownTimer == null)
         {
-            this.countDownTimer = new CountDownTimerPausable(10000, 1) {
+            this.countDownTimer = new CountDownTimerPausable(5000, 1) {
                 public void onTick(long millisUntilFinished) {
 
                     txtTime.setText(String.valueOf(millisUntilFinished / 1000));

@@ -75,6 +75,9 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 	private boolean loading = false;
 	private boolean stopLoadingData = false;
 	private String noticeType = "";
+
+	private TextView txtMessage;
+
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -96,7 +99,10 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 		// TODO Auto-generated method stub
 		view = inflater.inflate(R.layout.fragment_notice_new, container, false);
 		initView(view);
-		
+
+
+		txtMessage = (TextView)view.findViewById(R.id.txtMessage);
+
 		return view;
 	}
 	
@@ -382,6 +388,16 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 				Log.e("listnotice size", "is: "+listNotice.size());
 				
 				adapter.notifyDataSetChanged();
+
+				if(listNotice.size() <= 0)
+				{
+					txtMessage.setVisibility(View.VISIBLE);
+				}
+				else
+				{
+					txtMessage.setVisibility(View.GONE);
+				}
+
 				
 			}
 			

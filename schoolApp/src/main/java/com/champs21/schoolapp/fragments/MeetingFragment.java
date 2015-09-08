@@ -101,6 +101,8 @@ public class MeetingFragment extends Fragment implements UserAuthListener{
 	private boolean isRefreshing = false;
 	private boolean loading = false;
 	private boolean stopLoadingData = false;
+
+	private TextView txtMessage;
 	
 	
 	@Override
@@ -143,6 +145,9 @@ public class MeetingFragment extends Fragment implements UserAuthListener{
 		
 		initView(view);		
 		initAction();
+
+		txtMessage = (TextView)view.findViewById(R.id.txtMessage);
+
 
 		return view;
 	}
@@ -573,6 +578,15 @@ public class MeetingFragment extends Fragment implements UserAuthListener{
 				{
 					Toast.makeText(MeetingFragment.this.getActivity(), "No outgoing meeting request", Toast.LENGTH_SHORT).show();
 				}*/
+
+				if(listStatus.size() <= 0)
+				{
+					txtMessage.setVisibility(View.VISIBLE);
+				}
+				else
+				{
+					txtMessage.setVisibility(View.GONE);
+				}
 
 			}
 

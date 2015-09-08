@@ -1,10 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,11 +14,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.champs21.freeversion.PaidVersionHomeFragment;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.BaseType;
 import com.champs21.schoolapp.model.Batch;
-import com.champs21.schoolapp.model.PickerType;
 import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.model.StudentAttendance;
 import com.champs21.schoolapp.model.Wrapper;
@@ -37,6 +30,11 @@ import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class StudentLeaveFragment extends UserVisibleHintFragment{
 
@@ -52,6 +50,10 @@ public class StudentLeaveFragment extends UserVisibleHintFragment{
 	private UIHelper uiHelper;
 	
 	private TextView txtDate;
+
+	private TextView txtMessage;
+
+
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -93,6 +95,19 @@ public class StudentLeaveFragment extends UserVisibleHintFragment{
 					(wrapper.getData().get("leaves")).toString()));
 			adapter = new StudentLeaveListAdapter(getActivity(), arraylist);
 			studentListView.setAdapter(adapter);
+
+
+			if(arraylist.size() <=0 )
+			{
+				txtMessage.setVisibility(View.VISIBLE);
+			}
+			else
+			{
+				txtMessage.setVisibility(View.GONE);
+			}
+
+
+
 		};
 	};
 
@@ -115,6 +130,9 @@ public class StudentLeaveFragment extends UserVisibleHintFragment{
 		Date cDate = new Date();
 		String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
 		txtDate.setText(AppUtility.getDateString(fDate, AppUtility.DATE_FORMAT_APP, AppUtility.DATE_FORMAT_SERVER));
+
+
+		txtMessage = (TextView)rootView.findViewById(R.id.txtMessage);
 		
 		return rootView;
 	}
