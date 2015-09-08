@@ -49,7 +49,7 @@ public class CompleteProfileActivityContainer extends FragmentActivity{
          switch (type) {
          case STUDENT:
         	 CompleteProfileFragmentStudent student = new CompleteProfileFragmentStudent();
-             fragmentTransaction.add(R.id.container, student, "Student");
+			 fragmentTransaction.add(R.id.container, student, "Student");
              fragmentTransaction.commit();
              break;
          case PARENTS:

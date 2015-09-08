@@ -238,7 +238,7 @@
     </string-array>
     
     <string-array name="free_menus_images">
-        <item>spellingbee_bee_icon</item>
+        <!--<item>spellingbee_bee_icon</item>-->
         <item>spellingbee_newbee_icon</item>
         <item>resource</item>
         <item>newsarticle</item>
@@ -254,7 +254,7 @@
         <!-- <item>video</item> -->
     </string-array>
     <string-array name="free_menus_text">
-        <item>Play Online Round</item>
+        <!--<item>Play Online Round</item>-->
         <item>Spelling Bee</item>
         <item>Resource Centre</item>
         <item>News \u0026 Articles</item>
@@ -270,7 +270,7 @@
         <!-- <item>Videos</item> -->
     </string-array>
     <string-array name="free_menus_id">
-        <item>-7</item>
+        <!--<item>-7</item>-->
         <item>7</item>
         <item>6</item>
         <item>38</item>
@@ -482,8 +482,8 @@ Get updates on recent on goings and feeds from your school teachers.</string>
         <item>Rayer Bazar</item>
         <item>Sadarghat</item>
         <item>Segunbagucha</item>
-        <item>Shahbag</item>
         <item>Shantinagar</item>
+        <item>Shahbag</item>
         <item>Shyamoli</item>
         <item>Siddeshwari</item>
         <item>Sobhanbag</item>
