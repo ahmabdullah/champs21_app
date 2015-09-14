@@ -3,8 +3,17 @@
  */
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.champs21.freeversion.SingleCalendarEvent;
 import com.champs21.schoolapp.R;
@@ -24,18 +33,8 @@ import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -55,6 +54,7 @@ public class AcademicCalendarExam extends UserVisibleHintFragment implements Use
 	boolean _areContentLoaded = false;
 	private LinearLayout pbs;
 	private static final String TAG = "Academic Calendar Exam";
+	private TextView nodata;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -87,6 +87,7 @@ public class AcademicCalendarExam extends UserVisibleHintFragment implements Use
 		gridTitleText = (TextView) view.findViewById(R.id.grid_title_textview);
 		gridTitleText.setText(getString(R.string.title_exam_calendar_tab));
 		pbs = (LinearLayout)view.findViewById(R.id.pb);
+		nodata = (TextView)view.findViewById(R.id.nodataMsg);
 		setUpList();
 		loadDataInToList();
 		return view;
@@ -152,6 +153,7 @@ public class AcademicCalendarExam extends UserVisibleHintFragment implements Use
 								wrapper.getData().getAsJsonArray("events")
 										.toString()));
 				adapter.notifyDataSetChanged();
+				nodata.setVisibility((items.size()>0)?View.GONE:View.VISIBLE);
 			} else if (wrapper.getStatus().getCode() == AppConstant.RESPONSE_CODE_SESSION_EXPIRED) {
 				// userHelper.doLogIn();
 			}

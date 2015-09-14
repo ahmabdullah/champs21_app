@@ -3,9 +3,6 @@
  */
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,12 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.champs21.freeversion.SingleCalendarEvent;
 import com.champs21.freeversion.SingleExamRoutine;
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.adapters.AcademicCalendarListAdapter;
 import com.champs21.schoolapp.adapters.ExamRoutineListAdapter;
-import com.champs21.schoolapp.model.AcademicCalendarDataItem;
 import com.champs21.schoolapp.model.ExamRoutine;
 import com.champs21.schoolapp.model.UserAuthListener;
 import com.champs21.schoolapp.model.Wrapper;
@@ -34,11 +28,13 @@ import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
-import com.champs21.schoolapp.utils.UserHelper.UserAccessType;
 import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -56,6 +52,7 @@ public class ExamRoutineFragmentAll extends UserVisibleHintFragment implements
 	private TextView gridTitleText;
 	private LinearLayout pbs;
 	private static final String TAG = "Exam Routine";
+	private TextView nodata;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -90,6 +87,7 @@ public class ExamRoutineFragmentAll extends UserVisibleHintFragment implements
 		gridTitleText = (TextView) view.findViewById(R.id.grid_title_textview);
 		gridTitleText.setText("Exam");
 		pbs = (LinearLayout) view.findViewById(R.id.pb);
+		nodata = (TextView) view.findViewById(R.id.nodataMsg);
 		setUpList();
 		loadDataInToList();
 		return view;
@@ -171,6 +169,7 @@ public class ExamRoutineFragmentAll extends UserVisibleHintFragment implements
 						.parseExamRoutine(
 								wrapper.getData().getAsJsonArray("all_exam")
 										.toString()));
+				nodata.setVisibility(items.size() > 0 ? View.GONE : View.VISIBLE);
 				adapter.notifyDataSetChanged();
 			} else if (wrapper.getStatus().getCode() == AppConstant.RESPONSE_CODE_SESSION_EXPIRED) {
 				// userHelper.doLogIn();

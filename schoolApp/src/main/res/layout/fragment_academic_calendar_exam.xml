@@ -135,24 +135,38 @@
                 
                 
             </LinearLayout>
-
-            <ListView
-                android:id="@+id/exam_listview"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dip"
                 android:layout_marginBottom="2dip"
                 android:layout_marginLeft="2dip"
                 android:layout_marginRight="2dip"
                 android:layout_marginTop="0dip"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:cacheColorHint="@android:color/transparent"
-                android:fadingEdge="none"
-                android:fastScrollEnabled="false"
-                android:footerDividersEnabled="false"
-                android:headerDividersEnabled="false"
-                android:smoothScrollbar="true" >
-            </ListView>
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/nodataMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/maroon"
+                    android:layout_gravity="center"
+                    android:text="No data available!"
+                    android:visibility="invisible"
+                    android:textStyle="bold"/>
+                <ListView
+                    android:id="@+id/exam_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:fadingEdge="none"
+                    android:fastScrollEnabled="false"
+                    android:footerDividersEnabled="false"
+                    android:headerDividersEnabled="false"
+                    android:smoothScrollbar="true" >
+                </ListView>
+            </FrameLayout>
+
         </LinearLayout>
     </LinearLayout>
 
