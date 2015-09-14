@@ -138,7 +138,7 @@ public class ExamRoutineTeacherFragment extends Fragment{
                     listExamRoutine.add(parseExamRoutine(arrayExam.toString()).get(i));
                 }
 
-                if(listExamRoutine.size() <= 0)
+                if(listExamRoutine.size() == 0)
                 {
                     txtMessage.setVisibility(View.VISIBLE);
                     listViewExamRoutine.setVisibility(View.GONE);

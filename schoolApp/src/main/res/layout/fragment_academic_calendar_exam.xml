@@ -151,7 +151,7 @@
                     android:textColor="@color/maroon"
                     android:layout_gravity="center"
                     android:text="No data available!"
-                    android:visibility="invisible"
+                    android:visibility="visible"
                     android:textStyle="bold"/>
                 <ListView
                     android:id="@+id/exam_listview"
