@@ -23,6 +23,16 @@ public class NotificationReminder {
     @SerializedName("batch_id")
     private String batchId;
 
+	public boolean isAlreadyRead() {
+		return isAlreadyRead;
+	}
+
+	public void setIsAlreadyRead(boolean isAlreadyRead) {
+		this.isAlreadyRead = isAlreadyRead;
+	}
+
+	private boolean isAlreadyRead = false;
+
 
     public String getId() {
 		return id;
