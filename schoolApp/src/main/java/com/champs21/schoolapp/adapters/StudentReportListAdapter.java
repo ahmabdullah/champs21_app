@@ -1,24 +1,24 @@
 package com.champs21.schoolapp.adapters;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import android.content.Context;
+import android.content.Intent;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.champs21.freeversion.AnyFragmentLoadActivity;
 import com.champs21.freeversion.PaidVersionHomeFragment;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.StudentAttendance;
 
-import android.content.Context;
-import android.content.Intent;
-import android.sax.StartElementListener;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.TextView;
-import android.view.View.OnClickListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class StudentReportListAdapter extends BaseAdapter {
 
@@ -105,7 +105,7 @@ public class StudentReportListAdapter extends BaseAdapter {
 				// Pass all data flag
 				// Start SingleItemView Class
 				mContext.startActivity(intent);
-			}
+			};
 		});*/
 
 		return view;
@@ -122,10 +122,30 @@ public class StudentReportListAdapter extends BaseAdapter {
 		{
 			for (StudentAttendance st : arraylist) 
 			{
-				if (st.getStudentName().toLowerCase(Locale.getDefault()).contains(charText)||st.getRollNo().toLowerCase(Locale.getDefault()).contains(charText)) 
+
+				/*if (st.getStudentName().toLowerCase(Locale.getDefault()).contains(charText)||st.getRollNo().toLowerCase(Locale.getDefault()).contains(charText))
 				{
 					studentlist.add(st);
+				}*/
+
+				if(!TextUtils.isEmpty(st.getRollNo()))
+				{
+					if (st.getRollNo().toLowerCase(Locale.getDefault()).contains(charText))
+					{
+						studentlist.add(st);
+
+					}
+
 				}
+
+				if(!TextUtils.isEmpty(st.getStudentName()))
+				{
+					if (st.getStudentName().toLowerCase(Locale.getDefault()).contains(charText))
+					{
+						studentlist.add(st);
+					}
+				}
+
 			}
 		}
 		notifyDataSetChanged();

@@ -1,11 +1,15 @@
 package com.champs21.freeversion;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -48,8 +52,12 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 
     private RelativeLayout layoutMessage;
     private LinearLayout layoutDataContainer;
-	
-	
+
+	private LinearLayout layoutDownloadHolder;
+	private ImageButton btnDownload;
+
+
+
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
@@ -102,6 +110,9 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 
         layoutMessage = (RelativeLayout)this.findViewById(R.id.layoutMessage);
         layoutDataContainer = (LinearLayout)this.findViewById(R.id.layoutDataContainer);
+
+		this.layoutDownloadHolder = (LinearLayout)this.findViewById(R.id.layoutDownloadHolder);
+		this.btnDownload = (ImageButton)this.findViewById(R.id.btnDownload);
 	}
 	
 	
@@ -189,6 +200,30 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 		}else {
 			setButtonState(btnNoticeReminder, R.drawable.btn_reminder_normal, true, "Reminder");
 		}
+
+
+		if(!TextUtils.isEmpty(data.getFile_name()))
+		{
+			layoutDownloadHolder.setVisibility(View.VISIBLE);
+		}
+		else
+		{
+			layoutDownloadHolder.setVisibility(View.GONE);
+		}
+
+
+		btnDownload.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//http://api.champs21.com/api/freeuser/downloadattachment?id=47
+
+
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri
+						.parse("http://api.champs21.com/api/notice/downloadnoticeattachment?id=" + data.getNoticeId())));
+			}
+		});
 		
 		
 	}

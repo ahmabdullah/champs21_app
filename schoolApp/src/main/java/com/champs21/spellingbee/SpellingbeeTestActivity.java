@@ -436,6 +436,11 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
                     bgData.execute("year_4.xml");
                     break;
 
+                case 5:
+                    //bgData.execute("demo_5_mod.xml");
+                    bgData.execute("year_5.xml");
+                    break;
+
             }
         }
         else
@@ -1051,6 +1056,14 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
         }
 
         else if(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.CURRENT_BANK_NUMBER).equalsIgnoreCase("4"))
+        {
+            PrefSingleton.getInstance().savePreference(SpellingbeeConstants.CURRENT_BANK_NUMBER, "5");
+            BgLoadData bgData = new BgLoadData();
+            //bgData.execute("demo_3_mod.xml");
+            bgData.execute("year_5.xml");
+        }
+
+        else if(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.CURRENT_BANK_NUMBER).equalsIgnoreCase("5"))
         {
             PrefSingleton.getInstance().savePreference(SpellingbeeConstants.CURRENT_BANK_NUMBER, "1");
             BgLoadData bgData = new BgLoadData();

@@ -141,6 +141,8 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 
         layoutMessage = (RelativeLayout)this.findViewById(R.id.layoutMessage);
         layoutDataContainer = (LinearLayout)this.findViewById(R.id.layoutDataContainer);
+
+
 	}
 	
 	
