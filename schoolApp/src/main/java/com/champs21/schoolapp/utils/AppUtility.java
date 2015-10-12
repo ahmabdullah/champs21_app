@@ -53,6 +53,8 @@ public class AppUtility {
 	public static String getCatNameById(Context con, int id) {
 		if (id == 59)
 			return "Education Changes Life";
+		if( id == 74)
+			return "Summit Salutes Nation Builders";
 		String[] myMenuArrayText = con.getResources().getStringArray(
 				R.array.free_menus_text);
 		/*
@@ -527,7 +529,9 @@ public class AppUtility {
 			case 7:
 				return isIcon ? (isWhite ? R.drawable.spellingbee_head
 						: R.drawable.spellingbee_head) : R.raw.edu_banner;
-
+			case 74:
+				return isIcon ? (isWhite ? R.drawable.personality_normal
+						: R.drawable.candle_icon_red) : R.raw.summit_banner;
 		default:
 			return -1;
 		}

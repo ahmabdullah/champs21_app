@@ -346,7 +346,7 @@ public class UserHelper {
         public void onSuccess(int arg0, String responseString) {
             super.onSuccess(arg0, responseString);
 
-            Log.e("Response****", responseString);
+            Log.e("Response User Create", responseString);
 
             Wrapper wrapper = GsonParser.getInstance().parseServerResponse(
                     responseString);
