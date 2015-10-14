@@ -1,26 +1,24 @@
 package com.champs21.schoolapp.adapters;
 
-import java.util.List;
-
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.model.BaseType;
-import com.champs21.schoolapp.model.MenuData;
-import com.champs21.schoolapp.model.PickerType;
 import com.champs21.schoolapp.model.StudentAttendance;
+
+import java.util.List;
 
 public class StudentListPickerAdapter extends BaseAdapter{
 
 	private static class ViewHolder {
 		public TextView nameText;
 		public TextView rollNoText;
+		public Button viewProfileBtn;
 	}
 	
 	private List<StudentAttendance> items;
@@ -60,6 +58,8 @@ public class StudentListPickerAdapter extends BaseAdapter{
 			ViewHolder viewHolder = new ViewHolder();
 			viewHolder.nameText=(TextView)rowView.findViewById(R.id.label);
 			viewHolder.rollNoText=(TextView)rowView.findViewById(R.id.roll_no_text);
+			viewHolder.viewProfileBtn = (Button)rowView.findViewById(R.id.btn_view_student_profile);
+			viewHolder.viewProfileBtn.setVisibility(View.GONE);
 			rowView.setTag(viewHolder);
 		}
 

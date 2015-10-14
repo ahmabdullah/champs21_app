@@ -14,7 +14,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.facebook.FacebookException;
+import com.facebook.FacebookOperationCanceledException;
+import com.facebook.Session;
 import com.facebook.SessionDefaultAudience;
+import com.facebook.SessionState;
 import com.facebook.android.AsyncFacebookRunner;
 import com.facebook.android.AsyncFacebookRunner.RequestListener;
 import com.facebook.android.DialogError;
@@ -33,7 +36,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-public class AndroidFacebookConnectActivity extends Activity {
+public class AndroidFacebookConnectActivity extends Activity implements Session.StatusCallback {
 
 	// Your Facebook APP ID
 	private static String APP_ID = "850059515022967"; // Replace with your App
@@ -61,6 +64,8 @@ public class AndroidFacebookConnectActivity extends Activity {
 
 
 	private SimpleFacebook mSimpleFacebook;
+
+
 
 	@Override
 	public void onResume() {
@@ -136,9 +141,9 @@ public class AndroidFacebookConnectActivity extends Activity {
 				showAccessTokens();
 			}
 		});*/
-
+		Session.openActiveSession(AndroidFacebookConnectActivity.this, true, AndroidFacebookConnectActivity.this);
 		
-		loginAndPostToWall();
+		//loginAndPostToWall();
 
 		/*Session session = Session.getActiveSession();
 
@@ -163,20 +168,27 @@ public class AndroidFacebookConnectActivity extends Activity {
 		//I have scored " + score + " in Spell Bangladesh at www.champs21.com. Beat me if you can!
 
 
-		String str = "I have scored " + currentScore + " in Spell Bangladesh at www.champs21.com. Beat me if you can!";
+		String str = "I have scored " + currentScore + " in Spell Champs, Play and share your's!!";
 
 		Bundle params = new Bundle();
+
 		params.putString("name", "Meet the new spelling genius!");
-		params.putString("caption","Meet the new spelling genius!");
-		params.putString("description",str);
+		params.putString("caption", "Meet the new spelling genius!");
+		params.putString("description", str);
+		//params.putString("link", "https://play.google.com/store/apps/details?id=com.champs21.schoolapp");
+		params.putString("link", "https://play.google.com/store/apps/developer?id=Team+Creative");
+
 		/*params.putString("description", "I scored " + currentScore + " in Spelling Bee and climbed the ranks! Divisionals here I come! The Bee is Buzzing!!");*/
-		params.putString("link", "https://play.google.com/store/apps/details?id=com.champs21.schoolapp");
-		params.putString("picture", "http://www.champs21.com/swf/spellingbee_2015/sbee.png");
+
+		params.putString("picture", "http://www.champs21.com/swf/spellingbee_2015/icon_250.png");
+		//params.putString("picture", "http://www.champs21.com/swf/spellingbee_2015/sbee.png");
+
+
 
 		WebDialog feedDialog = (
 				new WebDialog.FeedDialogBuilder(this,
 						/*Session.getActiveSession(),*/
-						facebook.getSession(),
+						Session.getActiveSession(),
 
 
 						params))
@@ -184,12 +196,33 @@ public class AndroidFacebookConnectActivity extends Activity {
 					@Override
 					public void onComplete(Bundle values, FacebookException error) {
 
-						Toast.makeText(AndroidFacebookConnectActivity.this, AppMessages.ANDROIDFACEBOOKCONNECTACTIVITY_POSTED_TO_FB, Toast.LENGTH_SHORT).show();
+						//Toast.makeText(AndroidFacebookConnectActivity.this, AppMessages.ANDROIDFACEBOOKCONNECTACTIVITY_POSTED_TO_FB, Toast.LENGTH_SHORT).show();
+						if (error == null) {
+							// When the story is posted, echo the success
+							// and the post Id.
+							final String postId = values.getString("post_id");
+							if (postId != null) {
+								//Toast.makeText(PhotoViewer.this,"Posted story, id: "+postId,Toast.LENGTH_SHORT).show();
+								Toast.makeText(getApplicationContext(), "Publish Successfully!", Toast.LENGTH_SHORT).show();
+							} else {
+								// User clicked the Cancel button
+								Toast.makeText(getApplicationContext(), "Publish cancelled", Toast.LENGTH_SHORT).show();
+							}
+						} else if (error instanceof FacebookOperationCanceledException) {
+							// User clicked the "x" button
+							Toast.makeText(getApplicationContext(), "Publish cancelled", Toast.LENGTH_SHORT).show();
+						} else {
+							// Generic, ex: network error
+							Toast.makeText(getApplicationContext(),"Error posting story",Toast.LENGTH_SHORT).show();
+						}
+
 						AndroidFacebookConnectActivity.this.finish();
 
 					}
 				})
 				.build();
+
+
 		feedDialog.show();
 	}
 
@@ -202,6 +235,15 @@ public class AndroidFacebookConnectActivity extends Activity {
 				new LoginDialogListener());
 
 		//mSimpleFacebook.login(onLoginListener);
+	}
+
+	@Override
+	public void call(Session session, SessionState state, Exception exception) {
+
+		if (session.isOpened()) {
+			publishFeedDialog();
+		}
+
 	}
 
 	class LoginDialogListener implements DialogListener {
@@ -219,7 +261,8 @@ public class AndroidFacebookConnectActivity extends Activity {
 
 
 
-			publishFeedDialog();
+
+			//publishFeedDialog();
 
 
 
@@ -476,11 +519,20 @@ public class AndroidFacebookConnectActivity extends Activity {
 		}
 	}*/
 
-	@Override
+	/*@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		facebook.authorizeCallback(requestCode, resultCode, data);
+	}*/
+
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
 	}
+
+
 
 	/**
 	 * Get Profile information by making request to Facebook Graph API
