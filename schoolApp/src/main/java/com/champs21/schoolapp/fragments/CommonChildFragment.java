@@ -1677,6 +1677,27 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
 					 */
                         // Uri uri = Uri.parse("drawable://" +
                         // AppUtility.getResourceImageId(resId, false, false));
+                        holder.bannerView.setTag(""+position);
+                        holder.bannerView.setOnClickListener(new OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    if(list.get(Integer.parseInt(view.getTag().toString())).getCategoryId().equals("74")){
+                                        if (UserHelper.isLoggedIn())
+                                            startActivity(new Intent(mContext,
+                                                    CandleActivity.class));
+                                        else {
+                                            showCustomDialog(
+                                                    "CANDLE",
+                                                    R.drawable.candle_popup_icon,
+                                                    getResources().getString(R.string.candle_msg)
+                                                            + "\n"
+                                                            + getResources().getString(
+                                                            R.string.not_logged_in_msg));
+                                        }
+                                    }
+                                }
+                        });
+
                         imageLoader.displayImage(
                                 "drawable://"
                                         + AppUtility.getResourceImageId(resId,

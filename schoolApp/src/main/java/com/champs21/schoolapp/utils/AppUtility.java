@@ -319,6 +319,7 @@ public class AppUtility {
 							int hour24, int hour12, int min, int sec,
 							String AM_PM) {
 						// TODO Auto-generated method stub
+						// TODO Auto-generated method stub
 
 						SimpleDateFormat format = new SimpleDateFormat(
 								"yyyy-MM-dd hh:mm:ss");
@@ -531,7 +532,7 @@ public class AppUtility {
 						: R.drawable.spellingbee_head) : R.raw.edu_banner;
 			case 74:
 				return isIcon ? (isWhite ? R.drawable.personality_normal
-						: R.drawable.candle_icon_red) : R.raw.summit_banner;
+						: R.drawable.candle_icon_red) : R.raw.salute_banner;
 		default:
 			return -1;
 		}
