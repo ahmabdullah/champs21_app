@@ -2003,18 +2003,29 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                                                             .getCategory_id_to_use()),
                                                     item.getSubcategory_id_to_use());
                                         } else {
+
                                             ViewPager vp = (ViewPager) v;
-                                            Intent i = new Intent(
-                                                    Intent.ACTION_VIEW);
-                                            i.setData(Uri.parse(item
-                                                    .getAdd_images()
-                                                    .get(vp.getCurrentItem())
-                                                    .getAd_image_link()));
-                                            if (!TextUtils.isEmpty(item
-                                                    .getAdd_images()
-                                                    .get(vp.getCurrentItem())
-                                                    .getAd_image_link())) {
-                                                startActivity(i);
+                                            AddData adata = item.getAdd_images()
+                                                    .get(vp.getCurrentItem());
+
+                                            if(!TextUtils.isEmpty(adata.getAd_image_category()) && !TextUtils.isEmpty(adata.getAd_image_subcategory()) && !adata.getAd_image_category().equals("0")) {
+                                                ((HomePageFreeVersion) mContext).loadCategory(
+                                                        Integer.parseInt(adata.getAd_image_category()),
+                                                        adata.getAd_image_subcategory());
+                                            } else {
+                                                Intent i = new Intent(
+                                                        Intent.ACTION_VIEW);
+                                                i.setData(Uri.parse(item
+                                                        .getAdd_images()
+                                                        .get(vp.getCurrentItem())
+                                                        .getAd_image_link()));
+                                                if (!TextUtils.isEmpty(item
+                                                        .getAdd_images()
+                                                        .get(vp.getCurrentItem())
+                                                        .getAd_image_link())) {
+                                                    startActivity(i);
+                                            }
+
                                             }
                                         }
 
