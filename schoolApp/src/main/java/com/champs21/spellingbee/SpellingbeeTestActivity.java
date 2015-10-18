@@ -294,7 +294,7 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(SpellingbeeTestActivity.this, listCurrentData.get(currentPosition).getWord(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SpellingbeeTestActivity.this, listCurrentData.get(currentPosition).getWord(), Toast.LENGTH_SHORT).show();
                 speakWords(listCurrentData.get(currentPosition).getWord());
             }
         });
@@ -875,6 +875,12 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
 
         Log.e("KKKKKKKK", "data size: "+data.size());
         Log.e("KKKKKKKK", "currentpos: "+currentPosition);
+
+
+        btnMeaning.setBackgroundResource(R.drawable.spellingbee_btn_bangla_meaning);
+        isToggleMeaningButton = false;
+
+
 
         if(currentPosition == data.size()-1)
         {

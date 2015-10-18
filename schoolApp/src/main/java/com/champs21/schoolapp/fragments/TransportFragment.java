@@ -189,7 +189,10 @@ public class TransportFragment extends UserVisibleHintFragment implements
 					TextView txtSchoolPickUp = (TextView) row
 							.findViewById(R.id.txtSchoolPickUp);
 
-					txtDayName.setText(listSchedule.get(i).getWeekDayName());
+					String myString = listSchedule.get(i).getWeekDayName();
+					String upperString = myString.substring(0,1).toUpperCase() + myString.substring(1);
+					txtDayName.setText(upperString);
+
 					txtHomePickUp
 							.setText(listSchedule.get(i).getHomePickTime());
 					txtSchoolPickUp.setText(listSchedule.get(i)
