@@ -168,12 +168,12 @@ public class AndroidFacebookConnectActivity extends Activity implements Session.
 		//I have scored " + score + " in Spell Bangladesh at www.champs21.com. Beat me if you can!
 
 
-		String str = "I have scored " + currentScore + " in Spell Champs, Play and share your's!!";
+		String str = "I have scored " + currentScore + " in Spell Champs. Play and share yours!!";
 
 		Bundle params = new Bundle();
 
 		params.putString("name", "Meet the new spelling genius!");
-		params.putString("caption", "Meet the new spelling genius!");
+		params.putString("caption", "Spelling Bee Season 4");
 		params.putString("description", str);
 		//params.putString("link", "https://play.google.com/store/apps/details?id=com.champs21.schoolapp");
 		params.putString("link", "https://play.google.com/store/apps/developer?id=Team+Creative");

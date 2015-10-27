@@ -228,7 +228,7 @@
                         android:layout_marginLeft="10dp"
                         android:textStyle="bold"
                         android:layout_toLeftOf="@+id/btnEnter"
-                        android:inputType="textFilter|textCapCharacters"
+                        android:inputType="textFilter|textNoSuggestions|textCapCharacters|textVisiblePassword"
                         android:layout_alignParentLeft="true"
                         android:background="@android:color/transparent"
                         android:textCursorDrawable="@drawable/color_cursor"

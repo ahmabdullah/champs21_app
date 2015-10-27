@@ -213,7 +213,7 @@ public class LeaderBoardActivity extends ChildContainerActivity {
         RequestParams params = new RequestParams();
 
         //params.put("division", divisionName);
-
+;
 
         params.put("free_id", UserHelper.getUserFreeId());
 
