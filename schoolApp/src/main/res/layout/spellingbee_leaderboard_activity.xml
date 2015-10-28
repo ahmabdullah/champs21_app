@@ -91,7 +91,7 @@
         android:id="@+id/relativeLayout4">
 
         <ImageView
-            android:layout_width="210dp"
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
             android:scaleType="fitCenter"
             android:id="@+id/imageView3"
