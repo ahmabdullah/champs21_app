@@ -553,10 +553,15 @@ public class SpellingbeeTestActivity extends Activity implements TextToSpeech.On
                 pd.dismiss();
             }*/
 
-            initTimer();
+            //initTimer();
+
 
 
             pd.dismiss();
+            if(!pd.isShowing())
+            {
+                initTimer();
+            }
             Log.e("DATA_SIZE_ELSE", "is: " + data.size());
 
             if(!TextUtils.isEmpty(PrefSingleton.getInstance().getPreference(SpellingbeeConstants.KEY_SAVE_FULL_DATA)))
