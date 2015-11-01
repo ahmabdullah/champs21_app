@@ -110,8 +110,8 @@ public class SplashScreenActivity extends Activity {
                 	
                 	intent= new Intent(SplashScreenActivity.this, HomePageFreeVersion.class);
                     SplashScreenActivity.this.startActivity(intent);
-                	
-                	/*intent= new Intent(SplashScreenActivity.this, SingleItemShowFragmentActivity.class);
+
+					/*intent= new Intent(SplashScreenActivity.this, SingleItemShowFragmentActivity.class);
                 	intent= new Intent(SplashScreenActivity.this, HomePageFreeVersion.class);
                     SplashScreenActivity.this.startActivity(intent);
                 	

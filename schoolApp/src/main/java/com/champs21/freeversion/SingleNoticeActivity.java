@@ -1,10 +1,15 @@
 package com.champs21.freeversion;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -18,13 +23,11 @@ import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
-import com.champs21.schoolapp.utils.MyTagHandler;
 import com.champs21.schoolapp.utils.ReminderHelper;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.viewhelpers.CustomButton;
-import com.champs21.schoolapp.viewhelpers.ExpandableTextView;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -42,14 +45,19 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 	
 	private TextView txtNoticeTitle;
 	private TextView txtDate;
-	private ExpandableTextView txtContent;
+	//private ExpandableTextView txtContent;
+	private WebView txtContent;
 	private CustomButton btnNoticeAcknowledge;
 	private CustomButton btnNoticeReminder;
 
     private RelativeLayout layoutMessage;
     private LinearLayout layoutDataContainer;
-	
-	
+
+	private LinearLayout layoutDownloadHolder;
+	private ImageButton btnDownload;
+
+
+
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
@@ -95,24 +103,31 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 	{
 		txtNoticeTitle = (TextView)this.findViewById(R.id.txtNoticeTitle);
 		txtDate = (TextView)this.findViewById(R.id.txtDate);
-		txtContent = (ExpandableTextView)this.findViewById(R.id.txtContent);
+		//txtContent = (ExpandableTextView)this.findViewById(R.id.txtContent);
+		txtContent = (WebView)this.findViewById(R.id.txtContent);
 		btnNoticeAcknowledge = (CustomButton)this.findViewById(R.id.btnNoticeAcknowledge);
 		btnNoticeReminder = (CustomButton)this.findViewById(R.id.btnNoticeReminder);
 
         layoutMessage = (RelativeLayout)this.findViewById(R.id.layoutMessage);
         layoutDataContainer = (LinearLayout)this.findViewById(R.id.layoutDataContainer);
+
+		this.layoutDownloadHolder = (LinearLayout)this.findViewById(R.id.layoutDownloadHolder);
+		this.btnDownload = (ImageButton)this.findViewById(R.id.btnDownload);
 	}
 	
 	
 	private void initAction()
 	{
+		/*if(ReminderHelper.getInstance().reminder_map == null)
+			ReminderHelper.getInstance().constructReminderFromSharedPreference();*/
 		
-		Log.e("TITLE", "is: "+data.getNoticeTitle());
+		Log.e("TITLE", "is: " + data.getNoticeTitle());
 		
 		
 		txtNoticeTitle.setText(data.getNoticeTitle());
 		txtDate.setText(data.getPublishedAt());
-		txtContent.setText(" "+ Html.fromHtml(data.getNoticeContent(), null, new MyTagHandler()));
+		//txtContent.setText(" "+ Html.fromHtml(data.getNoticeContent(), null, new MyTagHandler()));
+		txtContent.loadData(data.getNoticeContent(), "text/html; charset=utf-8", "UTF-8");
 		
 		btnNoticeAcknowledge.setOnClickListener(new View.OnClickListener() {
 			
@@ -185,6 +200,30 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 		}else {
 			setButtonState(btnNoticeReminder, R.drawable.btn_reminder_normal, true, "Reminder");
 		}
+
+
+		if(!TextUtils.isEmpty(data.getFile_name()))
+		{
+			layoutDownloadHolder.setVisibility(View.VISIBLE);
+		}
+		else
+		{
+			layoutDownloadHolder.setVisibility(View.GONE);
+		}
+
+
+		btnDownload.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//http://api.champs21.com/api/freeuser/downloadattachment?id=47
+
+
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri
+						.parse("http://api.champs21.com/api/notice/downloadnoticeattachment?id=" + data.getNoticeId())));
+			}
+		});
 		
 		
 	}

@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.champs21.schoolapp"
     android:installLocation="auto"
-    android:versionCode="7"
-    android:versionName="1.0.6" >
+    android:versionCode="10"
+    android:versionName="1.0.9" >
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -403,11 +403,45 @@
         </activity>
 
 
+        <activity
+            android:name="com.champs21.spellingbee.SpellingbeeTestActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible">
+
+        </activity>
+
+        <activity
+            android:name="com.champs21.spellingbee.ResultPageActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.champs21.spellingbee.LeaderBoardActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.champs21.spellingbee.AndroidFacebookConnectActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.champs21.spellingbee.SpellingbeeRulesActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
         <provider android:authorities="com.facebook.app.NativeAppCallContentProvider850059515022967"
             android:name="com.facebook.NativeAppCallContentProvider"
             android:exported="true"/>
 
 
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="64b7d5b86f3c2225536b2173e0e3ad9fabb5a1bb" />
     </application>
 
 </manifest>

@@ -82,7 +82,7 @@ public class CompleteProfileFragmentParents extends Fragment implements
 		super.onCreate(savedInstanceState);
 		cities = new ArrayList<BaseType>();
 		String[] myResArray = getResources().getStringArray(R.array.city_list);
-		for (String string : myResArray) {
+			for (String string : myResArray) {
 			City city = new City();
 			city.setName(string);
 			cities.add(city);

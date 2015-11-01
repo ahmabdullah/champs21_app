@@ -53,6 +53,8 @@ public class AppUtility {
 	public static String getCatNameById(Context con, int id) {
 		if (id == 59)
 			return "Education Changes Life";
+		if( id == 74)
+			return "Summit Salutes Nation Builders";
 		String[] myMenuArrayText = con.getResources().getStringArray(
 				R.array.free_menus_text);
 		/*
@@ -317,6 +319,7 @@ public class AppUtility {
 							int hour24, int hour12, int min, int sec,
 							String AM_PM) {
 						// TODO Auto-generated method stub
+						// TODO Auto-generated method stub
 
 						SimpleDateFormat format = new SimpleDateFormat(
 								"yyyy-MM-dd hh:mm:ss");
@@ -527,7 +530,9 @@ public class AppUtility {
 			case 7:
 				return isIcon ? (isWhite ? R.drawable.spellingbee_head
 						: R.drawable.spellingbee_head) : R.raw.edu_banner;
-
+			case 74:
+				return isIcon ? (isWhite ? R.drawable.personality_normal
+						: R.drawable.candle_icon_red) : R.raw.salute_banner;
 		default:
 			return -1;
 		}
@@ -558,6 +563,7 @@ public class AppUtility {
 	 * 
 	 * @param px
 	 *            A value in px (pixels) unit. Which we need to convert into db
+	 *
 	 * @param context
 	 *            Context to get resources and device specific display metrics
 	 * @return A float value to represent dp equivalent to px value

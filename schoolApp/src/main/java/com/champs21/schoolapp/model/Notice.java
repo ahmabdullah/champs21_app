@@ -1,8 +1,8 @@
 package com.champs21.schoolapp.model;
 
-import java.util.ArrayList;
-
 import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
 
 public class Notice {
 	@SerializedName("notice_id")
@@ -27,8 +27,18 @@ public class Notice {
 	private String authorFullName;
 	@SerializedName("acknowledge")
 	private ArrayList<Acknowledge> allAck;
-	
-	
+	@SerializedName("file_name")
+	private String file_name;
+
+
+
+	public String getFile_name() {
+		return file_name;
+	}
+
+	public void setFile_name(String file_name) {
+		this.file_name = file_name;
+	}
 
 	public ArrayList<Acknowledge> getAllAck() {
 		return allAck;

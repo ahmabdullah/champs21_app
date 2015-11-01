@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
@@ -47,8 +48,9 @@ public class TransportFragment extends UserVisibleHintFragment implements
 	private LinearLayout layoutListHolder;
 	private LinearLayout pbs;
     private Context mContext;
+	private RelativeLayout nodata;
 
-    @Override
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
@@ -106,6 +108,7 @@ public class TransportFragment extends UserVisibleHintFragment implements
 		this.layoutListHolder = (LinearLayout) view
 				.findViewById(R.id.layoutListHolder);
 		this.pbs = (LinearLayout) view.findViewById(R.id.pb);
+		this.nodata = (RelativeLayout) view.findViewById(R.id.layoutMessage);
 	}
 
 	private void initViewActions() {
@@ -172,7 +175,7 @@ public class TransportFragment extends UserVisibleHintFragment implements
 						modelContainer.getData().getAsJsonObject()
 								.get("transport").getAsJsonObject()
 								.get("schedule").getAsJsonArray().toString());
-
+				if(listSchedule.size()>0)nodata.setVisibility(View.GONE);
 				for (int i = 0; i < listSchedule.size(); i++) {
 
 					View row = LayoutInflater.from(mContext).inflate(
@@ -186,7 +189,10 @@ public class TransportFragment extends UserVisibleHintFragment implements
 					TextView txtSchoolPickUp = (TextView) row
 							.findViewById(R.id.txtSchoolPickUp);
 
-					txtDayName.setText(listSchedule.get(i).getWeekDayName());
+					String myString = listSchedule.get(i).getWeekDayName();
+					String upperString = myString.substring(0,1).toUpperCase() + myString.substring(1);
+					txtDayName.setText(upperString);
+
 					txtHomePickUp
 							.setText(listSchedule.get(i).getHomePickTime());
 					txtSchoolPickUp.setText(listSchedule.get(i)
@@ -195,6 +201,7 @@ public class TransportFragment extends UserVisibleHintFragment implements
 					layoutListHolder.addView(row);
 
 				}
+
 
 				initViewActions();
 

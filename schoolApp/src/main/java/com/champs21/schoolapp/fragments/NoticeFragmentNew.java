@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
+import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -75,6 +76,9 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 	private boolean loading = false;
 	private boolean stopLoadingData = false;
 	private String noticeType = "";
+
+	private TextView txtMessage;
+
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -96,7 +100,10 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 		// TODO Auto-generated method stub
 		view = inflater.inflate(R.layout.fragment_notice_new, container, false);
 		initView(view);
-		
+
+
+		txtMessage = (TextView)view.findViewById(R.id.txtMessage);
+
 		return view;
 	}
 	
@@ -382,6 +389,16 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 				Log.e("listnotice size", "is: "+listNotice.size());
 				
 				adapter.notifyDataSetChanged();
+
+				if(listNotice.size() <= 0)
+				{
+					txtMessage.setVisibility(View.VISIBLE);
+				}
+				else
+				{
+					txtMessage.setVisibility(View.GONE);
+				}
+
 				
 			}
 			
@@ -510,6 +527,7 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 
 				convertView = LayoutInflater.from(getActivity()).inflate(R.layout.row_notice_list, null, false);
 				holder.tvTitle = (ExpandableTextView) convertView.findViewById(R.id.txt_notice_header);
+				holder.txtAttachment = (TextView)convertView.findViewById(R.id.txtAttachment);
 				//holder.tvContent = (ExpandableTextView) convertView.findViewById(R.id.txt_notice_content);
 				holder.tvDate = (TextView) convertView.findViewById(R.id.txt_notice_date);
 				//holder.acknowledgeBtn = (CustomButton) convertView.findViewById(R.id.btn_notice_acknowledge);
@@ -534,7 +552,14 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 			
 			//holder.acknowledgeBtn.setOnClickListener(NoticeFragmentNew.this);
 			//holder.reminderBtn.setOnClickListener(NoticeFragmentNew.this);
-			
+			if(!TextUtils.isEmpty(listNotice.get(position).getFile_name()))
+			{
+				holder.txtAttachment.setVisibility(View.VISIBLE);
+			}
+			else
+			{
+				holder.txtAttachment.setVisibility(View.GONE);
+			}
 			
 			
 			/*if (listNotice.get(position).getAllAck().size() != 0) {
@@ -621,6 +646,7 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 		TextView tvDate;
 		CustomButton acknowledgeBtn;
 		CustomButton reminderBtn;
+		TextView txtAttachment;
 	}
 
 }

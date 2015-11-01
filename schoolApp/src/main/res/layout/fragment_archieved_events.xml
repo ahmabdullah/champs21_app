@@ -20,6 +20,20 @@
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false"
         android:smoothScrollbar="true" />
+
+
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="No data found!"
+        android:textColor="@color/maroon"
+        android:gravity="center"
+        android:background="@android:color/white"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textSize="22sp"/>
     
     
     <ProgressBar

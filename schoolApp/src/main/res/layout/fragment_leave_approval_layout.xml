@@ -66,13 +66,35 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/listview"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:divider="@color/gray_bg"
-        android:dividerHeight="1dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:divider="@color/gray_bg"
+            android:dividerHeight="1dp" />
+
+        <TextView
+            android:id="@+id/txtMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="No data found!"
+            android:textColor="@color/maroon"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/white"
+            android:visibility="gone"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+
+    </FrameLayout>
+
+
 
     <View
         android:layout_width="match_parent"

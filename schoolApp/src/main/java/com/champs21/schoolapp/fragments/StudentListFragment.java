@@ -1,8 +1,5 @@
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.Locale;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
@@ -16,7 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.champs21.freeversion.PaidVersionHomeFragment;
@@ -39,6 +35,9 @@ import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import java.util.ArrayList;
+import java.util.Locale;
+
 public class StudentListFragment extends UserVisibleHintFragment {
 	private View rootView;
 	private ListView studentListView;
@@ -49,6 +48,8 @@ public class StudentListFragment extends UserVisibleHintFragment {
 	private UIHelper uiHelper;
 	private boolean isStudentListloaded = false;
 	private Context mContext;
+
+	private TextView txtMessage;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -93,6 +94,18 @@ public class StudentListFragment extends UserVisibleHintFragment {
 			adapter = new StudentListAdapter(mContext, arraylist);
 			studentListView.setAdapter(adapter);
 			isStudentListloaded = true;
+
+
+			if(arraylist.size() <= 0)
+			{
+				txtMessage.setVisibility(View.VISIBLE);
+			}
+			else
+			{
+				txtMessage.setVisibility(View.GONE);
+			}
+
+
 		};
 	};
 	private ImageButton batchSelectLayout;
@@ -119,7 +132,7 @@ public class StudentListFragment extends UserVisibleHintFragment {
 		// Capture Text in EditText
 		batchSelectLayout = (ImageButton)rootView.findViewById(R.id.lay_student_list_header_tap);
 		batchSelectLayout.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				showPicker(PickerType.TEACHER_BATCH);
@@ -132,22 +145,35 @@ public class StudentListFragment extends UserVisibleHintFragment {
 				// TODO Auto-generated method stub
 				String text = editsearch.getText().toString()
 						.toLowerCase(Locale.getDefault());
-				if(selectedBatch!=null)
-				adapter.filter(text);
+				if (selectedBatch != null)
+					adapter.filter(text);
 			}
 
 			@Override
 			public void beforeTextChanged(CharSequence arg0, int arg1,
-					int arg2, int arg3) {
+										  int arg2, int arg3) {
 				// TODO Auto-generated method stub
 			}
 
 			@Override
 			public void onTextChanged(CharSequence arg0, int arg1, int arg2,
-					int arg3) {
+									  int arg3) {
 				// TODO Auto-generated method stub
 			}
 		});
+
+		txtMessage = (TextView)rootView.findViewById(R.id.txtMessage);
+
+		if(arraylist.size() <= 0)
+		{
+			txtMessage.setVisibility(View.VISIBLE);
+		}
+		else
+		{
+			txtMessage.setVisibility(View.GONE);
+		}
+
+
 		return rootView;
 	}
 	
