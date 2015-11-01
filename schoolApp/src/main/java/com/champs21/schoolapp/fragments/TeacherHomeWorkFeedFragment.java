@@ -1,25 +1,16 @@
 package com.champs21.schoolapp.fragments;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Html;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
@@ -28,7 +19,6 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.champs21.freeversion.SingleHomeworkActivity;
 import com.champs21.freeversion.SingleTeacherHomeworkActivity;
 import com.champs21.freeversion.TeacherHomeworkDoneActivity;
 import com.champs21.schoolapp.R;
@@ -36,25 +26,21 @@ import com.champs21.schoolapp.fragments.TeacherHomeWorkFragment.IFilterClicked;
 import com.champs21.schoolapp.fragments.TeacherHomeWorkFragment.IFilterInsideClicked;
 import com.champs21.schoolapp.model.BaseType;
 import com.champs21.schoolapp.model.HomeWorkSubject;
-import com.champs21.schoolapp.model.HomeworkData;
 import com.champs21.schoolapp.model.Picker;
+import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.model.PickerType;
 import com.champs21.schoolapp.model.TeacherHomework;
 import com.champs21.schoolapp.model.UserAuthListener;
 import com.champs21.schoolapp.model.Wrapper;
-import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.CustomDateTimePicker;
 import com.champs21.schoolapp.utils.GsonParser;
-import com.champs21.schoolapp.utils.MyTagHandler;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
-import com.champs21.schoolapp.utils.UserHelper.UserTypeEnum;
 import com.champs21.schoolapp.viewhelpers.CustomButton;
-import com.champs21.schoolapp.viewhelpers.ExpandableTextView;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.google.gson.JsonArray;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -63,6 +49,12 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 public class TeacherHomeWorkFeedFragment extends Fragment implements UserAuthListener, IFilterClicked, IFilterInsideClicked{
 	
@@ -84,7 +76,8 @@ public class TeacherHomeWorkFeedFragment extends Fragment implements UserAuthLis
 	private String selectedSubjectId;
 	private String selectedDate;
 	private List<BaseType> homeWorkSubject;
-	
+
+	private TextView txtMessage;
 	
 
 	@Override
@@ -94,12 +87,14 @@ public class TeacherHomeWorkFeedFragment extends Fragment implements UserAuthLis
 		adapter = new GoodReadAdapter(getActivity());
 		userHelper = new UserHelper(this, getActivity());
 		allGooadReadPost.clear();
-		Log.e("SIZE OF ALLGOODREADPOST:", ""+allGooadReadPost.size());
+		Log.e("SIZE OF ALLGOODREADPOST:", "" + allGooadReadPost.size());
 		
 		homeWorkSubject = new ArrayList<BaseType>();
 		
 		TeacherHomeWorkFragment.lsitener = this;
 		TeacherHomeWorkFragment.lsitenerInside = this;
+
+
 	}
 
 	@Override
@@ -115,6 +110,9 @@ public class TeacherHomeWorkFeedFragment extends Fragment implements UserAuthLis
 		loadDataInToList();
 		
 		initListAction();
+
+		txtMessage = (TextView)view.findViewById(R.id.txtMessage);
+
 		
 		return view;
 	}
@@ -336,6 +334,16 @@ public class TeacherHomeWorkFeedFragment extends Fragment implements UserAuthLis
 				if (pageNumber != 0 || isRefreshing) {
 					listGoodread.onRefreshComplete();
 					loading = false;
+				}
+
+
+				if(allGooadReadPost.size() <= 0)
+				{
+					txtMessage.setVisibility(View.VISIBLE);
+				}
+				else
+				{
+					txtMessage.setVisibility(View.GONE);
 				}
 				
 				

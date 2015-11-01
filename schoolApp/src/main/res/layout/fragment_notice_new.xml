@@ -97,13 +97,17 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="10dp" >
-        
-        <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp" >
+
+            <com.handmark.pulltorefresh.library.PullToRefreshListView
                 android:id="@+id/listViewNotice"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -111,7 +115,28 @@
                 android:cacheColorHint="#00000000"
                 android:smoothScrollbar="true"
                 android:dividerHeight="1dp" />
-        
-    </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="No data found!"
+            android:textColor="@color/maroon"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/white"
+            android:visibility="gone"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="22sp"/>
+
+
+    </FrameLayout>
+
+
 
 </LinearLayout>

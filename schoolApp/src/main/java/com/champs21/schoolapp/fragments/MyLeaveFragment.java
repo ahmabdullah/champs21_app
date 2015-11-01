@@ -48,6 +48,8 @@ public class MyLeaveFragment extends  UserVisibleHintFragment{
 	
 	private TextView txtDate;
 
+	private TextView txtMessage;
+
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
@@ -127,6 +129,18 @@ public class MyLeaveFragment extends  UserVisibleHintFragment{
 					(wrapper.getData().get("leaves")).toString()));
 			adapter = new StudentLeaveListAdapter(getActivity(), arraylist);
 			studentListView.setAdapter(adapter);
+
+
+			if(arraylist.size() <=0 )
+			{
+				txtMessage.setVisibility(View.VISIBLE);
+			}
+			else
+			{
+				txtMessage.setVisibility(View.GONE);
+			}
+
+
 		};
 	};
 
@@ -149,6 +163,8 @@ public class MyLeaveFragment extends  UserVisibleHintFragment{
 		Date cDate = new Date();
 		String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
 		txtDate.setText(AppUtility.getDateString(fDate, AppUtility.DATE_FORMAT_APP, AppUtility.DATE_FORMAT_SERVER));
+
+		txtMessage = (TextView)rootView.findViewById(R.id.txtMessage);
 		
 		return rootView;
 	}

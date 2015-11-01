@@ -68,6 +68,17 @@
         android:orientation="vertical"
         android:padding="10dip" >
 
+        <TextView
+            android:id="@+id/txtAttachment"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/maroon"
+            android:visibility="gone"
+            android:text="This notice has attachment" />
+
         <com.champs21.schoolapp.viewhelpers.ExpandableTextView
             android:id="@+id/txt_notice_header"
             android:layout_width="match_parent"
@@ -77,6 +88,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/black"
             android:textStyle="italic" />
+
+
     </LinearLayout>
 
     <LinearLayout

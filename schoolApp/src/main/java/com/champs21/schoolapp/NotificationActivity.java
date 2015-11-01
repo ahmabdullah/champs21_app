@@ -156,7 +156,9 @@ public class NotificationActivity extends ChildContainerActivity{
 				// TODO Auto-generated method stub
 				NotificationReminder data = (NotificationReminder)mAdapter.getItem(position-1);
 				invokeClasses(data.getRtype(), data);
-				
+
+				data.setIsAlreadyRead(true);
+
 				//View clickedView = mAdapter.getView(position-1, null, null);
 				
 				LinearLayout lay = (LinearLayout)view.findViewById(R.id.layoutRootView);
@@ -281,6 +283,11 @@ public class NotificationActivity extends ChildContainerActivity{
 				holder.layoutRootView.setBackgroundColor(Color.parseColor("#edeeef"));
 			}
 			else
+			{
+				holder.layoutRootView.setBackgroundColor(Color.WHITE);
+			}
+
+			if(list.get(position).isAlreadyRead())
 			{
 				holder.layoutRootView.setBackgroundColor(Color.WHITE);
 			}

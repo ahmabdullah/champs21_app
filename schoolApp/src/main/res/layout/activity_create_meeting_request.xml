@@ -296,7 +296,7 @@
                         android:background="@color/gray_2"
                         android:ems="10"
                         android:gravity="top"
-                        android:hint="write your description"
+                        android:hint="Write your description"
                         android:inputType="textMultiLine"
                         android:padding="5dp"
                         android:textColor="@android:color/black"

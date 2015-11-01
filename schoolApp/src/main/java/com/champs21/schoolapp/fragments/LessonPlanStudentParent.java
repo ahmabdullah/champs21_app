@@ -51,6 +51,8 @@ public class LessonPlanStudentParent extends Fragment{
 
     private LessonPlanSubjectAdapter adapter;
 
+    private TextView txtMessage;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -101,6 +103,8 @@ public class LessonPlanStudentParent extends Fragment{
 
             }
         });*/
+
+        txtMessage = (TextView)view.findViewById(R.id.txtMessage);
 
     }
 
@@ -162,6 +166,16 @@ public class LessonPlanStudentParent extends Fragment{
                 }
 
                 adapter.notifyDataSetChanged();
+
+
+                if(listSubject.size() <= 0)
+                {
+                    txtMessage.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    txtMessage.setVisibility(View.GONE);
+                }
 
             }
 

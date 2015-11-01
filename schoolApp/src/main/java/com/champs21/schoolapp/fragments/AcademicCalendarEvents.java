@@ -3,9 +3,6 @@
  */
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,6 +33,9 @@ import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  */
@@ -52,7 +52,8 @@ public class AcademicCalendarEvents extends UserVisibleHintFragment implements U
 	private TextView gridTitleText;
 	private LinearLayout pbs;
 	private static final String TAG="Academic Calendar Events";
-	
+	private TextView nodata;
+
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -81,6 +82,7 @@ public class AcademicCalendarEvents extends UserVisibleHintFragment implements U
 		gridTitleText=(TextView)view.findViewById(R.id.grid_title_textview);
 		gridTitleText.setText(getString(R.string.title_events_calendar_tab));
 		pbs = (LinearLayout)view.findViewById(R.id.pb);
+		nodata = (TextView)view.findViewById(R.id.nodataMsg);
 		setUpList();
 		loadDataInToList();
 		return view;
@@ -149,6 +151,7 @@ public class AcademicCalendarEvents extends UserVisibleHintFragment implements U
 				items.clear();
 				items.addAll(GsonParser.getInstance().parseAcademicCalendarData(wrapper.getData().getAsJsonArray("events").toString()));
 				adapter.notifyDataSetChanged();
+				nodata.setVisibility((items.size() > 0)?View.GONE:View.VISIBLE);
 			}
 			else if(wrapper.getStatus().getCode()==AppConstant.RESPONSE_CODE_SESSION_EXPIRED)
 			{

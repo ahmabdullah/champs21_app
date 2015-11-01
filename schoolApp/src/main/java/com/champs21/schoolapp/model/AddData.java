@@ -9,6 +9,11 @@ public class AddData {
 	private String ad_image_link;
 	@SerializedName("ad_image_caption")
 	private String ad_image_caption;
+	@SerializedName("ad_image_category")
+	private String ad_image_category;
+	@SerializedName("ad_image_subcategory")
+	private String ad_image_subcategory;
+
 
 	public String getAd_image() {
 		return ad_image;
@@ -34,4 +39,19 @@ public class AddData {
 		this.ad_image_caption = ad_image_caption;
 	}
 
+	public String getAd_image_subcategory() {
+		return ad_image_subcategory;
+	}
+
+	public void setAd_image_subcategory(String ad_image_subcategory) {
+		this.ad_image_subcategory = ad_image_subcategory;
+	}
+
+	public String getAd_image_category() {
+		return ad_image_category;
+	}
+
+	public void setAd_image_category(String ad_image_category) {
+		this.ad_image_category = ad_image_category;
+	}
 }

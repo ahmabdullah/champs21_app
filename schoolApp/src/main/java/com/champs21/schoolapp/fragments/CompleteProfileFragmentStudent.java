@@ -139,6 +139,7 @@ public class CompleteProfileFragmentStudent extends Fragment implements
 		rBFemale = (RadioButton) view.findViewById(R.id.radio1);
 		for(int i=0;i<6;i++){
 			allStarImageView[i]= (ImageView) view.findViewById(starIds[i]);
+			allStarImageView[i].setVisibility(willplay?View.VISIBLE:View.INVISIBLE);
 		}
 		return view;
 	}

@@ -96,74 +96,34 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:id="@+id/tv_homework_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dip"
-                    android:textColor="@color/black"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="14sp"
-                    android:textStyle="italic|bold" />
-
-                <com.champs21.schoolapp.viewhelpers.ExpandableTextView
-                    android:id="@+id/txtContent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dip"
-                    android:textColor="@color/black"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textStyle="italic" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="@color/gray_2" >
-                </LinearLayout>
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp" >
+                    android:background="@color/white"
+                    android:orientation="vertical" >
 
                     <TextView
-                        android:id="@+id/tv_teavher_homework_feed_section"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tv_homework_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:textColor="@android:color/black"/>
+                        android:layout_margin="10dip"
+                        android:textColor="@color/black"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="14sp"
+                        android:textStyle="italic|bold" />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layoutDownloadHolder"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:visibility="gone" >
-
-                    <ImageButton
-                        android:id="@+id/btnDownload"
-                        android:layout_width="wrap_content"
+                    <com.champs21.schoolapp.viewhelpers.ExpandableTextView
+                        android:id="@+id/txtContent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/btn_download" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/bottmlay"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/textlay"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/white"
-                    android:orientation="vertical" >
+                        android:layout_margin="10dip"
+                        android:textColor="@color/black"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -172,42 +132,90 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/layoutBottomPanel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal" >
+                        android:layout_margin="10dp" >
 
-                        <com.champs21.schoolapp.viewhelpers.CustomButton
-                            android:id="@+id/btn_done"
+                        <TextView
+                            android:id="@+id/tv_teavher_homework_feed_section"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/general_btn"
-                            android:clickable="true"
-                            android:gravity="center"
-                            custom:iconImage="@drawable/done_normal"
-                            custom:iconText="@string/btn_done" />
+                            android:textSize="15sp"
+                            android:textColor="@android:color/black"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutDownloadHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:visibility="gone" >
+
+                        <ImageButton
+                            android:id="@+id/btnDownload"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn_download" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bottmlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textlay"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@android:color/white"
+                        android:orientation="vertical" >
 
                         <LinearLayout
-                            android:layout_width="2dip"
-                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
                             android:background="@color/gray_2" >
                         </LinearLayout>
 
-                        <com.champs21.schoolapp.viewhelpers.CustomButton
-                            android:id="@+id/btn_reminder"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:id="@+id/layoutBottomPanel"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/general_btn"
-                            android:clickable="true"
-                            android:gravity="center"
-                            custom:iconImage="@drawable/btn_reminder_normal"
-                            custom:iconText="@string/btn_reminder" />
+                            android:orientation="horizontal" >
 
+                            <com.champs21.schoolapp.viewhelpers.CustomButton
+                                android:id="@+id/btn_done"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/general_btn"
+                                android:clickable="true"
+                                android:gravity="center"
+                                custom:iconImage="@drawable/done_normal"
+                                custom:iconText="@string/btn_done" />
+
+                            <LinearLayout
+                                android:layout_width="2dip"
+                                android:layout_height="match_parent"
+                                android:background="@color/gray_2" >
+                            </LinearLayout>
+
+                            <com.champs21.schoolapp.viewhelpers.CustomButton
+                                android:id="@+id/btn_reminder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/general_btn"
+                                android:clickable="true"
+                                android:gravity="center"
+                                custom:iconImage="@drawable/btn_reminder_normal"
+                                custom:iconText="@string/btn_reminder" />
+
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+
+            </ScrollView>
+
+
 
         </LinearLayout>
 

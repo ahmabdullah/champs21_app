@@ -242,8 +242,13 @@ public class URLHelper {
 
 	//&&&&&&&&&&&&&&&&&&&&&&&&& SPELLING BEE STARTS &&&&&&&&&&&&&&&&&&&&&
 
+	public final static String SPELLINGBEE_INIT = "spelltv";
+
 	public final static String SPELLINGBEE_SAVESCORE = "freeuser/savespellingbee";
+	public final static String SPELLINGBEE_SAVESCORE_NEW = "spelltv/savespellingtv";
+
 	public final static String SPELLINGBEE_LEADERBOARD = "freeuser/getleaderboard";
+	public final static String SPELLINGBEE_LEADERBOARD_NEW = "spelltv/getleaderboard";
 
 
 	//&&&&&&&&&&&&&&&&&&&&&&&&& SPELLING BEE ENDS &&&&&&&&&&&&&&&&&&&&&

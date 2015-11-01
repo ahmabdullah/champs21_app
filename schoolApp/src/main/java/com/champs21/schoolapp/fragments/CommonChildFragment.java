@@ -171,7 +171,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
         listViewFitness.setOnRefreshListener(new OnRefreshListener<ListView>() {
             @Override
             public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-                String label = DateUtils.formatDateTime(getActivity(),
+                String label = DateUtils.formatDateTime(mContext,
                         System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME
                                 | DateUtils.FORMAT_SHOW_DATE
                                 | DateUtils.FORMAT_ABBREV_ALL);
@@ -198,7 +198,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
             }
         });
 
-        fitnessAdapter = new EfficientAdapter(getActivity(),
+        fitnessAdapter = new EfficientAdapter(mContext,
                 new ArrayList<FreeVersionPost>());
         fitnessAdapter.clearList();
         listViewFitness.setAdapter(fitnessAdapter);
@@ -261,7 +261,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
         setupPoppyView(mQuickReturnTextView);
         listViewFitness = (PullToRefreshListViewCustom) view
                 .findViewById(R.id.listView_category);
-        int footerHeight = getActivity().getResources().getDimensionPixelSize(
+        int footerHeight = mContext.getResources().getDimensionPixelSize(
                 R.dimen.footer_height);
         listViewFitness.setQuickReturnListViewOnScrollListener(
                 PullToRefreshListViewCustom.QuickReturnType.FOOTER, null, 0,
@@ -329,7 +329,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                 .cacheInMemory(true).cacheOnDisc(true).build();
 
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
-                getActivity()).threadPriority(Thread.NORM_PRIORITY - 2)
+                mContext).threadPriority(Thread.NORM_PRIORITY - 2)
                 .defaultDisplayImageOptions(defaultOptions)
                 .discCacheFileNameGenerator(new Md5FileNameGenerator())
                 .tasksProcessingOrder(QueueProcessingType.LIFO)
@@ -352,7 +352,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                                  String descriptionText) {
 
         PopupDialog picker = PopupDialog.newInstance(0);
-        picker.setData(headerText, descriptionText, imgResId, getActivity());
+        picker.setData(headerText, descriptionText, imgResId, mContext);
         picker.show(getChildFragmentManager(), null);
     }
 
@@ -401,7 +401,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                     switch (UserHelper.getUserAccessType()) {
                         case FREE:
                             if (userHelper.getUser().isJoinedToSchool()) {
-                                Intent schoolIntent = new Intent(getActivity(),
+                                Intent schoolIntent = new Intent(mContext,
                                         SingleSchoolFreeVersionActivity.class);
                                 schoolIntent
                                         .putExtra(AppConstant.SCHOOL_ID, UserHelper
@@ -409,7 +409,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                                 startActivity(schoolIntent);
 
                             } else {
-                                Intent schoolIntent = new Intent(getActivity(),
+                                Intent schoolIntent = new Intent(mContext,
                                         SchoolFreeVersionActivity.class);
                                 startActivity(schoolIntent);
                             }
@@ -417,7 +417,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
 
                         case PAID:
                             if (userHelper.getUser().getType() == UserTypeEnum.PARENTS)
-                                startActivityForResult(new Intent(getActivity(),
+                                startActivityForResult(new Intent(mContext,
                                                 ChildSelectionActivity.class),
                                         REQUEST_CODE_CHILD_SELECTION);
                             else {
@@ -435,7 +435,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                             break;
                     }
                 } else {
-                    Intent schoolIntent = new Intent(getActivity(),
+                    Intent schoolIntent = new Intent(mContext,
                             SchoolFreeVersionActivity.class);
                     startActivity(schoolIntent);
                 }
@@ -451,7 +451,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
             @Override
             public void onClick(View v) {
                 if (UserHelper.isLoggedIn())
-                    startActivity(new Intent(getActivity(),
+                    startActivity(new Intent(mContext,
                             CandleActivity.class));
                 else {
                     showCustomDialog(
@@ -1453,14 +1453,14 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                         holder.btnLeader.setOnClickListener(new OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                startActivity(new Intent(getActivity(),
+                                startActivity(new Intent(mContext,
                                         LeaderBoardActivity.class));
                             }
                         });
                         holder.btnRule.setOnClickListener(new OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                startActivity(new Intent(getActivity(),
+                                startActivity(new Intent(mContext,
                                         SpellingbeeRulesActivity.class));
                             }
                         });
@@ -1470,22 +1470,22 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                                 if (UserHelper.isLoggedIn()){
                                     if(userHelper.getUser().getType()==UserTypeEnum.STUDENT){
                                         if(UserHelper.getSpellingStatus()==0){
-                                            Intent i = new Intent(getActivity(),
+                                            Intent i = new Intent(mContext,
                                                     CompleteProfileActivityContainer.class);
                                             i.putExtra(SPKeyHelper.USER_TYPE, userHelper.getUser().getType().ordinal());
                                             startActivity(i);
                                         }else {
-                                            startActivity(new Intent(getActivity(),
+                                            startActivity(new Intent(mContext,
                                                     SpellingbeeTestActivity.class));
                                         }
                                     }else {
-                                        startActivity(new Intent(getActivity(),
+                                        startActivity(new Intent(mContext,
                                                 SpellingbeeTestActivity.class));
                                     }
 
                                 }
                                 else {
-                                    startActivity(new Intent(getActivity(),
+                                    startActivity(new Intent(mContext,
                                             LoginActivity.class));
                                 }
                             }
@@ -1671,6 +1671,27 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
 					 */
                         // Uri uri = Uri.parse("drawable://" +
                         // AppUtility.getResourceImageId(resId, false, false));
+                        holder.bannerView.setTag(""+position);
+                        holder.bannerView.setOnClickListener(new OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    if(list.get(Integer.parseInt(view.getTag().toString())).getCategoryId().equals("74")){
+                                        if (UserHelper.isLoggedIn())
+                                            startActivity(new Intent(mContext,
+                                                    CandleActivity.class));
+                                        else {
+                                            showCustomDialog(
+                                                    "CANDLE",
+                                                    R.drawable.candle_popup_icon,
+                                                    getResources().getString(R.string.candle_msg)
+                                                            + "\n"
+                                                            + getResources().getString(
+                                                            R.string.not_logged_in_msg));
+                                        }
+                                    }
+                                }
+                        });
+
                         imageLoader.displayImage(
                                 "drawable://"
                                         + AppUtility.getResourceImageId(resId,
@@ -1770,12 +1791,11 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                     // assesment
 
                     if (item.getForceAssessment().equalsIgnoreCase("1")) {
-                        Intent intent = new Intent(CommonChildFragment.this
-                                .getActivity(), AssesmentActivity.class);
+                        Intent intent = new Intent(mContext, AssesmentActivity.class);
                         startActivity(intent);
                     } else {
                         if (item.getPostType().equals("1")) {
-                            Intent intent = new Intent(getActivity(), SingleItemShowActivity.class);
+                            Intent intent = new Intent(mContext, SingleItemShowActivity.class);
                             intent.putExtra(AppConstant.ITEM_ID, item.getId());
                             intent.putExtra(AppConstant.ITEM_CAT_ID,
                                     item.getCategoryId());
@@ -1853,7 +1873,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                 @Override
                 public void onClick(View v) {
                     if (AppUtility.isInternetConnected()) {
-                        ((HomeContainerActivity) getActivity())
+                        ((HomeContainerActivity) mContext)
                                 .sharePostUniversal(list.get(Integer.parseInt(v
                                         .getTag().toString())));
                     }
@@ -1946,7 +1966,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
 
                                 if (item.getForceAssessment().equalsIgnoreCase("1")) {
                                     Intent intent = new Intent(
-                                            CommonChildFragment.this.getActivity(),
+                                            mContext,
                                             AssesmentActivity.class);
                                     startActivity(intent);
                                 } else {
@@ -1966,7 +1986,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
 
                                         } else {
                                             Intent intent = new Intent(
-                                                    getActivity(),
+                                                    mContext,
                                                     SingleItemShowActivity.class);
                                             intent.putExtra(AppConstant.ITEM_ID,
                                                     item.getId());
@@ -1993,23 +2013,34 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                                     } else if (item.getPostType().equals("2")) {
                                         if (!TextUtils.isEmpty(item
                                                 .getCategory_id_to_use())) {
-                                            ((HomePageFreeVersion) getActivity()).loadCategory(
+                                            ((HomePageFreeVersion) mContext).loadCategory(
                                                     Integer.parseInt(item
                                                             .getCategory_id_to_use()),
                                                     item.getSubcategory_id_to_use());
                                         } else {
+
                                             ViewPager vp = (ViewPager) v;
-                                            Intent i = new Intent(
-                                                    Intent.ACTION_VIEW);
-                                            i.setData(Uri.parse(item
-                                                    .getAdd_images()
-                                                    .get(vp.getCurrentItem())
-                                                    .getAd_image_link()));
-                                            if (!TextUtils.isEmpty(item
-                                                    .getAdd_images()
-                                                    .get(vp.getCurrentItem())
-                                                    .getAd_image_link())) {
-                                                startActivity(i);
+                                            AddData adata = item.getAdd_images()
+                                                    .get(vp.getCurrentItem());
+
+                                            if(!TextUtils.isEmpty(adata.getAd_image_category()) && !TextUtils.isEmpty(adata.getAd_image_subcategory()) && !adata.getAd_image_category().equals("0")) {
+                                                ((HomePageFreeVersion) mContext).loadCategory(
+                                                        Integer.parseInt(adata.getAd_image_category()),
+                                                        adata.getAd_image_subcategory());
+                                            } else {
+                                                Intent i = new Intent(
+                                                        Intent.ACTION_VIEW);
+                                                i.setData(Uri.parse(item
+                                                        .getAdd_images()
+                                                        .get(vp.getCurrentItem())
+                                                        .getAd_image_link()));
+                                                if (!TextUtils.isEmpty(item
+                                                        .getAdd_images()
+                                                        .get(vp.getCurrentItem())
+                                                        .getAd_image_link())) {
+                                                    startActivity(i);
+                                            }
+
                                             }
                                         }
 
@@ -2060,7 +2091,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                     mainHome.setImageResource(R.drawable.home_tap);
                     mainHome.setTag(1);
                     selectedEnum = UserTypeEnum.OTHER;
-                    ((HomePageFreeVersion) getActivity()).loadHome();
+                    ((HomePageFreeVersion) mContext).loadHome();
 
                 }
                 break;
@@ -2102,7 +2133,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                         .getItem(Integer.parseInt(v.getTag().toString()));
 
                 if (item.getPostType().equals("1")) {
-                    Intent intent = new Intent(getActivity(),
+                    Intent intent = new Intent(mContext,
                             SingleItemShowActivity.class);
                     intent.putExtra(AppConstant.ITEM_ID, item.getId());
                     intent.putExtra(AppConstant.ITEM_CAT_ID, item.getCategoryId());
@@ -2118,7 +2149,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                     fitnessAdapter.notifyDataSetChanged();
                 } else if (item.getPostType().equals("2")) {
                     if (!TextUtils.isEmpty(item.getCategory_id_to_use()))
-                        ((HomePageFreeVersion) getActivity()).loadCategory(
+                        ((HomePageFreeVersion) mContext).loadCategory(
                                 Integer.parseInt(item.getCategory_id_to_use()),
                                 item.getSubcategory_id_to_use());
                 }
@@ -2344,7 +2375,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                                     message = "Unknown error";
                                     break;
                             }
-                            Toast.makeText(getActivity(), message,
+                            Toast.makeText(mContext, message,
                                     Toast.LENGTH_SHORT).show();
                             spinner.setVisibility(View.GONE);
                         }
