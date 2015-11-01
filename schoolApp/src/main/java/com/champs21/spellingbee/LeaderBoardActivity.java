@@ -41,6 +41,7 @@ import java.util.List;
 public class LeaderBoardActivity extends ChildContainerActivity {
 
 
+
     private ImageView imgProfileImage;
     private TextView txtName;
 

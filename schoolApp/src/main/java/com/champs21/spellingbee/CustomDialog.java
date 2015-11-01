@@ -19,6 +19,7 @@ import java.util.Random;
  */
 public class CustomDialog extends Dialog{
 
+
     private TextView txtTime;
     private ImageButton btnSkip;
     private CountDownTimerPausable countDownTimer = null;

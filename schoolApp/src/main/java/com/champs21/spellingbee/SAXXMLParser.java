@@ -13,6 +13,7 @@ import java.util.List;
 import javax.xml.parsers.SAXParserFactory;
 
 public class SAXXMLParser {
+
     public static List<SpellingbeeDataModel> parse(InputStream is) {
         List<SpellingbeeDataModel> data = null;
         try {

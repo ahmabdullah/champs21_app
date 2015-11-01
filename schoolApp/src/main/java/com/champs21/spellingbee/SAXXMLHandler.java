@@ -13,6 +13,7 @@ import java.util.List;
 
 
 public class SAXXMLHandler extends DefaultHandler {
+
  
     private List<SpellingbeeDataModel> data;
     private String tempVal;

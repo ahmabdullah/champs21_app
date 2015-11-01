@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
  * Created by BLACK HAT on 06-May-15.
  */
 public class PrefSingleton {
+
     private static PrefSingleton mInstance;
     private Context mContext;
     //

@@ -38,6 +38,7 @@ import java.net.MalformedURLException;
 
 public class AndroidFacebookConnectActivity extends Activity implements Session.StatusCallback {
 
+
 	// Your Facebook APP ID
 	private static String APP_ID = "850059515022967"; // Replace with your App
 														// ID

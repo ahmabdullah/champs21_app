@@ -14,6 +14,7 @@ import com.champs21.schoolapp.R;
 public class SpellingbeeRulesActivity extends ChildContainerActivity {
 
 
+
     private WebView webViewRules;
 
 

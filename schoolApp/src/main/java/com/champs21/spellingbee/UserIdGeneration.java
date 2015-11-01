@@ -11,6 +11,7 @@ import java.util.Random;
  * Created by BLACK HAT on 04-Jun-15.
  */
 public class UserIdGeneration {
+    
 
     public static String[] method = new String[]{"c", "p", "s", "m", "d"};
     public static String[] operator = new String[]{"m", "p"};

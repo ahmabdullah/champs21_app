@@ -1,6 +1,7 @@
 package com.champs21.spellingbee;
 
 public class AppMessages {
+
 	
 	//SplashActivity.java //this class contains no string message data
 	

@@ -7,6 +7,7 @@ import com.champs21.schoolapp.utils.UserHelper;
  */
 public class SpellingbeeConstants {
 
+
     public static long SPELLINGBEE_TIMER = 30000;
     public static int PER_ITEM_PICK_COUNT = 2;
     public static int CHECK_POINT = 20;

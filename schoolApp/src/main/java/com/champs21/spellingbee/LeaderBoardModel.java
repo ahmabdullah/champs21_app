@@ -8,6 +8,7 @@ import com.google.gson.annotations.SerializedName;
 public class LeaderBoardModel {
 
 
+
     @SerializedName("user_fullname")
     private String userFullname;
 

@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 public class ResultPageActivity extends ChildContainerActivity {
 
 
+
     private String typedWord = "";
     private String actualWord = "";
     private String timeTaken = "";

@@ -5,5 +5,6 @@ package com.champs21.spellingbee;
  */
 public interface IOnSkipButtonClick {
 
+
     public void onSkipButtonClicked();
 }
