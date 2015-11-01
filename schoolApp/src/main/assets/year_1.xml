@@ -170,7 +170,7 @@
 	</data>
 	<data id="22">
 		<word>antenna</word>
-		<bangla_meaning>বেতারের তরঙ্গ সংগ্রাহক আকাশ তার</bangla_meaning>
+		<bangla_meaning>কীট পতঙ্গের মাথার জোড়া শুঁড়</bangla_meaning>
 		<definition>either of the two long thin parts on the heads of some insects and some animals.</definition>
 		<sentence>He picked the cockroach by its antenna.</sentence>
 		<wtype>noun</wtype>
@@ -1156,7 +1156,7 @@
 		<word>gravy</word>
 		<bangla_meaning>মাংসের রসা ঝোল</bangla_meaning>
 		<definition>fat and juices exuding from meat during cooking .</definition>
-		<sentence>The roast was swimming in delicious gravy.</sentence>
+		<sentence>Please add salt and black pepper to the gravy.</sentence>
 		<wtype>noun</wtype>
 		<level>0</level>
 	</data>
@@ -1643,7 +1643,7 @@
 	<data id="206">
 		<word>peculiar</word>
 		<bangla_meaning>অদ্ভুত</bangla_meaning>
-		<definition>strange .</definition>
+		<definition>strange or odd.</definition>
 		<sentence>His peculiar behaviour was noticed by everyone.</sentence>
 		<wtype>adjective</wtype>
 		<level>0</level>
@@ -2059,7 +2059,7 @@
 	<data id="258">
 		<word>generosity</word>
 		<bangla_meaning>দাক্ষিণ্য</bangla_meaning>
-		<definition>quality of being kind and generous .</definition>
+		<definition>quality of being kind.</definition>
 		<sentence>We were amazed by his generosity in inviting us to stay at his home.</sentence>
 		<wtype>noun</wtype>
 		<level>0</level>
