@@ -32,6 +32,7 @@ import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.ReportCardModel;
 import com.champs21.schoolapp.model.User;
 import com.champs21.schoolapp.networking.LruBitmapCache;
+import com.crashlytics.android.Crashlytics;
 import com.facebook.SessionDefaultAudience;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -45,6 +46,7 @@ import com.sromku.simple.fb.SimpleFacebookConfiguration;
 
 import java.util.ArrayList;
 
+import io.fabric.sdk.android.Fabric;
 import roboguice.activity.RoboFragmentActivity;
 
 
@@ -247,6 +249,7 @@ public class SchoolApp extends Application {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
+		Fabric.with(this, new Crashlytics());
 		//Fabric.with(this, new Crashlytics());
 		singleton = this;
 		
