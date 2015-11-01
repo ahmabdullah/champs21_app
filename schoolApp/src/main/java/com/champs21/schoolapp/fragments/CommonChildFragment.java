@@ -744,7 +744,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                 } else if (allpost.get(i).getPostType().equals("0")) {
                     allpost.get(i).setCategoryId(currentCategoryId);
                     if(currentCategoryId.equals("7")){
-                       fitnessAdapter.addSbStaticItem(allpost.get(i));
+                        fitnessAdapter.addSbStaticItem(allpost.get(i));
                     }else fitnessAdapter.addBannerItem(allpost.get(i));
                 } else if (allpost.get(i).getPostType().equals("3")) {
                     fitnessAdapter.addSpellItem(allpost.get(i));
