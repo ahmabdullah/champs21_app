@@ -35,6 +35,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.champs21.freeversion.AssesmentActivity;
 import com.champs21.freeversion.CandleActivity;
+import com.champs21.freeversion.CompleteProfileActivityContainer;
 import com.champs21.freeversion.GoodReadActivity;
 import com.champs21.freeversion.HomeContainerActivity;
 import com.champs21.freeversion.HomePageFreeVersion;
@@ -43,6 +44,7 @@ import com.champs21.freeversion.SchoolFreeVersionActivity;
 import com.champs21.freeversion.SingleItemShowActivity;
 import com.champs21.freeversion.SingleSchoolFreeVersionActivity;
 import com.champs21.schoolapp.ChildSelectionActivity;
+import com.champs21.schoolapp.LoginActivity;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.AddData;
 import com.champs21.schoolapp.model.FreeVersionPost;
@@ -55,6 +57,7 @@ import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
+import com.champs21.schoolapp.utils.SPKeyHelper;
 import com.champs21.schoolapp.utils.SchoolApp;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
@@ -68,6 +71,9 @@ import com.champs21.schoolapp.viewhelpers.PopupDialog;
 import com.champs21.schoolapp.viewhelpers.ResizableImageView;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.champs21.schoolapp.viewhelpers.UninterceptableViewPager;
+import com.champs21.spellingbee.LeaderBoardActivity;
+import com.champs21.spellingbee.SpellingbeeRulesActivity;
+import com.champs21.spellingbee.SpellingbeeTestActivity;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
@@ -738,7 +744,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                 } else if (allpost.get(i).getPostType().equals("0")) {
                     allpost.get(i).setCategoryId(currentCategoryId);
                     if(currentCategoryId.equals("7")){
-                       //fitnessAdapter.addSbStaticItem(allpost.get(i));
+                        fitnessAdapter.addSbStaticItem(allpost.get(i));
                     }else fitnessAdapter.addBannerItem(allpost.get(i));
                 } else if (allpost.get(i).getPostType().equals("3")) {
                     fitnessAdapter.addSpellItem(allpost.get(i));
@@ -1089,7 +1095,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
             ProgressBar pb1, pb2, pb3;
             ProgressBar singlePb;
 
-            //ImageButton btnLeader,btnRule, btnPlay;
+            ImageButton btnLeader,btnRule, btnPlay;
 
         }
 
@@ -1183,13 +1189,13 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                                 .findViewById(R.id.mypb);
                         break;
                     case TYPE_SB_STATIC:
-                       /* convertView = mInflater
+                        convertView = mInflater
                                 .inflate(
                                         R.layout.spelling_bee_layout_row,
                                         parent, false);
                         holder.btnLeader = (ImageButton) convertView.findViewById(R.id.btnLeaderBoardsb);
                         holder.btnRule = (ImageButton) convertView.findViewById(R.id.btnRules);
-                        holder.btnPlay = (ImageButton) convertView.findViewById(R.id.btnSbPlay);*/
+                        holder.btnPlay = (ImageButton) convertView.findViewById(R.id.btnSbPlay);
                         break;
                     case TYPE_NINE:
                         convertView = mInflater.inflate(
@@ -1447,7 +1453,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
 
                         break;
                     case TYPE_SB_STATIC:
-                        /*if(userHelper.isLoggedIn())holder.btnPlay.setBackgroundResource(R.drawable.spellingbee_play_btn);
+                        if(userHelper.isLoggedIn())holder.btnPlay.setBackgroundResource(R.drawable.spellingbee_play_btn);
                         else holder.btnPlay.setBackgroundResource(R.drawable.spellingbee_join);
 
                         holder.btnLeader.setOnClickListener(new OnClickListener() {
@@ -1489,7 +1495,7 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
                                             LoginActivity.class));
                                 }
                             }
-                        });*/
+                        });
                         break;
                     case TYPE_ONE:
                         setDataToView(holder, resId, position);
