@@ -433,11 +433,32 @@
             android:screenOrientation="portrait">
 
         </activity>
-        <activity
-            android:name="com.champs21.schoolapp.classtune.ClassTuneRegistrationActivity"
-            android:screenOrientation="portrait">
 
+        <activity
+            android:name="com.champs21.schoolapp.classtune.UserSelectionActivity"
+            android:screenOrientation="portrait">
         </activity>
+
+        <activity
+            android:name="com.champs21.schoolapp.classtune.RegistrationFirstPhaseActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.champs21.schoolapp.classtune.CreateStudentActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.champs21.schoolapp.classtune.CreateParentActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.champs21.schoolapp.classtune.CreateTeacherActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
 
         <provider android:authorities="com.facebook.app.NativeAppCallContentProvider850059515022967"
             android:name="com.facebook.NativeAppCallContentProvider"

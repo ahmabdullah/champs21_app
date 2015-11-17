@@ -41,5 +41,7 @@
 	<color name="absent_class">#e43b0d</color>
 	<color name="late_class">#f7941d</color>
 	<color name="leave_class">#1a93c2</color>
+
+	<color name="classtune_user_selection_signin">#74af27</color>
 	
 </resources>

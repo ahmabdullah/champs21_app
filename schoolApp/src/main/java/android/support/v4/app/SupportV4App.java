@@ -8,7 +8,7 @@ public class SupportV4App {
     }
 
     public static ArrayList<Fragment> activityFragmentsActive(FragmentActivity activity) {
-        return activity.mFragments.mActive;
+            return activity.mFragments.mActive;
     }
 
     public static int fragmentIndex(Fragment fragment) {

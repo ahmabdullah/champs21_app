@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.provider.Settings;
 import android.support.v4.app.FragmentManager;
 import android.telephony.TelephonyManager;
@@ -384,5 +385,11 @@ public class SchoolApp extends Application {
 	public void onTerminate() {
 		// TODO Auto-generated method stub
 		super.onTerminate();
+	}
+
+	public Typeface getClassTuneFontRes(String fontPath) {
+		Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/"+fontPath);
+
+		return tf;
 	}
 }

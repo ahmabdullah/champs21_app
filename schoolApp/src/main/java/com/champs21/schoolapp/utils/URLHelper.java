@@ -270,6 +270,17 @@ public class URLHelper {
 	public final static String URL_FREE_VERSION_SCHOOL_LEAVE = "freeuser/leaveschool";
 	
 
+	//###################### CLASS TUNE APIS ###############################
+
+	//&&&&&&&&&&&&&&& RegistrationFirstPhaseActivity &&&&&&&&&&&&&&&&&&&&&&&&
+	public final static String URL_PAID_USERCHECK = "paid/usercheck";
+	public final static String URL_PAID_BATCH = "paid/getbatch";
+	public final static String URL_PAID_STUDENT = "paid/student";
+	public final static String URL_PAID_PARENT = "paid/parent";
+	public final static String URL_CHECK_STUDENT = "paid/checkstudent";
+	public final static String URL_PAID_TEACHER = "paid/teacher";
+	public final static String URL_TEACHER_INFO = "paid/getteacherinfo";
+	public final static String URL_TEACHER_POSITION = "paid/getcategoryposition";
 
 	
 	

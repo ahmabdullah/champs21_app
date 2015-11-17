@@ -194,6 +194,19 @@ public class AppConstant {
 
     //######################################## LessonPlanStudentParent
     public static final String DATA_LESSON_PLAN_SUBJECT = "data_lesson_plan_subject";
+
+
+	//######################################## CALLS TUNE CONSTANTS ############################
+	public static final String USER_TYPE_CLASSTUNE = "user_type_classtune";
+	public static final String SCHOOL_ID_CLASSTUNE = "school_id_classtune";
+	public static final String STUDENT_FIRST_NAME_CLASSTUNE = "student_first_name_classtune";
+	public static final String STUDENT_LAST_NAME_CLASSTUNE = "student_last_name_classtune";
+	public static final String STUDENT_EMAIL_CLASSTUNE = "student_email_name_classtune";
+	public static final String STUDENT_PASSWORD_CLASSTUNE = "student_password_classtune";
+	public static final String STUDENT_SCHOOL_CODE_CLASSTUNE = "student_school_code_classtune";
+
+
+	public static final String CLASSTUNE_FONT_NAME = "breeserif_regular.otf";
 	
 	
 }
