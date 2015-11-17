@@ -74,6 +74,11 @@ public class UserHelper {
         AppRestClient.post(URLHelper.URL_LOGIN, params, logInHandler);
     }
 
+    public void doClassTuneLogin(RequestParams params) {
+        this.logedInUser = getUser();
+        AppRestClient.post(URLHelper.URL_PAID_STUDENT, params, logInHandler);
+    }
+
     private SharedPreferences getGcmPreferences(Context context) {
         // This sample app persists the registration ID in shared preferences,
         // but

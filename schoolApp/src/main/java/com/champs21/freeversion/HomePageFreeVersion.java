@@ -148,23 +148,25 @@ public class HomePageFreeVersion extends HomeContainerActivity {
 
     @Override
     public void onBackPressed() {
-        Fragment myFragment = getSupportFragmentManager().findFragmentByTag("PAID");
-        if (myFragment != null) {
+        Fragment homeFragment = getSupportFragmentManager().findFragmentByTag("PAID");
+        /*if (myFragment != null) {
             if (myFragment.isVisible()) {
                 loadHome();
             } else super.onBackPressed();
 
-        } else{
-            Fragment homeFragment = getSupportFragmentManager().findFragmentByTag("HOME");
-            if(homeFragment==null){
+        } else{*/
+            //Fragment homeFragment = getSupportFragmentManager().findFragmentByTag("HOME");
+            if(homeFragment == null){
                 loadHome();
-
-            }else {
-                if(homeFragment.isVisible())super.onBackPressed();
-                else loadHome();
+            } else {
+                if(homeFragment.isVisible()) {
+                    super.onBackPressed();
+                } else {
+                    loadHome();
+                }
             }
 
-        }
+        //}
     }
 
     public void loadFragment(Fragment frag) {
@@ -280,9 +282,6 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                     super.onActivityResult(requestCode, resultCode, data);
                 }
             }
-
-
-
     }
 
     private void navigateTo(int position) {
@@ -297,6 +296,10 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                         .commit();
                 break;
             case 1:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.pager_frame, PaidVersionHomeFragment.newInstance(1), "PAID").commit();
+                break;
+            default:
                 break;
         }
     }
@@ -328,7 +331,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_homepage_freeversion);
-        navigateTo(0);
+        navigateTo(1);
 
         context = getApplicationContext();
 
@@ -416,8 +419,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                                 }*/
                                 break;
                             default:
-                                getSupportFragmentManager()
-                                        .beginTransaction()
+                                getSupportFragmentManager().beginTransaction()
                                         .replace(
                                                 R.id.pager_frame,
                                                 CommonChildFragment.newInstance(
@@ -897,11 +899,13 @@ public class HomePageFreeVersion extends HomeContainerActivity {
 
     public void loadHome() {
         setActionBarNormal();
-        getSupportFragmentManager()
+        /*getSupportFragmentManager()
 
                 .beginTransaction()
                 .replace(R.id.pager_frame,
-                        CommonChildFragment.newInstance(-1, ""), "HOME").commit();
+                        CommonChildFragment.newInstance(-1, ""), "HOME").commit();*/
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.pager_frame, PaidVersionHomeFragment.newInstance(1), "PAID").commit();
 
         listAdapter.initializeStates();
         listAdapter.notifyDataSetChanged();
