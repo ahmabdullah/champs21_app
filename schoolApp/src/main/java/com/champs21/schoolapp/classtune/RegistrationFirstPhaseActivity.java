@@ -1,13 +1,16 @@
 package com.champs21.schoolapp.classtune;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.Wrapper;
@@ -31,7 +34,7 @@ public class RegistrationFirstPhaseActivity extends Activity {
     private EditText txtPassword;
     private EditText txtRetypePassword;
     private EditText txtSchoolCode;
-    private Button btnNext;
+    private ImageButton btnNext;
 
     private  UIHelper uiHelper;
 
@@ -40,12 +43,18 @@ public class RegistrationFirstPhaseActivity extends Activity {
     private TextWatcher txtWatcher = null;
 
     private String schoolId = "";
+    private ActionBar actionBar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration_firstphase);
+
+        /*requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
+
+        setContentView(R.layout.activity_registration_firstphase2);
 
         Bundle extras = getIntent().getExtras();
 
@@ -57,9 +66,28 @@ public class RegistrationFirstPhaseActivity extends Activity {
         uiHelper = new UIHelper(RegistrationFirstPhaseActivity.this);
 
         initView();
+        setUpActionBar();
         initAction();
 
+
+
+
         Log.e("ORDINAL", "is: "+ordinal);
+
+    }
+
+    private void setUpActionBar() {
+        actionBar = getActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#219439")));
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(false);
+
+        View cView = getLayoutInflater().inflate(R.layout.actionbar_view_classtune, null);
+
+        btnNext = (ImageButton) cView.findViewById(R.id.btnNext);
+
+        actionBar.setCustomView(cView);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 
     }
 
@@ -72,7 +100,7 @@ public class RegistrationFirstPhaseActivity extends Activity {
         txtPassword = (EditText)this.findViewById(R.id.txtPassword);
         txtRetypePassword = (EditText)this.findViewById(R.id.txtRetypePassword);
         txtSchoolCode = (EditText)this.findViewById(R.id.txtSchoolCode);
-        btnNext = (Button)this.findViewById(R.id.btnNext);
+        //btnNext = (ImageButton)this.findViewById(R.id.btnNext);
     }
 
     private void initAction()

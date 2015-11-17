@@ -441,7 +441,8 @@
 
         <activity
             android:name="com.champs21.schoolapp.classtune.RegistrationFirstPhaseActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
         </activity>
 
         <activity
