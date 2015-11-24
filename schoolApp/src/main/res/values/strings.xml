@@ -543,5 +543,12 @@ Get updates on recent on goings and feeds from your school teachers.</string>
 
     <string name="album_name_classtune">classtune</string>
 
+    <string name="spinner_prompt_select_batch">Select a batch</string>
+    <string name="spinner_prompt_select_gender">Select gender</string>
+    <string name="spinner_prompt_select_category">Select a category</string>
+    <string name="spinner_prompt_select_department">Select a department</string>
+    <string name="spinner_prompt_select_grade">Select a grade</string>
+    <string name="spinner_prompt_select_position">Select a position</string>
+
 
 </resources>

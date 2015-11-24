@@ -9,12 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
+import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
@@ -37,8 +36,8 @@ public class DialogSelectChildren extends Dialog {
 
     private IDialogSelectChildrenDoneListener doneListener;
 
-    private LinearLayout layoutChildInfoHolder;
-    private TextView txtChildInfo;
+    //private LinearLayout layoutChildInfoHolder;
+    //private TextView txtChildInfo;
     private String studentId = "";
 
 
@@ -59,7 +58,7 @@ public class DialogSelectChildren extends Dialog {
         initView();
         initAction();
 
-        this.setTitle("Enter children Ids");
+        this.setTitle(AppConstant.CLASSTUNE_MESSAGE_DIALOG_TITLE);
     }
 
     private void initView()
@@ -69,8 +68,8 @@ public class DialogSelectChildren extends Dialog {
         txtChildId = (EditText)this.findViewById(R.id.txtChildId);
         txtRelation = (EditText)this.findViewById(R.id.txtRelation);
 
-        layoutChildInfoHolder = (LinearLayout)this.findViewById(R.id.layoutChildInfoHolder);
-        txtChildInfo = (TextView)this.findViewById(R.id.txtChildInfo);
+        //layoutChildInfoHolder = (LinearLayout)this.findViewById(R.id.layoutChildInfoHolder);
+        //txtChildInfo = (TextView)this.findViewById(R.id.txtChildInfo);
     }
 
     private void initAction()
@@ -116,7 +115,7 @@ public class DialogSelectChildren extends Dialog {
         if(txtChildId.getText().toString().matches(""))
         {
 
-            uiHelper.showErrorDialog("Child Id cannot be empty!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_DIALOG_CHILD_ID);
             isValid = false;
 
         }
@@ -125,7 +124,7 @@ public class DialogSelectChildren extends Dialog {
         {
             if (txtRelation.getText().toString().matches(""))
             {
-                uiHelper.showErrorDialog("Relation for child field cannot be empty!");
+                uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_DIALOG_RELATION);
                 isValid = false;
             }
         }
@@ -215,29 +214,30 @@ public class DialogSelectChildren extends Dialog {
                 Log.e("CODE 200", "code 200");
                 String fullName = modelContainer.getData().get("full_name").getAsString();
 
-                layoutChildInfoHolder.setVisibility(View.VISIBLE);
-                txtChildInfo.setText("Student Id: " + fullName);
+                //layoutChildInfoHolder.setVisibility(View.VISIBLE);
+                //txtChildInfo.setText("Student Id: " + fullName);
 
-                String childrenParam = getChildrenParam();
-                doneListener.onDoneSelection(childrenParam);
+                //String childrenParam = getChildrenParam();
+                //doneListener.onDoneSelection(childrenParam);
+                doneListener.onDoneSelection(new ChildrenModel(txtChildId.getText().toString(), txtRelation.getText().toString(), fullName));
                 DialogSelectChildren.this.dismiss();
 
             }
             else
             {
-                layoutChildInfoHolder.setVisibility(View.GONE);
+                //layoutChildInfoHolder.setVisibility(View.GONE);
             }
 
             if (modelContainer.getStatus().getCode() == 401) {
 
                 Log.e("CODE 401", "code 401");
-                uiHelper.showErrorDialog("Student not exists");
+                uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_STUDENT_NOT_EXISTS);
             }
 
             else if (modelContainer.getStatus().getCode() == 400) {
 
                 Log.e("CODE 400", "code 400");
-                uiHelper.showErrorDialog("Something went wrong please try again.");
+                uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_SOMETHING_WENT_WRONG);
             }
 
 

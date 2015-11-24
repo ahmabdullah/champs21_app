@@ -207,6 +207,51 @@ public class AppConstant {
 
 
 	public static final String CLASSTUNE_FONT_NAME = "breeserif_regular.otf";
-	
-	
+
+
+	public static final String CLASSTUNE_MESSAGE_INVALID_EMAIL = "Invalid e-mail address";
+	public static final String CLASSTUNE_MESSAGE_FIRST_NAME = "First name cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_LAST_NAME = "Last name cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_EMAIL = "E-mail cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_PASSWORD = "Password cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_PASSWORD_CHAR_LENGTH = "Password should be minimum of 6 characters!";
+	public static final String CLASSTUNE_MESSAGE_PASSWORD_RETYPE = "Retype password carefully!";
+	public static final String CLASSTUNE_MESSAGE_PASSWORD_MATCH = "Password didn't match, retype password carefully!";
+	public static final String CLASSTUNE_MESSAGE_SCHOOL_CODE_EMPTY = "School code cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_SCHOOL_CODE_VALID = "School code is not valid!";
+
+	public static final String CLASSTUNE_MESSAGE_SOMETHING_WENT_WRONG = "Something went wrong please try again.";
+
+	public static final String CLASSTUNE_MESSAGE_CLASS_YET = "School didn't create any class yet!";
+	public static final String CLASSTUNE_MESSAGE_ADMISSION_NUMBER = "Admission no. cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_BATCH_SELECT = "Select a batch!";
+	public static final String CLASSTUNE_MESSAGE_DOB_SELECT = "Select date of birth!";
+	public static final String CLASSTUNE_MESSAGE_GENDER_SELECT = "Select gender!";
+	public static final String CLASSTUNE_MESSAGE_CONTACT_NUMBER = "Contact no. cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_ADMISSION_NUMBER_EXISTS = "Student admission number already exists!";
+
+	public static final String CLASSTUNE_MESSAGE_SELECT_SOURCE = "Select source";
+
+	public static final String CLASSTUNE_MESSAGE_ADD_CHILD_MORE_THAN = "To add more than three(3) children you have to login from web browser.";
+	public static final String CLASSTUNE_MESSAGE_USER_ID = "User Id cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_ADD_ONE_CHILD = "Add at least one child!";
+	public static final String CLASSTUNE_MESSAGE_USER_NAME = "Username already exists!";
+	public static final String CLASSTUNE_MESSAGE_INVALID_STUDENT_ID = "Invalid student Id!";
+	public static final String CLASSTUNE_MESSAGE_DUPLICATE_STUDENT_ID = "You entered duplicate student id, please enter correct id again";
+	public static final String CLASSTUNE_MESSAGE_DIALOG_TITLE = "Enter children Ids";
+	public static final String CLASSTUNE_MESSAGE_DIALOG_CHILD_ID = "Child Id cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_DIALOG_RELATION = "Relation for child field cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_STUDENT_NOT_EXISTS = "Student not exists!";
+	public static final String CLASSTUNE_MESSAGE_EMPLOYEE_NECESSARY_INFO = "School didn't create employee necessary information yet!";
+	public static final String CLASSTUNE_MESSAGE_EMPLOYEE_POSITION = "The school didn't create employee position for this yet!";
+	public static final String CLASSTUNE_MESSAGE_EMPLOYEE_NUMBER = "Employee no. cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_JOB_TITLE = "Job title cannot be empty!";
+	public static final String CLASSTUNE_MESSAGE_EMPLOYEE_CATEGORY = "Please select a category!";
+	public static final String CLASSTUNE_MESSAGE_EMPLOYEE_DEPARTMENT = "Please select a department!";
+	public static final String CLASSTUNE_MESSAGE_EMPLOYEE_POSITION_TYPE = "Please select a position!";
+	public static final String CLASSTUNE_MESSAGE_EMPLOYEE_JOINING_DATE = "Select a joining date!";
+	public static final String CLASSTUNE_MESSAGE_EMPLOYEE_EXISTS = "Employee number already exists!";
+
+
+
 }

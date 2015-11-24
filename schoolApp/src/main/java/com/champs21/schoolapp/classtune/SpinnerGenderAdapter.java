@@ -9,22 +9,20 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.champs21.schoolapp.model.Batch;
-
 import java.util.List;
 
 /**
  * Created by BLACK HAT on 12-Nov-15.
  */
-public class SpinnerBatchAdapter extends ArrayAdapter<Batch>{
+public class SpinnerGenderAdapter extends ArrayAdapter<String>{
 
     // Your sent context
     private Context context;
     // Your custom values for the spinner (User)
-    private List<Batch> values;
+    private List<String> values;
 
-    public SpinnerBatchAdapter(Context context, int textViewResourceId,
-                               List<Batch> values) {
+    public SpinnerGenderAdapter(Context context, int textViewResourceId,
+                                List<String> values) {
         super(context, textViewResourceId, values);
         this.context = context;
         this.values = values;
@@ -34,7 +32,7 @@ public class SpinnerBatchAdapter extends ArrayAdapter<Batch>{
         return values.size();
     }
 
-    public Batch getItem(int position){
+    public String getItem(int position){
         return values.get(position);
     }
 
@@ -48,7 +46,7 @@ public class SpinnerBatchAdapter extends ArrayAdapter<Batch>{
         txtName.setTextColor(Color.BLACK);
         txtName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 
-        txtName.setText(values.get(position).getName());
+        txtName.setText(values.get(position));
         txtName.setGravity(Gravity.CENTER);
 
         return txtName;
@@ -62,7 +60,7 @@ public class SpinnerBatchAdapter extends ArrayAdapter<Batch>{
         txtName.setTextColor(Color.BLACK);
         txtName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 
-        txtName.setText(values.get(position).getName());
+        txtName.setText(values.get(position));
         txtName.setGravity(Gravity.CENTER);
         txtName.setPadding(0, 10, 0, 10);
 

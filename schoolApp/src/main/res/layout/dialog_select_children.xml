@@ -46,7 +46,7 @@
                         android:id="@+id/txt_header_childid"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Child 1 Id "
+                        android:text="Child Id "
                         android:layout_weight=".5"
                         android:textColor="@android:color/black"
                         android:textSize="14sp"/>
@@ -100,24 +100,6 @@
                     android:layout_height="wrap_content"
                     android:text="Done"
                     android:textColor="@android:color/black"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:text="If you have more than 3 children please fill up their id from web browser."/>
 
             </LinearLayout>
 

@@ -114,6 +114,9 @@ public class RegistrationFirstPhaseActivity extends Activity {
 
             }
         });
+
+
+
     }
 
 
@@ -126,7 +129,7 @@ public class RegistrationFirstPhaseActivity extends Activity {
 
         else
         {
-            uiHelper.showErrorDialog("Invalid e-mail address");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_INVALID_EMAIL);
             return false;
         }
 
@@ -139,50 +142,50 @@ public class RegistrationFirstPhaseActivity extends Activity {
 
         if(txtFirstName.getText().toString().matches(""))
         {
-            uiHelper.showErrorDialog("First name cannot be empty!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_FIRST_NAME);
             isValid = false;
         }
 
         else if(txtLastName.getText().toString().matches(""))
         {
-            uiHelper.showErrorDialog("Last name cannot be empty!!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_LAST_NAME);
             isValid = false;
         }
 
         else if(txtEmail.getText().toString().matches(""))
         {
-            uiHelper.showErrorDialog("E-mail cannot be empty!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_EMAIL);
             isValid = false;
         }
 
         else if(txtPassword.getText().toString().matches(""))
         {
-            uiHelper.showErrorDialog("Password cannot be empty!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_PASSWORD);
             isValid = false;
         }
 
         else if(txtPassword.getText().toString().length() < 6)
         {
-            uiHelper.showErrorDialog("Password should be minimum of 6 characters!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_PASSWORD_CHAR_LENGTH);
             isValid = false;
         }
 
         else if(txtRetypePassword.getText().toString().matches(""))
         {
-            uiHelper.showErrorDialog("Retype password carefully!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_PASSWORD_RETYPE);
             isValid = false;
         }
 
         else if(!txtPassword.getText().toString().equals(txtRetypePassword.getText().toString()))
         {
-            uiHelper.showErrorDialog("Password didn't match, retype password carefully!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_PASSWORD_MATCH);
             isValid = false;
         }
 
 
         else if(txtSchoolCode.getText().toString().matches(""))
         {
-            uiHelper.showErrorDialog("School code cannot be empty!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_SCHOOL_CODE_EMPTY);
             isValid = false;
         }
 
@@ -314,13 +317,13 @@ public class RegistrationFirstPhaseActivity extends Activity {
             else if (modelContainer.getStatus().getCode() == 401) {
 
                 Log.e("CODE 401", "code 401");
-                uiHelper.showErrorDialog("School code is not valid!");
+                uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_SCHOOL_CODE_VALID);
             }
 
             else if (modelContainer.getStatus().getCode() == 400) {
 
                 Log.e("CODE 400", "code 400");
-                uiHelper.showErrorDialog("Something went wrong please try again.");
+                uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_SOMETHING_WENT_WRONG);
             }
 
 

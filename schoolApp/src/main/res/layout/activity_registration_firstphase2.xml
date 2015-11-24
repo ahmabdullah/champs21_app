@@ -5,15 +5,22 @@
     android:orientation="vertical">
 
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:isScrollContainer="true"
+        android:fillViewport="true">
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true">
+
+            <RelativeLayout
                 android:orientation="vertical"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="600dp"
                 android:layout_weight="1"
                 android:layout_alignRight="@+id/relativeLayout5"
                 android:layout_alignEnd="@+id/relativeLayout5"
@@ -267,270 +274,267 @@
 
             </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:layout_toRightOf="@+id/relativeLayout5"
-            android:layout_toEndOf="@+id/relativeLayout5"
-            android:layout_below="@+id/relativeLayout5">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:weightSum="6"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true">
+                android:layout_weight="2"
+                android:layout_toRightOf="@+id/relativeLayout5"
+                android:layout_toEndOf="@+id/relativeLayout5"
+                android:layout_below="@+id/relativeLayout5">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="#e8e9e9"
-                    android:layout_alignParentBottom="true"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="6"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:id="@+id/view0">
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true">
 
-                </View>
 
-                <RelativeLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_weight="1">
 
-                    <View
+                    <RelativeLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#e8e9e9"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:id="@+id/view1">
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1">
 
-                    </View>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#e8e9e9"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:id="@+id/view1">
 
-                    <EditText
-                        android:id="@+id/txtFirstName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
-                        android:hint="Tap here to type"
-                        android:background="@android:color/transparent"
-                        android:singleLine="true"
-                        android:imeOptions="actionNext"
-                        android:nextFocusDown="@+id/txtLastName"
-                        android:layout_above="@+id/view1" />
+                        </View>
+
+                        <EditText
+                            android:id="@+id/txtFirstName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:hint="Tap here to type"
+                            android:background="@android:color/transparent"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/txtLastName"
+                            android:layout_above="@+id/view1" />
 
 
 
-                </RelativeLayout>
+                    </RelativeLayout>
 
-                <RelativeLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center"
-                    android:layout_weight="1">
-
-                    <View
+                    <RelativeLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#e8e9e9"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:id="@+id/view2">
-
-                    </View>
-
-                    <EditText
-                        android:id="@+id/txtLastName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="30dp"
                         android:gravity="center"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
-                        android:hint="Tap here to type"
-                        android:background="@android:color/transparent"
-                        android:singleLine="true"
-                        android:imeOptions="actionNext"
-                        android:nextFocusDown="@+id/txtEmail"
-                        android:layout_above="@+id/view2" />
+                        android:layout_weight="1">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#e8e9e9"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:id="@+id/view2">
+
+                        </View>
+
+                        <EditText
+                            android:id="@+id/txtLastName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:hint="Tap here to type"
+                            android:background="@android:color/transparent"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/txtEmail"
+                            android:layout_above="@+id/view2" />
 
 
 
-                </RelativeLayout>
+                    </RelativeLayout>
 
-                <RelativeLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center"
-                    android:layout_weight="1">
-
-
-                    <View
+                    <RelativeLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#e8e9e9"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:id="@+id/view3">
-
-                    </View>
-
-                    <EditText
-                        android:id="@+id/txtEmail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="30dp"
                         android:gravity="center"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
-                        android:inputType="textEmailAddress"
-                        android:hint="Tap here to type"
-                        android:background="@android:color/transparent"
-                        android:singleLine="true"
-                        android:imeOptions="actionNext"
-                        android:nextFocusDown="@+id/txtPassword"
-                        android:layout_above="@+id/view3" />
+                        android:layout_weight="1">
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#e8e9e9"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:id="@+id/view3">
+
+                        </View>
+
+                        <EditText
+                            android:id="@+id/txtEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:inputType="textEmailAddress"
+                            android:hint="Tap here to type"
+                            android:background="@android:color/transparent"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/txtPassword"
+                            android:layout_above="@+id/view3" />
 
 
 
-                </RelativeLayout>
+                    </RelativeLayout>
 
-                <RelativeLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center"
-                    android:layout_weight="1">
-
-                    <View
+                    <RelativeLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#e8e9e9"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:id="@+id/view4">
-
-                    </View>
-
-                    <EditText
-                        android:id="@+id/txtPassword"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="30dp"
                         android:gravity="center"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
-                        android:inputType="textPassword"
-                        android:hint="Tap here to type"
-                        android:background="@android:color/transparent"
-                        android:singleLine="true"
-                        android:imeOptions="actionNext"
-                        android:nextFocusDown="@+id/txtRetypePassword"
-                        android:layout_above="@+id/view4" />
+                        android:layout_weight="1">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#e8e9e9"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:id="@+id/view4">
+
+                        </View>
+
+                        <EditText
+                            android:id="@+id/txtPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:inputType="textPassword"
+                            android:hint="Tap here to type"
+                            android:background="@android:color/transparent"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/txtRetypePassword"
+                            android:layout_above="@+id/view4" />
 
 
 
 
-                </RelativeLayout>
+                    </RelativeLayout>
 
-                <RelativeLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center"
-                    android:layout_weight="1">
-
-                    <View
+                    <RelativeLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#e8e9e9"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:id="@+id/view5">
-
-                    </View>
-
-                    <EditText
-                        android:id="@+id/txtRetypePassword"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="30dp"
                         android:gravity="center"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
-                        android:inputType="textPassword"
-                        android:imeOptions="actionNext"
-                        android:hint="Tap here to type"
-                        android:background="@android:color/transparent"
-                        android:singleLine="true"
-                        android:nextFocusDown="@+id/txtSchoolCode"
-                        android:layout_above="@+id/view5" />
+                        android:layout_weight="1">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#e8e9e9"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:id="@+id/view5">
+
+                        </View>
+
+                        <EditText
+                            android:id="@+id/txtRetypePassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:inputType="textPassword"
+                            android:imeOptions="actionNext"
+                            android:hint="Tap here to type"
+                            android:background="@android:color/transparent"
+                            android:singleLine="true"
+                            android:nextFocusDown="@+id/txtSchoolCode"
+                            android:layout_above="@+id/view5" />
 
 
 
-                </RelativeLayout>
+                    </RelativeLayout>
 
-                <RelativeLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/txtSchoolCode"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <RelativeLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="30dp"
                         android:gravity="center"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
-                        android:hint="Tap here to type"
-                        android:background="@android:color/transparent"
-                        android:singleLine="true"
-                        android:imeOptions="actionDone" />
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/txtSchoolCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:hint="Tap here to type"
+                            android:background="@android:color/transparent"
+                            android:singleLine="true"
+                            android:imeOptions="actionDone" />
 
 
 
-                </RelativeLayout>
+                    </RelativeLayout>
 
 
-            </LinearLayout>
+                </LinearLayout>
 
-        </RelativeLayout>
-    </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
 
 
 </RelativeLayout>
