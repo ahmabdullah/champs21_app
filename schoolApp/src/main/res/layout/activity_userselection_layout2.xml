@@ -5,194 +5,213 @@
     android:weightSum="8.8"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:orientation="horizontal"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.8"
-        android:background="@drawable/classtune_selectuser_top">
-
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/classtune_logo_top"/>
-
-        <ImageView
-            android:id="@+id/imgViewAbout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/classtune_about_top"
-            android:layout_margin="15dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:gravity="center">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:src="@drawable/classtune_register_image"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4.5"
-        android:background="#dfe1e2">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txtMeHeader"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="I'm"
-                android:textStyle="bold"
-                android:layout_margin="10dp"
-                android:textSize="20sp"
-                android:textColor="#888a8b"/>
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.8"
+                android:background="@drawable/classtune_selectuser_top">
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:weightSum="3">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/classtune_logo_top"/>
+
+                <ImageView
+                    android:id="@+id/imgViewAbout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/classtune_about_top"
+                    android:layout_margin="15dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+
+            </RelativeLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
                 android:gravity="center">
 
-                <ImageButton
-                    android:id="@+id/btnStudentSelect"
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/classtune_btn_select_student"/>
-
-                <TextView
-                    android:id="@+id/txtStudentHeader"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Student"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:textColor="@android:color/black"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/btnParentSelect"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/classtune_btn_select_parent"/>
-
-                <TextView
-                    android:id="@+id/txtParentHeader"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Parent"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:textColor="@android:color/black"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/btnTeacherSelect"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/classtune_btn_select_teacher"/>
-
-                <TextView
-                    android:id="@+id/txtTeacherHeader"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Teacher"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:textColor="@android:color/black"/>
+                    android:layout_margin="10dp"
+                    android:src="@drawable/classtune_register_image"/>
 
 
             </LinearLayout>
 
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4.5"
+                android:background="#dfe1e2">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left">
+
+                    <TextView
+                        android:id="@+id/txtMeHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="I'm"
+                        android:textStyle="bold"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:textColor="#888a8b"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/btnStudentSelect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/classtune_btn_select_student"/>
+
+                        <TextView
+                            android:id="@+id/txtStudentHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Student"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"/>
+
+                    </LinearLayout>
 
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/btnParentSelect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/classtune_btn_select_parent"/>
+
+                        <TextView
+                            android:id="@+id/txtParentHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Parent"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/btnTeacherSelect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/classtune_btn_select_teacher"/>
+
+                        <TextView
+                            android:id="@+id/txtTeacherHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Teacher"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"/>
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:gravity="right">
+
+                    <TextView
+                        android:id="@+id/txtMember"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Already a member?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                    <Button
+                        android:id="@+id/btnSignIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:text="Sign in"
+                        android:textStyle="bold"
+                        android:textColor="@drawable/classtune_btn_user_selection_signin"
+                        android:background="@drawable/classtune_btn_background_user_selection_signin"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="right">
+    </ScrollView>
 
-            <TextView
-                android:id="@+id/txtMember"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Already a member?"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="20sp" />
-            <Button
-                android:id="@+id/btnSignIn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                android:layout_marginTop="10dp"
-                android:textSize="18sp"
-                android:text="Sign in"
-                android:textStyle="bold"
-                android:textColor="@drawable/classtune_btn_user_selection_signin"
-                android:background="@drawable/classtune_btn_background_user_selection_signin"/>
 
-        </LinearLayout>
 
-    </LinearLayout>
+
 </LinearLayout>

@@ -1,7 +1,9 @@
 package com.champs21.schoolapp.classtune;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -11,6 +13,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,12 +24,13 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -66,14 +70,14 @@ import java.util.List;
 /**
  * Created by BLACK HAT on 09-Nov-15.
  */
-public class CreateStudentActivity extends Activity implements DatePicker.OnDateChangedListener{
+public class CreateStudentActivity extends Activity {
 
 
     private int ordinal = -1;
     private String schoolId = "";
 
     private Spinner spinnerBatch;
-    private DatePicker pickerDob;
+    //private DatePicker pickerDob;
     private Spinner spinnerGender;
     private EditText txtContact;
     private EditText txtAdmission;
@@ -83,7 +87,7 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
 
     private List<String> listGender;
 
-    private String gender = "1";
+    private String gender = "";
     private String dob = "";
 
     private int year;
@@ -103,7 +107,9 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
     private TextView txtUserId;
 
     //upload photo
-    private Button btnUploadPhoto;
+    //private Button btnUploadPhoto;
+
+    private RelativeLayout layoutUploadPhoto;
 
     private final int REQUEST_CODE_CAMERA = 110;
     private final int REQUEST_CODE_GELLERY = 111;
@@ -120,12 +126,20 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
     private String selectedImagePath = "";
     private ImageView btn_cross_image;
 
+    private ActionBar actionBar;
+    private ImageButton btnNext;
+
+    private TextView txtDob;
+    private RelativeLayout layoutDatePicker;
+
+    private TextView txtUploadPhoto;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_student);
+        setContentView(R.layout.activity_create_student2);
 
         Bundle extras = getIntent().getExtras();
 
@@ -147,6 +161,7 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
         listBatch = new ArrayList<Batch>();
 
         initView();
+        setUpActionBar();
         initAction();
         initApiGetBatch();
 
@@ -213,10 +228,20 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
                     listBatch.add(parseBatch(arrayBatch.toString()).get(i));
                 }
 
-                batchId = listBatch.get(0).getId();
+                //batchId = listBatch.get(0).getId();
                 initBatchSpinner();
 
 
+            }
+
+            else if(modelContainer.getStatus().getCode() == 401)
+            {
+                uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_CLASS_YET);
+            }
+
+            else if(modelContainer.getStatus().getCode() == 400)
+            {
+                uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_SOMETHING_WENT_WRONG);
             }
 
             else {
@@ -261,7 +286,7 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
     private void initView()
     {
         spinnerBatch = (Spinner)this.findViewById(R.id.spinnerBatch);
-        pickerDob = (DatePicker)this.findViewById(R.id.pickerDob);
+        //pickerDob = (DatePicker)this.findViewById(R.id.pickerDob);
         spinnerGender = (Spinner)this.findViewById(R.id.spinnerGender);
         txtContact = (EditText)this.findViewById(R.id.txtContact);
         txtAdmission = (EditText)this.findViewById(R.id.txtAdmission);
@@ -270,11 +295,31 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
         layoutUserIdHolder = (LinearLayout)this.findViewById(R.id.layoutUserIdHolder);
         txtUserId = (TextView)this.findViewById(R.id.txtUserId);
 
-        btnUploadPhoto = (Button)this.findViewById(R.id.btnUploadPhoto);
+        layoutUploadPhoto = (RelativeLayout)this.findViewById(R.id.layoutUploadPhoto);
 
         imageNameContainer = (LinearLayout)this.findViewById(R.id.image_attached_layout);
         tvImageName = (TextView)this.findViewById(R.id.tv_image_name);
         btn_cross_image = (ImageView)this.findViewById(R.id.btn_cross_image);
+
+        txtDob = (TextView)this.findViewById(R.id.txtDob);
+        layoutDatePicker = (RelativeLayout)this.findViewById(R.id.layoutDatePicker);
+
+        txtUploadPhoto = (TextView)this.findViewById(R.id.txtUploadPhoto);
+    }
+
+    private void setUpActionBar() {
+        actionBar = getActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.classtune_green_color)));
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(false);
+
+        View cView = getLayoutInflater().inflate(R.layout.actionbar_view_classtune, null);
+
+        btnNext = (ImageButton) cView.findViewById(R.id.btnNext);
+
+        actionBar.setCustomView(cView);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+
     }
 
     private void initAction()
@@ -283,7 +328,7 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
         listGender.add("Male");
         listGender.add("Female");
 
-        ArrayAdapter<String> genderAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listGender);
+        SpinnerGenderAdapter genderAdapter = new SpinnerGenderAdapter(this, android.R.layout.simple_spinner_item, listGender);
         spinnerGender.setAdapter(genderAdapter);
 
         spinnerGender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -304,15 +349,26 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
             }
         });
 
-        setCurrentDateOnView();
+        //setCurrentDateOnView();
 
-        btnCreate.setOnClickListener(new View.OnClickListener() {
+        /*btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (checkValidForm() == true) {
                     initApicall();
                 }
+            }
+        });*/
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (checkValidForm() == true) {
+                    initApicall();
+                }
+
             }
         });
 
@@ -333,7 +389,7 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
                                       int before, int count) {
                 if (s.length() != 0) {
                     layoutUserIdHolder.setVisibility(View.VISIBLE);
-                    txtUserId.setText("Your user id is: " + schoolId + "-" + txtAdmission.getText().toString());
+                    txtUserId.setText(schoolId + "-" + txtAdmission.getText().toString());
                 } else {
                     layoutUserIdHolder.setVisibility(View.GONE);
                 }
@@ -341,7 +397,7 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
             }
         });
 
-        btnUploadPhoto.setOnClickListener(new View.OnClickListener() {
+        layoutUploadPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -358,9 +414,52 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
             }
         });
 
+        layoutDatePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                new DatePickerDialog(CreateStudentActivity.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+
+
+            }
+        });
+
     }
 
-    public void setCurrentDateOnView() {
+    Calendar myCalendar = Calendar.getInstance();
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            // TODO Auto-generated method stub
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+            CreateStudentActivity.this.year = myCalendar.get(Calendar.YEAR);
+            CreateStudentActivity.this.month = myCalendar.get(Calendar.MONTH);
+            CreateStudentActivity.this.day = myCalendar.get(Calendar.DAY_OF_MONTH);
+
+            StringBuilder sb = new StringBuilder()
+                    .append(year).append("-")
+                    .append(month + 1).append("-")
+                    .append(day).append(" ");
+
+            Log.e("CURRENT_DATE", "is: " + sb.toString());
+            dob = sb.toString();
+            txtDob.setText(dob);
+
+            //pickerDob.init(CreateStudentActivity.this.year, CreateStudentActivity.this.month, CreateStudentActivity.this.day, this);
+        }
+
+    };
+
+    /*public void setCurrentDateOnView() {
 
         final Calendar c = Calendar.getInstance();
         year = c.get(Calendar.YEAR);
@@ -375,11 +474,11 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
         Log.e("CURRENT_DATE", "is: " + sb.toString());
         dob = sb.toString();
 
-        pickerDob.init(year, month, day, this);
+        //pickerDob.init(year, month, day, this);
 
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
         StringBuilder sb = new StringBuilder()
                 .append(year).append("-")
@@ -388,32 +487,38 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
 
         Log.e("CHANGED_DATE", "is: " + sb.toString());
         dob = sb.toString();
-    }
+    }*/
 
 
     private boolean checkValidForm()
     {
         boolean isValid = true;
 
-        if(txtContact.getText().toString().matches(""))
+        if(txtAdmission.getText().toString().matches(""))
         {
-            uiHelper.showErrorDialog("Contact no. cannot be empty!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_ADMISSION_NUMBER);
             isValid = false;
         }
-
-        else if(txtAdmission.getText().toString().matches(""))
+        else if(batchId.matches(""))
         {
-            uiHelper.showErrorDialog("Admission no. cannot be empty!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_BATCH_SELECT);
             isValid = false;
         }
-
-        else if(txtAdmission.getText().toString().matches(""))
+        else if(dob.matches(""))
         {
-            uiHelper.showErrorDialog("Admission no. cannot be empty!");
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_DOB_SELECT);
             isValid = false;
         }
-
-
+        else if(gender.matches(""))
+        {
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_GENDER_SELECT);
+            isValid = false;
+        }
+        else if(txtContact.getText().toString().matches(""))
+        {
+            uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_CONTACT_NUMBER);
+            isValid = false;
+        }
 
 
         return isValid;
@@ -488,13 +593,13 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
             else if (modelContainer.getStatus().getCode() == 401) {
 
                 Log.e("CODE 401", "code 401");
-                uiHelper.showErrorDialog("Student admission no. exists!");
+                uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_ADMISSION_NUMBER_EXISTS);
             }
 
             else if (modelContainer.getStatus().getCode() == 400) {
 
                 Log.e("CODE 400", "code 400");
-                uiHelper.showErrorDialog("Something went wrong please try again.");
+                uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_SOMETHING_WENT_WRONG);
             }
 
 
@@ -518,7 +623,7 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
 
 
         alertDialogBuilder
-                .setMessage("Select source")
+                .setMessage(AppConstant.CLASSTUNE_MESSAGE_SELECT_SOURCE)
                 .setCancelable(false)
                 .setPositiveButton("Gallery",
                         new DialogInterface.OnClickListener() {
@@ -586,7 +691,7 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
 
         PackageManager pm = getPackageManager();
         if (pm.hasSystemFeature(PackageManager.FEATURE_CAMERA) == false) {
-            Toast.makeText(CreateStudentActivity.this, "Camera Nai", Toast.LENGTH_SHORT)
+            Toast.makeText(CreateStudentActivity.this, "Camera not found!", Toast.LENGTH_SHORT)
                     .show();
             return;
         }
@@ -653,7 +758,7 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
         return storageDir;
     }
 
-    private String getAlbumName() {
+    public String getAlbumName() {
         return getString(R.string.album_name_classtune);
     }
 
@@ -663,8 +768,13 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
         if (isVisible) {
             imageNameContainer.setVisibility(View.VISIBLE);
             tvImageName.setText(getFileNameFromPath(selectedImagePath));
+
+            txtUploadPhoto.setVisibility(View.GONE);
+
         } else {
             imageNameContainer.setVisibility(View.GONE);
+
+            txtUploadPhoto.setVisibility(View.VISIBLE);
         }
     }
     private String getFileNameFromPath(String path) {
@@ -918,7 +1028,7 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
         try {
             long timestamp = System.currentTimeMillis();
             File ezpsaImageFile = new File(schoolDirectory,
-                    getString(R.string.album_name) + timestamp + ".png");
+                    getString(R.string.album_name_classtune) + timestamp + ".png");
 
             fOut = new FileOutputStream(ezpsaImageFile);
 
@@ -947,5 +1057,7 @@ public class CreateStudentActivity extends Activity implements DatePicker.OnDate
         }
 
     }
+
+
 
 }

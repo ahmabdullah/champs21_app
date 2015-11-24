@@ -3,6 +3,7 @@ package com.champs21.schoolapp.classtune;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -47,7 +48,9 @@ public class SpinnerTeacherInfoAdapter extends ArrayAdapter<TeacherInfo>{
         txtName.setTextColor(Color.BLACK);
         txtName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 
+
         txtName.setText(values.get(position).getName());
+        txtName.setGravity(Gravity.CENTER);
 
 
         return txtName;
@@ -62,7 +65,8 @@ public class SpinnerTeacherInfoAdapter extends ArrayAdapter<TeacherInfo>{
         txtName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 
         txtName.setText(values.get(position).getName());
-
+        txtName.setGravity(Gravity.CENTER);
+        txtName.setPadding(0, 10, 0, 10);
 
         return txtName;
     }

@@ -5,5 +5,5 @@ package com.champs21.schoolapp.classtune;
  */
 public interface IDialogSelectChildrenDoneListener {
 
-    public void onDoneSelection(String childrenParam);
+    public void onDoneSelection(ChildrenModel childrenModel);
 }

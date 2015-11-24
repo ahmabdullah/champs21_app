@@ -43,5 +43,7 @@
 	<color name="leave_class">#1a93c2</color>
 
 	<color name="classtune_user_selection_signin">#74af27</color>
+
+	<color name="classtune_green_color">#219439</color>
 	
 </resources>
