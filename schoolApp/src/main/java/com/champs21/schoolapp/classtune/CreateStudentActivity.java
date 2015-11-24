@@ -1,7 +1,6 @@
 package com.champs21.schoolapp.classtune;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.ComponentName;
@@ -78,7 +77,7 @@ import java.util.List;
 /**
  * Created by BLACK HAT on 09-Nov-15.
  */
-public class CreateStudentActivity extends Activity {
+public class CreateStudentActivity extends FragmentActivity implements UserAuthListener {
 
 
     private int ordinal = -1;
