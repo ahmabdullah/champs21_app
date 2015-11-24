@@ -45,7 +45,6 @@ public class CustomDialog extends Dialog{
         View divider = this.findViewById(divierId);
         divider.setBackgroundColor(Color.TRANSPARENT);
 
-
         initView();
         initAction();
     }

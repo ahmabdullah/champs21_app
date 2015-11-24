@@ -19,6 +19,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -35,20 +36,27 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.champs21.freeversion.CompleteProfileActivityContainer;
+import com.champs21.freeversion.HomePageFreeVersion;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.adapters.CropOptionAdapter;
 import com.champs21.schoolapp.fragments.AlbumStorageDirFactory;
 import com.champs21.schoolapp.fragments.BaseAlbumDirFactory;
 import com.champs21.schoolapp.fragments.FroyoAlbumDirFactory;
+import com.champs21.schoolapp.fragments.UserTypeSelectionDialog;
 import com.champs21.schoolapp.model.Batch;
 import com.champs21.schoolapp.model.CropOption;
+import com.champs21.schoolapp.model.UserAuthListener;
 import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
+import com.champs21.schoolapp.utils.SPKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
+import com.champs21.schoolapp.utils.UserHelper;
+import com.champs21.schoolapp.viewhelpers.PopupDialogChangePassword;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -125,6 +133,7 @@ public class CreateStudentActivity extends Activity {
     private TextView tvImageName;
     private String selectedImagePath = "";
     private ImageView btn_cross_image;
+    private UserHelper userHelper;
 
     private ActionBar actionBar;
     private ImageButton btnNext;
@@ -142,7 +151,7 @@ public class CreateStudentActivity extends Activity {
         setContentView(R.layout.activity_create_student2);
 
         Bundle extras = getIntent().getExtras();
-
+        userHelper = new UserHelper(this, CreateStudentActivity.this);
         if(extras != null)
         {
             ordinal = extras.getInt(AppConstant.USER_TYPE_CLASSTUNE);
@@ -552,8 +561,8 @@ public class CreateStudentActivity extends Activity {
         }
 
 
-
-        AppRestClient.post(URLHelper.URL_PAID_STUDENT, params, createStudentHandler);
+        userHelper.doClassTuneLogin(params);
+        //AppRestClient.post(URLHelper.URL_PAID_STUDENT, params, createStudentHandler);
     }
 
     AsyncHttpResponseHandler createStudentHandler = new AsyncHttpResponseHandler() {
@@ -577,7 +586,7 @@ public class CreateStudentActivity extends Activity {
         @Override
         public void onSuccess(int arg0, String responseString) {
 
-            Log.e("SCCCCC", "response: " + responseString);
+            Log.d("TOTAL RESPONSE", "response: " + responseString);
 
             uiHelper.dismissLoadingDialog();
 
@@ -1060,4 +1069,105 @@ public class CreateStudentActivity extends Activity {
 
 
 
+    @Override
+    public void onAuthenticationStart() {
+        uiHelper.showLoadingDialog(getString(R.string.loading_text));
+
+    }
+
+    @Override
+    public void onAuthenticationSuccessful() {
+        if (uiHelper.isDialogActive()) {
+            uiHelper.dismissLoadingDialog();
+
+        }
+        if (UserHelper.isRegistered()) {
+            if (UserHelper.isLoggedIn()) {
+
+
+
+
+                switch (UserHelper.getUserAccessType()) {
+                    case FREE:
+                        Intent intent = new Intent(CreateStudentActivity.this,
+                                HomePageFreeVersion.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                        break;
+                    case PAID:
+                        if ( UserHelper.isFirstLogin() ){
+                            PopupDialogChangePassword picker = new PopupDialogChangePassword();
+                            picker.show(getSupportFragmentManager(), null);
+                        }else doPaidNavigation();
+                        break;
+
+                    default:
+                        break;
+                }
+
+            } else {
+                finish();
+                Intent intent = new Intent(CreateStudentActivity.this,
+                        CompleteProfileActivityContainer.class);
+                intent.putExtra(SPKeyHelper.USER_TYPE, userHelper.getUser()
+                        .getType().ordinal());
+                intent.putExtra("FIRST_TIME", true);
+                startActivity(intent);
+
+            }
+        } else {
+            Log.e("TypeSelection!", "GOOOOOOOOOOOOOOOO");
+            UserTypeSelectionDialog dialogFrag = UserTypeSelectionDialog
+                    .newInstance();
+            dialogFrag.show(getSupportFragmentManager().beginTransaction(),
+                    "dialog");
+
+        }
+
+    }
+
+    @Override
+    public void onAuthenticationFailed(String msg) {
+
+    }
+
+    @Override
+    public void onPaswordChanged() {
+
+    }
+
+    public void doPaidNavigation(){
+        switch (userHelper.getUser().getType()) {
+
+            case PARENTS:
+                if (userHelper.getUser().getChildren() == null) {
+                    Log.e("Userhelper", "null");
+                }
+                if (userHelper.getUser().getChildren().size() > 0) {
+                    Intent paidIntent = new Intent(CreateStudentActivity.this,
+                            HomePageFreeVersion.class);
+                    paidIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                            | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(paidIntent);
+                    finish();
+                }
+                break;
+            default:
+
+                /*if(userHelper.getUserAccessType()== UserHelper.UserAccessType.PAID ){//&& UserHelper.isFirstLogin()
+                    PopupDialogChangePassword picker = new PopupDialogChangePassword();
+                    picker.show(getSupportFragmentManager(), null);
+                }*/
+                Intent paidIntent = new Intent(CreateStudentActivity.this,
+                        HomePageFreeVersion.class);
+                paidIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                        | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(paidIntent);
+                finish();
+                break;
+        }
+
+    }
 }

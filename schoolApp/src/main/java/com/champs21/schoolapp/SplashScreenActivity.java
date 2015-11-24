@@ -15,6 +15,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.champs21.freeversion.HomePageFreeVersion;
 import com.champs21.schoolapp.classtune.UserSelectionActivity;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.ReminderHelper;
@@ -108,11 +109,13 @@ public class SplashScreenActivity extends Activity {
                 if (!mIsBackButtonPressed) {
                 	Intent intent;
 
-					intent= new Intent(SplashScreenActivity.this, UserSelectionActivity.class);
-					SplashScreenActivity.this.startActivity(intent);
-                	
-                	/*intent= new Intent(SplashScreenActivity.this, HomePageFreeVersion.class);
-                    SplashScreenActivity.this.startActivity(intent);*/
+					if(UserHelper.isLoggedIn()) {
+						intent= new Intent(SplashScreenActivity.this, HomePageFreeVersion.class);
+						SplashScreenActivity.this.startActivity(intent);
+					} else {
+						intent= new Intent(SplashScreenActivity.this, UserSelectionActivity.class);
+						SplashScreenActivity.this.startActivity(intent);
+					}
 
 					/*intent= new Intent(SplashScreenActivity.this, SingleItemShowFragmentActivity.class);
                 	intent= new Intent(SplashScreenActivity.this, HomePageFreeVersion.class);
