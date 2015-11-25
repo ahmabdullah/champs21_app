@@ -32,12 +32,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.champs21.freeversion.CompleteProfileActivityContainer;
 import com.champs21.freeversion.HomePageFreeVersion;
+import com.champs21.schoolapp.ChildSelectionActivity;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.adapters.CropOptionAdapter;
 import com.champs21.schoolapp.fragments.AlbumStorageDirFactory;
 import com.champs21.schoolapp.fragments.BaseAlbumDirFactory;
+import com.champs21.schoolapp.fragments.CommonChildFragment;
 import com.champs21.schoolapp.fragments.FroyoAlbumDirFactory;
 import com.champs21.schoolapp.fragments.UserTypeSelectionDialog;
 import com.champs21.schoolapp.model.CropOption;
@@ -47,7 +48,6 @@ import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
-import com.champs21.schoolapp.utils.SPKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
 import com.champs21.schoolapp.utils.UserHelper;
 import com.champs21.schoolapp.viewhelpers.PopupDialogChangePassword;
@@ -905,8 +905,27 @@ public class CreateParentActivity extends FragmentActivity implements IDialogSel
                     return;
                 }
                 break;
+            case CommonChildFragment.REQUEST_CODE_CHILD_SELECTION:
+                    if (resultCode == RESULT_OK) {
+                        /*if (userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+                            startActivityForResult(new Intent(getActivity(),
+                                            ChildSelectionActivity.class),
+                                    REQUEST_CODE_CHILD_SELECTION);
+                        else {
+                            ((HomePageFreeVersion) getActivity())
+                                    .setActionBarTitle(userHelper.getUser()
+                                            .getPaidInfo().getSchool_name());
+                            ((HomePageFreeVersion) getActivity())
+                                    .loadPaidFragment(PaidVersionHomeFragment
+                                            .newInstance(1));
+                        }*/
+                    AppUtility.doPaidNavigation(userHelper, CreateParentActivity.this);
+                    }
+                    if (resultCode == RESULT_CANCELED) {
+                        return;
+                    }
 
-
+                break;
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -1147,14 +1166,9 @@ public class CreateParentActivity extends FragmentActivity implements IDialogSel
     public void onAuthenticationSuccessful() {
         if (uiHelper.isDialogActive()) {
             uiHelper.dismissLoadingDialog();
-
         }
         if (UserHelper.isRegistered()) {
-            if (UserHelper.isLoggedIn()) {
-
-
-
-
+                if (UserHelper.isLoggedIn()) {
                 switch (UserHelper.getUserAccessType()) {
                     case FREE:
                         Intent intent = new Intent(CreateParentActivity.this,
@@ -1168,21 +1182,17 @@ public class CreateParentActivity extends FragmentActivity implements IDialogSel
                         if ( UserHelper.isFirstLogin() ){
                             PopupDialogChangePassword picker = new PopupDialogChangePassword();
                             picker.show(getSupportFragmentManager(), null);
-                        }else AppUtility.doPaidNavigation(userHelper, CreateParentActivity.this);
+                        } else {
+                            startActivityForResult(new Intent(this,
+                                            ChildSelectionActivity.class),
+                                    CommonChildFragment.REQUEST_CODE_CHILD_SELECTION);
+                            //AppUtility.doPaidNavigation(userHelper, CreateParentActivity.this);
+                        }
                         break;
 
                     default:
                         break;
                 }
-
-            } else {
-                finish();
-                Intent intent = new Intent(CreateParentActivity.this,
-                        CompleteProfileActivityContainer.class);
-                intent.putExtra(SPKeyHelper.USER_TYPE, userHelper.getUser()
-                        .getType().ordinal());
-                intent.putExtra("FIRST_TIME", true);
-                startActivity(intent);
 
             }
         } else {
@@ -1204,4 +1214,6 @@ public class CreateParentActivity extends FragmentActivity implements IDialogSel
     public void onPaswordChanged() {
 
     }
+
+
 }

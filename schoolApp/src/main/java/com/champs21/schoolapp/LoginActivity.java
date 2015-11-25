@@ -9,11 +9,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.champs21.freeversion.CompleteProfileActivityContainer;
 import com.champs21.freeversion.HomePageFreeVersion;
-import com.champs21.freeversion.RegistrationActivity;
+import com.champs21.schoolapp.fragments.CommonChildFragment;
 import com.champs21.schoolapp.fragments.UserTypeSelectionDialog;
 import com.champs21.schoolapp.fragments.UserTypeSelectionDialog.UserTypeListener;
 import com.champs21.schoolapp.utils.SPKeyHelper;
@@ -29,9 +28,9 @@ public class LoginActivity extends SocialBaseActivity implements
 	EditText etUserName;
 	EditText etPassword;
 	Button btnLogin;
-	Button btnFbLogin;
-	Button btnGoogleLogin;
-	TextView tvSignup;
+
+
+
 	private final int DIALOG_FRAGMENT = 101;
 	SchoolApp app;
 	boolean isFirstTime;
@@ -54,12 +53,6 @@ public class LoginActivity extends SocialBaseActivity implements
 		//etPassword.setText("123456");
 		btnLogin=(Button)findViewById(R.id.btn_login);
 		btnLogin.setOnClickListener(this);
-		btnFbLogin=(Button)findViewById(R.id.fb_login_btn);
-		btnFbLogin.setOnClickListener(this);
-		btnGoogleLogin=(Button)findViewById(R.id.google_login_btn);
-		btnGoogleLogin.setOnClickListener(this);
-		tvSignup=(TextView)findViewById(R.id.tv_signup);
-		tvSignup.setOnClickListener(this);
 		app = (SchoolApp) getApplicationContext();
 		app.setupUI(findViewById(R.id.layout_parent), this);
 		
@@ -80,20 +73,9 @@ public class LoginActivity extends SocialBaseActivity implements
 		case R.id.btn_login:
 			validateFieldAndCallLogIn();
 			break;
-		case R.id.fb_login_btn:
-			doFaceBookLogin(false);
-			break;
-		case R.id.google_login_btn:
-			doGooglePlusLogin();
-			break;
-		case R.id.tv_signup:
-			startActivity(new Intent(this, RegistrationActivity.class));
-			finish();
-			break;
 		default:
 			break;
 		}
-
 	}
 
 	private void validateFieldAndCallLogIn() {
@@ -144,7 +126,12 @@ public class LoginActivity extends SocialBaseActivity implements
                     if ( UserHelper.isFirstLogin() ){
                         PopupDialogChangePassword picker = new PopupDialogChangePassword();
                         picker.show(getSupportFragmentManager(), null);
-                    }else doPaidNavigation();
+                    } else {
+						//doPaidNavigation();
+						startActivityForResult(new Intent(this,
+										ChildSelectionActivity.class),
+								CommonChildFragment.REQUEST_CODE_CHILD_SELECTION);
+					}
                     break;
 
 				default:
@@ -169,15 +156,16 @@ public class LoginActivity extends SocialBaseActivity implements
 					"dialog");
 
 		}
-
 	}
 
     @Override
     public void onActivityResult(int requestCode, int responseCode, Intent intent) {
-
-        if(requestCode==REQUEST_COMPLETE_PROFILE){
+		if(requestCode==REQUEST_COMPLETE_PROFILE){
                 doPaidNavigation();
         }
+		if(requestCode== CommonChildFragment.REQUEST_CODE_CHILD_SELECTION) {
+			doPaidNavigation();
+		}
         super.onActivityResult(requestCode, responseCode, intent);
     }
 

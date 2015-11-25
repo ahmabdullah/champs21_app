@@ -16,6 +16,7 @@ import android.view.Display;
 import android.view.WindowManager;
 
 import com.champs21.freeversion.HomePageFreeVersion;
+import com.champs21.schoolapp.ChildSelectionActivity;
 import com.champs21.schoolapp.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
@@ -591,6 +592,10 @@ public class AppUtility {
 				if (userHelper.getUser().getChildren() == null) {
 					Log.e("Userhelper", "null");
 				}
+
+				/*startActivityForResult(new Intent(getActivity(),
+								ChildSelectionActivity.class),
+						REQUEST_CODE_CHILD_SELECTION);*/
 				if (userHelper.getUser().getChildren().size() > 0) {
 					Intent paidIntent = new Intent(activity,
 							HomePageFreeVersion.class);
