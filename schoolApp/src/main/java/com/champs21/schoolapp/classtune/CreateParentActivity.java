@@ -1,7 +1,6 @@
 package com.champs21.schoolapp.classtune;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.ComponentName;
@@ -19,6 +18,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,19 +32,25 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.champs21.freeversion.CompleteProfileActivityContainer;
+import com.champs21.freeversion.HomePageFreeVersion;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.adapters.CropOptionAdapter;
 import com.champs21.schoolapp.fragments.AlbumStorageDirFactory;
 import com.champs21.schoolapp.fragments.BaseAlbumDirFactory;
 import com.champs21.schoolapp.fragments.FroyoAlbumDirFactory;
+import com.champs21.schoolapp.fragments.UserTypeSelectionDialog;
 import com.champs21.schoolapp.model.CropOption;
+import com.champs21.schoolapp.model.UserAuthListener;
 import com.champs21.schoolapp.model.Wrapper;
-import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
+import com.champs21.schoolapp.utils.SPKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
+import com.champs21.schoolapp.utils.UserHelper;
+import com.champs21.schoolapp.viewhelpers.PopupDialogChangePassword;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -65,7 +71,7 @@ import java.util.Set;
 /**
  * Created by BLACK HAT on 10-Nov-15.
  */
-public class CreateParentActivity extends Activity implements IDialogSelectChildrenDoneListener{
+public class CreateParentActivity extends FragmentActivity implements IDialogSelectChildrenDoneListener, UserAuthListener{
 
 
     private UIHelper uiHelper;
@@ -88,7 +94,7 @@ public class CreateParentActivity extends Activity implements IDialogSelectChild
     private Spinner spinnerGender;
     private EditText txtContact;
 
-
+    private UserHelper userHelper;
 
     //private Button btnCreate;
 
@@ -150,6 +156,7 @@ public class CreateParentActivity extends Activity implements IDialogSelectChild
         setContentView(R.layout.activity_create_parent2);
 
         Bundle extras = getIntent().getExtras();
+        userHelper = new UserHelper(this, CreateParentActivity.this);
 
         if(extras != null)
         {
@@ -532,8 +539,8 @@ public class CreateParentActivity extends Activity implements IDialogSelectChild
 
 
 
-
-        AppRestClient.post(URLHelper.URL_PAID_PARENT, params, createParentHandler);
+        userHelper.doClassTuneLogin(URLHelper.URL_PAID_PARENT, params);
+        //AppRestClient.post(URLHelper.URL_PAID_PARENT, params, createParentHandler);
     }
 
     AsyncHttpResponseHandler createParentHandler = new AsyncHttpResponseHandler() {
@@ -1128,6 +1135,73 @@ public class CreateParentActivity extends Activity implements IDialogSelectChild
         } catch (Exception e) { // TODO
             e.printStackTrace();
         }
+
+    }
+
+    @Override
+    public void onAuthenticationStart() {
+        uiHelper.showLoadingDialog(getString(R.string.loading_text));
+    }
+
+    @Override
+    public void onAuthenticationSuccessful() {
+        if (uiHelper.isDialogActive()) {
+            uiHelper.dismissLoadingDialog();
+
+        }
+        if (UserHelper.isRegistered()) {
+            if (UserHelper.isLoggedIn()) {
+
+
+
+
+                switch (UserHelper.getUserAccessType()) {
+                    case FREE:
+                        Intent intent = new Intent(CreateParentActivity.this,
+                                HomePageFreeVersion.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                        break;
+                    case PAID:
+                        if ( UserHelper.isFirstLogin() ){
+                            PopupDialogChangePassword picker = new PopupDialogChangePassword();
+                            picker.show(getSupportFragmentManager(), null);
+                        }else AppUtility.doPaidNavigation(userHelper, CreateParentActivity.this);
+                        break;
+
+                    default:
+                        break;
+                }
+
+            } else {
+                finish();
+                Intent intent = new Intent(CreateParentActivity.this,
+                        CompleteProfileActivityContainer.class);
+                intent.putExtra(SPKeyHelper.USER_TYPE, userHelper.getUser()
+                        .getType().ordinal());
+                intent.putExtra("FIRST_TIME", true);
+                startActivity(intent);
+
+            }
+        } else {
+            Log.e("TypeSelection!", "GOOOOOOOOOOOOOOOO");
+            UserTypeSelectionDialog dialogFrag = UserTypeSelectionDialog
+                    .newInstance();
+            dialogFrag.show(getSupportFragmentManager().beginTransaction(),
+                    "dialog");
+
+        }
+    }
+
+    @Override
+    public void onAuthenticationFailed(String msg) {
+
+    }
+
+    @Override
+    public void onPaswordChanged() {
 
     }
 }

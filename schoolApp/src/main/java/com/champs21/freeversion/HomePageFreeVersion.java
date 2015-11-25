@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.champs21.schoolapp.ChildSelectionActivity;
+import com.champs21.schoolapp.LoginActivity;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.fragments.CommonChildFragment;
 import com.champs21.schoolapp.fragments.VideoFragment;
@@ -153,10 +154,9 @@ public class HomePageFreeVersion extends HomeContainerActivity {
             if (myFragment.isVisible()) {
                 loadHome();
             } else super.onBackPressed();
-
         } else{*/
             //Fragment homeFragment = getSupportFragmentManager().findFragmentByTag("HOME");
-            if(homeFragment == null){
+            if(homeFragment == null) {
                 loadHome();
             } else {
                 if(homeFragment.isVisible()) {
@@ -165,8 +165,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                     loadHome();
                 }
             }
-
-        //}
+     //}
     }
 
     public void loadFragment(Fragment frag) {
@@ -599,9 +598,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
 					startActivity(intent);
 					overridePendingTransition(0, 0);
                     }
-
-
-                        break;
+                       break;
 
                     default:
                         break;
@@ -656,7 +653,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                 UserHelper.setLoggedIn(false);
                 UserHelper.saveIsJoinedSchool(false);
                 Intent intent = new Intent(HomePageFreeVersion.this,
-                        HomePageFreeVersion.class);
+                        LoginActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION
                         | Intent.FLAG_ACTIVITY_NEW_TASK
                         | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -671,10 +668,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                 Toast.makeText(context, "Something went wrong with your internet connectivity, pleaswe try again later.", Toast.LENGTH_SHORT).show();
 
             }
-
-
         }
-
     };
 
 

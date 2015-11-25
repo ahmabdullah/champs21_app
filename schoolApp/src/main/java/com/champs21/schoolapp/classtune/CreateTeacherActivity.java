@@ -1,7 +1,6 @@
 package com.champs21.schoolapp.classtune;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
@@ -20,6 +19,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -35,21 +35,28 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.champs21.freeversion.CompleteProfileActivityContainer;
+import com.champs21.freeversion.HomePageFreeVersion;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.adapters.CropOptionAdapter;
 import com.champs21.schoolapp.fragments.AlbumStorageDirFactory;
 import com.champs21.schoolapp.fragments.BaseAlbumDirFactory;
 import com.champs21.schoolapp.fragments.FroyoAlbumDirFactory;
+import com.champs21.schoolapp.fragments.UserTypeSelectionDialog;
 import com.champs21.schoolapp.model.Batch;
 import com.champs21.schoolapp.model.CropOption;
 import com.champs21.schoolapp.model.TeacherInfo;
+import com.champs21.schoolapp.model.UserAuthListener;
 import com.champs21.schoolapp.model.Wrapper;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.GsonParser;
 import com.champs21.schoolapp.utils.RequestKeyHelper;
+import com.champs21.schoolapp.utils.SPKeyHelper;
 import com.champs21.schoolapp.utils.URLHelper;
+import com.champs21.schoolapp.utils.UserHelper;
+import com.champs21.schoolapp.viewhelpers.PopupDialogChangePassword;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -71,7 +78,7 @@ import java.util.List;
 /**
  * Created by BLACK HAT on 12-Nov-15.
  */
-public class CreateTeacherActivity extends Activity {
+public class CreateTeacherActivity extends FragmentActivity implements UserAuthListener{
 
     private UIHelper uiHelper;
 
@@ -90,6 +97,8 @@ public class CreateTeacherActivity extends Activity {
     private int year;
     private int month;
     private int day;
+
+    private UserHelper userHelper;
 
     private LinearLayout layoutUserIdHolder;
     private TextView txtUserId;
@@ -136,7 +145,7 @@ public class CreateTeacherActivity extends Activity {
 
     private RelativeLayout layoutGreenPanelPosition;
     private View viewGreenPanelPosition;
-    private RelativeLayout layoutPositionHolder;
+    RelativeLayout layoutPositionHolder;
 
     private TextView txtMessage;
 
@@ -170,6 +179,7 @@ public class CreateTeacherActivity extends Activity {
 
         uiHelper = new UIHelper(CreateTeacherActivity.this);
 
+        userHelper = new UserHelper(this, CreateTeacherActivity.this);
 
         Bundle extras = getIntent().getExtras();
 
@@ -248,7 +258,7 @@ public class CreateTeacherActivity extends Activity {
 
         layoutGreenPanelPosition = (RelativeLayout)this.findViewById(R.id.layoutGreenPanelPosition);
         viewGreenPanelPosition = this.findViewById(R.id.viewGreenPanelPosition);
-        layoutPositionHolder = (RelativeLayout)this.findViewById(R.id.layoutPositionHolder);
+        layoutPositionHolder = (RelativeLayout)findViewById(R.id.layoutPositionHolder);
 
         txtMessage = (TextView)this.findViewById(R.id.txtMessage);
 
@@ -659,7 +669,7 @@ public class CreateTeacherActivity extends Activity {
         });
 
 
-        Log.e("listPosition size", "is: "+listTeacherInfoPosition.size());
+        Log.e("listPosition size", "is: " + listTeacherInfoPosition.size());
 
 
         if(listTeacherInfoPosition.size() > 0)
@@ -970,8 +980,8 @@ public class CreateTeacherActivity extends Activity {
         }
 
 
-
-        AppRestClient.post(URLHelper.URL_PAID_TEACHER, params, createTeacherHandler);
+        userHelper.doClassTuneLogin(URLHelper.URL_PAID_TEACHER, params);
+        //AppRestClient.post(URLHelper.URL_PAID_TEACHER, params, createTeacherHandler);
     }
 
     AsyncHttpResponseHandler createTeacherHandler = new AsyncHttpResponseHandler() {
@@ -1471,6 +1481,73 @@ public class CreateTeacherActivity extends Activity {
         } catch (Exception e) { // TODO
             e.printStackTrace();
         }
+
+    }
+
+    @Override
+    public void onAuthenticationStart() {
+        uiHelper.showLoadingDialog(getString(R.string.loading_text));
+    }
+
+    @Override
+    public void onAuthenticationSuccessful() {
+        if (uiHelper.isDialogActive()) {
+            uiHelper.dismissLoadingDialog();
+
+        }
+        if (UserHelper.isRegistered()) {
+            if (UserHelper.isLoggedIn()) {
+
+
+
+
+                switch (UserHelper.getUserAccessType()) {
+                    case FREE:
+                        Intent intent = new Intent(CreateTeacherActivity.this,
+                                HomePageFreeVersion.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                        break;
+                    case PAID:
+                        if ( UserHelper.isFirstLogin() ){
+                            PopupDialogChangePassword picker = new PopupDialogChangePassword();
+                            picker.show(getSupportFragmentManager(), null);
+                        }else AppUtility.doPaidNavigation(userHelper, CreateTeacherActivity.this);
+                        break;
+
+                    default:
+                        break;
+                }
+
+            } else {
+                finish();
+                Intent intent = new Intent(CreateTeacherActivity.this,
+                        CompleteProfileActivityContainer.class);
+                intent.putExtra(SPKeyHelper.USER_TYPE, userHelper.getUser()
+                        .getType().ordinal());
+                intent.putExtra("FIRST_TIME", true);
+                startActivity(intent);
+
+            }
+        } else {
+            Log.e("TypeSelection!", "GOOOOOOOOOOOOOOOO");
+            UserTypeSelectionDialog dialogFrag = UserTypeSelectionDialog
+                    .newInstance();
+            dialogFrag.show(getSupportFragmentManager().beginTransaction(),
+                    "dialog");
+
+        }
+    }
+
+    @Override
+    public void onAuthenticationFailed(String msg) {
+
+    }
+
+    @Override
+    public void onPaswordChanged() {
 
     }
 

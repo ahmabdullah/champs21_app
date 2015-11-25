@@ -1,7 +1,9 @@
 package com.champs21.schoolapp.utils;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -13,6 +15,7 @@ import android.util.TypedValue;
 import android.view.Display;
 import android.view.WindowManager;
 
+import com.champs21.freeversion.HomePageFreeVersion;
 import com.champs21.schoolapp.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
@@ -579,5 +582,38 @@ public class AppUtility {
 			float value) {
 		return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value,
 				context.getResources().getDisplayMetrics());
+	}
+
+	public static void doPaidNavigation(UserHelper userHelper, Activity activity){
+		switch (userHelper.getUser().getType()) {
+
+			case PARENTS:
+				if (userHelper.getUser().getChildren() == null) {
+					Log.e("Userhelper", "null");
+				}
+				if (userHelper.getUser().getChildren().size() > 0) {
+					Intent paidIntent = new Intent(activity,
+							HomePageFreeVersion.class);
+					paidIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+							| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+					activity.startActivity(paidIntent);
+					activity.finish();
+				}
+				break;
+			default:
+
+                /*if(userHelper.getUserAccessType()== UserHelper.UserAccessType.PAID ){//&& UserHelper.isFirstLogin()
+                    PopupDialogChangePassword picker = new PopupDialogChangePassword();
+                    picker.show(getSupportFragmentManager(), null);
+                }*/
+				Intent paidIntent = new Intent(activity,
+						HomePageFreeVersion.class);
+				paidIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+						| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				activity.startActivity(paidIntent);
+				activity.finish();
+				break;
+		}
+
 	}
 }

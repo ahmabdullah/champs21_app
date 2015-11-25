@@ -3,12 +3,8 @@
  */
 package com.champs21.schoolapp.fragments;
 
-import java.util.ArrayList;
-
-import android.content.Intent;
-import android.content.IntentFilter;
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.champs21.freeversion.PaidVersionHomeFragment;
 import com.champs21.schoolapp.BatchSelectionChangedBroadcastReceiver;
@@ -28,11 +23,11 @@ import com.champs21.schoolapp.model.Batch;
 import com.champs21.schoolapp.model.ClassTestItem;
 import com.champs21.schoolapp.model.ClassTestReportItem;
 import com.champs21.schoolapp.model.Picker;
+import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.model.PickerType;
 import com.champs21.schoolapp.model.ReportCardModel;
 import com.champs21.schoolapp.model.StudentAttendance;
 import com.champs21.schoolapp.model.Wrapper;
-import com.champs21.schoolapp.model.Picker.PickerItemSelectedListener;
 import com.champs21.schoolapp.networking.AppRestClient;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.AppUtility;
@@ -47,6 +42,8 @@ import com.champs21.schoolapp.viewhelpers.ExpandableTextView;
 import com.champs21.schoolapp.viewhelpers.UIHelper;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import java.util.ArrayList;
 
 /**
  * @author Amit
@@ -74,6 +71,7 @@ public class ReportClassTestFragment extends UserVisibleHintFragment implements 
 	UserHelper userHelper;
 	private String batchId="";
 	private String studentId="";
+	private Context mContext;
 	
 	/*@Override
 	public void onResume() {
@@ -113,9 +111,10 @@ public class ReportClassTestFragment extends UserVisibleHintFragment implements 
 
 
 	private void init() {
+		mContext = getActivity();
 		uiHelper=new UIHelper(getActivity());
-		app = (SchoolApp) getActivity().getApplicationContext();
-		userHelper = new UserHelper(getActivity());
+		app = (SchoolApp) mContext.getApplicationContext();
+		userHelper = new UserHelper(mContext);
 		items = new ArrayList<ClassTestReportItem>();
 
 		
@@ -231,7 +230,6 @@ public class ReportClassTestFragment extends UserVisibleHintFragment implements 
 				processItems();
 			}
 
-
 		};
 	};
 		
@@ -297,7 +295,7 @@ public class ReportClassTestFragment extends UserVisibleHintFragment implements 
 	protected void processItems() {
 		// TODO Auto-generated method stub
 
-		mInflater = LayoutInflater.from(getActivity());
+		mInflater = LayoutInflater.from(mContext);
 
 		for (int i = 0; i < items.size(); i++) {
 			final int j = i;
@@ -511,7 +509,7 @@ public class ReportClassTestFragment extends UserVisibleHintFragment implements 
 			int pos = 0;
 			holder.tvCTDate.setText(ctList.get(pos).getExamDate());
 			holder.tvCTSub.setText(items.get(i).getSubjectName());
-			holder.imageCTSub.setBackgroundResource(AppUtility.getImageResourceId(items.get(i).getSubjectIcon(), getActivity()));
+			holder.imageCTSub.setBackgroundResource(AppUtility.getImageResourceId(items.get(i).getSubjectIcon(), mContext));
 			holder.tvCTName.setText(ctList.get(pos).getExamName());
 
 			holder.tvCTGrade.setText(ctList.get(pos).getGrade());

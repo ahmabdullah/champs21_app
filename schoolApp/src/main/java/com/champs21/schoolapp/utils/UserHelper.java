@@ -74,9 +74,9 @@ public class UserHelper {
         AppRestClient.post(URLHelper.URL_LOGIN, params, logInHandler);
     }
 
-    public void doClassTuneLogin(RequestParams params) {
+    public void doClassTuneLogin(String url, RequestParams params) {
         this.logedInUser = getUser();
-        AppRestClient.post(URLHelper.URL_PAID_STUDENT, params, logInHandler);
+        AppRestClient.post(url, params, logInHandler);
     }
 
     private SharedPreferences getGcmPreferences(Context context) {

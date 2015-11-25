@@ -425,13 +425,9 @@ public class CreateStudentActivity extends FragmentActivity implements UserAuthL
         layoutDatePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 new DatePickerDialog(CreateStudentActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-
-
             }
         });
 
@@ -527,8 +523,6 @@ public class CreateStudentActivity extends FragmentActivity implements UserAuthL
             uiHelper.showErrorDialog(AppConstant.CLASSTUNE_MESSAGE_CONTACT_NUMBER);
             isValid = false;
         }
-
-
         return isValid;
     }
 
@@ -560,7 +554,7 @@ public class CreateStudentActivity extends FragmentActivity implements UserAuthL
         }
 
 
-        userHelper.doClassTuneLogin(params);
+        userHelper.doClassTuneLogin(URLHelper.URL_PAID_STUDENT, params);
         //AppRestClient.post(URLHelper.URL_PAID_STUDENT, params, createStudentHandler);
     }
 

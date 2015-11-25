@@ -51,7 +51,6 @@ public class SplashScreenActivity extends Activity {
 		uiHelper=new UIHelper(SplashScreenActivity.this);
 		/*if(AppUtility.isInternetConnected())
 			AppRestClient.postCmart(URLHelper.BASE_URL_CMART+URLHelper.URL_FREE_VERSION_C_MART_INIT, null,initCart);
-		
 		else
 		{
 			navigateToNextPage();
@@ -168,13 +167,9 @@ public class SplashScreenActivity extends Activity {
 
 		@Override
 		public void onSuccess(int arg0, String responseString) {
-			
 			Log.e("INDEX", responseString);
 			SharedPreferencesHelper.getInstance().setString(SPKeyHelper.CAMRT_CATS,responseString);
 			navigateToNextPage();
-			
-			
-			
 		}
 
 	};
