@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.champs21.schoolapp.LoginActivity;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.utils.AppConstant;
 import com.champs21.schoolapp.utils.SchoolApp;
@@ -40,7 +41,6 @@ public class UserSelectionActivity extends Activity implements View.OnClickListe
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_userselection_layout2);
-
         initView();
         initAction();
     }
@@ -64,7 +64,7 @@ public class UserSelectionActivity extends Activity implements View.OnClickListe
         btnStudentSelect.setOnClickListener(this);
         btnParentSelect.setOnClickListener(this);
         btnTeacherSelect.setOnClickListener(this);
-
+        btnSignIn.setOnClickListener(this);
 
         txtMeHeader.setTypeface(SchoolApp.getInstance().getClassTuneFontRes(AppConstant.CLASSTUNE_FONT_NAME));
         txtMeHeader.setText("I'm");
@@ -84,31 +84,36 @@ public class UserSelectionActivity extends Activity implements View.OnClickListe
     @Override
     public void onClick(View v)
     {
-        Intent intent = new Intent(UserSelectionActivity.this, RegistrationFirstPhaseActivity.class);
+        Intent intent = null;
 
 
         switch (v.getId())
         {
             case R.id.btnStudentSelect:
+                intent = new Intent(UserSelectionActivity.this, RegistrationFirstPhaseActivity.class);
                 intent.putExtra(AppConstant.USER_TYPE_CLASSTUNE, 2);
-
                 break;
 
             case R.id.btnParentSelect:
+                intent = new Intent(UserSelectionActivity.this, RegistrationFirstPhaseActivity.class);
                 intent.putExtra(AppConstant.USER_TYPE_CLASSTUNE, 4);
-
                 break;
 
             case R.id.btnTeacherSelect:
+                intent = new Intent(UserSelectionActivity.this, RegistrationFirstPhaseActivity.class);
                 intent.putExtra(AppConstant.USER_TYPE_CLASSTUNE, 3);
+                break;
 
+            case R.id.btnSignIn:
+                intent = new Intent(UserSelectionActivity.this, LoginActivity.class);
                 break;
 
             default:
                 break;
         }
 
-        startActivity(intent);
-
+        if(intent != null) {
+            startActivity(intent);
+        }
     }
 }
