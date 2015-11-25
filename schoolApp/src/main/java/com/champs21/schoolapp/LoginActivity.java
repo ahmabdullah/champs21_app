@@ -127,10 +127,13 @@ public class LoginActivity extends SocialBaseActivity implements
                         PopupDialogChangePassword picker = new PopupDialogChangePassword();
                         picker.show(getSupportFragmentManager(), null);
                     } else {
-						//doPaidNavigation();
-						startActivityForResult(new Intent(this,
-										ChildSelectionActivity.class),
-								CommonChildFragment.REQUEST_CODE_CHILD_SELECTION);
+						if(userHelper.getUser().getType() != UserTypeEnum.PARENTS){
+							doPaidNavigation();
+						} else {
+							startActivityForResult(new Intent(this,
+											ChildSelectionActivity.class),
+									CommonChildFragment.REQUEST_CODE_CHILD_SELECTION);
+						}
 					}
                     break;
 
@@ -161,7 +164,7 @@ public class LoginActivity extends SocialBaseActivity implements
     @Override
     public void onActivityResult(int requestCode, int responseCode, Intent intent) {
 		if(requestCode==REQUEST_COMPLETE_PROFILE){
-                doPaidNavigation();
+			doPaidNavigation();
         }
 		if(requestCode== CommonChildFragment.REQUEST_CODE_CHILD_SELECTION) {
 			doPaidNavigation();
