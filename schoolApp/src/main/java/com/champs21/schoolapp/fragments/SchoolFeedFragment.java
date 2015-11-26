@@ -53,7 +53,6 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.handmark.pulltorefresh.library.PullToRefreshListViewCustom;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -108,7 +107,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
         // adapter.notifyDataSetChanged();
 
-        listGoodread = (PullToRefreshListViewCustom) view
+        listGoodread = (PullToRefreshListView) view
                 .findViewById(R.id.listView_category);
         int footerHeight = getActivity().getResources().getDimensionPixelSize(
                 R.dimen.footer_height);
