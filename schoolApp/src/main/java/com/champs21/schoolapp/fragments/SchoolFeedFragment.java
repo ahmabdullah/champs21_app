@@ -18,19 +18,15 @@ import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.champs21.freeversion.AnyFragmentLoadActivity;
 import com.champs21.freeversion.ChildContainerActivity;
-import com.champs21.freeversion.GoodReadActivity;
 import com.champs21.freeversion.HomePageFreeVersion;
 import com.champs21.freeversion.PaidVersionHomeFragment;
-import com.champs21.freeversion.SchoolScrollableDetailsActivity;
 import com.champs21.freeversion.SchoolSingleItemShowActivity;
 import com.champs21.schoolapp.R;
 import com.champs21.schoolapp.model.FreeVersionPost;
@@ -56,6 +52,7 @@ import com.champs21.schoolapp.viewhelpers.UninterceptableViewPager;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.PullToRefreshListViewCustom;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -73,7 +70,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
     UIHelper uiHelper;
     UserHelper userHelper;
-    private PullToRefreshListViewCustom listGoodread;
+    private PullToRefreshListView listGoodread;
     private GoodReadAdapter adapter;
     private ArrayList<FreeVersionPost> allGooadReadPost = new ArrayList<FreeVersionPost>();
     private ProgressBar spinner;
@@ -90,7 +87,6 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
             R.id.d6};
     private int[] mArray = {R.id.m1, R.id.m2, R.id.m3, R.id.m4, R.id.m5,
             R.id.m6};
-    private LinearLayout mQuickReturnTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -112,19 +108,11 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
         // adapter.notifyDataSetChanged();
 
-        mQuickReturnTextView = (LinearLayout) view
-                .findViewById(R.id.quick_return_tv);
-        setupPoppyView(mQuickReturnTextView);
         listGoodread = (PullToRefreshListViewCustom) view
                 .findViewById(R.id.listView_category);
         int footerHeight = getActivity().getResources().getDimensionPixelSize(
                 R.dimen.footer_height);
         //some code hello there
-        listGoodread.setQuickReturnListViewOnScrollListener(
-                PullToRefreshListViewCustom.QuickReturnType.FOOTER, null, 0,
-                mQuickReturnTextView, footerHeight);
-        // listViewFitness.getRefreshableView().addHeaderView(mQuickReturnTextView);
-        listGoodread.setCanSlideInIdleScrollState(true);
         listGoodread.setAdapter(adapter);
         setUpList();
         loadDataInToList();
@@ -1308,79 +1296,6 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
     }
 
-    private void setupPoppyView(View poppyView) {
-        ImageButton btnGoodread = (ImageButton) poppyView
-                .findViewById(R.id.btn_goodread);
-        btnGoodread.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (UserHelper.isLoggedIn())
-                    startActivity(new Intent(SchoolFeedFragment.this
-                            .getActivity(), GoodReadActivity.class));
-                else {
-                    showCustomDialog(
-                            "GOOD READ",
-                            R.drawable.goodread_popup_icon,
-                            getResources().getString(R.string.good_read_msg)
-                                    + "\n"
-                                    + getResources().getString(
-                                    R.string.not_logged_in_msg));
-                }
-                // uiHelper.showSuccessDialog(
-                // getString(R.string.not_logged_in_msg), "Dear User");
-            }
-        });
-
-        ImageButton btnMySchool = (ImageButton) poppyView
-                .findViewById(R.id.btn_myschool);
-        btnMySchool.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-					/*Intent schoolIntent = new Intent(getActivity(),
-							SchoolFreeVersionActivity.class);
-					startActivity(schoolIntent);*/
-                Intent intent = new Intent(
-                        getActivity(),
-                        SchoolScrollableDetailsActivity.class);
-                intent.putExtra(AppConstant.SCHOOL_ID, userHelper.getJoinedSchool().getSchool_id());
-                startActivity(intent);
-
-                // uiHelper.showMessage("Magic mart is comming soon!");
-            }
-        });
-
-        ImageButton btnCandle = (ImageButton) poppyView
-                .findViewById(R.id.btn_candle);
-        btnCandle.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (UserHelper.isLoggedIn()) {
-                    /*startActivity(new Intent(getActivity(),
-                            CandleActivity.class));*/
-
-                    Intent intent = new Intent(getActivity(), AnyFragmentLoadActivity.class);
-                    intent.putExtra("class_name_school_candle", "SchoolCandleFragment");
-                    startActivity(intent);
 
 
-                }
-
-                else {
-                    showCustomDialog(
-                            "CANDLE",
-                            R.drawable.candle_popup_icon,
-                            getResources().getString(R.string.candle_msg)
-                                    + "\n"
-                                    + getResources().getString(
-                                    R.string.not_logged_in_msg));
-                }
-                // uiHelper.showSuccessDialog(
-                // getString(R.string.not_logged_in_msg), "Dear User");
-            }
-        });
-    }
 }

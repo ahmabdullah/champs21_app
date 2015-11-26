@@ -119,7 +119,6 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
     private boolean isRefreshing = false;
     private boolean loading = false;
     private boolean stopLoadingData = false;
-    private LinearLayout mQuickReturnTextView;
     private UserTypeEnum selectedEnum = UserTypeEnum.OTHER;
     private String currentSubcategoryId = "";
     private LinearLayout headerBlock;
@@ -262,18 +261,15 @@ public class CommonChildFragment extends Fragment implements UserAuthListener,
         // setupPoppyView();
         // bannerView = (ImageView) view.findViewById(R.id.iv_banner);
 
-        mQuickReturnTextView = (LinearLayout) view
-                .findViewById(R.id.quick_return_tv);
-        setupPoppyView(mQuickReturnTextView);
         listViewFitness = (PullToRefreshListViewCustom) view
                 .findViewById(R.id.listView_category);
         int footerHeight = mContext.getResources().getDimensionPixelSize(
                 R.dimen.footer_height);
-        listViewFitness.setQuickReturnListViewOnScrollListener(
+        /*listViewFitness.setQuickReturnListViewOnScrollListener(
                 PullToRefreshListViewCustom.QuickReturnType.FOOTER, null, 0,
                 mQuickReturnTextView, footerHeight);
         // listViewFitness.getRefreshableView().addHeaderView(mQuickReturnTextView);
-        listViewFitness.setCanSlideInIdleScrollState(true);
+        listViewFitness.setCanSlideInIdleScrollState(true);*/
         setUpList();
         loadDataInToList();
         return view;

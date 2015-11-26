@@ -105,7 +105,6 @@ public class LoginActivity extends SocialBaseActivity implements
 		if (UserHelper.isRegistered()) {
 			if (UserHelper.isLoggedIn()) {
 				
-			
 				if(fromAssessment!=null && fromAssessment.length() > 0)
 				{
 					//Intent intent = new Intent(LoginActivity.this, AssesmentActivity.class);

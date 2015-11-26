@@ -60,12 +60,8 @@ public class SchoolApp extends Application {
 	private boolean loggedIn;
 	private ArrayList<Integer> weekends;
 	private ReportCardModel reportCardData = new ReportCardModel();
-	
 	public static final String TAG = SchoolApp.class.getSimpleName();
-	
 	private com.nostra13.universalimageloader.core.ImageLoader imageLoader;
-	
-	
 	public void setReportCardData(ReportCardModel reportCardData) {
 		this.reportCardData = reportCardData;
 	}
@@ -112,17 +108,12 @@ public class SchoolApp extends Application {
 
 	    //If a layout container, iterate over children and seed recursion.
 	    if (view instanceof ViewGroup) {
-
-	        for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
-
-	            View innerView = ((ViewGroup) view).getChildAt(i);
-
-	            setupUI(innerView, activity);
+			for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+			    View innerView = ((ViewGroup) view).getChildAt(i);
+				setupUI(innerView, activity);
 	        }
 	    }
 	}
-
-	
 
 	public void showLoader(Context context) {
 		dlog = ProgressDialog.show(context, AppConstant.STR_LOADER_TITLE, AppConstant.STR_LOADER_MSG, false, false);
@@ -137,10 +128,8 @@ public class SchoolApp extends Application {
 	public String getUDID() {
 		
 		String udid = SharedPreferencesHelper.getInstance().getString(SPKeyHelper.UDID, "");
-
 		if (udid.equalsIgnoreCase("")) {
 			TelephonyManager tm = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
-
 			udid = tm.getDeviceId();
 			
 			SharedPreferencesHelper.getInstance().setString(SPKeyHelper.UDID, udid);
