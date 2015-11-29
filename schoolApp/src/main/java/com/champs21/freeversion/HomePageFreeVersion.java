@@ -223,7 +223,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                 if (data == null) {
                     if (resultCode == RESULT_OK) {
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.pager_frame, PaidVersionHomeFragment.newInstance(1), "PAID").commitAllowingStateLoss();
+                                .replace(R.id.pager_frame, PaidVersionHomeFragment.newInstance(0), "PAID").commitAllowingStateLoss();
                         setActionBarTitle(userHelper.getUser().getPaidInfo()
                                 .getSchool_name());
                     }
@@ -296,7 +296,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                 break;
             case 1:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.pager_frame, PaidVersionHomeFragment.newInstance(1), "PAID").commit();
+                        .replace(R.id.pager_frame, PaidVersionHomeFragment.newInstance(0), "PAID").commit();
                 break;
             default:
                 break;
@@ -899,7 +899,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                 .replace(R.id.pager_frame,
                         CommonChildFragment.newInstance(-1, ""), "HOME").commit();*/
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.pager_frame, PaidVersionHomeFragment.newInstance(1), "PAID").commit();
+                .replace(R.id.pager_frame, PaidVersionHomeFragment.newInstance(0), "PAID").commit();
 
         listAdapter.initializeStates();
         listAdapter.notifyDataSetChanged();

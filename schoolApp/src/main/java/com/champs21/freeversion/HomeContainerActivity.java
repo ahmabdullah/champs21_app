@@ -68,7 +68,6 @@ import com.champs21.schoolapp.fragments.BaseAlbumDirFactory;
 import com.champs21.schoolapp.fragments.FroyoAlbumDirFactory;
 import com.champs21.schoolapp.model.CropOption;
 import com.champs21.schoolapp.model.DrawerChildBase;
-import com.champs21.schoolapp.model.DrawerChildMenu;
 import com.champs21.schoolapp.model.DrawerChildSettings;
 import com.champs21.schoolapp.model.DrawerGroup;
 import com.champs21.schoolapp.model.User;
@@ -176,7 +175,7 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 		int count = 0;
 
 		group = new DrawerGroup();
-		group.setImageName("menu_right_drawer");
+		/*group.setImageName("menu_right_drawer");
 		group.setText("Champs21");
 		group.setId("0");
 		groupItem.add(group);
@@ -195,7 +194,7 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 			child.setImageName(myMenuArrayImages[i]);
 			menus.add(child);
 		}
-		childList.put(groupItem.get(count++).getText(), menus);
+		childList.put(groupItem.get(count++).getText(), menus);*/
 		/*
 		 * List<Boolean> menuStatelist=new ArrayList<Boolean>(Arrays.asList(new
 		 * Boolean[myMenuArrayText.length])); Collections.fill(menuStatelist,

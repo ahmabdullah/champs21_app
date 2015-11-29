@@ -159,7 +159,6 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
         });
 
         adapter = new GoodReadAdapter(getActivity(), allGooadReadPost);
-
         listGoodread.setAdapter(adapter);
     }
 
@@ -208,7 +207,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
             }
         }
 
-        ;
+
 
         @Override
         public void onStart() {
@@ -223,7 +222,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
             }
         }
 
-        ;
+
 
         @Override
         public void onSuccess(int arg0, String responseString) {

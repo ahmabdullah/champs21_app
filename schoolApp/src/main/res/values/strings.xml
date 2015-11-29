@@ -61,7 +61,6 @@
     </string-array>
     <string-array name="diary_images_student">
         <item>home</item>
-        <item>diary_icon</item>
         <item>homework</item>
         <item>quiz</item>
         <item>notice</item>
@@ -78,7 +77,7 @@
     </string-array>
     
     <string-array name="diary_class_student">
-        <item>home</item>.
+
         <item>SchoolFeedFragment</item>
         <item>HomeworkFragment</item>
         <item>QuizFragment</item>
@@ -96,7 +95,7 @@
     </string-array>
     
     <string-array name="diary_text_student">
-        <item>home</item>
+
         <item>School Feed</item>
         <item>Homework</item>
         <item>Quiz</item>
@@ -115,7 +114,6 @@
     
     <string-array name="diary_images_parents">
         <item>home</item>
-        <item>diary_icon</item>
         <item>homework</item>
         <item>quiz</item>
         <item>notice</item>
@@ -135,7 +133,6 @@
     </string-array>
     
     <string-array name="diary_text_parents">
-        <item>home</item>
         <item>School Feed</item>
         <item>Homework</item>
         <item>Quiz</item>
@@ -156,7 +153,6 @@
     </string-array>
     
     <string-array name="diary_class_parents">
-        <item>home</item>
         <item>SchoolFeedFragment</item>
         <item>HomeworkFragment</item>
         <item>QuizFragment</item>
@@ -179,7 +175,6 @@
     
     <string-array name="diary_images_teacher">
         <item>home</item>
-        <item>diary_icon</item>
         <item>attendance</item>
         <item>homework</item>
         <item>routine</item>
@@ -198,7 +193,6 @@
     </string-array>
     
     <string-array name="diary_text_teacher">
-        <item>home</item>
         <item>School Feed</item>
         <item>Attendance</item>
         <item>Homework</item>
@@ -218,7 +212,6 @@
     </string-array>
     
     <string-array name="diary_class_teacher">
-        <item>home</item>
         <item>SchoolFeedFragment</item>
         <item>TeachersAttendanceTabhostFragment</item>
         <item>TeacherHomeWorkFragment</item>

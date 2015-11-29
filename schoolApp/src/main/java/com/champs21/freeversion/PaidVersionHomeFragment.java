@@ -1,28 +1,17 @@
 package com.champs21.freeversion;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.List;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver.OnWindowFocusChangeListener;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.FrameLayout.LayoutParams;
 
 import com.champs21.schoolapp.R;
-import com.champs21.schoolapp.fragments.CommonChildFragment;
 import com.champs21.schoolapp.fragments.SchoolFeedFragment;
 import com.champs21.schoolapp.model.BaseType;
 import com.champs21.schoolapp.model.Batch;
@@ -30,14 +19,18 @@ import com.champs21.schoolapp.model.DrawerChildBase;
 import com.champs21.schoolapp.model.DrawerChildMenuDiary;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.UserHelper;
-import com.champs21.schoolapp.viewhelpers.PagerSlidingTabStrip;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PaidVersionHomeFragment extends Fragment implements
 		OnClickListener {
 	public static List<BaseType> batches = new ArrayList<BaseType>();
 	public static boolean isBatchLoaded = false;
 	public static Batch selectedBatch = null;
-	private int currentPos = 1;
+	private int currentPos = 0;
 	private UserHelper userHelper = new UserHelper(getActivity());
 
 	@Override
