@@ -621,6 +621,7 @@
             android:orientation="horizontal" >
 
             <ImageView
+                android:id="@+id/summary_attendance_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/sum_attendance" />
@@ -948,7 +949,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:visibility="gone"
+        android:visibility="visible"
         android:id="@+id/sum_lay_exam_routine_publish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -88,6 +88,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
             R.id.d6};
     private int[] mArray = {R.id.m1, R.id.m2, R.id.m3, R.id.m4, R.id.m5,
             R.id.m6};
+    private boolean isPaid;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,7 +107,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                 false);
         //some code goes here
         spinner = (ProgressBar) view.findViewById(R.id.loading);
-
+        isPaid = userHelper.getUser().getPaidInfo().getSchoolType() == 1 ? true : false;
         // adapter.notifyDataSetChanged();
 
         listGoodread = (PullToRefreshListView) view
@@ -432,6 +433,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                                 .findViewById(R.id.sum_tv_school_name);
                         holder.studentName = (TextView) convertView
                                 .findViewById(R.id.sum_tv_child_name);
+                        holder.attendacneIcon = (ImageView) convertView.findViewById(R.id.summary_attendance_icon);
                         holder.schoolPicture = (ResizableImageView) convertView
                                 .findViewById(R.id.sum_iv_banner);
                         holder.profilePicture = (ImageView) convertView
@@ -744,7 +746,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                             holder.toggle.setVisibility(View.VISIBLE);
                             holder.attendance.setVisibility(View.VISIBLE);
                             holder.attendanceTextView.setText(feed.getAttendence());
-                            if(!feed.isHasClassTomorrow()) {
+                            if(!isPaid) {
                                 holder.routineIcon.setAlpha(70);
                                 holder.summeryRoutineText.setTextColor(getResources().getColor(R.color.gray_4));
                             }else { holder.routineIcon.setAlpha(255);
@@ -754,7 +756,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                                     feed.isHasClassTomorrow(), 8);
 
 
-                            if(feed.getHomeWorkSubjects().size() == 0) {
+                            /*if(!isPaid) { //feed.getHomeWorkSubjects().size() == 0
                                 holder.homeworkIcon.setAlpha(70);
                                 holder.hwText1.setTextColor(getResources().getColor(R.color.gray_4));
                                 holder.hwText2.setTextColor(getResources().getColor(R.color.gray_4));
@@ -762,30 +764,41 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                                 holder.hwText1.setTextColor(getResources().getColor(R.color.black));
                                 holder.hwText2.setTextColor(getResources().getColor(R.color.black));
                                 holder.homeworkIcon.setAlpha(255);
-                            }
-                            disableBlock(holder.homework, feed.getHomeWorkSubjects()
-                                    .size() != 0, 2);
-                            disableBlock(holder.attendance, true, 7);
+                            }*/
+                            disableBlock(holder.homework, true, 2);//feed.getHomeWorkSubjects().size() != 0
 
-                            if(!feed.isHasExamTomorrow()) {
+
+                            disableBlock(holder.attendance, isPaid, 7);
+                            if(isPaid) {
+                                holder.attendacneIcon.setAlpha(255);
+                                holder.attendanceTextView.setTextColor(getResources().getColor(R.color.black));
+                                holder.studentName.setTextColor(getResources().getColor(R.color.classtune_green_color));
+                            } else {
+                                holder.attendacneIcon.setAlpha(70);
+                                holder.attendanceTextView.setTextColor(getResources().getColor(R.color.gray_4));
+                                holder.studentName.setTextColor(getResources().getColor(R.color.gray_4));
+                            }
+
+
+                            if(!isPaid) {
                                 holder.etIconbg.setBackgroundColor(getResources().getColor(R.color.red_disable));
                                 holder.etText1.setTextColor(getResources().getColor(R.color.gray_4));
                                 holder.etText2.setTextColor(getResources().getColor(R.color.gray_4));
                             }else {
-                                holder.etIconbg.setBackgroundColor(getResources().getColor(R.color.red));
+                                holder.etIconbg.setBackgroundColor(getResources().getColor(R.color.classtune_green_color));
                                 holder.etText1.setTextColor(getResources().getColor(R.color.black));
                                 holder.etText2.setTextColor(getResources().getColor(R.color.black));
                             }
-                            disableBlock(holder.examTomorrow, feed.isHasExamTomorrow(),
+                            disableBlock(holder.examTomorrow, isPaid,
                                     9);
                             disableBlock(holder.quiz,
                                     feed.getSummeryQuizes().size() != 0, 3);
 
                             disableBlock(holder.reusltPublish,
-                                    !TextUtils.isEmpty(feed.getResult_publish()), 10);
-                            if (!TextUtils.isEmpty(feed.getResult_publish())) {
-                                holder.examResultText.setText(feed.getResult_publish()
-                                        + " Result published.");
+                                    isPaid, 10);
+                            if (isPaid) {
+                                /*holder.examResultText.setText(feed.getResult_publish()
+                                        + " Result published.");*/
                                 holder.rpIcon.setAlpha(255);
                                 holder.examResultText.setTextColor(getResources().getColor(R.color.black));
                                 holder.rpGoodLuck.setTextColor(getResources().getColor(R.color.black));
@@ -794,16 +807,16 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                                 holder.examResultText.setTextColor(getResources().getColor(R.color.gray_4));
                                 holder.rpGoodLuck.setTextColor(getResources().getColor(R.color.gray_4));
                             }
-                            if (!TextUtils.isEmpty(feed.getRoutine_publish())) {
-                                holder.examRoutineText.setText(feed
-                                        .getRoutine_publish() + " Routine published.");
-                                holder.erpIcon.setBackgroundColor(getResources().getColor(R.color.red));
+                            if (isPaid) {
+                                /*holder.examRoutineText.setText(feed
+                                        .getRoutine_publish() + " Routine published.");*/
+                                holder.erpIcon.setBackgroundColor(getResources().getColor(R.color.classtune_green_color));
                             } else {
                                 holder.erpIcon.setBackgroundColor(getResources().getColor(R.color.red_disable));
                                 holder.examRoutineText.setTextColor(getResources().getColor(R.color.gray_4));
                             }
                             disableBlock(holder.routinePublish,
-                                    !TextUtils.isEmpty(feed.getRoutine_publish()), 9);
+                                    isPaid, 9);
                             holder.toggle.setOnClickListener(new OnClickListener() {
 
                                 @Override
@@ -850,29 +863,29 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                         }
 
                         disableBlock(holder.eventTomorrow,
-                                feed.isHasEventTomorrow(), 6);
-                        if (feed.isHasEventTomorrow()) {
-                            holder.eventText.setText("You have "
-                                    + feed.getEvent_name() + " Tomorrow.");
+                                isPaid, 6);
+                        if (isPaid) {//feed.isHasEventTomorrow()
+                            /*holder.eventText.setText("You have "
+                                    + feed.getEvent_name() + " Tomorrow.");*/
                             holder.eventIcon.setAlpha(255);
                         } else {
                             holder.eventIcon.setAlpha(70);
                             holder.eventText.setTextColor(getResources().getColor(R.color.gray_4));
                         }
 
-                        disableBlock(holder.notice, feed.isHasNotice(), 4);
-                        if(feed.isHasNotice()) {
+                        disableBlock(holder.notice, true, isPaid ? 4:3);
+                        /*if(feed.isHasNotice()) {
                             holder.noticeIconLay.setBackgroundColor(getResources().getColor(R.color.red));
                             holder.noticeText.setTextColor(getResources().getColor(R.color.black));
                         } else {
                             holder.noticeIconLay.setBackgroundColor(getResources().getColor(R.color.red_disable));
                             holder.noticeText.setTextColor(getResources().getColor(R.color.gray_4));
-                        }
+                        }*/
 
-                        if (!TextUtils.isEmpty(summary.getSchool_picture()))
+                       /* if (!TextUtils.isEmpty(summary.getSchool_picture()))
                             SchoolApp.getInstance().displayUniversalImage(
                                     summary.getSchool_picture(),
-                                    holder.schoolPicture);
+                                    holder.schoolPicture);*/
                         if (!TextUtils.isEmpty(summary.getProfile_picture()))
                             SchoolApp.getInstance().displayUniversalImage(
                                     summary.getProfile_picture(),
@@ -1270,6 +1283,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
         ImageView eventIcon;
         TextView studentNameHeader;
+        public ImageView attendacneIcon;
     }
 
     private class ImagePagerAdapter extends PagerAdapter {

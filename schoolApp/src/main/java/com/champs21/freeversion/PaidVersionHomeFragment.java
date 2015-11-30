@@ -1,6 +1,5 @@
 package com.champs21.freeversion;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -20,6 +19,7 @@ import com.champs21.schoolapp.model.DrawerChildBase;
 import com.champs21.schoolapp.model.DrawerChildMenuDiary;
 import com.champs21.schoolapp.utils.AppUtility;
 import com.champs21.schoolapp.utils.UserHelper;
+import com.champs21.schoolapp.viewhelpers.PopupDialog;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -301,6 +301,14 @@ public class PaidVersionHomeFragment extends Fragment implements
 		// pager.setCurrentItem(positionPager);
 	}
 
+	public void showCustomDialog(String headerText, int imgResId,
+								 String descriptionText) {
+
+		PopupDialog picker = PopupDialog.newInstance(0);
+		picker.setData(headerText, descriptionText, imgResId, getActivity());
+		picker.show(getChildFragmentManager(), null);
+	}
+
 	@Override
 	public void onClick(View v) {
 		DrawerChildMenuDiary child = (DrawerChildMenuDiary) v.getTag();
@@ -308,10 +316,7 @@ public class PaidVersionHomeFragment extends Fragment implements
 		if (child.isPressed())
 			return;
 		if(!ispaid && Integer.parseInt(child.getId()) > 2){
-			new AlertDialog.Builder(getActivity())
-					.setMessage("Please upgrade to premium account to enjoy this feature!")
-					.setIcon(android.R.drawable.ic_dialog_alert)
-					.show();
+			showCustomDialog("DISCLAIMER",R.drawable.premium_upgrade_icon, "Contact your school to Upgrade.");
 			return;
 		}
 		for (int i = 0; i < menuScrollView.getChildCount(); i++) {
