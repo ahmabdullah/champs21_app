@@ -50,15 +50,14 @@ public class ChildSelectionActivity extends RoboFragmentActivity{
 	private CustomIndicator customIndicator;
 
 
-    private ImageView imgViewCover;
-	private ProgressBar progressBarImage;
+
 
 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_children_selection2);
+		setContentView(R.layout.activity_children_selection3);
 		
 		density = getResources().getDisplayMetrics().density;
 		
@@ -74,7 +73,7 @@ public class ChildSelectionActivity extends RoboFragmentActivity{
 
 		childrenList = userHelper.getUser().getChildren();
 		
-		Log.e("list size", userHelper.getUser().getChildren().size()+"");
+		//Log.e("list size", userHelper.getUser().getChildren().size()+"");
 
 		//listView = (ListView) findViewById(R.id.listView_children);
 		//adapter = new EfficientAdapter(this, childrenList);
@@ -136,8 +135,7 @@ public class ChildSelectionActivity extends RoboFragmentActivity{
 		
 		customIndicator = (CustomIndicator)this.findViewById(R.id.customIndicator);
 
-        imgViewCover  = (ImageView)this.findViewById(R.id.imgViewCover);
-        progressBarImage = (ProgressBar)this.findViewById(R.id.progressBarImage);
+
 	}
 	
 	private void initAction()
@@ -202,15 +200,6 @@ public class ChildSelectionActivity extends RoboFragmentActivity{
 			customIndicator.setVisibility(View.VISIBLE);
 		}
 
-
-        if(!TextUtils.isEmpty(UserHelper.getSchoolCover()))
-        {
-            SchoolApp.getInstance().displayUniversalImage(UserHelper.getSchoolCover(), imgViewCover, progressBarImage);
-        }
-        else
-        {
-            imgViewCover.setImageResource(R.drawable.header_student_select);
-        }
 
 	}
 	
@@ -381,4 +370,13 @@ public class ChildSelectionActivity extends RoboFragmentActivity{
 			return list;
 		}
 	}*/
+
+	@Override
+	public void onBackPressed() {
+
+		userHelper.storeCurrentChildInfo(childrenList.get(0));
+
+		setResult(RESULT_OK);
+		super.onBackPressed();
+	}
 }

@@ -31,7 +31,7 @@
 	<color name="settings_grey_title_bar">#C3C7C8</color>
 	<color name="settings_grey_divider">#D5D9DB</color>
 	<color name="accepted_color">#017DB9</color>
-	<color name="red_disable">#c89fa0</color>
+	<color name="red_disable">#b5e2b3</color>
 	<color name="bg_disable">#ecedee</color>
 	<color name="bg_row_odd">#F4F6F7</color>
 	<color name="search_container_tap">#e7ecee</color>

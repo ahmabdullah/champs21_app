@@ -331,7 +331,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:background="@color/red" />
+        android:background="@color/classtune_green_color" />
 
 
         <LinearLayout
@@ -385,7 +385,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12:00pm-12:45pm"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/classtune_green_color"/>
                 </LinearLayout>
 
             <LinearLayout
@@ -419,7 +419,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12:00pm-12:45pm"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/classtune_green_color"/>
             </LinearLayout>
             </LinearLayout>
 
@@ -466,7 +466,7 @@
                 android:text="Roll Call"
                 android:layout_marginLeft="5dp"
                 android:textStyle="bold"
-                android:textColor="@color/red"
+                android:textColor="@color/classtune_green_color"
                 android:textSize="11sp" />
 
 
@@ -501,7 +501,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Add New Homework"
-                android:textColor="@color/red"
+                android:textColor="@color/classtune_green_color"
                 android:textSize="11sp" />
         </LinearLayout>
         <LinearLayout
@@ -533,7 +533,7 @@
                 android:layout_marginLeft="5dp"
                 android:text="Add Quiz"
                 android:textStyle="bold"
-                android:textColor="@color/red"
+                android:textColor="@color/classtune_green_color"
                 android:textSize="11sp" />
         </LinearLayout>
     </LinearLayout>
@@ -656,7 +656,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ibrahimul"
-                    android:textColor="@color/red"
+                    android:textColor="@color/classtune_green_color"
                     android:textSize="14sp" />
 
                 <TextView
@@ -748,7 +748,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="Homework"
-                android:textColor="@color/red"
+                android:textColor="@color/classtune_green_color"
                 android:textSize="22sp" />
         </LinearLayout>
     </LinearLayout>
@@ -799,7 +799,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tution Fee"
-                    android:textColor="@color/red"
+                    android:textColor="@color/classtune_green_color"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -852,7 +852,7 @@
             android:id="@+id/notice_icon_lay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/red" >
+            android:background="@color/classtune_green_color" >
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -924,7 +924,7 @@
             android:id="@+id/summery_exam_tomorrow_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/red" >
+            android:background="@color/classtune_green_color" >
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -957,7 +957,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="EXAM tomorrow."
-                android:textColor="@color/red"
+                android:textColor="@color/classtune_green_color"
                 android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
@@ -978,7 +978,7 @@
             android:id="@+id/summary_exam_routine_publish_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/red" >
+            android:background="@color/classtune_green_color" >
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -997,7 +997,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="Exam Routine Published"
-            android:textColor="@color/red"
+            android:textColor="@color/classtune_green_color"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -1089,7 +1089,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="leave Application"
-                    android:textColor="@color/red"
+                    android:textColor="@color/classtune_green_color"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
@@ -1138,7 +1138,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Meeting Request"
-                    android:textColor="@color/red"
+                    android:textColor="@color/classtune_green_color"
                     android:textSize="10sp"
                     android:textStyle="bold" />
 

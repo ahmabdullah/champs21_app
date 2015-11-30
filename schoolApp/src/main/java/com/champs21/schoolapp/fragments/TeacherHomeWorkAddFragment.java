@@ -59,12 +59,15 @@ public class TeacherHomeWorkAddFragment extends Fragment implements
 	private String dateFormatServerString = "";
 	
 	private LinearLayout layoutDate;
+	private LinearLayout layoutAttachmentHolder;
+	UserHelper userHelper;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		subjectCats = new ArrayList<BaseType>();
 		uiHelper = new UIHelper(getActivity());
+		userHelper=new UserHelper(getActivity());
 	}
 
 	private boolean isFormValid() {
@@ -107,7 +110,7 @@ public class TeacherHomeWorkAddFragment extends Fragment implements
 							uiHelper.showLoadingDialog("Loading..");
 						super.onStart();
 					}
-					
+
 					@Override
 					public void onFailure(Throwable arg0, String response) {
 						if (uiHelper.isDialogActive())
@@ -129,7 +132,7 @@ public class TeacherHomeWorkAddFragment extends Fragment implements
 									"Successfully posted Homework!",
 									Toast.LENGTH_SHORT).show();
 
-                                    clearDataFields();
+							clearDataFields();
 						} else
 							Toast.makeText(
 									getActivity(),
@@ -204,6 +207,10 @@ public class TeacherHomeWorkAddFragment extends Fragment implements
 	private void intiviews(View view) {
 		subjectEditText = (EditText) view
 				.findViewById(R.id.et_teacher_ah_subject_name);
+
+
+		layoutAttachmentHolder = (LinearLayout)view.findViewById(R.id.layoutAttachmentHolder);
+
 		homeworkDescriptionEditText = (EditText) view
 				.findViewById(R.id.et_teacher_ah_homework_description);
 		subjectNameTextView = (TextView) view
@@ -218,8 +225,25 @@ public class TeacherHomeWorkAddFragment extends Fragment implements
 				.setOnClickListener(this);
 		((ImageButton) view.findViewById(R.id.btn_homework_type))
 				.setOnClickListener(this);
-		((CustomButton) view.findViewById(R.id.btn_teacher_ah_attach_file))
-				.setOnClickListener(this);
+
+
+		if(userHelper.getUser().getPaidInfo().getSchoolType() == 0)
+		{
+			layoutAttachmentHolder.setAlpha(.5f);
+		}
+		else
+		{
+			layoutAttachmentHolder.setAlpha(1f);
+			((CustomButton) view.findViewById(R.id.btn_teacher_ah_attach_file))
+					.setOnClickListener(this);
+		}
+
+		/*((CustomButton) view.findViewById(R.id.btn_teacher_ah_attach_file))
+				.setOnClickListener(this);*/
+
+
+
+
 		((CustomButton) view.findViewById(R.id.btn_teacher_ah_due_date))
 				.setOnClickListener(this);
 		((ImageButton) view.findViewById(R.id.btn_publish_homework))

@@ -7,6 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.Signature;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Base64;
@@ -39,6 +40,7 @@ public class SplashScreenActivity extends Activity {
 	private UserHelper userHelper;
 	private UIHelper uiHelper;
 
+
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -56,6 +58,9 @@ public class SplashScreenActivity extends Activity {
 			navigateToNextPage();
 
 		}*/
+
+
+
 		getHashKey();
 		navigateToNextPage();
 

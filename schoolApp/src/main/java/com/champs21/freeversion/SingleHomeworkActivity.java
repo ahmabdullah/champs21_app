@@ -156,7 +156,7 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 		if ( data.getIsDone().equalsIgnoreCase(AppConstant.ACCEPTED) || 
 				data.getIsDone().equalsIgnoreCase(AppConstant.SUBMITTED)) {
 			btnDone.setImage(R.drawable.done_tap);
-			btnDone.setTitleColor(this.getResources().getColor(R.color.maroon));
+			btnDone.setTitleColor(this.getResources().getColor(R.color.classtune_green_color));
 
 			btnDone.setEnabled(false);
 		} else {
@@ -208,6 +208,23 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				final CustomButton btn = (CustomButton) v;
+				setButtonState(btn, R.drawable.btn_reminder_tap, false, "Reminder");
+
+
+				AppUtility.listenerDatePickerCancel = new AppUtility.IDatePickerCancel() {
+					@Override
+					public void onCancelCalled() {
+
+						Log.e("CCCCC", "cancel called");
+						btn.setImage(R.drawable.btn_reminder_normal);
+						btn.setTitleColor(SingleHomeworkActivity.this.getResources().getColor(R.color.gray_1));
+						btn.setEnabled(true);
+					}
+				};
+
+
+
 				AppUtility.showDateTimePicker(AppConstant.KEY_HOMEWORK+data.getId(), data.getSubject()+ ": " + AppConstant.NOTIFICATION_HOMEWORK, data.getName(), SingleHomeworkActivity.this);
 			}
 		});
@@ -258,7 +275,7 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
         if(enable) {
             setBtnTitleColor(btn, R.color.gray_1);
         } else {
-            setBtnTitleColor(btn, R.color.maroon);
+            setBtnTitleColor(btn, R.color.classtune_green_color);
         }
     }
     private void setBtnTitleColor(CustomButton btn, int colorId) {
@@ -301,7 +318,7 @@ public class SingleHomeworkActivity extends ChildContainerActivity {
 				data.setIsDone(AppConstant.ACCEPTED);
 				
 				btnDone.setImage(R.drawable.done_tap);
-				btnDone.setTitleColor(SingleHomeworkActivity.this.getResources().getColor(R.color.maroon));
+				btnDone.setTitleColor(SingleHomeworkActivity.this.getResources().getColor(R.color.classtune_green_color));
 
 				btnDone.setEnabled(false);
 				

@@ -457,7 +457,7 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 					.getAcknowledge_status().equals("1")) {
 				clickedAckBtn.setImage(R.drawable.done_tap);
 				clickedAckBtn.setTitleColor(NoticeFragmentNew.this.getActivity()
-						.getResources().getColor(R.color.maroon));
+						.getResources().getColor(R.color.classtune_green_color));
 				clickedAckBtn.setTitleText("Acknowledged");
 				clickedAckBtn.setEnabled(false);
 			}
@@ -481,7 +481,7 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 		if(enable) {
 			setBtnTitleColor(btn, R.color.gray_1); 
 		} else {
-			setBtnTitleColor(btn, R.color.maroon); 
+			setBtnTitleColor(btn, R.color.classtune_green_color);
 		}
 	}
 	private void setBtnTitleColor(CustomButton btn, int colorId) {
@@ -604,7 +604,7 @@ public class NoticeFragmentNew extends Fragment implements View.OnClickListener{
 					Notice rmNotice = (Notice) reminderBtn.getTag();
 					reminderBtn.setImage(R.drawable.btn_reminder_tap);
 					reminderBtn.setTitleColor(NoticeFragmentNew.this.getActivity()
-							.getResources().getColor(R.color.maroon));
+							.getResources().getColor(R.color.classtune_green_color));
 					reminderBtn.setEnabled(false);
 					String content = ""+Html.fromHtml(rmNotice.getNoticeContent());
 

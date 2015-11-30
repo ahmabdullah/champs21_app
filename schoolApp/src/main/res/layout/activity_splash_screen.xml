@@ -4,7 +4,24 @@
     android:layout_height="match_parent"
     android:id="@+id/splash_bg"
     android:background="@drawable/splash_1">
-    
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ct_splash"
+        android:id="@+id/imageView19"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView18"
+        android:src="@drawable/splash_lower_header"
+        android:layout_below="@+id/imageView19"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
 
 
 </RelativeLayout>

@@ -149,7 +149,7 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 				Notice rmNotice = data;
 				reminderBtn.setImage(R.drawable.btn_reminder_tap);
 				reminderBtn.setTitleColor(SingleNoticeActivity.this
-						.getResources().getColor(R.color.maroon));
+						.getResources().getColor(R.color.classtune_green_color));
 				reminderBtn.setEnabled(false);
 				String content = ""+Html.fromHtml(rmNotice.getNoticeContent());
 				/*ReminderHelper.getInstance().setReminder(rmNotice.getPublishedAt(),
@@ -237,7 +237,7 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 		if(enable) {
 			setBtnTitleColor(btn, R.color.gray_1); 
 		} else {
-			setBtnTitleColor(btn, R.color.maroon); 
+			setBtnTitleColor(btn, R.color.classtune_green_color);
 		}
 	}
 	private void setBtnTitleColor(CustomButton btn, int colorId) {
@@ -290,7 +290,7 @@ public class SingleNoticeActivity extends ChildContainerActivity {
 					.getAcknowledge_status().equals("1")) {
 				clickedAckBtn.setImage(R.drawable.done_tap);
 				clickedAckBtn.setTitleColor(SingleNoticeActivity.this
-						.getResources().getColor(R.color.maroon));
+						.getResources().getColor(R.color.classtune_green_color));
 				clickedAckBtn.setTitleText("Acknowledged");
 				clickedAckBtn.setEnabled(false);
 			}

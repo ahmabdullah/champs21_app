@@ -50,7 +50,7 @@
             android:background="@android:color/white"
             android:gravity="center"
             android:text="No quiz available now!"
-            android:textColor="@color/maroon"
+            android:textColor="@color/classtune_green_color"
             android:textSize="20sp"
             android:textStyle="bold"
             android:visibility="gone" />
