@@ -30,6 +30,7 @@ import com.champs21.freeversion.HomePageFreeVersion;
 import com.champs21.freeversion.PaidVersionHomeFragment;
 import com.champs21.freeversion.SchoolSingleItemShowActivity;
 import com.champs21.schoolapp.R;
+import com.champs21.schoolapp.StudentInfoActivity;
 import com.champs21.schoolapp.model.FreeVersionPost;
 import com.champs21.schoolapp.model.FreeVersionPost.DateFeed;
 import com.champs21.schoolapp.model.UserAuthListener;
@@ -633,6 +634,23 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
             } else {
                 holder = (ViewHolder) convertView.getTag();
             }
+
+
+            holder.profilePicture.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if (userHelper.getUser().getType() != UserTypeEnum.TEACHER)
+                    {
+                        Intent intent = new Intent(getActivity(), StudentInfoActivity.class);
+                        intent.putExtra("key_from_feed", 1);
+                        startActivity(intent);
+                    }
+
+
+                }
+            });
+
 
             if (list.size() > 0) {
 

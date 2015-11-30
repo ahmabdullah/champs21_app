@@ -281,6 +281,7 @@ public class URLHelper {
 	public final static String URL_PAID_TEACHER = "paid/teacher";
 	public final static String URL_TEACHER_INFO = "paid/getteacherinfo";
 	public final static String URL_TEACHER_POSITION = "paid/getcategoryposition";
+	public final static String URL_GET_INFO = "dashboard/getstudentinfo";
 
 	
 	

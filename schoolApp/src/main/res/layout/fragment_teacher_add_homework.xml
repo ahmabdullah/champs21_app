@@ -195,6 +195,7 @@
                 android:textCursorDrawable="@drawable/cursor_color" />
 
             <LinearLayout
+                android:id="@+id/layoutAttachmentHolder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >

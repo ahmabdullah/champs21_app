@@ -465,20 +465,15 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                                         AccountSettingsActivity.class);
                                 startActivity(accountSettingsIntent);
                                 break;
-                            case 1:// for preference settings
-                                Intent prefIntent = new Intent(
-                                        HomePageFreeVersion.this,
-                                        PreferenceSettingsActivity.class);
-                                startActivity(prefIntent);
-                                break;
-                            case 2:// for edit profile
+
+                            case 1:// for edit profile
                                 Intent i = new Intent(HomePageFreeVersion.this,
                                         CompleteProfileActivityContainer.class);
                                 i.putExtra(SPKeyHelper.USER_TYPE, userHelper
                                         .getUser().getType().ordinal());
                                 startActivity(i);
                                 break;
-                            case 3:// for edit profile
+                            case 2:// for edit profile
                                 Intent aboutIntent = new Intent(
                                         HomePageFreeVersion.this,
                                         InfoActivity.class);
@@ -487,7 +482,7 @@ public class HomePageFreeVersion extends HomeContainerActivity {
                                         .getString(R.string.about_use_text));
                                 startActivity(aboutIntent);
                                 break;
-                            case 4:// for edit profile
+                            case 3:// for edit profile
                                 Intent tpIntent = new Intent(
                                         HomePageFreeVersion.this,
                                         InfoActivity.class);

@@ -34,6 +34,7 @@ public class StudentInfoActivity extends ChildContainerActivity {
 	private TextView studentName,studentClass, roll, guardianName, gender, batchName, admissionNumber, txtContactNumber, txtAddress;
 	private ImageView profileImage;
 	private ProgressBar progress;
+	private int feedKeyValue = 0;
 	
 	
 	@Override
@@ -49,8 +50,10 @@ public class StudentInfoActivity extends ChildContainerActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_student_info);
 		
-		if(getIntent().getExtras() != null)
+		if(getIntent().getExtras() != null) {
 			studentId = getIntent().getExtras().getString("student_id");
+			feedKeyValue = getIntent().getExtras().getInt("key_from_feed", 0);
+		}
 		
 		fetchStudentInfo();
 		
@@ -86,9 +89,28 @@ public class StudentInfoActivity extends ChildContainerActivity {
 	private void fetchStudentInfo()
 	{
 		RequestParams params=new RequestParams();
-		params.put(RequestKeyHelper.STUDENT_ID, studentId);
-		params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
-		AppRestClient.post(URLHelper.URL_GET_STUDENT_INFO, params, getStudentInfoHandler);
+
+		if(feedKeyValue == 1)
+		{
+			if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.PARENTS)
+			{
+				params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
+				params.put(RequestKeyHelper.STUDENT_ID, userHelper.getUser().getSelectedChild().getProfileId());
+
+			}
+			else if(userHelper.getUser().getType() == UserHelper.UserTypeEnum.STUDENT)
+			{
+				params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
+			}
+			AppRestClient.post(URLHelper.URL_GET_INFO, params, getStudentInfoHandler);
+		}
+		else
+		{
+			params.put(RequestKeyHelper.STUDENT_ID, studentId);
+			params.put(RequestKeyHelper.USER_SECRET, UserHelper.getUserSecret());
+			AppRestClient.post(URLHelper.URL_GET_STUDENT_INFO, params, getStudentInfoHandler);
+		}
+
 	}
 	
 	private void updateUI(Student student)

@@ -47,14 +47,12 @@
     
     <string-array name="free_settings_images_log_in">
         <item>account_settings</item>
-        <item>preference</item>
         <item>profile_edit</item>
         <item>about_us</item>
         <item>terms_and_policy</item>
     </string-array>
     <string-array name="free_settings_text_log_in">
         <item>Account Settings</item>
-        <item>Preference Settings</item>
         <item>Edit Profile</item>
         <item>About Us</item>
         <item>Terms \u0026 Policy</item>

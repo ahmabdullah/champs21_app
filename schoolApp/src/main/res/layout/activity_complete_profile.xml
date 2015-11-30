@@ -7,14 +7,20 @@
     android:background="@color/gray_child_choosing"
     android:orientation="vertical" >
 
-    <ImageView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:gravity="center_horizontal|bottom"
-        android:orientation="vertical"
-        android:src="@drawable/banner_complete_profile" />
-    
+        android:background="@drawable/classtune_selectuser_top">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ct_splash"
+            android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+
     
     <RelativeLayout android:id="@+id/container"
         android:layout_width="fill_parent"

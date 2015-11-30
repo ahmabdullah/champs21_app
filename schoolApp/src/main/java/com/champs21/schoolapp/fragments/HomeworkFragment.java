@@ -214,8 +214,7 @@ public class HomeworkFragment extends Fragment implements OnClickListener,UserAu
 				refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
 
 				Mode m = listviewHomework.getCurrentMode();
-				if(m==Mode.PULL_FROM_START)
-				{
+				if (m == Mode.PULL_FROM_START) {
 					currentAdapter.setStopLoadingData(false);
 					currentAdapter.setRefreshing(true);
 					currentAdapter.resetPageNumber();
@@ -225,18 +224,14 @@ public class HomeworkFragment extends Fragment implements OnClickListener,UserAu
 						processFetchHomework(URLHelper.URL_PROJECT);
 					}
 
-				}
-				else if(!currentAdapter.isStopLoadingData())
-				{
+				} else if (!currentAdapter.isStopLoadingData()) {
 					currentAdapter.addPageNumber();
 					if (type == 1) {
 						processFetchHomework(URLHelper.URL_HOMEWORK);
 					} else {
 						processFetchHomework(URLHelper.URL_PROJECT);
 					}
-				}
-				else
-				{
+				} else {
 					new NoDataTask().execute();
 				}
 			}
@@ -267,45 +262,7 @@ public class HomeworkFragment extends Fragment implements OnClickListener,UserAu
 			layoutFilter.setVisibility(View.VISIBLE);
 		}
 		
-		layoutFilter.setOnClickListener(new View.OnClickListener() {
-			
-			@SuppressLint("NewApi")
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				isFilterClicked = !isFilterClicked;
-				
-				if(isFilterClicked)
-				{
-					layoutFilter.setBackgroundColor(Color.parseColor("#b1b8ba"));
-					imgFilter.setImageResource(R.drawable.filter_tap);
-					
-					layoutMidPanel.setVisibility(View.VISIBLE);
-					
-					//layoutMidPanel.animate().translationY(layoutMidPanel.getHeight());
-				}
-				
-				else
-				{
-					layoutFilter.setBackgroundColor(Color.WHITE);
-					imgFilter.setImageResource(R.drawable.filter_normal);
-					
-					layoutMidPanel.setVisibility(View.GONE);
-					
-					
-					if (type == 1) {
-						processFetchHomework(URLHelper.URL_HOMEWORK);
-					} else {
-						processFetchHomework(URLHelper.URL_PROJECT);
-					}
-					
-					
-				}
-				
-				
-				//initApiCallSubject();
-			}
-		});
+
 		
 		
 		
@@ -319,14 +276,60 @@ public class HomeworkFragment extends Fragment implements OnClickListener,UserAu
 		});
 		
 		layoutDate.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				showDateTimePicker(getActivity());
 			}
 		});
-		
+
+
+		if(userHelper.getUser().getPaidInfo().getSchoolType() == 0)
+		{
+			layoutFilter.setAlpha(.5f);
+			layoutFilter.setOnClickListener(null);
+		}
+		else
+		{
+			layoutFilter.setAlpha(1f);
+
+			layoutFilter.setOnClickListener(new View.OnClickListener() {
+
+				@SuppressLint("NewApi")
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					isFilterClicked = !isFilterClicked;
+
+					if (isFilterClicked) {
+						layoutFilter.setBackgroundColor(Color.parseColor("#b1b8ba"));
+						imgFilter.setImageResource(R.drawable.filter_tap);
+
+						layoutMidPanel.setVisibility(View.VISIBLE);
+
+						//layoutMidPanel.animate().translationY(layoutMidPanel.getHeight());
+					} else {
+						layoutFilter.setBackgroundColor(Color.WHITE);
+						imgFilter.setImageResource(R.drawable.filter_normal);
+
+						layoutMidPanel.setVisibility(View.GONE);
+
+
+						if (type == 1) {
+							processFetchHomework(URLHelper.URL_HOMEWORK);
+						} else {
+							processFetchHomework(URLHelper.URL_PROJECT);
+						}
+
+
+					}
+
+
+					//initApiCallSubject();
+				}
+			});
+		}
 		
 		
 		initListAction();

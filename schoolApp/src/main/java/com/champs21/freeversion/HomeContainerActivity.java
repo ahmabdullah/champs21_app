@@ -685,7 +685,7 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 		inflater.inflate(R.menu.actionbar_menu, menu);
 
 		// Associate searchable configuration with the SearchView
-		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		/*SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
 		final SearchView searchView = (SearchView) menu.findItem(
 				R.id.action_search).getActionView();
 		searchView.setSearchableInfo(searchManager
@@ -764,7 +764,7 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 
 				return true;
 			}
-		});
+		});*/
 
 
         for (int i = 0; i < menu.size(); i++) {
@@ -824,10 +824,10 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 				mDrawerLayout.openDrawer(Gravity.RIGHT);
 				expListView.expandGroup(0);
 			}
-		} else if (item.getItemId() == R.id.action_login) {
+		} /*else if (item.getItemId() == R.id.action_login) {
 			startActivity(new Intent(HomeContainerActivity.this,
 					LoginActivity.class));
-		}
+		}*/
 
 
         /*else if (item.getItemId() == R.id.action_notification) {
@@ -848,7 +848,7 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
 
-		MenuItem searchViewMenuItem = menu.findItem(R.id.action_search);
+		/*MenuItem searchViewMenuItem = menu.findItem(R.id.action_search);
 		mSearchView = (SearchView) searchViewMenuItem.getActionView();
 		int searchImgId = getResources().getIdentifier(
 				"android:id/search_button", null, null);
@@ -860,7 +860,7 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 		int id = mSearchView.getContext().getResources()
 				.getIdentifier("android:id/search_src_text", null, null);
 		TextView textView = (TextView) mSearchView.findViewById(id);
-		textView.setTextColor(Color.WHITE);
+		textView.setTextColor(Color.WHITE);*/
 
 		return super.onPrepareOptionsMenu(menu);
 
