@@ -111,6 +111,64 @@
         <item>Lesson Plan</item>
 
     </string-array>
+
+    //student free menus serial
+    <string-array name="diary_images_student_free">
+        <item>home</item>
+        <item>homework</item>
+        <item>notice</item>
+        <item>quiz</item>
+
+        <item>syllabus</item>
+        <item>event</item>
+        <item>attendance</item>
+        <item>routine</item>
+        <item>exam_routine</item>
+        <item>reportcard</item>
+        <item>academic_calendar</item>
+        <item>transport</item>
+        <item>lesson_plan</item>
+
+    </string-array>
+
+    <string-array name="diary_class_student_free">
+
+        <item>SchoolFeedFragment</item>
+        <item>HomeworkFragment</item>
+        <item>NoticeFragmentNew</item>
+        <item>QuizFragment</item>
+
+        <item>SyllabusFragment</item>
+        <item>ParentEventFragment</item>
+        <item>ParentAttendenceFragment</item>
+        <item>StudentClassRoutineFragment</item>
+        <item>ExamRoutineFragmentAll</item>
+        <item>ParentReportCardFragment</item>
+        <item>ParentAcademicCalender</item>
+        <item>TransportFragment</item>
+        <item>LessonPlanStudentParent</item>
+
+    </string-array>
+
+    <string-array name="diary_text_student_free">
+
+        <item>School Feed</item>
+        <item>Homework</item>
+        <item>Notice</item>
+        <item>Quiz</item>
+
+        <item>Syllabus</item>
+        <item>Event</item>
+        <item>Attendance</item>
+        <item>Routine</item>
+        <item>Exam Routine</item>
+        <item>Reportcard</item>
+        <item>Academic Calendar</item>
+        <item>Transport</item>
+        <item>Lesson Plan</item>
+
+    </string-array>
+
     
     <string-array name="diary_images_parents">
         <item>home</item>
@@ -171,6 +229,71 @@
         <item>LessonPlanStudentParent</item>
 
     </string-array>
+
+    //free parent menu start here
+    <string-array name="diary_images_parents_free">
+        <item>home</item>
+        <item>homework</item>
+        <item>notice</item>
+        <item>quiz</item>
+
+        <item>syllabus</item>
+        <item>event</item>
+        <item>attendance</item>
+        <item>routine</item>
+        <item>exam_routine</item>
+        <item>reportcard</item>
+        <item>meetingrequest</item>
+        <item>academic_calendar</item>
+        <item>transport</item>
+        <item>leaveapplication</item>
+        <item>fees</item>
+        <item>lesson_plan</item>
+
+    </string-array>
+
+    <string-array name="diary_text_parents_free">
+        <item>School Feed</item>
+        <item>Homework</item>
+        <item>Notice</item>
+        <item>Quiz</item>
+
+        <item>Syllabus</item>
+        <item>Event</item>
+        <item>Attendance</item>
+        <item>Routine</item>
+        <item>Exam Routine</item>
+        <item>Reportcard</item>
+        <item>Meeting Request</item>
+        <item>Academic Calendar</item>
+        <item>Transport</item>
+        <item>Leave Application</item>
+        <item>Fees</item>
+        <item>Lesson Plan</item>
+
+    </string-array>
+
+    <string-array name="diary_class_parents_free">
+        <item>SchoolFeedFragment</item>
+        <item>HomeworkFragment</item>
+        <item>NoticeFragmentNew</item>
+        <item>QuizFragment</item>
+
+        <item>SyllabusFragment</item>
+        <item>ParentEventFragment</item>
+        <item>ParentAttendenceFragment</item>
+        <item>StudentClassRoutineFragment</item>
+        <item>ExamRoutineFragmentAll</item>
+        <item>ParentReportCardFragment</item>
+        <item>MeetingFragment</item>
+        <item>ParentAcademicCalender</item>
+        <item>TransportFragment</item>
+        <item>ApplyForLeaveFragment</item>
+        <item>FeesTabhostFragment</item>
+        <item>LessonPlanStudentParent</item>
+
+    </string-array>
+
     
     
     <string-array name="diary_images_teacher">
@@ -229,7 +352,70 @@
         <item>LessonPlanTeacher</item>
 
     </string-array>
-    
+
+    <string-array name="diary_images_teacher_free">
+        <item>home</item>
+        <item>homework</item>
+        <item>notice</item>
+        <item>attendance</item>
+
+        <item>routine</item>
+        <item>exam_routine</item>
+
+        <item>syllabus</item>
+        <item>student_list</item>
+        <item>leaveapplication</item>
+        <item>meetingrequest</item>
+        <item>event</item>
+        <item>transport</item>
+        <item>reportcard</item>
+        <item>academic_calendar</item>
+        <item>lesson_plan</item>
+
+    </string-array>
+
+    <string-array name="diary_text_teacher_free">
+        <item>School Feed</item>
+        <item>Homework</item>
+        <item>Notice</item>
+        <item>Attendance</item>
+
+        <item>Routine</item>
+        <item>Exam Routine</item>
+
+        <item>Syllabus</item>
+        <item>Student List</item>
+        <item>Leave Application</item>
+        <item>Meeting Request</item>
+        <item>Events</item>
+        <item>Transport</item>
+        <item>Reportcard</item>
+        <item>Academic Calendar</item>
+        <item>Lesson Plan</item>
+
+    </string-array>
+
+    <string-array name="diary_class_teacher_free">
+        <item>SchoolFeedFragment</item>
+        <item>TeacherHomeWorkFragment</item>
+        <item>NoticeFragmentNew</item>
+        <item>TeachersAttendanceTabhostFragment</item>
+
+        <item>TeacherRoutineFragment</item>
+        <item>ExamRoutineTeacherFragment</item>
+
+        <item>SyllabusFragment</item>
+        <item>StudentListFragment</item>
+        <item>ApplyForLeaveFragment</item>
+        <item>MeetingFragment</item>
+        <item>ParentEventFragment</item>
+        <item>TransportFragment</item>
+        <item>ParentReportCardFragment</item>
+        <item>ParentAcademicCalender</item>
+        <item>LessonPlanTeacher</item>
+
+    </string-array>
+
     <string-array name="free_menus_images">
         <!--<item>spellingbee_bee_icon</item>-->
         <item>spellingbee_newbee_icon</item>

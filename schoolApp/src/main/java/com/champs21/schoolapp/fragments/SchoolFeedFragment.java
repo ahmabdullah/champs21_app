@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.champs21.freeversion.ChildContainerActivity;
@@ -438,6 +439,9 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                                 .findViewById(R.id.sum_tv_date);
                         holder.eventText = (TextView) convertView
                                 .findViewById(R.id.sum_tv_event);
+                        holder.studentNameHeader = (TextView) convertView.findViewById(R.id.summary_student_text_name);
+
+                        holder.eventIcon = (ImageView) convertView.findViewById(R.id.summary_event_icon);
                         holder.todayTextView = (TextView) convertView
                                 .findViewById(R.id.sum_tv_today);
                         if (userHelper.getUser().getType() == UserTypeEnum.TEACHER) {
@@ -469,18 +473,29 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                                     .findViewById(R.id.sum_tv_attendance_text);
                             holder.classTomorrow = (LinearLayout) convertView
                                     .findViewById(R.id.sum_lay_has_class_tomorrow);
+                            holder.routineIcon = (ImageView) convertView.findViewById(R.id.summary_routine_icon);
+                            holder.summeryRoutineText = (TextView) convertView.findViewById(R.id.summery_routine_text);
                             holder.toggle = (LinearLayout) convertView
                                     .findViewById(R.id.sum_lay_toggle);
                             holder.homework = (LinearLayout) convertView
                                     .findViewById(R.id.sum_lay_homework);
+                            holder.homeworkIcon = (ImageView) convertView.findViewById(R.id.summery_homework_icon);
+                            holder.hwText1 = (TextView) convertView.findViewById(R.id.summery_homework_text1);
+                            holder.hwText2 = (TextView) convertView.findViewById(R.id.summery_homework_text2);
                             holder.quiz = (LinearLayout) convertView
                                     .findViewById(R.id.sum_lay_quiz);
                             holder.examResultText = (TextView) convertView
                                     .findViewById(R.id.sum_tv_result_pub_text);
+                            holder.rpIcon = (ImageView) convertView.findViewById(R.id.summery_result_publish_icon);
+                            holder.rpGoodLuck = (TextView) convertView.findViewById(R.id.summery_result_publish_good_luck_text);
                             holder.examRoutineText = (TextView) convertView
                                     .findViewById(R.id.sum_tv_exam_routine);
+                            holder.erpIcon = (LinearLayout) convertView.findViewById(R.id.summary_exam_routine_publish_icon);
                             holder.examTomorrow = (LinearLayout) convertView
                                     .findViewById(R.id.sum_lay_exam);
+                            holder.etIconbg = (LinearLayout) convertView.findViewById(R.id.summery_exam_tomorrow_icon);
+                            holder.etText1 = (TextView) convertView.findViewById(R.id.summery_exam_tomorrow_text1);
+                            holder.etText2 = (TextView) convertView.findViewById(R.id.summery_exam_tomorrow_text2);
                             holder.routinePublish = (LinearLayout) convertView
                                     .findViewById(R.id.sum_lay_exam_routine_publish);
                             holder.reusltPublish = (LinearLayout) convertView
@@ -496,6 +511,8 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
                         holder.notice = (LinearLayout) convertView
                                 .findViewById(R.id.sum_lay_notice);
+                        holder.noticeIconLay = (RelativeLayout) convertView.findViewById(R.id.notice_icon_lay);
+                        holder.noticeText = (TextView) convertView.findViewById(R.id.notice_text);
                         for (int m = 0; m < 6; m++) {
                             holder.linearLayoutArray[m] = (LinearLayout) convertView
                                     .findViewById(lArray[m]);
@@ -626,6 +643,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                                 summary.getCurrentSummeryPosition());
                         holder.schoolName.setText(summary.getSchool_name());
                         holder.studentName.setText(feed.getStudent_name());
+                        holder.studentNameHeader.setText(feed.getStudent_name());
                         holder.currentDate.setText(summary.getCurrentDate().split(" ")[0] + "\n" + summary.getCurrentDate().split(" ")[1]);
                         if (!TextUtils.isEmpty(summary.getLast_visited().getType())) {
                             holder.todayTextView.setText(summary.getLast_visited()
@@ -708,24 +726,63 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                             holder.toggle.setVisibility(View.VISIBLE);
                             holder.attendance.setVisibility(View.VISIBLE);
                             holder.attendanceTextView.setText(feed.getAttendence());
+                            if(!feed.isHasClassTomorrow()) {
+                                holder.routineIcon.setAlpha(70);
+                                holder.summeryRoutineText.setTextColor(getResources().getColor(R.color.gray_4));
+                            }else { holder.routineIcon.setAlpha(255);
+                                holder.summeryRoutineText.setTextColor(getResources().getColor(R.color.black));
+                            }
                             disableBlock(holder.classTomorrow,
                                     feed.isHasClassTomorrow(), 8);
+
+
+                            if(feed.getHomeWorkSubjects().size() == 0) {
+                                holder.homeworkIcon.setAlpha(70);
+                                holder.hwText1.setTextColor(getResources().getColor(R.color.gray_4));
+                                holder.hwText2.setTextColor(getResources().getColor(R.color.gray_4));
+                            } else {
+                                holder.hwText1.setTextColor(getResources().getColor(R.color.black));
+                                holder.hwText2.setTextColor(getResources().getColor(R.color.black));
+                                holder.homeworkIcon.setAlpha(255);
+                            }
                             disableBlock(holder.homework, feed.getHomeWorkSubjects()
                                     .size() != 0, 2);
                             disableBlock(holder.attendance, true, 7);
+
+                            if(!feed.isHasExamTomorrow()) {
+                                holder.etIconbg.setBackgroundColor(getResources().getColor(R.color.red_disable));
+                                holder.etText1.setTextColor(getResources().getColor(R.color.gray_4));
+                                holder.etText2.setTextColor(getResources().getColor(R.color.gray_4));
+                            }else {
+                                holder.etIconbg.setBackgroundColor(getResources().getColor(R.color.red));
+                                holder.etText1.setTextColor(getResources().getColor(R.color.black));
+                                holder.etText2.setTextColor(getResources().getColor(R.color.black));
+                            }
                             disableBlock(holder.examTomorrow, feed.isHasExamTomorrow(),
                                     9);
                             disableBlock(holder.quiz,
                                     feed.getSummeryQuizes().size() != 0, 3);
+
                             disableBlock(holder.reusltPublish,
                                     !TextUtils.isEmpty(feed.getResult_publish()), 10);
                             if (!TextUtils.isEmpty(feed.getResult_publish())) {
                                 holder.examResultText.setText(feed.getResult_publish()
                                         + " Result published.");
+                                holder.rpIcon.setAlpha(255);
+                                holder.examResultText.setTextColor(getResources().getColor(R.color.black));
+                                holder.rpGoodLuck.setTextColor(getResources().getColor(R.color.black));
+                            }else {
+                                holder.rpIcon.setAlpha(70);
+                                holder.examResultText.setTextColor(getResources().getColor(R.color.gray_4));
+                                holder.rpGoodLuck.setTextColor(getResources().getColor(R.color.gray_4));
                             }
                             if (!TextUtils.isEmpty(feed.getRoutine_publish())) {
                                 holder.examRoutineText.setText(feed
                                         .getRoutine_publish() + " Routine published.");
+                                holder.erpIcon.setBackgroundColor(getResources().getColor(R.color.red));
+                            } else {
+                                holder.erpIcon.setBackgroundColor(getResources().getColor(R.color.red_disable));
+                                holder.examRoutineText.setTextColor(getResources().getColor(R.color.gray_4));
                             }
                             disableBlock(holder.routinePublish,
                                     !TextUtils.isEmpty(feed.getRoutine_publish()), 9);
@@ -776,11 +833,23 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
                         disableBlock(holder.eventTomorrow,
                                 feed.isHasEventTomorrow(), 6);
-                        if (feed.isHasEventTomorrow())
+                        if (feed.isHasEventTomorrow()) {
                             holder.eventText.setText("You have "
                                     + feed.getEvent_name() + " Tomorrow.");
+                            holder.eventIcon.setAlpha(255);
+                        } else {
+                            holder.eventIcon.setAlpha(70);
+                            holder.eventText.setTextColor(getResources().getColor(R.color.gray_4));
+                        }
 
                         disableBlock(holder.notice, feed.isHasNotice(), 4);
+                        if(feed.isHasNotice()) {
+                            holder.noticeIconLay.setBackgroundColor(getResources().getColor(R.color.red));
+                            holder.noticeText.setTextColor(getResources().getColor(R.color.black));
+                        } else {
+                            holder.noticeIconLay.setBackgroundColor(getResources().getColor(R.color.red_disable));
+                            holder.noticeText.setTextColor(getResources().getColor(R.color.gray_4));
+                        }
 
                         if (!TextUtils.isEmpty(summary.getSchool_picture()))
                             SchoolApp.getInstance().displayUniversalImage(
@@ -1028,10 +1097,11 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
                 @Override
                 public void onClick(View v) {
+                    if(v.getTag() == null) return;
                     int pos = Integer.parseInt(v.getTag().toString());
                     ((HomePageFreeVersion) getActivity())
                             .loadPaidFragment(PaidVersionHomeFragment
-                                    .newInstance(pos));
+                                    .newInstance(pos-1));
                 }
             });
             switch (view.getId()) {
@@ -1050,11 +1120,11 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                         view.setTag("" + pos);
 
                     } else {
-                        view.setVisibility(View.GONE);
+                        view.setVisibility(View.VISIBLE);
+                        view.setBackgroundColor(getResources().getColor(R.color.bg_disable));
 
                     }
-
-                    break;
+                     break;
                 case R.id.sum_lay_exam:
                 case R.id.sum_lay_notice:
                 case R.id.sum_lay_exam_routine_publish:
@@ -1063,9 +1133,9 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                         view.setTag("" + pos);
 
                     } else {
-                        view.setVisibility(View.GONE);
-                        // view.setBackgroundColor(getResources().getColor(R.color.bg_disable));
-                        // view.findViewById(R.id.sum_iv_disable).setBackgroundColor(getActivity().getResources().getColor(R.color.red_disable));
+                        view.setVisibility(View.VISIBLE);
+                        view.setBackgroundColor(getResources().getColor(R.color.bg_disable));
+                        //view.findViewById(R.id.sum_iv_disable).setBackgroundColor(getActivity().getResources().getColor(R.color.red_disable));
                     }
 
                     break;
@@ -1127,8 +1197,6 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
             }
         }
 
-        ;
-
         public void onSuccess(int arg0, String responseString) {
             if (uiHelper.isDialogActive()) {
                 uiHelper.dismissLoadingDialog();
@@ -1161,25 +1229,29 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
 
         // SUMMERY LAYOUT
         TextView schoolName, currentDate, studentName;
-        TextView todayTextView;
+        TextView todayTextView, summeryRoutineText, hwText1, hwText2;
         TextView attendanceTextView, leaveStatusText, meetingStatusText;
-        TextView examRoutineText, examResultText, eventText;
+        TextView examRoutineText, examResultText, eventText, rpGoodLuck;
         TextView sum_tv_subject_name_day1, sum_tv_batch_course1, sum_tv_class_duration1;
         TextView sum_tv_subject_name_day2, sum_tv_batch_course2, sum_tv_class_duration2;
         TextView sum_tv_teacher_hw_subject_stat1, sum_tv_teacher_hw_class_section1, sum_tv_teacher_hw_date1;
         TextView sum_tv_teacher_hw_subject_stat2, sum_tv_teacher_hw_class_section2, sum_tv_teacher_hw_date2;
         ResizableImageView schoolPicture;
-        ImageView profilePicture;
+        ImageView profilePicture, routineIcon,homeworkIcon, rpIcon;
         LinearLayout classTomorrow, homework, reusltPublish, routinePublish,
                 eventTomorrow, examTomorrow, notice, quiz;
+        RelativeLayout noticeIconLay;
         LinearLayout meeting, leave, tution, attendance, dateSlot, toggle,
                 nextClasses, teacherHomewoks, nextClass2, nextHomework2, routineHomeworkQuizAdd;
         LinearLayout sum_lay_rollcall, sum_lay_add_homework, sum_lay_add_quiz;
-
+        LinearLayout etIconbg, erpIcon;
+        TextView etText1, etText2, noticeText;
         TextView[] dateTextViewArray = new TextView[6];
         TextView[] monthTextViewArray = new TextView[6];
         LinearLayout[] linearLayoutArray = new LinearLayout[6];
 
+        ImageView eventIcon;
+        TextView studentNameHeader;
     }
 
     private class ImagePagerAdapter extends PagerAdapter {

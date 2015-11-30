@@ -340,13 +340,13 @@ public class HomeContainerActivity extends SocialBaseActivity implements
 			 * settingsStatelist); count++;
 			 */
 
-			group = new DrawerGroup();
+			/*group = new DrawerGroup();
 			group.setImageName("score");
 			group.setText("Quiz Scores");
 			group.setId("3");
 			groupItem.add(group);
 			childList.put(groupItem.get(count++).getText(),
-					new ArrayList<DrawerChildBase>());
+					new ArrayList<DrawerChildBase>());*/
 
 			group = new DrawerGroup();
 			group.setImageName("log_out");

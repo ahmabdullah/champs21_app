@@ -29,6 +29,7 @@ public class SPKeyHelper {
 	public final static String IS_TEACHER = "IS_TEACHER";
 	public final static String IS_STUDENT = "IS_STUDENT";
 	public final static String SCHOOL_ID = "SCHOOL_ID";
+	public final static String SCHOOL_TYPE = "SCHOOL_TYPE";
 	public final static String SCHOOL_NAME = "SCHOOL_NAME";
 	public final static String BATCH_ID = "BATCH_ID";
 	public final static String USERNAME = "USERNAME";
