@@ -785,7 +785,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                                 holder.etText1.setTextColor(getResources().getColor(R.color.gray_4));
                                 holder.etText2.setTextColor(getResources().getColor(R.color.gray_4));
                             }else {
-                                holder.etIconbg.setBackgroundColor(getResources().getColor(R.color.red));
+                                holder.etIconbg.setBackgroundColor(getResources().getColor(R.color.classtune_green_color));
                                 holder.etText1.setTextColor(getResources().getColor(R.color.black));
                                 holder.etText2.setTextColor(getResources().getColor(R.color.black));
                             }
@@ -810,7 +810,7 @@ public class SchoolFeedFragment extends Fragment implements UserAuthListener {
                             if (isPaid) {
                                 /*holder.examRoutineText.setText(feed
                                         .getRoutine_publish() + " Routine published.");*/
-                                holder.erpIcon.setBackgroundColor(getResources().getColor(R.color.red));
+                                holder.erpIcon.setBackgroundColor(getResources().getColor(R.color.classtune_green_color));
                             } else {
                                 holder.erpIcon.setBackgroundColor(getResources().getColor(R.color.red_disable));
                                 holder.examRoutineText.setTextColor(getResources().getColor(R.color.gray_4));
