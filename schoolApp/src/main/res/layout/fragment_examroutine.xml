@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Mid Term Exam"
-                    android:textColor="@color/red"
+                    android:textColor="@color/classtune_green_color"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -90,7 +90,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Date"
-                        android:textColor="@color/maroon" />
+                        android:textColor="@color/classtune_green_color" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -106,7 +106,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Time"
-                        android:textColor="@color/maroon" />
+                        android:textColor="@color/classtune_green_color" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -122,7 +122,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Subject"
-                        android:textColor="@color/maroon" />
+                        android:textColor="@color/classtune_green_color" />
                 </LinearLayout>
             </LinearLayout>
 

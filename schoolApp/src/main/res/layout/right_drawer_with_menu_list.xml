@@ -25,7 +25,7 @@
             <RelativeLayout
                 android:layout_width="90dip"
                 android:layout_height="100dip"
-                android:background="#b0141b" 
+                android:background="#064a14"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dip">
 
@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="20sp"
                    	android:ellipsize="end"
                    	android:lines="1"
                     android:textStyle="bold"
@@ -73,8 +73,8 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="Student of class IX"
-                    android:textColor="@color/settings_grey_left"
-                    android:textSize="14sp" >
+                    android:textColor="@color/black"
+                    android:textSize="18sp" >
                 </TextView>
             </LinearLayout>
         </LinearLayout>

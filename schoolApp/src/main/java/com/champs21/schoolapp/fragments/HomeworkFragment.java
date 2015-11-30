@@ -662,8 +662,13 @@ public class HomeworkFragment extends Fragment implements OnClickListener,UserAu
 		if(requestCode == 50)
 		{
 		
-			currentAdapter.clearList();
+			/*currentAdapter.clearList();
+			processFetchHomework(URLHelper.URL_HOMEWORK);*/
+			initAdapters();
+			currentAdapter = homeworkAdapter;
+			initializePageing();
 			processFetchHomework(URLHelper.URL_HOMEWORK);
+
 		}
 		
 	}
@@ -1010,7 +1015,7 @@ public class HomeworkFragment extends Fragment implements OnClickListener,UserAu
 			if ( list.get(position).getIsDone().equalsIgnoreCase(AppConstant.ACCEPTED) || 
 					list.get(position).getIsDone().equalsIgnoreCase(AppConstant.SUBMITTED)) {
 				holder.btnDone.setImage(R.drawable.done_tap);
-				holder.btnDone.setTitleColor(HomeworkFragment.this.getActivity().getResources().getColor(R.color.maroon));
+				holder.btnDone.setTitleColor(HomeworkFragment.this.getActivity().getResources().getColor(R.color.classtune_green_color));
 
 				holder.btnDone.setEnabled(false);
 			} else {
@@ -1099,7 +1104,7 @@ public class HomeworkFragment extends Fragment implements OnClickListener,UserAu
 			if(enable) {
 				setBtnTitleColor(btn, R.color.gray_1); 
 			} else {
-				setBtnTitleColor(btn, R.color.maroon); 
+				setBtnTitleColor(btn, R.color.classtune_green_color);
 			}
 		}
 		private void setBtnTitleColor(CustomButton btn, int colorId) {

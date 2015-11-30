@@ -18,7 +18,7 @@
         android:background="@color/white"
         android:gravity="center"
         android:text="No syllabus found"
-        android:textColor="@color/maroon"
+        android:textColor="@color/classtune_green_color"
         android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="gone" />

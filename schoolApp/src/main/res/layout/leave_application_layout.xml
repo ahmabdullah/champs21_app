@@ -292,7 +292,7 @@
                 android:layout_height="3dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:background="@color/red" />
+                android:background="@color/classtune_green_color" />
 
 
 

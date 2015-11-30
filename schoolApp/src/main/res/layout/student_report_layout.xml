@@ -57,5 +57,5 @@
 	<View 
 	    android:layout_width="match_parent"
 	    android:layout_height="3dp"
-	    android:background="@color/red"/>
+	    android:background="@color/classtune_green_color"/>
 </LinearLayout>

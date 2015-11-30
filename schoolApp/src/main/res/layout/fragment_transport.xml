@@ -239,7 +239,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Day"
-                            android:textColor="@color/maroon"
+                            android:textColor="@color/classtune_green_color"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -255,7 +255,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Home Pick Up Time"
-                            android:textColor="@color/maroon"
+                            android:textColor="@color/classtune_green_color"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -271,7 +271,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="School Pick Up Time"
-                            android:textColor="@color/maroon"
+                            android:textColor="@color/classtune_green_color"
                             android:textSize="12sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -297,7 +297,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
-                            android:textColor="@color/maroon"
+                            android:textColor="@color/classtune_green_color"
                             android:text="No data available!"
                             android:gravity="center"
                             android:layout_centerInParent="true"
