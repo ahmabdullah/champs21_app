@@ -506,6 +506,10 @@ public class UserHelper {
                 id);
     }
 
+    public void saveSchoolType(int type) {
+        SharedPreferencesHelper.getInstance().setInt(SPKeyHelper.SCHOOL_TYPE, type);
+    }
+
     public void saveSchoolName(String name) {
         SharedPreferencesHelper.getInstance().setString(
                 SPKeyHelper.SCHOOL_NAME, name);
@@ -608,6 +612,8 @@ public class UserHelper {
                 SPKeyHelper.SCHOOL_ID, ""));
         info.setSchoolId(SharedPreferencesHelper.getInstance().getString(
                 SPKeyHelper.SCHOOL_ID, ""));
+        info.setSchoolType(SharedPreferencesHelper.getInstance().getInt(
+                SPKeyHelper.SCHOOL_TYPE, 0));
         info.setSchool_name(SharedPreferencesHelper.getInstance().getString(
                 SPKeyHelper.SCHOOL_NAME, ""));
         info.setSecret(SharedPreferencesHelper.getInstance().getString(
@@ -815,6 +821,7 @@ public class UserHelper {
                     }
                     saveUserSecret(user.getPaidInfo().getSecret());
                     saveSchoolId(user.getPaidInfo().getSchoolId());
+                    saveSchoolType(user.getPaidInfo().getSchoolType());
                     saveSchoolName(user.getPaidInfo().getSchool_name());
                     saveProfileId(user.getPaidInfo().getProfileId());
                     saveBatchID(user.getPaidInfo().getBatchId());

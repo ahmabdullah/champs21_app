@@ -56,7 +56,10 @@ public class UserPaidInfo {
     @SerializedName("unread_total")
     private String unread_total_notification;
 
-    public String getIs_first_login() {
+	@SerializedName("school_type")
+	private int schoolType;
+
+	public String getIs_first_login() {
         return is_first_login;
     }
 
@@ -143,6 +146,12 @@ public class UserPaidInfo {
 	public void setSchoolId(String schoolId) {
 		this.schoolId = schoolId;
 	}
+
+	public void setSchoolType(int schoolType) {
+		this.schoolType = schoolType;
+	}
+
+	public int getSchoolType() { return schoolType; }
 
 	public String getSchoolId() {
 		return schoolId;

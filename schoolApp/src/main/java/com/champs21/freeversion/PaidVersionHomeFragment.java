@@ -1,5 +1,6 @@
 package com.champs21.freeversion;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -32,6 +33,7 @@ public class PaidVersionHomeFragment extends Fragment implements
 	public static Batch selectedBatch = null;
 	private int currentPos = 0;
 	private UserHelper userHelper = new UserHelper(getActivity());
+	private boolean ispaid;
 
 	@Override
 	public void onDestroy() {
@@ -166,12 +168,22 @@ public class PaidVersionHomeFragment extends Fragment implements
 			 * firstAdapterIconArrayStudent
 			 * ,firstAdapterIconTapArrayStudent,userHelper.getUser().getType());
 			 */
-			myDiaryArrayText = getResources().getStringArray(
-					R.array.diary_text_student);
-			myDiaryArrayImages = getResources().getStringArray(
-					R.array.diary_images_student);
-			myDiaryArrayClazz = getResources().getStringArray(
-					R.array.diary_class_student);
+			if(userHelper.getUser().getPaidInfo().getSchoolType() == 1) {
+				myDiaryArrayText = getResources().getStringArray(
+						R.array.diary_text_student);
+				myDiaryArrayImages = getResources().getStringArray(
+						R.array.diary_images_student);
+				myDiaryArrayClazz = getResources().getStringArray(
+						R.array.diary_class_student);
+			} else {
+				myDiaryArrayText = getResources().getStringArray(
+						R.array.diary_text_student_free);
+				myDiaryArrayImages = getResources().getStringArray(
+						R.array.diary_images_student_free);
+				myDiaryArrayClazz = getResources().getStringArray(
+						R.array.diary_class_student_free);
+			}
+
 
 			break;
 		case PARENTS:
@@ -181,12 +193,22 @@ public class PaidVersionHomeFragment extends Fragment implements
 			 * firstAdapterIconArrayParents
 			 * ,firstAdapterIconTapArrayParents,userHelper.getUser().getType());
 			 */
-			myDiaryArrayText = getResources().getStringArray(
-					R.array.diary_text_parents);
-			myDiaryArrayImages = getResources().getStringArray(
-					R.array.diary_images_parents);
-			myDiaryArrayClazz = getResources().getStringArray(
-					R.array.diary_class_parents);
+			if(userHelper.getUser().getPaidInfo().getSchoolType() == 1) {
+				myDiaryArrayText = getResources().getStringArray(
+						R.array.diary_text_parents);
+				myDiaryArrayImages = getResources().getStringArray(
+						R.array.diary_images_parents);
+				myDiaryArrayClazz = getResources().getStringArray(
+						R.array.diary_class_parents);
+			} else {
+				myDiaryArrayText = getResources().getStringArray(
+						R.array.diary_text_parents_free);
+				myDiaryArrayImages = getResources().getStringArray(
+						R.array.diary_images_parents_free);
+				myDiaryArrayClazz = getResources().getStringArray(
+						R.array.diary_class_parents_free);
+			}
+
 			break;
 		case TEACHER:
 			/*
@@ -195,23 +217,45 @@ public class PaidVersionHomeFragment extends Fragment implements
 			 * firstAdapterIconArrayTeacher
 			 * ,firstAdapterIconTapArrayTeacher,userHelper.getUser().getType());
 			 */
-			myDiaryArrayText = getResources().getStringArray(
-					R.array.diary_text_teacher);
-			myDiaryArrayImages = getResources().getStringArray(
-					R.array.diary_images_teacher);
-			myDiaryArrayClazz = getResources().getStringArray(
-					R.array.diary_class_teacher);
+			if(userHelper.getUser().getPaidInfo().getSchoolType() == 1){
+				myDiaryArrayText = getResources().getStringArray(
+						R.array.diary_text_teacher);
+				myDiaryArrayImages = getResources().getStringArray(
+						R.array.diary_images_teacher);
+				myDiaryArrayClazz = getResources().getStringArray(
+						R.array.diary_class_teacher);
+			} else {
+				myDiaryArrayText = getResources().getStringArray(
+						R.array.diary_text_teacher_free);
+				myDiaryArrayImages = getResources().getStringArray(
+						R.array.diary_images_teacher_free);
+				myDiaryArrayClazz = getResources().getStringArray(
+						R.array.diary_class_teacher_free);
+			}
+
 			break;
 		default:
-			myDiaryArrayText = getResources().getStringArray(
-					R.array.diary_text_student);
-			myDiaryArrayImages = getResources().getStringArray(
-					R.array.diary_images_student);
-			myDiaryArrayClazz = getResources().getStringArray(
-					R.array.diary_class_student);
+			if(userHelper.getUser().getPaidInfo().getSchoolType() == 1){
+				myDiaryArrayText = getResources().getStringArray(
+						R.array.diary_text_student);
+				myDiaryArrayImages = getResources().getStringArray(
+						R.array.diary_images_student);
+				myDiaryArrayClazz = getResources().getStringArray(
+						R.array.diary_class_student);
+
+			} else {
+				myDiaryArrayText = getResources().getStringArray(
+						R.array.diary_text_student_free);
+				myDiaryArrayImages = getResources().getStringArray(
+						R.array.diary_images_student_free);
+				myDiaryArrayClazz = getResources().getStringArray(
+						R.array.diary_class_student_free);
+
+			}
 			break;
 		}
 		List<DrawerChildBase> diaryMenuStudent = new ArrayList<DrawerChildBase>();
+		ispaid = userHelper.getUser().getPaidInfo().getSchoolType() == 1 ? true: false;
 		for (int i = 0; i < myDiaryArrayText.length; i++) {
 			DrawerChildMenuDiary child = new DrawerChildMenuDiary();
 			child.setText(myDiaryArrayText[i]);
@@ -241,6 +285,11 @@ public class PaidVersionHomeFragment extends Fragment implements
 				child.setPressed(true);
 				loadDiaryItem(child);
 			}
+			if(!ispaid && i > 2) {
+				iv.getBackground().setAlpha(45);
+			}else {
+				iv.getBackground().setAlpha(255);
+			}
 			iv.setOnClickListener(this);
 			menuScrollView.addView(iv);
 		}
@@ -258,6 +307,13 @@ public class PaidVersionHomeFragment extends Fragment implements
 		ImageButton btn = (ImageButton) v;
 		if (child.isPressed())
 			return;
+		if(!ispaid && Integer.parseInt(child.getId()) > 2){
+			new AlertDialog.Builder(getActivity())
+					.setMessage("Please upgrade to premium account to enjoy this feature!")
+					.setIcon(android.R.drawable.ic_dialog_alert)
+					.show();
+			return;
+		}
 		for (int i = 0; i < menuScrollView.getChildCount(); i++) {
 			ImageButton ib = (ImageButton) menuScrollView.getChildAt(i);
 			DrawerChildMenuDiary dcmd = (DrawerChildMenuDiary) ib.getTag();
@@ -265,6 +321,9 @@ public class PaidVersionHomeFragment extends Fragment implements
 			ib.setBackgroundResource(getActivity().getResources()
 					.getIdentifier(dcmd.getImageName() + "_normal", "drawable",
 							getActivity().getPackageName()));
+			if(!ispaid && i>2) {
+				ib.getBackground().setAlpha(45);
+			}
 		}
 		child.setPressed(true);
 		btn.setBackgroundResource(getActivity().getResources().getIdentifier(
