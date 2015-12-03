@@ -29,12 +29,12 @@
                     android:orientation="horizontal"
                     android:padding="5dip" >
 
-                    <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon
+                    <com.classtune.schoolapp.viewhelpers.CustomRhombusIcon
                         android:id="@+id/rhombus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         custom:iconImageRhombus="@drawable/candle_icon_red" >
-                    </com.champs21.schoolapp.viewhelpers.CustomRhombusIcon>
+                    </com.classtune.schoolapp.viewhelpers.CustomRhombusIcon>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/candle_banner" />
 
-                <com.champs21.schoolapp.viewhelpers.ExpandableTextView
+                <com.classtune.schoolapp.viewhelpers.ExpandableTextView
                         android:id="@+id/tv_candle_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -211,7 +211,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal" >
 
-                    <com.champs21.schoolapp.viewhelpers.CustomButton
+                    <com.classtune.schoolapp.viewhelpers.CustomButton
                         android:id="@+id/btn_candle_attach_files"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -222,7 +222,7 @@
                         custom:iconImage="@drawable/attach_btn_normal"
                         custom:iconText="@string/btn_candle_attach_file" />
 
-                    <com.champs21.schoolapp.viewhelpers.CustomButton
+                    <com.classtune.schoolapp.viewhelpers.CustomButton
                         android:id="@+id/btn_candle_upload_pic"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -233,7 +233,7 @@
                         custom:iconImage="@drawable/camera_normal"
                         custom:iconText="@string/btn_candle_upload_picture" />
 
-                    <com.champs21.schoolapp.viewhelpers.CustomButton
+                    <com.classtune.schoolapp.viewhelpers.CustomButton
                         android:id="@+id/btn_candle_submit"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"

@@ -149,14 +149,14 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <com.champs21.schoolapp.viewhelpers.CustomIndicator
+                <com.classtune.schoolapp.viewhelpers.CustomIndicator
                     android:id="@+id/customIndicator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center" >
 
 
-                </com.champs21.schoolapp.viewhelpers.CustomIndicator>
+                </com.classtune.schoolapp.viewhelpers.CustomIndicator>
 
             </LinearLayout>
         </LinearLayout>

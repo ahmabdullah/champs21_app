@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.champs21.freeversion.ChildContainerActivity" >
+    tools:context="com.classtune.freeversion.ChildContainerActivity" >
 
     <HorizontalScrollView
         android:id="@+id/sv_paid_scroll"

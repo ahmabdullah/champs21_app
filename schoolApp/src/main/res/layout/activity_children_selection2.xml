@@ -150,7 +150,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true" />
 
-            <com.champs21.schoolapp.viewhelpers.CustomIndicator
+            <com.classtune.schoolapp.viewhelpers.CustomIndicator
                 android:id="@+id/customIndicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/indicator_normal" /> -->
-            </com.champs21.schoolapp.viewhelpers.CustomIndicator>
+            </com.classtune.schoolapp.viewhelpers.CustomIndicator>
 
         </RelativeLayout>
 

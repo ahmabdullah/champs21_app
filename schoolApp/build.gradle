@@ -20,7 +20,7 @@ android {
     buildToolsVersion "21.1.2"
     compileOptions.encoding = 'ISO-8859-1'
     defaultConfig {
-        applicationId "com.champs21.schoolapp"
+        applicationId "com.classtune.schoolapp"
         minSdkVersion 11
         targetSdkVersion 19
     }

@@ -19,20 +19,20 @@
         </LinearLayout>
     </LinearLayout>
 
-    <com.champs21.schoolapp.viewhelpers.PagerContainer
+    <com.classtune.schoolapp.viewhelpers.PagerContainer
         android:id="@+id/pager_container_row"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
        >
 
-        <com.champs21.schoolapp.viewhelpers.UninterceptableViewPager
+        <com.classtune.schoolapp.viewhelpers.UninterceptableViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal" />
-    </com.champs21.schoolapp.viewhelpers.PagerContainer>
+    </com.classtune.schoolapp.viewhelpers.PagerContainer>
 
 </RelativeLayout>

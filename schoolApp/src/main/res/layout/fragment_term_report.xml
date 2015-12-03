@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mid Term Exam"
-            android:textColor="@color/red"
+            android:textColor="@color/classtune_green_color"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>

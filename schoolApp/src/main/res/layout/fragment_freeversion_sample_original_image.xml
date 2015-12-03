@@ -25,13 +25,13 @@
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal" >
 
-                <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon
+                <com.classtune.schoolapp.viewhelpers.CustomRhombusIcon
                     android:id="@+id/imgViewCategoryMenuIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
                     custom:iconImageRhombus="@drawable/home_tap" >
-                </com.champs21.schoolapp.viewhelpers.CustomRhombusIcon>
+                </com.classtune.schoolapp.viewhelpers.CustomRhombusIcon>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:minHeight="100dp" >
 
-                <com.champs21.schoolapp.viewhelpers.ResizableImageView
+                <com.classtune.schoolapp.viewhelpers.ResizableImageView
                     android:id="@+id/iv_single_image"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -227,7 +227,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <com.champs21.schoolapp.viewhelpers.CustomButton
+                <com.classtune.schoolapp.viewhelpers.CustomButton
                     android:id="@+id/btnWow"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -244,7 +244,7 @@
                     android:background="@color/gray_2" >
                 </LinearLayout>
 
-                <com.champs21.schoolapp.viewhelpers.CustomButton
+                <com.classtune.schoolapp.viewhelpers.CustomButton
                     android:id="@+id/btnShare"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -266,7 +266,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" >
 
-                    <com.champs21.schoolapp.viewhelpers.CustomButton
+                    <com.classtune.schoolapp.viewhelpers.CustomButton
                         android:id="@+id/btnReadLater"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -276,7 +276,7 @@
                         custom:iconImage="@drawable/read_later_normal"
                         custom:iconText="Read Later" />
 
-                    <com.champs21.schoolapp.viewhelpers.CustomButton
+                    <com.classtune.schoolapp.viewhelpers.CustomButton
                         android:id="@+id/btnRemove"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

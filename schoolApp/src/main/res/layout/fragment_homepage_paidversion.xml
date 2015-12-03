@@ -24,7 +24,7 @@
         android:paddingTop="5dip"
         android:paddingBottom="5dip">
 
-        <com.champs21.schoolapp.viewhelpers.PagerSlidingTabStrip
+        <com.classtune.schoolapp.viewhelpers.PagerSlidingTabStrip
             android:id="@+id/tab"
             android:layout_width="match_parent"
             android:layout_height="48dip"

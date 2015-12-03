@@ -19,7 +19,7 @@
         android:gravity="center"
         android:padding="10dp" >
 
-        <com.champs21.schoolapp.viewhelpers.CustomTextView
+        <com.classtune.schoolapp.viewhelpers.CustomTextView
             android:id="@+id/tv_pref_subcat_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

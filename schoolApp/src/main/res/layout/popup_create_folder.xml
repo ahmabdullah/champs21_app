@@ -13,14 +13,14 @@
        android:padding="10dip">
        
        
-       <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon 
+       <com.classtune.schoolapp.viewhelpers.CustomRhombusIcon
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            custom:iconImageRhombus="@drawable/goodread_icon_white"
            >
            
            
-       </com.champs21.schoolapp.viewhelpers.CustomRhombusIcon>
+       </com.classtune.schoolapp.viewhelpers.CustomRhombusIcon>
        
        
        <LinearLayout android:layout_width="0dip"

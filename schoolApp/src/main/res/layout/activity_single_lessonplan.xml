@@ -100,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/white">
 
-                    <com.champs21.schoolapp.viewhelpers.ExpandableTextView
+                    <com.classtune.schoolapp.viewhelpers.ExpandableTextView
                         android:id="@+id/txtDescription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -130,7 +130,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
-                        <com.champs21.schoolapp.viewhelpers.CustomTabButton
+                        <com.classtune.schoolapp.viewhelpers.CustomTabButton
                             android:id="@+id/btnDelete"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -148,7 +148,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
-                        <com.champs21.schoolapp.viewhelpers.CustomTabButton
+                        <com.classtune.schoolapp.viewhelpers.CustomTabButton
                             android:id="@+id/btnEdit"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" >
 
-            <com.champs21.schoolapp.viewhelpers.CustomTabButton
+            <com.classtune.schoolapp.viewhelpers.CustomTabButton
                 android:id="@+id/btn_notice_general"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
             android:layout_marginLeft="1dip"
             android:layout_weight="1" >
 
-            <com.champs21.schoolapp.viewhelpers.CustomTabButton
+            <com.classtune.schoolapp.viewhelpers.CustomTabButton
                 android:id="@+id/btn_notice_circular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
             android:layout_marginLeft="1dip"
             android:layout_weight="1" >
 
-            <com.champs21.schoolapp.viewhelpers.CustomTabButton
+            <com.classtune.schoolapp.viewhelpers.CustomTabButton
                 android:id="@+id/btn_notice_announcement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -94,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" >
 
-                    <com.champs21.schoolapp.viewhelpers.CustomTabButtonEllipsizeText
+                    <com.classtune.schoolapp.viewhelpers.CustomTabButtonEllipsizeText
                         android:id="@+id/btnTermExam"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" >
 
-                    <com.champs21.schoolapp.viewhelpers.CustomTabButtonEllipsizeText
+                    <com.classtune.schoolapp.viewhelpers.CustomTabButtonEllipsizeText
                         android:id="@+id/btnClassTest"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -130,7 +130,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" >
 
-                    <com.champs21.schoolapp.viewhelpers.CustomTabButtonEllipsizeText
+                    <com.classtune.schoolapp.viewhelpers.CustomTabButtonEllipsizeText
                         android:id="@+id/btnProject"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -148,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" >
 
-                    <com.champs21.schoolapp.viewhelpers.CustomTabButtonEllipsizeText
+                    <com.classtune.schoolapp.viewhelpers.CustomTabButtonEllipsizeText
                         android:id="@+id/btnYearly"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

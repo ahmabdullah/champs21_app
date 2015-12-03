@@ -171,7 +171,7 @@
                 android:orientation="horizontal"
                 android:visibility="visible" >
 
-                <com.champs21.schoolapp.viewhelpers.CustomButton
+                <com.classtune.schoolapp.viewhelpers.CustomButton
                     android:id="@+id/btn_done"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -47,7 +47,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp">
         
-        <com.champs21.schoolapp.viewhelpers.CustomTabButton
+        <com.classtune.schoolapp.viewhelpers.CustomTabButton
                 android:id="@+id/tab_upcoming"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                 custom:iconImageTab="@drawable/events_normal"
                 custom:iconTextTab="@string/title_events_tab" />
         
-        <com.champs21.schoolapp.viewhelpers.CustomTabButton
+        <com.classtune.schoolapp.viewhelpers.CustomTabButton
                 android:id="@+id/tab_archive"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

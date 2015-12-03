@@ -20,7 +20,7 @@
         android:paddingBottom="5dip"
         android:paddingTop="5dip" >
 
-        <com.champs21.freeversion.PagerSlidingTabStripGoodRead
+        <com.classtune.freeversion.PagerSlidingTabStripGoodRead
             android:id="@+id/tab"
             android:layout_width="match_parent"
             android:layout_height="48dip" />
