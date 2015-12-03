@@ -12,13 +12,13 @@
         android:orientation="horizontal"
         android:padding="10dip" >
 
-        <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon
+        <com.classtune.schoolapp.viewhelpers.CustomRhombusIcon
             android:id="@+id/imgViewCategoryMenuIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             custom:iconImageRhombus="@drawable/notice_normal" >
-        </com.champs21.schoolapp.viewhelpers.CustomRhombusIcon>
+        </com.classtune.schoolapp.viewhelpers.CustomRhombusIcon>
 
         <LinearLayout
             android:layout_width="0dip"
@@ -75,11 +75,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textSize="14sp"
-            android:textColor="@color/maroon"
+            android:textColor="@color/classtune_green_color"
             android:visibility="gone"
             android:text="This notice has attachment" />
 
-        <com.champs21.schoolapp.viewhelpers.ExpandableTextView
+        <com.classtune.schoolapp.viewhelpers.ExpandableTextView
             android:id="@+id/txt_notice_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
             android:background="@color/gray_2" >
         </LinearLayout>
 
-        <com.champs21.schoolapp.viewhelpers.CustomButton
+        <com.classtune.schoolapp.viewhelpers.CustomButton
             android:id="@+id/btn_notice_reminder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

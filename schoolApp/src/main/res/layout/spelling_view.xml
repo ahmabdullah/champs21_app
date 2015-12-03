@@ -57,7 +57,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/words_of_the_day" />
 
-        <com.champs21.schoolapp.viewhelpers.CustomButton
+        <com.classtune.schoolapp.viewhelpers.CustomButton
             android:id="@+id/spell_btn_play"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

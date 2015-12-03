@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.champs21.freeversion.ObservableScrollView
+    <com.classtune.freeversion.ObservableScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -359,7 +359,7 @@
                         android:orientation="horizontal"
                         android:visibility="gone" >
 
-                        <com.champs21.schoolapp.viewhelpers.CustomButton
+                        <com.classtune.schoolapp.viewhelpers.CustomButton
                             android:id="@+id/btnLike"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -376,7 +376,7 @@
                             android:background="@color/gray_2" >
                         </LinearLayout>
 
-                        <com.champs21.schoolapp.viewhelpers.CustomButton
+                        <com.classtune.schoolapp.viewhelpers.CustomButton
                             android:id="@+id/btnShare"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -395,7 +395,7 @@
                             android:orientation="vertical" >
                         </LinearLayout>
 
-                        <com.champs21.schoolapp.viewhelpers.CustomButton
+                        <com.classtune.schoolapp.viewhelpers.CustomButton
                             android:id="@+id/btnRemove"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -486,13 +486,13 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal" >
 
-                        <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon
+                        <com.classtune.schoolapp.viewhelpers.CustomRhombusIcon
                             android:id="@+id/rhombus"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dip"
                             custom:iconImageRhombus="@drawable/rombos" >
-                        </com.champs21.schoolapp.viewhelpers.CustomRhombusIcon>
+                        </com.classtune.schoolapp.viewhelpers.CustomRhombusIcon>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -545,6 +545,6 @@
                 </RelativeLayout>
             </LinearLayout>
         </FrameLayout>
-    </com.champs21.freeversion.ObservableScrollView>
+    </com.classtune.freeversion.ObservableScrollView>
 
 </RelativeLayout>

@@ -634,7 +634,7 @@
 
                                 </View>
 
-                                <com.champs21.schoolapp.classtune.NoDefaultSpinner
+                                <com.classtune.schoolapp.classtune.NoDefaultSpinner
                                     android:id="@+id/spinnerGender"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -645,7 +645,7 @@
                                     android:layout_alignParentTop="true"
                                     android:spinnerMode="dialog"
                                     android:prompt="@string/spinner_prompt_select_gender">
-                                </com.champs21.schoolapp.classtune.NoDefaultSpinner>
+                                </com.classtune.schoolapp.classtune.NoDefaultSpinner>
 
 
 
@@ -753,7 +753,7 @@
 
                                 </View>
 
-                                <com.champs21.schoolapp.classtune.NoDefaultSpinner
+                                <com.classtune.schoolapp.classtune.NoDefaultSpinner
                                     android:id="@+id/spinnerCategory"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -765,7 +765,7 @@
                                     android:spinnerMode="dialog"
                                     android:prompt="@string/spinner_prompt_select_category">
 
-                                </com.champs21.schoolapp.classtune.NoDefaultSpinner>
+                                </com.classtune.schoolapp.classtune.NoDefaultSpinner>
 
 
 
@@ -791,7 +791,7 @@
 
                                 </View>
 
-                                <com.champs21.schoolapp.classtune.NoDefaultSpinner
+                                <com.classtune.schoolapp.classtune.NoDefaultSpinner
                                     android:id="@+id/spinnerDepartment"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -803,7 +803,7 @@
                                     android:spinnerMode="dialog"
                                     android:prompt="@string/spinner_prompt_select_department">
 
-                                </com.champs21.schoolapp.classtune.NoDefaultSpinner>
+                                </com.classtune.schoolapp.classtune.NoDefaultSpinner>
 
 
 
@@ -848,14 +848,14 @@
                                         android:textSize="18sp"
                                         android:text="Select a category first\r\nthen select position"/>
 
-                                    <com.champs21.schoolapp.classtune.NoDefaultSpinner
+                                    <com.classtune.schoolapp.classtune.NoDefaultSpinner
                                         android:id="@+id/spinnerPosition"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:spinnerMode="dialog"
                                         android:prompt="@string/spinner_prompt_select_position">
 
-                                    </com.champs21.schoolapp.classtune.NoDefaultSpinner>
+                                    </com.classtune.schoolapp.classtune.NoDefaultSpinner>
 
                                 </FrameLayout>
 
@@ -885,7 +885,7 @@
 
                                 </View>
 
-                                <com.champs21.schoolapp.classtune.NoDefaultSpinner
+                                <com.classtune.schoolapp.classtune.NoDefaultSpinner
                                     android:id="@+id/spinnerGrade"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -897,7 +897,7 @@
                                     android:spinnerMode="dialog"
                                     android:prompt="@string/spinner_prompt_select_grade">
 
-                                </com.champs21.schoolapp.classtune.NoDefaultSpinner>
+                                </com.classtune.schoolapp.classtune.NoDefaultSpinner>
 
 
 
@@ -965,7 +965,7 @@
 
                                 </View>
 
-                                <com.champs21.schoolapp.classtune.NoDefaultSpinner
+                                <com.classtune.schoolapp.classtune.NoDefaultSpinner
                                     android:id="@+id/spinnerBatch"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -977,7 +977,7 @@
                                     android:spinnerMode="dialog"
                                     android:prompt="@string/spinner_prompt_select_batch">
 
-                                </com.champs21.schoolapp.classtune.NoDefaultSpinner>
+                                </com.classtune.schoolapp.classtune.NoDefaultSpinner>
 
 
 

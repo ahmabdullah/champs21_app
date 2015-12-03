@@ -131,7 +131,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal" >
 
-                    <com.champs21.schoolapp.viewhelpers.CustomButton
+                    <com.classtune.schoolapp.viewhelpers.CustomButton
                         android:id="@+id/btn_candle_attach_files"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -142,7 +142,7 @@
                         custom:iconImage="@drawable/attach_btn_normal"
                         custom:iconText="@string/btn_candle_attach_file" />
 
-                    <com.champs21.schoolapp.viewhelpers.CustomButton
+                    <com.classtune.schoolapp.viewhelpers.CustomButton
                         android:id="@+id/btn_candle_upload_pic"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
                         custom:iconImage="@drawable/camera_normal"
                         custom:iconText="@string/btn_candle_upload_picture" />
 
-                    <com.champs21.schoolapp.viewhelpers.CustomButton
+                    <com.classtune.schoolapp.viewhelpers.CustomButton
                         android:id="@+id/btn_candle_submit"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"

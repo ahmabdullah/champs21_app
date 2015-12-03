@@ -86,7 +86,7 @@
     </LinearLayout> -->
 
 
- <com.champs21.schoolapp.viewhelpers.MyFragmentTabHost
+ <com.classtune.schoolapp.viewhelpers.MyFragmentTabHost
     android:id="@+id/tabhost_ac"
     android:layout_width="match_parent"
     android:layout_height="0dip"
@@ -120,5 +120,5 @@
             android:layout_weight="1" />
 	        
 	    </LinearLayout>
-</com.champs21.schoolapp.viewhelpers.MyFragmentTabHost> 
+</com.classtune.schoolapp.viewhelpers.MyFragmentTabHost>
 </LinearLayout>

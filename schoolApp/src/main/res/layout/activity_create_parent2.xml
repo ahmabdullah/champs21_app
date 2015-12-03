@@ -400,7 +400,7 @@
 
                             </View>
 
-                            <com.champs21.schoolapp.classtune.NoDefaultSpinner
+                            <com.classtune.schoolapp.classtune.NoDefaultSpinner
                                 android:id="@+id/spinnerGender"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -411,7 +411,7 @@
                                 android:layout_alignParentTop="true"
                                 android:spinnerMode="dialog"
                                 android:prompt="@string/spinner_prompt_select_gender">>
-                            </com.champs21.schoolapp.classtune.NoDefaultSpinner>
+                            </com.classtune.schoolapp.classtune.NoDefaultSpinner>
 
 
 

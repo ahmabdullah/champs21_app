@@ -128,18 +128,18 @@
                     android:background="@android:color/transparent"
                     android:orientation="horizontal" >
 
-                    <com.champs21.schoolapp.viewhelpers.PagerContainer
+                    <com.classtune.schoolapp.viewhelpers.PagerContainer
                         android:id="@+id/pager_container"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" >
 
-                        <com.champs21.schoolapp.viewhelpers.UninterceptableViewPager
+                        <com.classtune.schoolapp.viewhelpers.UninterceptableViewPager
                             android:id="@+id/imageViewPager"
                             android:layout_width="match_parent"
                     		android:layout_height="match_parent"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp" />
-                    </com.champs21.schoolapp.viewhelpers.PagerContainer>
+                    </com.classtune.schoolapp.viewhelpers.PagerContainer>
 
                     <!-- <android.support.v4.view.ViewPager
                         android:id="@+id/imageViewPager"

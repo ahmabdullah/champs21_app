@@ -354,7 +354,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
-                        <com.champs21.schoolapp.viewhelpers.CustomTabButton
+                        <com.classtune.schoolapp.viewhelpers.CustomTabButton
                             android:id="@+id/btnSave"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -371,7 +371,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
-                        <com.champs21.schoolapp.viewhelpers.CustomTabButton
+                        <com.classtune.schoolapp.viewhelpers.CustomTabButton
                             android:id="@+id/btnSaveAndAssign"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

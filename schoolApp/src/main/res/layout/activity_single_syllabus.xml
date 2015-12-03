@@ -83,7 +83,7 @@
             android:background="@color/gray_2" >
         </LinearLayout>
 
-        <com.champs21.schoolapp.viewhelpers.ExpandableTextView
+        <com.classtune.schoolapp.viewhelpers.ExpandableTextView
             android:id="@+id/txtContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

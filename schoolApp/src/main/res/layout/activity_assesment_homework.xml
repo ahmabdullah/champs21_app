@@ -488,7 +488,7 @@
             android:orientation="horizontal"
             android:visibility="gone" >
 
-            <com.champs21.schoolapp.viewhelpers.CustomButton
+            <com.classtune.schoolapp.viewhelpers.CustomButton
                 android:id="@+id/btnSubmit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -505,7 +505,7 @@
                 android:background="@color/gray_2" >
             </LinearLayout>
 
-            <com.champs21.schoolapp.viewhelpers.CustomButton
+            <com.classtune.schoolapp.viewhelpers.CustomButton
                 android:id="@+id/btnViewScore"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

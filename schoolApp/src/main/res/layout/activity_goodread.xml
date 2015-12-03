@@ -39,7 +39,7 @@
         android:background="@color/white"
         android:orientation="horizontal" >
 
-        <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon
+        <com.classtune.schoolapp.viewhelpers.CustomRhombusIcon
             android:id="@+id/rhombus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
             android:layout_centerVertical="true"
             android:layout_margin="5dip"
             custom:iconImageRhombus="@drawable/goodread_icon_red" >
-        </com.champs21.schoolapp.viewhelpers.CustomRhombusIcon>
+        </com.classtune.schoolapp.viewhelpers.CustomRhombusIcon>
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -77,7 +77,7 @@
         android:paddingBottom="5dip"
         android:paddingTop="5dip" >
 
-        <com.champs21.freeversion.PagerSlidingTabStripGoodRead
+        <com.classtune.freeversion.PagerSlidingTabStripGoodRead
             android:id="@+id/tab"
             android:layout_width="match_parent"
             android:layout_height="48dip" />

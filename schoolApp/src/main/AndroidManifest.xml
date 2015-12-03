@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.champs21.schoolapp"
+    package="com.classtune.schoolapp"
     android:installLocation="auto"
-    android:versionCode="10"
-    android:versionName="1.0.9" >
+    android:versionCode="1"
+    android:versionName="1.0.0" >
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -17,7 +17,7 @@
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="androidki.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 
@@ -35,7 +35,7 @@
 
     -->
     <permission
-        android:name="com.champs21.schoolapp.permission.C2D_MESSAGE"
+        android:name="com.classtune.schoolapp.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.champs21.schoolapp.permission.C2D_MESSAGE" />
@@ -44,7 +44,7 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <application
-        android:name="com.champs21.schoolapp.utils.SchoolApp"
+        android:name="com.classtune.schoolapp.utils.SchoolApp"
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
@@ -62,12 +62,12 @@
 
         <!-- android:theme="@android:style/Theme.Light.NoTitleBar" > -->
         <activity
-            android:name="com.champs21.freeversion.HomePageFreeVersion"
+            android:name="com.classtune.freeversion.HomePageFreeVersion"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.schoolapp.SplashScreenActivity"
+            android:name="com.classtune.schoolapp.SplashScreenActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
@@ -78,41 +78,41 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.champs21.freeversion.HomeBaseActivity"
+            android:name="com.classtune.freeversion.HomeBaseActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.champs21.schoolapp.LoginActivity"
+            android:name="com.classtune.schoolapp.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.champs21.freeversion.GoodReadActivity"
+            android:name="com.classtune.freeversion.GoodReadActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.champs21.freeversion.FreeVersionLoggedInActivity"
+            android:name="com.classtune.freeversion.FreeVersionLoggedInActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.champs21.schoolapp.HomePageActivity"
+            android:name="com.classtune.schoolapp.HomePageActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.champs21.schoolapp.TestActivity"
+            android:name="com.classtune.schoolapp.TestActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.champs21.schoolapp.ChildSelectionActivity"
+            android:name="com.classtune.schoolapp.ChildSelectionActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.champs21.freeversion.RegistrationActivity"
+            android:name="com.classtune.freeversion.RegistrationActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
@@ -122,7 +122,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name="com.champs21.freeversion.SingleItemShowActivity"
+            android:name="com.classtune.freeversion.SingleItemShowActivity"
             android:hardwareAccelerated="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
@@ -144,7 +144,7 @@
         </activity>
         
         <activity
-            android:name="com.champs21.freeversion.CompleteProfileActivityContainer"
+            android:name="com.classtune.freeversion.CompleteProfileActivityContainer"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
@@ -157,10 +157,10 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/fb_app_id" />
 
-        <receiver android:name="com.champs21.schoolapp.utils.MyAlarm" >
+        <receiver android:name="com.classtune.schoolapp.utils.MyAlarm" >
         </receiver>
         <receiver
-            android:name="com.champs21.schoolapp.utils.BootBroadcastReceiver"
+            android:name="com.classtune.schoolapp.utils.BootBroadcastReceiver"
             android:enabled="true" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -168,70 +168,70 @@
         </receiver>
 
         <activity
-            android:name="com.champs21.freeversion.CandleActivity"
+            android:name="com.classtune.freeversion.CandleActivity"
             android:label="@string/title_activity_candle"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.SchoolDetailsActivity"
+            android:name="com.classtune.freeversion.SchoolDetailsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.SchoolAllActivities"
+            android:name="com.classtune.freeversion.SchoolAllActivities"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.SchoolPopulationActivity"
+            android:name="com.classtune.freeversion.SchoolPopulationActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.SingleSchooolFromSearchActivity"
+            android:name="com.classtune.freeversion.SingleSchooolFromSearchActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.CmartMainActivity"
+            android:name="com.classtune.freeversion.CmartMainActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.CmartProductDetaillActivity"
+            android:name="com.classtune.freeversion.CmartProductDetaillActivity"
             android:label="@string/title_activity_cmart_product_detaill" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.InfoActivity"
+            android:name="com.classtune.freeversion.InfoActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.champs21.freeversion.WordsOfTheDayMainActivity"
+            android:name="com.classtune.freeversion.WordsOfTheDayMainActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.PreferenceSettingsActivity"
+            android:name="com.classtune.freeversion.PreferenceSettingsActivity"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.champs21.freeversion.AccountSettingsActivity"
+            android:name="com.classtune.freeversion.AccountSettingsActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.CartActivity"
+            android:name="com.classtune.freeversion.CartActivity"
             android:label="@string/title_activity_cart" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.VideoPlayerActivity"
+            android:name="com.classtune.freeversion.VideoPlayerActivity"
             android:configChanges="orientation|screenSize" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.SchoolScrollableDetailsActivity"
+            android:name="com.classtune.freeversion.SchoolScrollableDetailsActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.SchoolFreeVersionActivity"
+            android:name="com.classtune.freeversion.SchoolFreeVersionActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.SingleSchoolFreeVersionActivity"
+            android:name="com.classtune.freeversion.SingleSchoolFreeVersionActivity"
             android:screenOrientation="portrait" >
         </activity>
         <!--
@@ -245,7 +245,7 @@
 
         -->
         <receiver
-            android:name="com.champs21.schoolapp.GcmBroadcastReceiver"
+            android:name="com.classtune.schoolapp.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
 
@@ -256,213 +256,213 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.champs21.schoolapp.GcmIntentService" />
+        <service android:name="com.classtune.schoolapp.GcmIntentService" />
 
         <activity
-            android:name="com.champs21.freeversion.SchoolCandleSettingActivity"
+            android:name="com.classtune.freeversion.SchoolCandleSettingActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.PaidVersionHomePageActivity"
+            android:name="com.classtune.freeversion.PaidVersionHomePageActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.AssesmentActivity"
+            android:name="com.classtune.freeversion.AssesmentActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.schoolapp.StudentListActivity"
+            android:name="com.classtune.schoolapp.StudentListActivity"
             android:label="@string/title_activity_student_list" >
         </activity>
         <activity
-            android:name="com.champs21.freeversion.CreateMeetingRequest"
+            android:name="com.classtune.freeversion.CreateMeetingRequest"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.champs21.schoolapp.SyllabusActivity"
+            android:name="com.classtune.schoolapp.SyllabusActivity"
             android:label="@string/title_activity_syllabus" >
         </activity>
         <activity 
-            android:name="com.champs21.freeversion.AssesmentHistoryActivity"
+            android:name="com.classtune.freeversion.AssesmentHistoryActivity"
             android:screenOrientation="portrait">
             
         </activity>
 
         <activity
-            android:name="com.champs21.schoolapp.StudentInfoActivity"
+            android:name="com.classtune.schoolapp.StudentInfoActivity"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_student_info" >
         </activity>
         <activity 
-            android:name="com.champs21.freeversion.AssessmentSummeryActivity"
+            android:name="com.classtune.freeversion.AssessmentSummeryActivity"
             android:screenOrientation="portrait">
         </activity>
 		<activity
-            android:name="com.champs21.freeversion.SchoolSingleItemShowActivity"
+            android:name="com.classtune.freeversion.SchoolSingleItemShowActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="com.champs21.freeversion.AssessmentLeaderBoardActivity"
+        <activity android:name="com.classtune.freeversion.AssessmentLeaderBoardActivity"
             android:screenOrientation="portrait">
             
         </activity>
-        <activity android:name="com.champs21.freeversion.AssessmentRules"
+        <activity android:name="com.classtune.freeversion.AssessmentRules"
             android:screenOrientation="portrait">
             
         </activity>
         
-        <service android:name="com.champs21.schoolapp.NotifyService"/>
+        <service android:name="com.classtune.schoolapp.NotifyService"/>
         
-        <receiver android:name="com.champs21.schoolapp.NotifyServiceReceiver"/>
+        <receiver android:name="com.classtune.schoolapp.NotifyServiceReceiver"/>
         
         <activity 
-            android:name="com.champs21.freeversion.AssesmentHomeworkActivity"
+            android:name="com.classtune.freeversion.AssesmentHomeworkActivity"
             android:screenOrientation="portrait">
             
         </activity>
 
         <activity 
-            android:name="com.champs21.freeversion.SingleHomeworkActivity"
+            android:name="com.classtune.freeversion.SingleHomeworkActivity"
             android:screenOrientation="portrait">
             
         </activity>
         <activity 
-            android:name="com.champs21.freeversion.SingleCalendarEvent"
+            android:name="com.classtune.freeversion.SingleCalendarEvent"
             android:screenOrientation="portrait">
             
         </activity>
 
         <activity
-            android:name="com.champs21.schoolapp.NotificationActivity"
+            android:name="com.classtune.schoolapp.NotificationActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity 
-            android:name="com.champs21.freeversion.SingleSyllabus"
+            android:name="com.classtune.freeversion.SingleSyllabus"
             android:screenOrientation="portrait">
             
         </activity>
 
         <activity 
-            android:name="com.champs21.freeversion.SyllabusMidLayerActivity"
+            android:name="com.classtune.freeversion.SyllabusMidLayerActivity"
             android:screenOrientation="portrait">
             
         </activity>
 
         <activity 
-            android:name="com.champs21.freeversion.SingleExamRoutine"
+            android:name="com.classtune.freeversion.SingleExamRoutine"
             android:screenOrientation="portrait">
             
         </activity>
         <activity 
-            android:name="com.champs21.freeversion.SingleItemTermReportActivity"
+            android:name="com.classtune.freeversion.SingleItemTermReportActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity 
-            android:name="com.champs21.freeversion.TeacherHomeworkDoneActivity"
-            android:screenOrientation="portrait">
-            
-        </activity>
-        <activity 
-            android:name="com.champs21.freeversion.SingleTeacherHomeworkActivity"
+            android:name="com.classtune.freeversion.TeacherHomeworkDoneActivity"
             android:screenOrientation="portrait">
             
         </activity>
         <activity 
-            android:name="com.champs21.freeversion.SingleNoticeActivity"
+            android:name="com.classtune.freeversion.SingleTeacherHomeworkActivity"
             android:screenOrientation="portrait">
             
         </activity>
         <activity 
-            android:name="com.champs21.freeversion.AnyFragmentLoadActivity"
+            android:name="com.classtune.freeversion.SingleNoticeActivity"
             android:screenOrientation="portrait">
             
         </activity>
         <activity 
-            android:name="com.champs21.freeversion.SingleMeetingRequestActivity"
+            android:name="com.classtune.freeversion.AnyFragmentLoadActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        <activity 
+            android:name="com.classtune.freeversion.SingleMeetingRequestActivity"
             android:screenOrientation="portrait">
             
         </activity>
 
         <activity
-            android:name="com.champs21.freeversion.SingleLessonPlan"
+            android:name="com.classtune.freeversion.SingleLessonPlan"
             android:screenOrientation="portrait">
 
         </activity>
 
         <activity
-            android:name="com.champs21.freeversion.EditLessonPlanActivity"
+            android:name="com.classtune.freeversion.EditLessonPlanActivity"
             android:screenOrientation="portrait">
 
         </activity>
 
         <activity
-            android:name="com.champs21.freeversion.LessonPlanSubjectDetailsActivity"
+            android:name="com.classtune.freeversion.LessonPlanSubjectDetailsActivity"
             android:screenOrientation="portrait">
 
         </activity>
 
 
         <activity
-            android:name="com.champs21.spellingbee.SpellingbeeTestActivity"
+            android:name="com.classtune.spellingbee.SpellingbeeTestActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysVisible">
 
         </activity>
 
         <activity
-            android:name="com.champs21.spellingbee.ResultPageActivity"
+            android:name="com.classtune.spellingbee.ResultPageActivity"
             android:screenOrientation="portrait">
 
         </activity>
 
         <activity
-            android:name="com.champs21.spellingbee.LeaderBoardActivity"
+            android:name="com.classtune.spellingbee.LeaderBoardActivity"
             android:screenOrientation="portrait">
 
         </activity>
 
         <activity
-            android:name="com.champs21.spellingbee.AndroidFacebookConnectActivity"
+            android:name="com.classtune.spellingbee.AndroidFacebookConnectActivity"
             android:screenOrientation="portrait">
 
         </activity>
 
         <activity
-            android:name="com.champs21.spellingbee.SpellingbeeRulesActivity"
+            android:name="com.classtune.spellingbee.SpellingbeeRulesActivity"
             android:screenOrientation="portrait">
 
         </activity>
 
         <activity
-            android:name="com.champs21.schoolapp.classtune.UserSelectionActivity"
+            android:name="com.classtune.schoolapp.classtune.UserSelectionActivity"
             android:screenOrientation="portrait">
         </activity>
 
         <activity
-            android:name="com.champs21.schoolapp.classtune.RegistrationFirstPhaseActivity"
+            android:name="com.classtune.schoolapp.classtune.RegistrationFirstPhaseActivity"
             android:screenOrientation="portrait">
         </activity>
 
         <activity
-            android:name="com.champs21.schoolapp.classtune.CreateStudentActivity"
+            android:name="com.classtune.schoolapp.classtune.CreateStudentActivity"
             android:screenOrientation="portrait">
         </activity>
 
         <activity
-            android:name="com.champs21.schoolapp.classtune.CreateParentActivity"
+            android:name="com.classtune.schoolapp.classtune.CreateParentActivity"
             android:screenOrientation="portrait">
         </activity>
 
         <activity
-            android:name="com.champs21.schoolapp.classtune.CreateTeacherActivity"
+            android:name="com.classtune.schoolapp.classtune.CreateTeacherActivity"
             android:screenOrientation="portrait">
         </activity>
 
 
-        <provider android:authorities="com.facebook.app.NativeAppCallContentProvider850059515022967"
+        <!--<provider android:authorities="com.facebook.app.NativeAppCallContentProvider850059515022967"
             android:name="com.facebook.NativeAppCallContentProvider"
-            android:exported="true"/>
+            android:exported="true"/>-->
 
 
         <meta-data

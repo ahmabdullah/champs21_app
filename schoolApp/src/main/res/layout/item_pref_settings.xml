@@ -36,7 +36,7 @@
             android:orientation="vertical"
             android:padding="10dp" >
 
-            <com.champs21.schoolapp.viewhelpers.CustomTextView
+            <com.classtune.schoolapp.viewhelpers.CustomTextView
                 android:id="@+id/tv_main_cat_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                 android:textColor="@color/red"
                 android:textSize="22sp"
                 customfont:fontName="AliquamREG.ttf" >
-            </com.champs21.schoolapp.viewhelpers.CustomTextView>
+            </com.classtune.schoolapp.viewhelpers.CustomTextView>
 
             <LinearLayout
                 android:layout_width="match_parent"

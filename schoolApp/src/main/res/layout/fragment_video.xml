@@ -111,7 +111,7 @@
                     android:text="Select Category"/>
                 -->
 
-                <com.champs21.schoolapp.viewhelpers.CustomButton
+                <com.classtune.schoolapp.viewhelpers.CustomButton
                     android:id="@+id/btnSelectCategory"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

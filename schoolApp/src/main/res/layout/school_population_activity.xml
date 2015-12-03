@@ -48,7 +48,7 @@
                 android:background="@android:color/white">
                 
                 
-                <com.champs21.schoolapp.viewhelpers.CustomTextView
+                <com.classtune.schoolapp.viewhelpers.CustomTextView
                 android:id="@+id/webView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,19 +70,19 @@
                 android:orientation="horizontal"
                 android:visibility="gone" >
 
-                <com.champs21.schoolapp.viewhelpers.PagerContainer
+                <com.classtune.schoolapp.viewhelpers.PagerContainer
                     android:id="@+id/pager_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" >
 
-                    <com.champs21.schoolapp.viewhelpers.UninterceptableViewPager
+                    <com.classtune.schoolapp.viewhelpers.UninterceptableViewPager
                         android:id="@+id/imageViewPager"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp" >
-                    </com.champs21.schoolapp.viewhelpers.UninterceptableViewPager>
-                </com.champs21.schoolapp.viewhelpers.PagerContainer>
+                    </com.classtune.schoolapp.viewhelpers.UninterceptableViewPager>
+                </com.classtune.schoolapp.viewhelpers.PagerContainer>
             </LinearLayout>
 
             <LinearLayout

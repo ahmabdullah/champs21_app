@@ -70,6 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="No upcoming exam!"
+            android:textStyle="bold"
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="@color/classtune_green_color"

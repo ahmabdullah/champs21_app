@@ -42,14 +42,14 @@
                         android:layout_width="125dp"
                         android:layout_height="100dp"/>
 
-                    <com.champs21.schoolapp.viewhelpers.CustomRhombusIcon
+                    <com.classtune.schoolapp.viewhelpers.CustomRhombusIcon
                         android:id="@+id/imageViewImageLogoRombus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:visibility="gone"
                         custom:iconImageRhombus="@drawable/home_tap" >
-                    </com.champs21.schoolapp.viewhelpers.CustomRhombusIcon>
+                    </com.classtune.schoolapp.viewhelpers.CustomRhombusIcon>
                 </FrameLayout>
 
                 <!--

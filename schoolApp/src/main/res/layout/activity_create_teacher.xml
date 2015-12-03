@@ -190,13 +190,13 @@
                         android:textColor="@android:color/black"
                         android:id="@+id/txt_header_category" />
 
-                    <com.champs21.schoolapp.classtune.NoDefaultSpinner
+                    <com.classtune.schoolapp.classtune.NoDefaultSpinner
                         android:id="@+id/spinnerCategory"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.35">
 
-                    </com.champs21.schoolapp.classtune.NoDefaultSpinner>
+                    </com.classtune.schoolapp.classtune.NoDefaultSpinner>
                 </LinearLayout>
 
                 <LinearLayout
@@ -216,13 +216,13 @@
                         android:textColor="@android:color/black"
                         android:id="@+id/txt_header_department" />
 
-                    <com.champs21.schoolapp.classtune.NoDefaultSpinner
+                    <com.classtune.schoolapp.classtune.NoDefaultSpinner
                         android:id="@+id/spinnerDepartment"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.35">
 
-                    </com.champs21.schoolapp.classtune.NoDefaultSpinner>
+                    </com.classtune.schoolapp.classtune.NoDefaultSpinner>
                 </LinearLayout>
 
 
@@ -243,13 +243,13 @@
                         android:textColor="@android:color/black"
                         android:id="@+id/txt_header_grade" />
 
-                    <com.champs21.schoolapp.classtune.NoDefaultSpinner
+                    <com.classtune.schoolapp.classtune.NoDefaultSpinner
                         android:id="@+id/spinnerGrade"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.35">
 
-                    </com.champs21.schoolapp.classtune.NoDefaultSpinner>
+                    </com.classtune.schoolapp.classtune.NoDefaultSpinner>
                 </LinearLayout>
 
                 <LinearLayout
@@ -330,13 +330,13 @@
                         android:textColor="@android:color/black"
                         android:id="@+id/txt_header_batchid" />
 
-                    <com.champs21.schoolapp.classtune.NoDefaultSpinner
+                    <com.classtune.schoolapp.classtune.NoDefaultSpinner
                         android:id="@+id/spinnerBatch"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.35">
 
-                    </com.champs21.schoolapp.classtune.NoDefaultSpinner>
+                    </com.classtune.schoolapp.classtune.NoDefaultSpinner>
                 </LinearLayout>
 
 

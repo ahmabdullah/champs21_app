@@ -226,7 +226,7 @@
                 
                
 
-                <com.champs21.schoolapp.viewhelpers.CustomButton
+                <com.classtune.schoolapp.viewhelpers.CustomButton
                     android:id="@+id/btnUploadLogo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -243,7 +243,7 @@
                     android:background="@color/gray_2" >
                 </LinearLayout>
 
-                <com.champs21.schoolapp.viewhelpers.CustomButton
+                <com.classtune.schoolapp.viewhelpers.CustomButton
                     android:id="@+id/btnUploadPicture"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -262,7 +262,7 @@
                     android:orientation="vertical" >
                 </LinearLayout>
 
-                <com.champs21.schoolapp.viewhelpers.CustomButton
+                <com.classtune.schoolapp.viewhelpers.CustomButton
                     android:id="@+id/btnSend"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
